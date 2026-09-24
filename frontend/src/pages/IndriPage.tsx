@@ -74,6 +74,7 @@ import acImg from '../assets/aindri/ac.png';
 import adImg from '../assets/aindri/ad.png';
 import aeImg from '../assets/aindri/ae.png';
 import warehouseImg from '../assets/aindri/warehouse.png';
+import axImg from '../assets/aindri/ax.png';
 
 const howWorksSteps = [
   { num: '01', title: 'Connect', desc: 'Aindri works with your existing camera infrastructure, reducing the need for a complete hardware overhaul.' },
@@ -490,22 +491,27 @@ export const IndriPage: React.FC = () => {
 
           <div className="see-why__layout fade-in-up" style={{ transitionDelay: '0.2s' }}>
             <div className="see-why__main-card">
-              <h3 className="see-why__main-title">Intelligence Layer</h3>
-              <p className="see-why__main-desc">
-                Instead of replacing your existing surveillance setup, Aindri adds an intelligence layer that analyzes the live feeds and identifies events that require attention.
-              </p>
-              <div className="see-why__flow">
-                <div className="see-why__flow-step">Existing Cameras</div>
-                <div className="see-why__flow-arrow">&darr;</div>
-                <div className="see-why__flow-step">Aindri Computer Vision</div>
-                <div className="see-why__flow-arrow">&darr;</div>
-                <div className="see-why__flow-step">Event Detection</div>
-                <div className="see-why__flow-arrow">&darr;</div>
-                <div className="see-why__flow-step">Alert + Evidence</div>
-                <div className="see-why__flow-arrow">&darr;</div>
-                <div className="see-why__flow-step">Human Action</div>
+              <div className="see-why__main-content">
+                <h3 className="see-why__main-title">Intelligence Layer</h3>
+                <p className="see-why__main-desc">
+                  Instead of replacing your existing surveillance setup, Aindri adds an intelligence layer that analyzes the live feeds and identifies events that require attention.
+                </p>
+                <div className="see-why__flow">
+                  <div className="see-why__flow-step">Existing Cameras</div>
+                  <div className="see-why__flow-arrow">&darr;</div>
+                  <div className="see-why__flow-step">Aindri Computer Vision</div>
+                  <div className="see-why__flow-arrow">&darr;</div>
+                  <div className="see-why__flow-step">Event Detection</div>
+                  <div className="see-why__flow-arrow">&darr;</div>
+                  <div className="see-why__flow-step">Alert + Evidence</div>
+                  <div className="see-why__flow-arrow">&darr;</div>
+                  <div className="see-why__flow-step">Human Action</div>
+                </div>
+                <p className="see-why__main-footer">Your cameras keep watching. Aindri helps them understand.</p>
               </div>
-              <p className="see-why__main-footer">Your cameras keep watching. Aindri helps them understand.</p>
+              <div className="see-why__main-image">
+                <img src={axImg} alt="Intelligence Layer" />
+              </div>
             </div>
 
             <div className="see-why__scroll-area">

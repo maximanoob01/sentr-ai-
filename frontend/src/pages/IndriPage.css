@@ -1115,18 +1115,39 @@
 }
 
 .see-why__main-card {
-  flex: 0 0 350px;
+  flex: 0 0 550px;
   background: #0f172a;
   color: #ffffff;
   border-radius: 20px;
   padding: 2.5rem 2rem;
   box-shadow: 0 20px 50px rgba(0,0,0,0.15);
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
   position: relative;
   overflow: hidden;
   z-index: 1;
+}
+
+.see-why__main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.see-why__main-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.see-why__main-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
 }
 
 .see-why__main-card::before {
@@ -2297,3 +2318,12 @@
   }
 }
 
+@media (max-width: 992px) {
+  .see-why__layout {
+    flex-direction: column;
+  }
+  .see-why__main-card {
+    flex: auto;
+    flex-direction: column;
+  }
+}
