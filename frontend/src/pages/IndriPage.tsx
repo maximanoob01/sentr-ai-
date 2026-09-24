@@ -535,7 +535,8 @@ export const IndriPage: React.FC = () => {
       {/* ======== 6.75 MAKE THEM WORK SMARTER ======== */}
       <section className="indri-smart section-y">
         <div className="container">
-          <div className="indri-smart__card fade-in-up">
+          <div className="indri-smart__card fade-in-up" style={{ backgroundImage: `url(${workImg})` }}>
+            <div className="indri-smart__overlay"></div>
             <div className="indri-smart__content">
               <h2 className="indri-smart__heading">
                 Your Cameras Are Already Watching.<br />
@@ -554,9 +555,6 @@ export const IndriPage: React.FC = () => {
                 <a href="#demo" className="indri-btn-white">Request a Demo</a>
                 <a href="/contact" className="indri-btn-outline">Explore a Custom Solution &rarr;</a>
               </div>
-            </div>
-            <div className="indri-smart__visual">
-              <img src={workImg} alt="Cameras working smarter" />
             </div>
           </div>
         </div>
