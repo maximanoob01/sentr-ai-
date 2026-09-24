@@ -208,7 +208,7 @@ const howWorksSteps = [
   { num: '05', title: 'Act', desc: 'Depending on the severity, your team can review and intervene. High-priority events can support process-hold workflows.' }
 ];
 
-const HowWorksStep: React.FC<{ step: any; index: number }> = ({ step, index }) => {
+const HowWorksStep: React.FC<{ step: any }> = ({ step }) => {
   const [open, setOpen] = useState(false);
   
   return (
@@ -441,8 +441,8 @@ export const IndriPage: React.FC = () => {
             <img src={ddImg} alt="How Aindri Works" className="how-aindri-works__bg-img" />
             
             <div className="how-aindri-works__overlay">
-              {howWorksSteps.map((step, index) => (
-                <HowWorksStep key={step.num} step={step} index={index} />
+              {howWorksSteps.map((step) => (
+                <HowWorksStep key={step.num} step={step} />
               ))}
             </div>
           </div>
