@@ -1114,8 +1114,14 @@
   align-items: stretch;
 }
 
+.see-why__left-col {
+  flex: 0 0 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 .see-why__main-card {
-  flex: 0 0 350px;
   background: #0f172a;
   color: #ffffff;
   border-radius: 20px;
@@ -1130,11 +1136,8 @@
 }
 
 .see-why__center-image {
-  flex: 0 0 400px;
   display: flex;
-  align-items: flex-start;
   justify-content: center;
-  padding-top: 0;
 }
 
 .see-why__center-image img {
@@ -2315,6 +2318,10 @@
 @media (max-width: 992px) {
   .see-why__layout {
     flex-direction: column;
+  }
+  .see-why__left-col {
+    flex: auto;
+    width: 100%;
   }
   .see-why__main-card, .see-why__center-image {
     flex: auto;
