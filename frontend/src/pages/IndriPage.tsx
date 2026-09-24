@@ -75,7 +75,7 @@ import adImg from '../assets/aindri/ad.png';
 import aeImg from '../assets/aindri/ae.png';
 import warehouseImg from '../assets/aindri/warehouse.png';
 import axImg from '../assets/aindri/ax.png';
-import workImg from '../assets/aindri/work.png';
+import workImg from '../assets/work.png';
 
 const howWorksSteps = [
   { num: '01', title: 'Connect', desc: 'Aindri works with your existing camera infrastructure, reducing the need for a complete hardware overhaul.' },
