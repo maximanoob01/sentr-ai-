@@ -531,6 +531,33 @@ export const IndriPage: React.FC = () => {
           </div>
         </div>
       </section>
+      {/* ======== 6.75 MAKE THEM WORK SMARTER ======== */}
+      <section className="indri-smart section-y">
+        <div className="container">
+          <div className="indri-smart__card fade-in-up">
+            <div className="indri-smart__content">
+              <h2 className="indri-smart__heading">
+                Your Cameras Are Already Watching.<br />
+                <span className="text-gradient">Make Them Work Smarter.</span>
+              </h2>
+              <p className="indri-smart__desc">
+                Turn your existing camera infrastructure into an intelligent, real-time layer for detecting anomalies, understanding activity, and responding to critical events.
+              </p>
+              
+              <div className="indri-smart__challenge">
+                <span className="indri-smart__challenge-badge">Have a specific operational challenge?</span>
+                <p>Aindri can be adapted to your business requirements and use cases.</p>
+              </div>
+              
+              <div className="indri-smart__actions">
+                <a href="#demo" className="indri-btn-white">Request a Demo</a>
+                <a href="/contact" className="indri-btn-outline">Explore a Custom Solution &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* ======== 7. DEPLOYMENT ======== */}
       <section className="indri-deploy section-y">

@@ -1394,6 +1394,140 @@
   line-height: 1.4;
 }
 
+/* ======== MAKE THEM WORK SMARTER ======== */
+.indri-smart__card {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border-radius: 32px;
+  padding: 5rem 4rem;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.indri-smart__card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(14, 165, 233, 0.15) 0%, transparent 50%);
+  pointer-events: none;
+  animation: scrollMarqueeSteps 25s linear infinite;
+}
+
+.indri-smart__heading {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #f8fafc;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.indri-smart__heading .text-gradient {
+  background: linear-gradient(90deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.indri-smart__desc {
+  font-size: 1.125rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.indri-smart__challenge {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 2.5rem;
+  border-radius: 16px;
+  margin: 2rem auto 3rem;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+}
+
+.indri-smart__challenge-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #38bdf8;
+  margin-bottom: 0.5rem;
+}
+
+.indri-smart__challenge p {
+  color: #f8fafc;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.indri-smart__actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.indri-smart__actions .indri-btn-white {
+  background: #ffffff;
+  color: #0f172a;
+  padding: 1rem 2rem;
+  border-radius: 99px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+}
+
+.indri-smart__actions .indri-btn-white:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.indri-smart__actions .indri-btn-outline {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 1rem 2rem;
+  border-radius: 99px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.indri-smart__actions .indri-btn-outline:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .indri-smart__card {
+    padding: 3rem 1.5rem;
+  }
+  .indri-smart__heading {
+    font-size: 2rem;
+  }
+  .indri-smart__actions {
+    flex-direction: column;
+  }
+}
+
 /* ======== DEPLOYMENT ======== */
 .indri-deploy {
   background: var(--bg-base);
