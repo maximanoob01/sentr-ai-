@@ -1132,8 +1132,9 @@
 .see-why__center-image {
   flex: 0 0 400px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  padding-top: 2.5rem;
 }
 
 .see-why__center-image img {
