@@ -1134,7 +1134,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding-top: 2.5rem;
+  padding-top: 0;
 }
 
 .see-why__center-image img {
