@@ -1398,14 +1398,39 @@
 .indri-smart__card {
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   border-radius: 24px;
-  padding: 3rem 3rem;
+  padding: 3rem 4rem;
   box-shadow: 0 20px 40px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.1);
   position: relative;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
   align-items: center;
-  text-align: center;
+  text-align: left;
+}
+
+.indri-smart__content {
+  position: relative;
+  z-index: 2;
+}
+
+.indri-smart__visual {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.indri-smart__visual img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.indri-smart__visual:hover img {
+  transform: translateY(-5px);
 }
 
 .indri-smart__card::before {
@@ -1442,7 +1467,7 @@
   color: #cbd5e1;
   line-height: 1.6;
   max-width: 800px;
-  margin: 0 auto 1rem;
+  margin: 0 0 1rem;
   position: relative;
   z-index: 2;
 }
@@ -1452,7 +1477,7 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 1.25rem 2rem;
   border-radius: 12px;
-  margin: 1.5rem auto 2rem;
+  margin: 1.5rem 0 2rem;
   display: inline-block;
   position: relative;
   z-index: 2;
@@ -1478,7 +1503,7 @@
 .indri-smart__actions {
   display: flex;
   gap: 1rem;
-  justify-content: center;
+  justify-content: flex-start;
   position: relative;
   z-index: 2;
 }
@@ -1514,6 +1539,22 @@
 .indri-smart__actions .indri-btn-outline:hover {
   background: rgba(255,255,255,0.1);
   border-color: #ffffff;
+}
+
+@media (max-width: 992px) {
+  .indri-smart__card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .indri-smart__desc {
+    margin: 0 auto 1rem;
+  }
+  .indri-smart__challenge {
+    margin: 1.5rem auto 2rem;
+  }
+  .indri-smart__actions {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 768px) {

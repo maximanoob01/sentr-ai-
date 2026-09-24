@@ -75,6 +75,7 @@ import adImg from '../assets/aindri/ad.png';
 import aeImg from '../assets/aindri/ae.png';
 import warehouseImg from '../assets/aindri/warehouse.png';
 import axImg from '../assets/aindri/ax.png';
+import workImg from '../assets/aindri/work.png';
 
 const howWorksSteps = [
   { num: '01', title: 'Connect', desc: 'Aindri works with your existing camera infrastructure, reducing the need for a complete hardware overhaul.' },
@@ -554,41 +555,15 @@ export const IndriPage: React.FC = () => {
                 <a href="/contact" className="indri-btn-outline">Explore a Custom Solution &rarr;</a>
               </div>
             </div>
+            <div className="indri-smart__visual">
+              <img src={workImg} alt="Cameras working smarter" />
+            </div>
           </div>
         </div>
       </section>
 
 
-      {/* ======== 7. DEPLOYMENT ======== */}
-      <section className="indri-deploy section-y">
-        <div className="container">
-          <div className="fade-in-up" style={{ marginBottom: 'var(--space-12)' }}>
-            <span className="section-label">Deployment</span>
-            <h2 className="indri-deploy__heading">Flexible Deployment Options</h2>
-            <p className="indri-deploy__sub">
-              Aindri can be deployed to suit your infrastructure requirements. Contact us to discuss the approach that fits your operations.
-            </p>
-          </div>
-          <div className="indri-deploy__cards">
-            {[
-              { title: 'Cloud', desc: 'Hosted on cloud infrastructure with managed scaling, updates and availability. Suitable for organisations with cloud-ready infrastructure.', tags: ['Azure', 'Scalable', 'Managed'] },
-              { title: 'On-Premise', desc: 'Deployed within your own data centre or facility. Provides full data control and suits environments with strict data residency requirements.', tags: ['Full Control', 'Data Residency', 'Private'] },
-              { title: 'Hybrid', desc: 'A combination of on-premise edge processing and cloud-based analytics. Balances local performance with cloud-scale storage and analysis.', tags: ['Edge + Cloud', 'Flexible', 'Scalable'] },
-            ].map((d) => (
-              <div key={d.title} className="card card-accent-hover indri-deploy__card fade-in-up">
-                <h3 className="indri-deploy__card-title">{d.title}</h3>
-                <p className="indri-deploy__card-desc">{d.desc}</p>
-                <div className="indri-deploy__card-tags">
-                  {d.tags.map((t) => <span key={t} className="tech-tag">{t}</span>)}
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="indri-deploy__note fade-in-up">
-            Hardware requirements, integration process, training and support are scoped during the onboarding engagement. Contact our team to discuss your specific requirements.
-          </p>
-        </div>
-      </section>
+
 
       {/* ======== 8. FAQ ======== */}
       <section className="indri-faq section-y" id="faq">
