@@ -1,0 +1,209 @@
+/* ============================================
+   Footer Styles
+   ============================================ */
+
+.footer-main {
+  background: #1C2135; /* Lighter navy — matches --bg-surface-3 */
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: clamp(2.5rem, 5vw, 4rem);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.footer-main__inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-main__top {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-8); /* Reduced gap */
+  margin-bottom: var(--space-6); /* Reduced margin */
+}
+
+.footer-main__brand {
+  max-width: 320px;
+}
+
+.footer-main__logo-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: var(--space-4);
+  letter-spacing: -0.03em;
+}
+
+.footer-main__desc {
+  font-size: 0.875rem;
+  color: #a0aec0;
+  line-height: 1.6;
+}
+
+.footer-main__social {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.footer-main__social--centered {
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-main__contact-list {
+  margin-top: var(--space-4); /* Reduced */
+  margin-bottom: var(--space-4); /* Reduced */
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a.footer-contact-item:hover {
+  color: var(--accent);
+}
+
+.footer-contact-item svg {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.footer-main__social a {
+  color: #ffffff;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ef4444; /* Bright Red */
+  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.2);
+}
+
+.footer-main__social a:hover {
+  color: #ffffff;
+  background: #dc2626; /* Darker Red */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(239, 68, 68, 0.4);
+}
+
+.footer-main__links-grid {
+  display: flex;
+  gap: clamp(2rem, 6vw, 5rem);
+  flex-wrap: wrap;
+}
+
+.footer-main__col h3 {
+  font-size: 0.85rem;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: var(--space-4);
+  letter-spacing: 0.02em;
+}
+
+.footer-main__col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer-main__col a {
+  color: #a0aec0;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.footer-main__col a:hover {
+  color: var(--accent);
+  transform: translateX(4px);
+}
+
+.footer-main__bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-main__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #a0aec0;
+  position: relative;
+  z-index: 2;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  padding-bottom: 2rem;
+}
+
+.footer-main__legal {
+  display: flex;
+  gap: var(--space-6);
+}
+
+.footer-main__legal a {
+  color: #a0aec0;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer-main__legal a:hover {
+  color: #fff;
+}
+
+.footer-main__huge-logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--space-6);
+  user-select: none;
+}
+
+.footer-main__huge-logo img {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 1024px) {
+  .footer-main__top {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-main__links-grid {
+    gap: var(--space-8);
+  }
+  .footer-main__col {
+    min-width: 120px;
+  }
+  .footer-main__huge-logo {
+    margin-top: var(--space-6);
+  }
+}

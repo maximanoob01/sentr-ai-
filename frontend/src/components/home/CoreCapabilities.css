@@ -1,0 +1,61 @@
+/* ============================================
+   Core Capabilities
+   ============================================ */
+
+.capabilities__header {
+  max-width: 680px;
+  margin-bottom: var(--space-16);
+}
+
+.capabilities__heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: var(--space-4);
+}
+
+.capabilities__sub {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.capabilities__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+
+.capabilities__card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.capabilities__card-title {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.capabilities__card-desc {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.65;
+  flex: 1;
+}
+
+@media (max-width: 1024px) {
+  .capabilities__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .capabilities__grid {
+    grid-template-columns: 1fr;
+  }
+}

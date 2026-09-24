@@ -1,0 +1,178 @@
+/* ============================================
+   Final CTA Section
+   ============================================ */
+
+.final-cta {
+  background: var(--bg-base);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dot cluster — bottom left corner */
+.final-cta::before {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  width: 240px;
+  height: 160px;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.2) 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Dot cluster — top right corner */
+.final-cta::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  width: 240px;
+  height: 160px;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.2) 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.final-cta__wrapper {
+  position: relative;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-10) var(--space-12);
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Top-left corner logo */
+.final-cta__corner-logo {
+  position: absolute;
+  top: 20px;
+  left: 24px;
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  z-index: 2;
+  opacity: 0.9;
+}
+
+.final-cta__bg-accent {
+  position: absolute;
+  top: -40%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 300px;
+  background: radial-gradient(ellipse, rgba(0, 196, 161, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Dimmed background photo — opacity controls how faint it is */
+.final-cta__bg-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.08; /* Very dim — raise to make more visible */
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.final-cta__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.final-cta__heading {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 900;
+  color: var(--text-primary);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin-bottom: var(--space-3);
+}
+
+.final-cta__sub {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  max-width: 520px;
+  line-height: 1.6;
+  margin-bottom: var(--space-5);
+}
+
+.final-cta__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+  flex-wrap: wrap;
+}
+
+/* Pill-shaped buttons */
+.final-cta__actions .btn {
+  border-radius: 999px;
+}
+
+.final-cta__contact-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-default);
+  width: 100%;
+  max-width: 640px;
+}
+
+.final-cta__contact-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: #ffffff;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.final-cta__contact-item:not(.final-cta__contact-item--location):hover {
+  color: var(--accent);
+}
+
+.final-cta__contact-sep {
+  color: #ffffff;
+  font-size: var(--text-sm);
+}
+
+@media (max-width: 768px) {
+  .final-cta__wrapper {
+    padding: var(--space-8) var(--space-5);
+  }
+
+  .final-cta__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .final-cta__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .final-cta__contact-sep {
+    display: none;
+  }
+
+  .final-cta__contact-row {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+}
