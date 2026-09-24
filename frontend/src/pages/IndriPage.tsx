@@ -230,7 +230,7 @@ export const IndriPage: React.FC = () => {
 
 
       {/* ======== 2.5 FROM SURVEILLANCE TO INTELLIGENCE ======== */}
-      <section className="surveillance-intel section-y">
+      <section id="product" className="surveillance-intel section-y">
         <div className="container">
           <div className="surveillance-intel__header fade-in-up">
             <h2 className="surveillance-intel__heading">From Surveillance to Intelligence.</h2>
@@ -307,7 +307,7 @@ export const IndriPage: React.FC = () => {
 
 
       {/* ======== 3. HOW AINDRI WORKS ======== */}
-      <section className="how-aindri-works section-y">
+      <section id="technology" className="how-aindri-works section-y">
         <div className="container">
           <div className="how-aindri-works__interactive fade-in-up" style={{ transitionDelay: '0.2s' }}>
             <div className="how-aindri-works__header fade-in-up">
