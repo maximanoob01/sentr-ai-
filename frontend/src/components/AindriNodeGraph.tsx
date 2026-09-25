@@ -109,7 +109,7 @@ export const AindriNodeGraph: React.FC = () => {
 
           {/* LEFT — SVG Graph */}
           <div className="aindri-node__graph fade-in-up">
-            <svg viewBox={`0 0 ${viewW} ${viewH}`} className="aindri-node__svg" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox={`0 80 ${viewW} 480`} className="aindri-node__svg" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 {nodes.map((node) => {
                   const nx = cx + Math.cos(toRad(node.angle)) * node.distance;
