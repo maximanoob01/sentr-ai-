@@ -43,15 +43,9 @@ export const AboutPage: React.FC = () => {
               <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#3b82f6', display: 'inline-block' }}></span>
               <span style={{ color: '#93c5fd', fontSize: '0.85rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>About Sentr AI</span>
             </div>
-            <h1 style={{ fontSize: 'clamp(2rem, 4.5vw, 3.5rem)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.03em', marginBottom: '1.5rem', lineHeight: 1.1 }}>
+            <h1 style={{ fontSize: 'clamp(2rem, 4.5vw, 3.5rem)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.03em', marginBottom: '0', lineHeight: 1.1 }}>
               Building Intelligent Technology for a <span style={{ color: '#3b82f6' }}>More Secure Future</span>
             </h1>
-            <p style={{ color: '#e2e8f0', fontSize: '1.25rem', lineHeight: 1.7, marginBottom: '1.5rem', maxWidth: '750px' }}>
-              Sentr AI helps organizations protect, optimize, and transform their technology environments through intelligent monitoring, cybersecurity, enterprise IT, cloud infrastructure, and managed services.
-            </p>
-            <p style={{ color: '#cbd5e1', fontSize: '1.15rem', lineHeight: 1.7, maxWidth: '750px' }}>
-              We combine technology expertise with a practical understanding of business operations to build solutions that are secure, scalable, and designed around real-world requirements.
-            </p>
           </div>
         </div>
       </section>
