@@ -13,13 +13,14 @@ export const AboutPage: React.FC = () => {
     <main style={{ minHeight: '100vh', background: 'var(--bg-base)' }}>
       {/* Hero Section */}
       <section style={{ 
+        paddingTop: 'calc(var(--nav-height) + 4rem)', 
+        paddingBottom: '8rem', 
         position: 'relative',
-        minHeight: '80vh',
+        overflow: 'hidden',
         display: 'flex',
         alignItems: 'center',
-        paddingTop: 'calc(var(--nav-height) + 2rem)',
-        paddingBottom: '4rem',
-        overflow: 'hidden'
+        justifyContent: 'center',
+        minHeight: '60vh'
       }}>
         {/* Background Image with Overlay */}
         <div style={{
@@ -27,23 +28,38 @@ export const AboutPage: React.FC = () => {
           inset: 0,
           backgroundImage: `url(${heroImg})`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center 25%',
+          backgroundPosition: 'center',
           zIndex: 0
         }} />
         <div style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(to right, rgba(8, 11, 18, 0.95) 0%, rgba(8, 11, 18, 0.7) 50%, rgba(8, 11, 18, 0.3) 100%)',
+          background: 'rgba(15, 23, 42, 0.7)',
           zIndex: 0
         }} />
 
-        <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center', marginTop: '-4rem' }}>
-          <div className="fade-in-up" style={{ maxWidth: '850px', margin: '0 auto' }}>
-            <div style={{ marginBottom: '1.5rem' }}>
-              <span style={{ color: '#ffffff', fontSize: '2rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em' }}>About Sentr AI</span>
-            </div>
-            <h1 style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.75rem)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.03em', marginBottom: '0', lineHeight: 1.2 }}>
-              Building Intelligent Technology for a <span style={{ color: '#3b82f6' }}>More Secure Future</span>
+        <div className="container" style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+          <div className="fade-in-up" style={{ maxWidth: '900px', margin: '0 auto' }}>
+            <h2 style={{ 
+              color: '#ffffff', 
+              fontSize: '1.2rem', 
+              fontWeight: 700, 
+              textTransform: 'uppercase', 
+              letterSpacing: '0.15em',
+              marginBottom: '1.5rem'
+            }}>
+              About Sentr AI
+            </h2>
+            <h1 style={{ 
+              fontSize: 'clamp(2rem, 5vw, 3.5rem)', 
+              fontWeight: 800, 
+              color: '#ffffff', 
+              letterSpacing: '-0.02em', 
+              lineHeight: 1.2,
+              margin: 0
+            }}>
+              Building Intelligent Technology for a <br />
+              <span style={{ color: '#3b82f6' }}>More Secure Future</span>
             </h1>
           </div>
         </div>
