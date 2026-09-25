@@ -102,6 +102,35 @@ export const AindriNodeGraph: React.FC = () => {
         <img src={cameraImg} alt="" className="aindri-node__bg-img" />
         <div className="aindri-node__bg-overlay"></div>
       </div>
+      
+      {/* Sliding Strip */}
+      <div className="aindri-node__marquee-strip">
+        <div className="aindri-node__marquee-content">
+          <span>Real-Time Detection</span>
+          <span className="aindri-node__marquee-dot">•</span>
+          <span>5 Core Capabilities</span>
+          <span className="aindri-node__marquee-dot">•</span>
+          <span>Existing Camera Infrastructure</span>
+          <span className="aindri-node__marquee-dot">•</span>
+          <span>Snapshot-Based Evidence</span>
+          <span className="aindri-node__marquee-dot">•</span>
+          <span>24/7 Operational Visibility</span>
+          <span className="aindri-node__marquee-dot">•</span>
+          
+          {/* Duplicate for infinite loop */}
+          <span>Real-Time Detection</span>
+          <span className="aindri-node__marquee-dot">•</span>
+          <span>5 Core Capabilities</span>
+          <span className="aindri-node__marquee-dot">•</span>
+          <span>Existing Camera Infrastructure</span>
+          <span className="aindri-node__marquee-dot">•</span>
+          <span>Snapshot-Based Evidence</span>
+          <span className="aindri-node__marquee-dot">•</span>
+          <span>24/7 Operational Visibility</span>
+          <span className="aindri-node__marquee-dot">•</span>
+        </div>
+      </div>
+
       <div className="container relative z-10">
 
         <div className="aindri-node__header fade-in-up">
