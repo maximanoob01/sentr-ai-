@@ -4,6 +4,7 @@ import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { HomePage } from './pages/HomePage';
 import { IndriPage } from './pages/IndriPage';
+import { AboutPage } from './pages/AboutPage';
 import { useScrollAnimation } from './hooks/useScrollAnimation';
 import heroImg from './assets/contact us/hero.png';
 import workImg from './assets/work.png';
@@ -344,7 +345,7 @@ const AppInner: React.FC = () => {
         <Route path="/resources" element={<PlaceholderPage title="Resources" />} />
         <Route path="/resources/:slug" element={<PlaceholderPage title="Resource" />} />
         <Route path="/company" element={<PlaceholderPage title="Company" />} />
-        <Route path="/company/about" element={<PlaceholderPage title="About Sentr AI" />} />
+        <Route path="/company/about" element={<AboutPage />} />
         <Route path="/company/partners" element={<PlaceholderPage title="Partners" />} />
         <Route path="/company/careers" element={<PlaceholderPage title="Careers" />} />
         <Route path="/privacy" element={<PlaceholderPage title="Privacy Policy" />} />
