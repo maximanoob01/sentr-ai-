@@ -4,7 +4,7 @@
 
 .magazine-feature {
   position: relative;
-  background-color: #f8fafc; /* Light grey background */
+  background-color: #ffffff; /* White background */
   padding: 50px 0; /* Reduced from 80px */
   color: #0f172a; /* Dark text */
   font-family: 'Inter', sans-serif;
@@ -171,7 +171,7 @@
   position: absolute;
   bottom: -80px; /* Pushed further lower */
   right: 20px;
-  background-color: #e2e8f0; /* Grey style */
+  background-color: #facc15; /* Yellow highlight */
   color: #0f172a;
   padding: 24px; /* Reduced from 32px */
   border-radius: 8px;

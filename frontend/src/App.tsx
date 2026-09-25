@@ -6,6 +6,8 @@ import { HomePage } from './pages/HomePage';
 import { IndriPage } from './pages/IndriPage';
 import { useScrollAnimation } from './hooks/useScrollAnimation';
 import heroImg from './assets/contact us/hero.png';
+import workImg from './assets/work.png';
+import siliconImg from './assets/alliance logo/silicon.png';
 import './styles/globals.css';
 import './styles/components.css';
 
@@ -162,6 +164,42 @@ const ContactPage: React.FC = () => (
             </div>
 
           </div>
+        </div>
+      </div>
+    </section>
+
+    {/* SiliconIndia Feature Section */}
+    <section className="section-y" style={{ background: 'var(--bg-surface-2)', borderTop: '1px solid var(--border-default)' }}>
+      <div className="container">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+          
+          <div className="fade-in-up" style={{ order: 2 }}>
+            <img src={siliconImg} alt="SiliconIndia" style={{ height: '48px', marginBottom: '1.5rem', objectFit: 'contain' }} />
+            <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '1rem', lineHeight: 1.2 }}>
+              Featured in SiliconIndia Magazine
+            </h2>
+            <h3 style={{ fontSize: '1.25rem', color: 'var(--accent)', fontWeight: 600, marginBottom: '1.5rem' }}>
+              Recognized for Intelligent Monitoring & Enterprise Technology
+            </h3>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
+              Sentr AI has been shortlisted for SiliconIndia Magazine's “Top Company in Intelligent Monitoring System Solution of the Year 2026” special edition.
+            </p>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.7, marginBottom: '2rem' }}>
+              The feature highlights Sentr AI's work across intelligent monitoring, cybersecurity, enterprise IT, cloud and managed services.
+            </p>
+            <a href="#" className="btn btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+              Read the Feature 
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+          </div>
+
+          <div className="fade-in-up" style={{ order: 1 }}>
+            <div style={{ position: 'relative', borderRadius: 'var(--radius-2xl)', overflow: 'hidden', boxShadow: '0 20px 40px -10px rgba(0,0,0,0.3)' }}>
+              <img src={workImg} alt="Sentr AI Workspace" style={{ width: '100%', height: 'auto', display: 'block' }} />
+              <div style={{ position: 'absolute', inset: 0, border: '1px solid rgba(255,255,255,0.1)', borderRadius: 'var(--radius-2xl)', pointerEvents: 'none' }}></div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
