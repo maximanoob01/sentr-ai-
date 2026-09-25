@@ -212,10 +212,10 @@ const ContactPage: React.FC = () => (
             News & Resources
           </h2>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+        <div style={{ display: 'flex', gap: '2rem', overflowX: 'auto', paddingBottom: '2rem', scrollSnapType: 'x mandatory', scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
           
           {/* Card 1 */}
-          <div className="fade-in-up" style={{ transitionDelay: '0.1s', background: '#ffffff', padding: '2rem', borderRadius: 'var(--radius-xl)', border: '1px solid #e2e8f0', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05)', display: 'flex', flexDirection: 'column', height: '100%' }}>
+          <div className="fade-in-up" style={{ flex: '0 0 min(100%, 350px)', scrollSnapAlign: 'start', transitionDelay: '0.1s', background: '#ffffff', padding: '2rem', borderRadius: 'var(--radius-xl)', border: '1px solid #e2e8f0', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05)', display: 'flex', flexDirection: 'column' }}>
             <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: '#3b82f6', fontWeight: 700, marginBottom: '0.75rem', display: 'block' }}>Technology</span>
             <h4 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: '0.75rem', lineHeight: 1.4 }}>Why Business Email Is Essential for Every Organization</h4>
             <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.6, flexGrow: 1, marginBottom: '2rem' }}>
@@ -229,7 +229,7 @@ const ContactPage: React.FC = () => (
           </div>
 
           {/* Card 2 */}
-          <div className="fade-in-up" style={{ transitionDelay: '0.2s', background: '#ffffff', padding: '2rem', borderRadius: 'var(--radius-xl)', border: '1px solid #e2e8f0', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05)', display: 'flex', flexDirection: 'column', height: '100%' }}>
+          <div className="fade-in-up" style={{ flex: '0 0 min(100%, 350px)', scrollSnapAlign: 'start', transitionDelay: '0.2s', background: '#ffffff', padding: '2rem', borderRadius: 'var(--radius-xl)', border: '1px solid #e2e8f0', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05)', display: 'flex', flexDirection: 'column' }}>
             <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: '#3b82f6', fontWeight: 700, marginBottom: '0.75rem', display: 'block' }}>Artificial Intelligence</span>
             <h4 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: '0.75rem', lineHeight: 1.4 }}>How AI Is Impacting the Technology Industry</h4>
             <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.6, flexGrow: 1, marginBottom: '2rem' }}>
@@ -243,7 +243,7 @@ const ContactPage: React.FC = () => (
           </div>
 
           {/* Card 3 */}
-          <div className="fade-in-up" style={{ transitionDelay: '0.3s', background: '#ffffff', padding: '2rem', borderRadius: 'var(--radius-xl)', border: '1px solid #e2e8f0', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05)', display: 'flex', flexDirection: 'column', height: '100%' }}>
+          <div className="fade-in-up" style={{ flex: '0 0 min(100%, 350px)', scrollSnapAlign: 'start', transitionDelay: '0.3s', background: '#ffffff', padding: '2rem', borderRadius: 'var(--radius-xl)', border: '1px solid #e2e8f0', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05)', display: 'flex', flexDirection: 'column' }}>
             <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: '#3b82f6', fontWeight: 700, marginBottom: '0.75rem', display: 'block' }}>Cloud Infrastructure</span>
             <h4 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: '0.75rem', lineHeight: 1.4 }}>Understanding Cloud Management: Why It Matters for Businesses</h4>
             <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.6, flexGrow: 1, marginBottom: '2rem' }}>
@@ -257,7 +257,7 @@ const ContactPage: React.FC = () => (
           </div>
 
           {/* Card 4 */}
-          <div className="fade-in-up" style={{ transitionDelay: '0.4s', background: '#ffffff', padding: '2rem', borderRadius: 'var(--radius-xl)', border: '1px solid #e2e8f0', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05)', display: 'flex', flexDirection: 'column', height: '100%' }}>
+          <div className="fade-in-up" style={{ flex: '0 0 min(100%, 350px)', scrollSnapAlign: 'start', transitionDelay: '0.4s', background: '#ffffff', padding: '2rem', borderRadius: 'var(--radius-xl)', border: '1px solid #e2e8f0', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05)', display: 'flex', flexDirection: 'column' }}>
             <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: '#3b82f6', fontWeight: 700, marginBottom: '0.75rem', display: 'block' }}>Cybersecurity</span>
             <h4 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: '0.75rem', lineHeight: 1.4 }}>How AI Is Transforming Cybersecurity in India</h4>
             <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.6, flexGrow: 1, marginBottom: '2rem' }}>
