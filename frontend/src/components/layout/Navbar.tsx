@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 import logoImg from '../../assets/logo.png';
+import siliconImg from '../../assets/alliance logo/silicon.png';
 
 interface NavItem {
   label: string;
@@ -16,8 +17,9 @@ interface NavItem {
     tag: string;
     title: string;
     description: string;
-    buttonText: string;
-    href: string;
+    image?: string;
+    buttonText?: string;
+    href?: string;
   };
 }
 
@@ -134,11 +136,10 @@ const navItems: NavItem[] = [
       }
     ],
     sideCard: {
-      tag: 'Market Research Report',
-      title: 'The State of the Aftermarket 2025',
-      description: 'Insights from 550 OEM leaders on the future of parts, pricing, and performance.',
-      buttonText: 'Learn More',
-      href: '/report'
+      tag: 'FEATURED IN',
+      title: 'SiliconIndia MAGAZINE',
+      description: 'Top Company in Intelligent Monitoring System Solution — 2026',
+      image: siliconImg
     }
   }
 ];
@@ -253,11 +254,16 @@ export const Navbar: React.FC = () => {
                             {item.sideCard && (
                               <div className="navbar__mega-sidecard">
                                 <span className="navbar__mega-sidecard-tag">{item.sideCard.tag}</span>
+                                {item.sideCard.image && (
+                                  <img src={item.sideCard.image} alt={item.sideCard.title} className="navbar__mega-sidecard-img" style={{ maxWidth: '120px', marginBottom: '1rem', objectFit: 'contain' }} />
+                                )}
                                 <h4 className="navbar__mega-sidecard-title">{item.sideCard.title}</h4>
                                 <p className="navbar__mega-sidecard-desc">{item.sideCard.description}</p>
-                                <Link to={item.sideCard.href} className="navbar__mega-sidecard-btn">
-                                  {item.sideCard.buttonText}
-                                </Link>
+                                {item.sideCard.href && item.sideCard.buttonText && (
+                                  <Link to={item.sideCard.href} className="navbar__mega-sidecard-btn">
+                                    {item.sideCard.buttonText}
+                                  </Link>
+                                )}
                               </div>
                             )}
                           </div>

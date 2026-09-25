@@ -133,7 +133,7 @@ export const AindriNodeGraph: React.FC = () => {
 
               {/* Dot background */}
               <pattern id="dots" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
-                <circle cx="1.5" cy="1.5" r="1" fill="rgba(148,163,184,0.12)" />
+                <circle cx="1.5" cy="1.5" r="1" fill="rgba(148,163,184,0.4)" />
               </pattern>
               <rect width={viewW} height={viewH} fill="url(#dots)" />
 
