@@ -71,37 +71,37 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* Section 1: Who We Are */}
-      <section className="section-y" style={{ background: '#ffffff', paddingTop: '8rem', paddingBottom: '8rem' }}>
+      <section className="section-y" style={{ background: '#ffffff', paddingTop: '5rem', paddingBottom: '5rem' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '6rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center', maxWidth: '1100px', margin: '0 auto' }}>
             
             {/* Left: Image Collage */}
-            <div className="fade-in-up" style={{ position: 'relative', height: '500px', width: '100%' }}>
+            <div className="fade-in-up" style={{ position: 'relative', height: '400px', width: '100%' }}>
               {/* Image 1 (tall) */}
-              <img src={img1} alt="Team" style={{ position: 'absolute', top: 0, left: 0, width: '55%', height: '80%', objectFit: 'cover', borderRadius: 'var(--radius-xl)', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.15)', zIndex: 1 }} />
+              <img src={img1} alt="Team" style={{ position: 'absolute', top: 0, left: 0, width: '55%', height: '80%', objectFit: 'cover', borderRadius: 'var(--radius-xl)', boxShadow: '0 15px 30px -10px rgba(0,0,0,0.1)', zIndex: 1 }} />
               {/* Image 2 (square) */}
-              <img src={img2} alt="Meeting" style={{ position: 'absolute', top: '10%', right: '5%', width: '45%', height: '40%', objectFit: 'cover', borderRadius: 'var(--radius-xl)', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.2)', zIndex: 2 }} />
+              <img src={img2} alt="Meeting" style={{ position: 'absolute', top: '10%', right: '5%', width: '45%', height: '40%', objectFit: 'cover', borderRadius: 'var(--radius-xl)', boxShadow: '0 15px 30px -10px rgba(0,0,0,0.15)', zIndex: 2 }} />
               {/* Image 3 (wide) */}
-              <img src={img3} alt="Office" style={{ position: 'absolute', bottom: '5%', right: 0, width: '65%', height: '40%', objectFit: 'cover', borderRadius: 'var(--radius-xl)', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.25)', zIndex: 3 }} />
+              <img src={img3} alt="Office" style={{ position: 'absolute', bottom: '5%', right: 0, width: '65%', height: '40%', objectFit: 'cover', borderRadius: 'var(--radius-xl)', boxShadow: '0 15px 30px -10px rgba(0,0,0,0.2)', zIndex: 3 }} />
             </div>
 
             {/* Right: Text */}
             <div className="fade-in-up" style={{ transitionDelay: '0.2s' }}>
-              <span className="section-label" style={{ color: '#475569' }}>ABOUT US</span>
-              <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, color: '#0f172a', letterSpacing: '-0.03em', marginBottom: '1.5rem', lineHeight: 1.1 }}>
+              <span className="section-label" style={{ color: '#475569', fontSize: '0.8rem', marginBottom: '0.75rem' }}>ABOUT US</span>
+              <h2 style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.25rem)', fontWeight: 800, color: '#0f172a', letterSpacing: '-0.02em', marginBottom: '1.25rem', lineHeight: 1.2 }}>
                 Who We Are: <br/>More Than a <span style={{ color: '#2563eb' }}>Technology Provider</span>
               </h2>
-              <p style={{ color: '#475569', fontSize: '1.125rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
+              <p style={{ color: '#475569', fontSize: '1rem', lineHeight: 1.6, marginBottom: '1rem' }}>
                 Sentr AI helps organizations protect, optimize, and transform their technology environments through intelligent monitoring, cybersecurity, enterprise IT, cloud infrastructure, and managed services.
               </p>
-              <p style={{ color: '#475569', fontSize: '1.125rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
+              <p style={{ color: '#475569', fontSize: '1rem', lineHeight: 1.6, marginBottom: '1rem' }}>
                 We combine technology expertise with a practical understanding of business operations to build solutions that are secure, scalable, and designed around real-world requirements.
               </p>
-              <p style={{ color: '#475569', fontSize: '1.125rem', lineHeight: 1.7, marginBottom: '2.5rem' }}>
+              <p style={{ color: '#475569', fontSize: '1rem', lineHeight: 1.6, marginBottom: '2rem' }}>
                 Our name reflects our philosophy: Sentr AI acts as a digital sentinel, combining artificial intelligence and technical expertise to help organizations protect their digital assets, improve visibility, and operate more effectively.
               </p>
               
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
                 {[
                   'AI & Intelligent Monitoring',
                   'Cybersecurity',
@@ -112,9 +112,9 @@ export const AboutPage: React.FC = () => {
                   'Digital Workplace',
                   'Compliance & Reporting'
                 ].map((item, i) => (
-                  <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                    <div style={{ width: '8px', height: '8px', background: '#eab308', borderRadius: '50%' }}></div>
-                    <span style={{ color: '#0f172a', fontWeight: 600, fontSize: '0.95rem' }}>{item}</span>
+                  <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <div style={{ width: '6px', height: '6px', background: '#eab308', borderRadius: '50%' }}></div>
+                    <span style={{ color: '#0f172a', fontWeight: 600, fontSize: '0.9rem' }}>{item}</span>
                   </div>
                 ))}
               </div>
