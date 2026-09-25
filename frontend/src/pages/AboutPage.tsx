@@ -42,7 +42,7 @@ export const AboutPage: React.FC = () => {
           <div className="fade-in-up" style={{ maxWidth: '900px', margin: '0 auto' }}>
             <h2 style={{ 
               color: '#ffffff', 
-              fontSize: '1.2rem', 
+              fontSize: '1.75rem', 
               fontWeight: 700, 
               textTransform: 'uppercase', 
               letterSpacing: '0.15em',
@@ -51,7 +51,7 @@ export const AboutPage: React.FC = () => {
               About Sentr AI
             </h2>
             <h1 style={{ 
-              fontSize: 'clamp(2rem, 5vw, 3.5rem)', 
+              fontSize: 'clamp(1.5rem, 3.5vw, 2.5rem)', 
               fontWeight: 800, 
               color: '#ffffff', 
               letterSpacing: '-0.02em', 
