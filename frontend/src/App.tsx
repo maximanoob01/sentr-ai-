@@ -174,9 +174,8 @@ const ContactPage: React.FC = () => (
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem', alignItems: 'center' }}>
           
           <div className="fade-in-up" style={{ order: 2 }}>
-            <img src={siliconImg} alt="SiliconIndia" style={{ height: '48px', marginBottom: '1.5rem', objectFit: 'contain' }} />
-            <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '1rem', lineHeight: 1.2 }}>
-              Featured in SiliconIndia Magazine
+            <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '1rem', lineHeight: 1.2, display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
+              Featured in <img src={siliconImg} alt="SiliconIndia" style={{ height: '1.2em', objectFit: 'contain', verticalAlign: 'middle' }} /> Magazine
             </h2>
             <h3 style={{ fontSize: '1.25rem', color: '#3b82f6', fontWeight: 600, marginBottom: '1.5rem' }}>
               Recognized for Intelligent Monitoring & Enterprise Technology
