@@ -174,7 +174,7 @@ export const AboutPage: React.FC = () => {
             {/* Card 1: Mission */}
             <div className="fade-in-up" style={{ background: '#ffffff', overflow: 'hidden', boxShadow: '0 15px 30px -10px rgba(0,0,0,0.1)', display: 'flex', flexDirection: 'column' }}>
               <div style={{ position: 'relative' }}>
-                <img src={img4} alt="Our Mission" style={{ width: '100%', height: '220px', objectFit: 'cover', display: 'block' }} />
+                <img src={img5} alt="Our Mission" style={{ width: '100%', height: '220px', objectFit: 'cover', display: 'block' }} />
                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '3px', background: '#f97316' }}></div>
               </div>
               <div style={{ padding: '2.5rem 2rem 3rem', flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
@@ -200,7 +200,7 @@ export const AboutPage: React.FC = () => {
             {/* Card 2: Vision */}
             <div className="fade-in-up" style={{ transitionDelay: '0.2s', background: '#ffffff', overflow: 'hidden', boxShadow: '0 15px 30px -10px rgba(0,0,0,0.1)', display: 'flex', flexDirection: 'column' }}>
               <div style={{ position: 'relative' }}>
-                <img src={img5} alt="Our Vision" style={{ width: '100%', height: '220px', objectFit: 'cover', display: 'block' }} />
+                <img src={img4} alt="Our Vision" style={{ width: '100%', height: '220px', objectFit: 'cover', display: 'block' }} />
                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '3px', background: '#f97316' }}></div>
               </div>
               <div style={{ padding: '2.5rem 2rem 3rem', flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
