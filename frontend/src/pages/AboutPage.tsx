@@ -170,7 +170,7 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* Infinite Logo Slider */}
-      <section style={{ background: '#ffffff', padding: '4rem 0', borderTop: '1px solid #f1f5f9', overflow: 'hidden' }}>
+      <section style={{ background: '#ffffff', paddingTop: '4rem', paddingBottom: '2rem', borderTop: '1px solid #f1f5f9', overflow: 'hidden' }}>
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
           <span style={{ color: '#94a3b8', fontSize: '0.85rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase' }}>Our Technology Alliances</span>
         </div>
@@ -186,7 +186,7 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* Section 3: Mission and Vision */}
-      <section className="section-y" style={{ background: '#f8fafc', paddingTop: '8rem', paddingBottom: '8rem' }}>
+      <section className="section-y" style={{ background: '#f8fafc', paddingTop: '3rem', paddingBottom: '8rem' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <span className="section-label" style={{ color: '#475569' }}>COMPANY VISION</span>
