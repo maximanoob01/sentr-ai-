@@ -169,7 +169,7 @@ const ContactPage: React.FC = () => (
     </section>
 
     {/* SiliconIndia Feature Section */}
-    <section className="section-y" style={{ background: 'var(--bg-surface-2)', borderTop: '1px solid var(--border-default)' }}>
+    <section className="section-y" style={{ background: '#374151', borderTop: '1px solid var(--border-default)' }}>
       <div className="container">
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem', alignItems: 'center' }}>
           
