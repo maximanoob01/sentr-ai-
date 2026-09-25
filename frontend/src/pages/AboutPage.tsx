@@ -27,7 +27,7 @@ export const AboutPage: React.FC = () => {
           inset: 0,
           backgroundImage: `url(${heroImg})`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundPosition: 'center 25%',
           zIndex: 0
         }} />
         <div style={{
@@ -37,7 +37,7 @@ export const AboutPage: React.FC = () => {
           zIndex: 0
         }} />
 
-        <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
+        <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center', marginTop: '-4rem' }}>
           <div className="fade-in-up" style={{ maxWidth: '850px', margin: '0 auto' }}>
             <div style={{ marginBottom: '1.5rem' }}>
               <span style={{ color: '#ffffff', fontSize: '2rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em' }}>About Sentr AI</span>
