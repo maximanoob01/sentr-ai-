@@ -119,7 +119,7 @@ const ContactPage: React.FC = () => (
                 <textarea id="message" className="form-textarea" placeholder="Your message..." rows={4}></textarea>
               </div>
               
-              <button type="submit" className="btn btn-primary" style={{ width: '100%', marginTop: '1rem' }}>Send Message</button>
+              <button type="submit" className="btn btn-primary btn-lg" style={{ width: '100%', marginTop: '1.5rem', fontSize: '1.1rem', fontWeight: 600, padding: '1rem' }}>Send Message</button>
             </form>
           </div>
 
