@@ -37,11 +37,10 @@ export const AboutPage: React.FC = () => {
           zIndex: 0
         }} />
 
-        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <div className="fade-in-up" style={{ maxWidth: '850px' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.5rem', padding: '0.5rem 1rem', background: 'rgba(37,99,235,0.2)', border: '1px solid rgba(37,99,235,0.3)', borderRadius: 'var(--radius-full)', backdropFilter: 'blur(4px)' }}>
-              <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#3b82f6', display: 'inline-block' }}></span>
-              <span style={{ color: '#93c5fd', fontSize: '0.85rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>About Sentr AI</span>
+        <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
+          <div className="fade-in-up" style={{ maxWidth: '850px', margin: '0 auto' }}>
+            <div style={{ marginBottom: '1rem' }}>
+              <span style={{ color: '#ffffff', fontSize: '1.25rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em' }}>About Sentr AI</span>
             </div>
             <h1 style={{ fontSize: 'clamp(2rem, 4.5vw, 3.5rem)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.03em', marginBottom: '0', lineHeight: 1.1 }}>
               Building Intelligent Technology for a <span style={{ color: '#3b82f6' }}>More Secure Future</span>
