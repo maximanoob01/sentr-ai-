@@ -1,5 +1,4 @@
 import React from 'react';
-import aindriiImg from '../assets/aindri/aindri.png';
 
 interface Node {
   id: string;
@@ -103,9 +102,6 @@ export const AindriNodeGraph: React.FC = () => {
         <div className="aindri-node__header fade-in-up">
           <span className="section-label">How It All Connects</span>
           <h2 className="aindri-node__heading">Aindri at the Center of Your Operations</h2>
-          <p className="aindri-node__sub">
-            A single intelligence layer that connects your cameras, data, teams, and systems into one unified response network.
-          </p>
         </div>
 
         {/* Side-by-side: graph LEFT, cards RIGHT */}
@@ -184,10 +180,6 @@ export const AindriNodeGraph: React.FC = () => {
               );
             })}
 
-            {/* Center logo */}
-            <div className="aindri-node__center-logo">
-              <img src={aindriiImg} alt="Aindri" />
-            </div>
           </div>
 
           {/* RIGHT — Cards */}
