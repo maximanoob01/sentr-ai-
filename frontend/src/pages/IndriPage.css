@@ -31,11 +31,18 @@
 }
 
 /* The graph wrapper — relative so we can absolutely position overlays */
+.aindri-node__body {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 2.5rem;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .aindri-node__graph {
   position: relative;
   width: 100%;
-  max-width: 900px;
-  margin: 0 auto 4rem;
   aspect-ratio: 1000 / 640;
 }
 
@@ -131,13 +138,11 @@
   filter: drop-shadow(0 0 16px rgba(56,189,248,0.7));
 }
 
-/* Cards below graph */
+/* Cards — single column stacked beside the graph */
 .aindri-node__cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  max-width: 1100px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .aindri-node__card {
@@ -202,8 +207,16 @@
   margin: 0;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1100px) {
+  .aindri-node__body {
+    grid-template-columns: 1fr;
+  }
+  .aindri-node__graph {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+  }
   .aindri-node__cards {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
 }
