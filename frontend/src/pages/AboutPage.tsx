@@ -188,12 +188,9 @@ export const AboutPage: React.FC = () => {
                 <p style={{ color: '#64748b', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
                   We combine AI, cybersecurity, cloud, enterprise IT, and managed services to create solutions that go beyond basic protection and support long-term business growth.
                 </p>
-                <p style={{ color: '#0f172a', fontSize: '0.9rem', fontWeight: 600, lineHeight: 1.6, marginBottom: '2.5rem', fontStyle: 'italic' }}>
+                <p style={{ color: '#0f172a', fontSize: '0.9rem', fontWeight: 600, lineHeight: 1.6, marginBottom: '0', fontStyle: 'italic', marginTop: 'auto' }}>
                   "To become a global technology partner for organizations looking to build secure, intelligent, and scalable digital environments."
                 </p>
-                <a href="#mission" style={{ marginTop: 'auto', display: 'inline-block', padding: '0.5rem 1.75rem', border: '2px solid #f97316', borderRadius: 'var(--radius-full)', color: '#f97316', fontSize: '0.85rem', fontWeight: 600, textDecoration: 'none', transition: 'all 0.2s ease' }}>
-                  Read more
-                </a>
               </div>
             </div>
 
@@ -214,12 +211,9 @@ export const AboutPage: React.FC = () => {
                 <p style={{ color: '#64748b', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
                   We believe proactive cybersecurity, intelligent monitoring, smart technology management, and continuous improvement should become fundamental parts of modern business.
                 </p>
-                <p style={{ color: '#0f172a', fontSize: '0.9rem', fontWeight: 600, lineHeight: 1.6, marginBottom: '2.5rem', fontStyle: 'italic' }}>
+                <p style={{ color: '#0f172a', fontSize: '0.9rem', fontWeight: 600, lineHeight: 1.6, marginBottom: '0', fontStyle: 'italic', marginTop: 'auto' }}>
                   "Make technology more intelligent. Make businesses more secure."
                 </p>
-                <a href="#vision" style={{ marginTop: 'auto', display: 'inline-block', padding: '0.5rem 1.75rem', border: '2px solid #f97316', borderRadius: 'var(--radius-full)', color: '#f97316', fontSize: '0.85rem', fontWeight: 600, textDecoration: 'none', transition: 'all 0.2s ease' }}>
-                  Read more
-                </a>
               </div>
             </div>
 
@@ -234,7 +228,7 @@ export const AboutPage: React.FC = () => {
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a', marginBottom: '1.25rem', lineHeight: 1.3 }}>
                   One Partner. Multiple Technology Capabilities.
                 </h3>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem', textAlign: 'left', width: '100%' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '0', textAlign: 'left', width: '100%', marginTop: 'auto' }}>
                   <div>
                     <span style={{ color: '#0f172a', fontWeight: 700, fontSize: '0.9rem', display: 'block' }}>Intelligent Monitoring</span>
                     <span style={{ color: '#64748b', fontSize: '0.85rem', lineHeight: 1.5 }}>AI-powered vision and real-time monitoring solutions.</span>
@@ -252,9 +246,6 @@ export const AboutPage: React.FC = () => {
                     <span style={{ color: '#64748b', fontSize: '0.85rem', lineHeight: 1.5 }}>App & data management, compliance, and IT support.</span>
                   </div>
                 </div>
-                <a href="#aindri" style={{ marginTop: 'auto', display: 'inline-block', padding: '0.5rem 1.75rem', border: '2px solid #f97316', borderRadius: 'var(--radius-full)', color: '#f97316', fontSize: '0.85rem', fontWeight: 600, textDecoration: 'none', transition: 'all 0.2s ease' }}>
-                  Explore Aindri →
-                </a>
               </div>
             </div>
           </div>
