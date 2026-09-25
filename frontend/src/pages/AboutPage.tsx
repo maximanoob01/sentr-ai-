@@ -39,10 +39,10 @@ export const AboutPage: React.FC = () => {
 
         <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
           <div className="fade-in-up" style={{ maxWidth: '850px', margin: '0 auto' }}>
-            <div style={{ marginBottom: '1rem' }}>
-              <span style={{ color: '#ffffff', fontSize: '1.25rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em' }}>About Sentr AI</span>
+            <div style={{ marginBottom: '1.5rem' }}>
+              <span style={{ color: '#ffffff', fontSize: '2rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em' }}>About Sentr AI</span>
             </div>
-            <h1 style={{ fontSize: 'clamp(2rem, 4.5vw, 3.5rem)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.03em', marginBottom: '0', lineHeight: 1.1 }}>
+            <h1 style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.75rem)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.03em', marginBottom: '0', lineHeight: 1.2 }}>
               Building Intelligent Technology for a <span style={{ color: '#3b82f6' }}>More Secure Future</span>
             </h1>
           </div>
