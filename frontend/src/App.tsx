@@ -8,6 +8,7 @@ import { useScrollAnimation } from './hooks/useScrollAnimation';
 import heroImg from './assets/contact us/hero.png';
 import workImg from './assets/work.png';
 import siliconImg from './assets/alliance logo/silicon.png';
+import oceanImg from './assets/ocean.png';
 import './styles/globals.css';
 import './styles/components.css';
 
@@ -292,7 +293,7 @@ const ContactPage: React.FC = () => {
     {/* CTA Section */}
     <section style={{ paddingBottom: '6rem', background: '#ffffff' }}>
       <div className="container">
-        <div className="fade-in-up" style={{ background: 'linear-gradient(135deg, #1e3a8a, #2563eb)', padding: '4rem 3rem', borderRadius: 'var(--radius-2xl)', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', boxShadow: '0 20px 40px -10px rgba(37,99,235,0.3)' }}>
+        <div className="fade-in-up" style={{ backgroundImage: `linear-gradient(135deg, rgba(30,58,138,0.85), rgba(37,99,235,0.7)), url(${oceanImg})`, backgroundSize: 'cover', backgroundPosition: 'center', padding: '4rem 3rem', borderRadius: 'var(--radius-2xl)', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', boxShadow: '0 20px 40px -10px rgba(37,99,235,0.3)' }}>
           <div style={{ flex: '1 1 400px' }}>
             <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.5rem)', fontWeight: 800, color: '#ffffff', marginBottom: '1rem', lineHeight: 1.2 }}>
               Have a Challenge in Mind?
