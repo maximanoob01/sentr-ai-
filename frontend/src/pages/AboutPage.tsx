@@ -1,6 +1,11 @@
 import React, { useEffect } from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import heroImg from '../assets/about us/hero.png';
+import img1 from '../assets/about us/1.png';
+import img2 from '../assets/about us/2.png';
+import img3 from '../assets/about us/3.png';
+import img4 from '../assets/about us/4.png';
+import img5 from '../assets/about us/5.png';
 
 export const AboutPage: React.FC = () => {
   useScrollAnimation();
@@ -61,6 +66,156 @@ export const AboutPage: React.FC = () => {
               Building Intelligent Technology for a <br />
               <span style={{ color: '#3b82f6' }}>More Secure Future</span>
             </h1>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 1: Who We Are */}
+      <section className="section-y" style={{ background: '#ffffff', paddingTop: '8rem', paddingBottom: '8rem' }}>
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '6rem', alignItems: 'center' }}>
+            
+            {/* Left: Image Collage */}
+            <div className="fade-in-up" style={{ position: 'relative', height: '500px', width: '100%' }}>
+              {/* Image 1 (tall) */}
+              <img src={img1} alt="Team" style={{ position: 'absolute', top: 0, left: 0, width: '55%', height: '80%', objectFit: 'cover', borderRadius: 'var(--radius-xl)', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.15)', zIndex: 1 }} />
+              {/* Image 2 (square) */}
+              <img src={img2} alt="Meeting" style={{ position: 'absolute', top: '10%', right: '5%', width: '45%', height: '40%', objectFit: 'cover', borderRadius: 'var(--radius-xl)', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.2)', zIndex: 2 }} />
+              {/* Image 3 (wide) */}
+              <img src={img3} alt="Office" style={{ position: 'absolute', bottom: '5%', right: 0, width: '65%', height: '40%', objectFit: 'cover', borderRadius: 'var(--radius-xl)', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.25)', zIndex: 3 }} />
+            </div>
+
+            {/* Right: Text */}
+            <div className="fade-in-up" style={{ transitionDelay: '0.2s' }}>
+              <span className="section-label" style={{ color: '#475569' }}>ABOUT US</span>
+              <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, color: '#0f172a', letterSpacing: '-0.03em', marginBottom: '1.5rem', lineHeight: 1.1 }}>
+                Who We Are: <br/>More Than a <span style={{ color: '#2563eb' }}>Technology Provider</span>
+              </h2>
+              <p style={{ color: '#475569', fontSize: '1.125rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
+                Sentr AI helps organizations protect, optimize, and transform their technology environments through intelligent monitoring, cybersecurity, enterprise IT, cloud infrastructure, and managed services.
+              </p>
+              <p style={{ color: '#475569', fontSize: '1.125rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
+                We combine technology expertise with a practical understanding of business operations to build solutions that are secure, scalable, and designed around real-world requirements.
+              </p>
+              <p style={{ color: '#475569', fontSize: '1.125rem', lineHeight: 1.7, marginBottom: '2.5rem' }}>
+                Our name reflects our philosophy: Sentr AI acts as a digital sentinel, combining artificial intelligence and technical expertise to help organizations protect their digital assets, improve visibility, and operate more effectively.
+              </p>
+              
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                {[
+                  'AI & Intelligent Monitoring',
+                  'Cybersecurity',
+                  'Enterprise IT',
+                  'Cloud Infrastructure',
+                  'Managed Services',
+                  'IT Asset Management',
+                  'Digital Workplace',
+                  'Compliance & Reporting'
+                ].map((item, i) => (
+                  <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                    <div style={{ width: '8px', height: '8px', background: '#eab308', borderRadius: '50%' }}></div>
+                    <span style={{ color: '#0f172a', fontWeight: 600, fontSize: '0.95rem' }}>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 2: What Drives Us */}
+      <section className="section-y" style={{ background: '#0f172a', paddingTop: '6rem', paddingBottom: '6rem' }}>
+        <div className="container">
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4rem', alignItems: 'center' }}>
+            <div className="fade-in-up" style={{ flex: '1 1 500px' }}>
+              <span className="section-label" style={{ color: '#94a3b8' }}>WHAT DRIVES US</span>
+              <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.03em', marginBottom: '1.5rem', lineHeight: 1.1 }}>
+                Technology Should Solve <span style={{ color: '#eab308' }}>Real Business Problems</span>
+              </h2>
+              <p style={{ color: '#cbd5e1', fontSize: '1.125rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
+                Modern businesses depend on increasingly complex technology environments. Infrastructure, cloud, applications, security, data, and operations are all connected.
+              </p>
+              <p style={{ color: '#cbd5e1', fontSize: '1.125rem', lineHeight: 1.7, marginBottom: '3rem' }}>
+                Our role is to help make that complexity easier to manage. We focus on building solutions that help organizations:
+              </p>
+              
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
+                {[
+                  { title: 'See Clearly', desc: 'Gain better visibility into technology and operations.' },
+                  { title: 'Stay Secure', desc: 'Protect systems, data, identities, and infrastructure.' },
+                  { title: 'Work Smarter', desc: 'Use automation and intelligent technology to improve efficiency.' },
+                  { title: 'Scale Confidently', desc: 'Build technology foundations that evolve with business needs.' }
+                ].map((item, i) => (
+                  <div key={i}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
+                      <div style={{ width: '8px', height: '8px', background: '#eab308' }}></div>
+                      <span style={{ color: '#ffffff', fontWeight: 700, fontSize: '1.1rem' }}>{item.title}</span>
+                    </div>
+                    <p style={{ color: '#94a3b8', fontSize: '0.95rem', lineHeight: 1.6, margin: 0, paddingLeft: '1.25rem' }}>{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3: Mission and Vision */}
+      <section className="section-y" style={{ background: '#f8fafc', paddingTop: '8rem', paddingBottom: '8rem' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <span className="section-label" style={{ color: '#475569' }}>COMPANY VISION</span>
+            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, color: '#0f172a', letterSpacing: '-0.03em', lineHeight: 1.1 }}>
+              Your Success Is Our Top Priority.
+            </h2>
+          </div>
+          
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '3rem' }}>
+            {/* Card 1: Mission */}
+            <div className="fade-in-up" style={{ background: '#ffffff', borderRadius: 'var(--radius-2xl)', overflow: 'hidden', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.05)', display: 'flex', flexDirection: 'column' }}>
+              <img src={img4} alt="Our Mission" style={{ width: '100%', height: '280px', objectFit: 'cover' }} />
+              <div style={{ padding: '3rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                <span style={{ display: 'inline-block', padding: '0.5rem 1rem', background: '#ecfdf5', color: '#059669', fontSize: '0.85rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', borderRadius: 'var(--radius-full)', marginBottom: '1.5rem', alignSelf: 'flex-start' }}>Our Mission</span>
+                <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0f172a', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+                  Empower Businesses With Intelligent, Secure & Scalable Technology
+                </h3>
+                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '1rem' }}>
+                  Our mission is to help businesses adopt technology with greater confidence.
+                </p>
+                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '2rem' }}>
+                  We combine AI, cybersecurity, cloud, enterprise IT, and managed services to create solutions that go beyond basic protection and support long-term business growth.
+                </p>
+                <div style={{ background: '#f1f5f9', padding: '1.5rem', borderRadius: 'var(--radius-xl)', marginTop: 'auto', borderLeft: '4px solid #3b82f6' }}>
+                  <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#0f172a', marginBottom: '0.5rem' }}>Our ambition</h4>
+                  <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>
+                    To become a global technology partner for organizations looking to build secure, intelligent, and scalable digital environments.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 2: Vision */}
+            <div className="fade-in-up" style={{ transitionDelay: '0.2s', background: '#ffffff', borderRadius: 'var(--radius-2xl)', overflow: 'hidden', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.05)', display: 'flex', flexDirection: 'column' }}>
+              <img src={img5} alt="Our Vision" style={{ width: '100%', height: '280px', objectFit: 'cover' }} />
+              <div style={{ padding: '3rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                <span style={{ display: 'inline-block', padding: '0.5rem 1rem', background: '#fefce8', color: '#eab308', fontSize: '0.85rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', borderRadius: 'var(--radius-full)', marginBottom: '1.5rem', alignSelf: 'flex-start' }}>Our Vision</span>
+                <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0f172a', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+                  A World Where Innovation and Security Go Hand in Hand
+                </h3>
+                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '1rem' }}>
+                  We envision a future where organizations can adopt new technologies without compromising security or operational control.
+                </p>
+                <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '2rem' }}>
+                  We believe proactive cybersecurity, intelligent monitoring, smart technology management, and continuous improvement should become fundamental parts of modern business.
+                </p>
+                <div style={{ background: '#fefce8', padding: '1.5rem', borderRadius: 'var(--radius-xl)', marginTop: 'auto', borderLeft: '4px solid #eab308' }}>
+                  <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#a16207', marginBottom: '0.5rem' }}>Our vision is simple:</h4>
+                  <p style={{ color: '#a16207', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>
+                    Make technology more intelligent. Make businesses more secure.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
