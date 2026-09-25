@@ -68,7 +68,6 @@ import img2 from '../assets/aindri/2.png';
 import img3 from '../assets/aindri/3.png';
 import img4 from '../assets/aindri/4.png';
 import img5 from '../assets/aindri/5.png';
-import ddImg from '../assets/aindri/dd.png';
 import aaImg from '../assets/aindri/aa.png';
 import abImg from '../assets/aindri/ab.png';
 import acImg from '../assets/aindri/ac.png';
@@ -345,8 +344,6 @@ export const IndriPage: React.FC = () => {
               <h2 className="how-aindri-works__heading">How Aindri Works</h2>
               <p className="how-aindri-works__sub">See &rarr; Understand &rarr; Alert &rarr; Act</p>
             </div>
-            
-            <img src={ddImg} alt="How Aindri Works" className="how-aindri-works__bg-img" />
             
             <div className="how-aindri-works__overlay">
               {howWorksSteps.map((step) => (
