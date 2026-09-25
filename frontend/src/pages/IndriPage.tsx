@@ -326,12 +326,12 @@ export const IndriPage: React.FC = () => {
               <p className="how-aindri-works__sub">See &rarr; Understand &rarr; Alert &rarr; Act</p>
             </div>
             
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', marginTop: '3rem' }}>
+            <div style={{ display: 'flex', flexWrap: 'nowrap', gap: '1.5rem', marginTop: '3rem', overflowX: 'auto', paddingBottom: '1rem' }}>
               {howWorksSteps.map((step, i) => (
-                <div key={step.num} className="feature-card fade-in-up" style={{ transitionDelay: `${i * 0.1}s`, textAlign: 'left', display: 'flex', flexDirection: 'column' }}>
+                <div key={step.num} className="feature-card fade-in-up" style={{ transitionDelay: `${i * 0.1}s`, textAlign: 'left', display: 'flex', flexDirection: 'column', flex: '1', minWidth: '240px' }}>
                   <span style={{ color: 'var(--accent)', fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.1em', display: 'block', marginBottom: '0.5rem' }}>STEP {step.num}</span>
-                  <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: '1rem' }}>{step.title}</h3>
-                  <p style={{ color: '#64748b', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>{step.desc}</p>
+                  <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#0f172a', marginBottom: '1rem' }}>{step.title}</h3>
+                  <p style={{ color: '#64748b', fontSize: '0.9rem', lineHeight: 1.6, margin: 0 }}>{step.desc}</p>
                 </div>
               ))}
             </div>
