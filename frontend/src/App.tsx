@@ -66,25 +66,6 @@ const ContactPage: React.FC = () => (
       <p style={{ color: 'var(--text-secondary)', fontSize: '1.125rem', maxWidth: '520px', lineHeight: 1.7, marginBottom: '3rem' }}>
         Whether you have a question about Indri, need enterprise IT support or want to explore how we can work together — we're here.
       </p>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem', maxWidth: '800px' }}>
-        {[
-          { label: 'Email', value: 'info@sentrai.in', href: 'mailto:info@sentrai.in' },
-          { label: 'Phone', value: '+91 8851847821', href: 'tel:+918851847821' },
-          { label: 'Location', value: 'F2, Sector-8, Noida, UP 201301', href: undefined },
-        ].map((item) => (
-          <div key={item.label} style={{ background: 'var(--bg-surface-2)', border: '1px solid var(--border-default)', borderRadius: 'var(--radius-xl)', padding: '1.5rem' }}>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>{item.label}</div>
-            {item.href ? (
-              <a href={item.href} style={{ color: 'var(--accent)', fontWeight: 600, fontSize: '1rem', textDecoration: 'none' }}>{item.value}</a>
-            ) : (
-              <span style={{ color: 'var(--text-primary)', fontWeight: 500, fontSize: '0.95rem' }}>{item.value}</span>
-            )}
-          </div>
-        ))}
-      </div>
-      <div style={{ marginTop: '3rem' }}>
-        <a href="/products/indri#demo" className="btn btn-primary btn-lg btn-arrow">Request an Indri Demo</a>
-      </div>
     </div>
   </main>
 );
