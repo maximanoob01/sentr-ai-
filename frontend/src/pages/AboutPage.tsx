@@ -87,7 +87,7 @@ export const AboutPage: React.FC = () => {
             {/* Left: Image Collage */}
             <div className="fade-in-up" style={{ position: 'relative', height: '400px', width: '100%' }}>
               {/* Dot Pattern */}
-              <div className="dot-pattern" style={{ position: 'absolute', top: '-2rem', left: '-2rem', width: '200px', height: '200px', zIndex: 0, opacity: 0.6 }}></div>
+              <div className="dot-pattern" style={{ position: 'absolute', top: '-3rem', left: '-3rem', width: '350px', height: '350px', zIndex: 0, opacity: 0.6 }}></div>
               {/* Image 1 (tall) */}
               <img src={img1} alt="Team" style={{ position: 'absolute', top: 0, left: 0, width: '55%', height: '80%', objectFit: 'cover', borderRadius: 'var(--radius-xl)', boxShadow: '0 15px 30px -10px rgba(0,0,0,0.1)', zIndex: 1 }} />
               {/* Image 2 (square) */}
