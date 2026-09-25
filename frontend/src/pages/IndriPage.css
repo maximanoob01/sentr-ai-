@@ -2,6 +2,224 @@
    Indri Product Page Styles
    ============================================ */
 
+/* ======== AINDRI NODE GRAPH ======== */
+.aindri-node-section {
+  background: #050d1a;
+  border-top: 1px solid rgba(56,189,248,0.1);
+  border-bottom: 1px solid rgba(56,189,248,0.1);
+}
+
+.aindri-node__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.aindri-node__heading {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  color: #f8fafc;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.aindri-node__sub {
+  font-size: 1.05rem;
+  color: #94a3b8;
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* The graph wrapper — relative so we can absolutely position overlays */
+.aindri-node__graph {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 4rem;
+  aspect-ratio: 1000 / 640;
+}
+
+.aindri-node__svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Animated SVG lines */
+.aindri-node__line {
+  stroke-dasharray: 60 200;
+  stroke-dashoffset: 260;
+  animation: nodePulse 3s ease-in-out infinite;
+  opacity: 0.8;
+}
+
+@keyframes nodePulse {
+  0% { stroke-dashoffset: 260; opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { stroke-dashoffset: -200; opacity: 0.4; }
+}
+
+.aindri-node__line--cameras { animation-delay: 0s; }
+.aindri-node__line--ai       { animation-delay: 0.4s; }
+.aindri-node__line--alerts   { animation-delay: 0.8s; }
+.aindri-node__line--erp      { animation-delay: 1.2s; }
+.aindri-node__line--warehouse { animation-delay: 1.6s; }
+.aindri-node__line--analytics { animation-delay: 2s; }
+
+.aindri-node__dot {
+  animation: dotPulse 3s ease-in-out infinite;
+}
+@keyframes dotPulse {
+  0%, 100% { opacity: 0.2; r: 3; }
+  50% { opacity: 1; r: 5; }
+}
+
+.aindri-node__dot--cameras   { animation-delay: 0s; }
+.aindri-node__dot--ai        { animation-delay: 0.4s; }
+.aindri-node__dot--alerts    { animation-delay: 0.8s; }
+.aindri-node__dot--erp       { animation-delay: 1.2s; }
+.aindri-node__dot--warehouse { animation-delay: 1.6s; }
+.aindri-node__dot--analytics { animation-delay: 2s; }
+
+.aindri-node__center-ring {
+  animation: ringPulse 2.5s ease-in-out infinite;
+}
+@keyframes ringPulse {
+  0%, 100% { stroke-opacity: 0.3; r: 52; }
+  50% { stroke-opacity: 0.8; r: 56; }
+}
+
+/* HTML overlays on graph */
+.aindri-node__icon-wrapper {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.aindri-node__icon-inner {
+  width: 62px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #38bdf8;
+  filter: drop-shadow(0 0 8px rgba(56,189,248,0.6));
+  transition: transform 0.3s ease;
+}
+
+.aindri-node__center-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aindri-node__center-logo img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 16px rgba(56,189,248,0.7));
+}
+
+/* Cards below graph */
+.aindri-node__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.aindri-node__card {
+  background: rgba(15,23,42,0.8);
+  border: 1px solid rgba(56,189,248,0.12);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.aindri-node__card:hover {
+  border-color: rgba(56,189,248,0.35);
+  transform: translateY(-3px);
+}
+
+.aindri-node__card-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  background: rgba(56,189,248,0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #38bdf8;
+}
+
+.aindri-node__card-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.aindri-node__card-body {
+  flex: 1;
+}
+
+.aindri-node__card-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #38bdf8;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.aindri-node__card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin-bottom: 0.4rem;
+  line-height: 1.3;
+}
+
+.aindri-node__card-desc {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .aindri-node__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .aindri-node__graph {
+    display: none;
+  }
+  .aindri-node__cards {
+    grid-template-columns: 1fr;
+  }
+  .aindri-node__card {
+    padding: 1.25rem;
+  }
+}
+
 /* ======== HERO ======== */
 .indri-hero {
   position: relative;

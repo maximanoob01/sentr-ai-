@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './IndriPage.css';
+import { AindriNodeGraph } from '../components/AindriNodeGraph';
 
 /* ---- FAQ ---- */
 const faqs = [
@@ -228,6 +229,9 @@ export const IndriPage: React.FC = () => {
       </section>
 
 
+
+      {/* ======== 2. AINDRI NODE GRAPH ======== */}
+      <AindriNodeGraph />
 
       {/* ======== 2.5 FROM SURVEILLANCE TO INTELLIGENCE ======== */}
       <section id="product" className="surveillance-intel section-y">
