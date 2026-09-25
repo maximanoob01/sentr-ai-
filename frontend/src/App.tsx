@@ -58,7 +58,7 @@ const ContactPage: React.FC = () => (
       opacity: 0.15,
       zIndex: 0
     }} />
-    <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+    <div className="container" style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
       <span className="section-label">Get in Touch</span>
       <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 800, color: 'var(--text-primary)', letterSpacing: '-0.03em', marginBottom: '1rem', lineHeight: 1.1 }}>
         Contact Sentr AI
