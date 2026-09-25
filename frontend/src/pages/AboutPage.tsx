@@ -6,6 +6,15 @@ import img2 from '../assets/about us/2.png';
 import img3 from '../assets/about us/3.png';
 import img4 from '../assets/about us/4.png';
 import img5 from '../assets/about us/5.png';
+import partner1 from '../assets/alliance logo/1.png';
+import partner2 from '../assets/alliance logo/2.png';
+import partner3 from '../assets/alliance logo/3.png';
+import partner4 from '../assets/alliance logo/4.png';
+import partner5 from '../assets/alliance logo/5.png';
+import partner6 from '../assets/alliance logo/6.png';
+import partner7 from '../assets/alliance logo/7.png';
+import partner8 from '../assets/alliance logo/8.png';
+
 
 export const AboutPage: React.FC = () => {
   useScrollAnimation();
@@ -156,6 +165,22 @@ export const AboutPage: React.FC = () => {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Infinite Logo Slider */}
+      <section style={{ background: '#ffffff', padding: '4rem 0', borderTop: '1px solid #f1f5f9', overflow: 'hidden' }}>
+        <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          <span style={{ color: '#94a3b8', fontSize: '0.85rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase' }}>Our Technology Alliances</span>
+        </div>
+        <div className="logo-slider-container">
+          <div className="logo-slider-track">
+            {[partner1, partner2, partner3, partner4, partner5, partner6, partner7, partner8, partner1, partner2, partner3, partner4, partner5, partner6, partner7, partner8].map((logo, index) => (
+              <div key={index} className="logo-slide">
+                <img src={logo} alt={`Partner ${index + 1}`} />
+              </div>
+            ))}
           </div>
         </div>
       </section>
