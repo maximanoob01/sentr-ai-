@@ -178,7 +178,7 @@ const ContactPage: React.FC = () => (
             <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '1rem', lineHeight: 1.2 }}>
               Featured in SiliconIndia Magazine
             </h2>
-            <h3 style={{ fontSize: '1.25rem', color: 'var(--accent)', fontWeight: 600, marginBottom: '1.5rem' }}>
+            <h3 style={{ fontSize: '1.25rem', color: '#3b82f6', fontWeight: 600, marginBottom: '1.5rem' }}>
               Recognized for Intelligent Monitoring & Enterprise Technology
             </h3>
             <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
@@ -187,9 +187,9 @@ const ContactPage: React.FC = () => (
             <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.7, marginBottom: '2rem' }}>
               The feature highlights Sentr AI's work across intelligent monitoring, cybersecurity, enterprise IT, cloud and managed services.
             </p>
-            <a href="#" className="btn btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+            <a href="#" className="btn btn-primary btn-lg" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', backgroundColor: '#2563eb', color: '#ffffff', borderColor: '#2563eb', padding: '1rem 2rem', fontSize: '1.1rem', fontWeight: 600 }}>
               Read the Feature 
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
             </a>
           </div>
 
