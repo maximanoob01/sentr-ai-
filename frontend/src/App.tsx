@@ -5,6 +5,7 @@ import { Footer } from './components/layout/Footer';
 import { HomePage } from './pages/HomePage';
 import { IndriPage } from './pages/IndriPage';
 import { useScrollAnimation } from './hooks/useScrollAnimation';
+import heroImg from './assets/contact us/hero.png';
 import './styles/globals.css';
 import './styles/components.css';
 
@@ -41,8 +42,23 @@ const NotFound: React.FC = () => (
 );
 
 const ContactPage: React.FC = () => (
-  <main style={{ paddingTop: 'calc(var(--nav-height) + 4rem)', paddingBottom: '6rem', minHeight: '70vh' }}>
-    <div className="container">
+  <main style={{ 
+    paddingTop: 'calc(var(--nav-height) + 4rem)', 
+    paddingBottom: '6rem', 
+    minHeight: '70vh',
+    position: 'relative',
+    overflow: 'hidden'
+  }}>
+    <div style={{
+      position: 'absolute',
+      inset: 0,
+      backgroundImage: `url(${heroImg})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      opacity: 0.15,
+      zIndex: 0
+    }} />
+    <div className="container" style={{ position: 'relative', zIndex: 1 }}>
       <span className="section-label">Get in Touch</span>
       <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 800, color: 'var(--text-primary)', letterSpacing: '-0.03em', marginBottom: '1rem', lineHeight: 1.1 }}>
         Contact Sentr AI
