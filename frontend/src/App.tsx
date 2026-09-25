@@ -288,6 +288,28 @@ const ContactPage: React.FC = () => {
         </div>
       </div>
     </section>
+
+    {/* CTA Section */}
+    <section style={{ paddingBottom: '6rem', background: '#ffffff' }}>
+      <div className="container">
+        <div className="fade-in-up" style={{ background: 'linear-gradient(135deg, #1e3a8a, #2563eb)', padding: '4rem 3rem', borderRadius: 'var(--radius-2xl)', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', boxShadow: '0 20px 40px -10px rgba(37,99,235,0.3)' }}>
+          <div style={{ flex: '1 1 400px' }}>
+            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.5rem)', fontWeight: 800, color: '#ffffff', marginBottom: '1rem', lineHeight: 1.2 }}>
+              Have a Challenge in Mind?
+            </h2>
+            <p style={{ color: '#e0e7ff', fontSize: '1.125rem', margin: 0, maxWidth: '500px', lineHeight: 1.6 }}>
+              Tell us what you need. Let's find the right solution.
+            </p>
+          </div>
+          <div>
+            <a href="#" style={{ background: '#ffffff', color: '#1e3a8a', padding: '1.25rem 2.5rem', fontSize: '1.1rem', fontWeight: 700, borderRadius: 'var(--radius-full)', display: 'inline-flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none', transition: 'transform 0.2s', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)' }} onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-2px)'} onMouseOut={(e) => e.currentTarget.style.transform = 'none'}>
+              Contact Sentr AI 
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
   );
 };
