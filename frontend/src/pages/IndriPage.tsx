@@ -85,26 +85,7 @@ const howWorksSteps = [
   { num: '05', title: 'Act', desc: 'Depending on the severity, your team can review and intervene. High-priority events can support process-hold workflows.' }
 ];
 
-const HowWorksStep: React.FC<{ step: any }> = ({ step }) => {
-  const [open, setOpen] = useState(false);
-  
-  return (
-    <div className="how-works-hotspot">
-      <div className={`how-works-card ${open ? 'open' : ''}`}>
-        <span className="how-works-card__num">STEP {step.num}</span>
-        <h3 className="how-works-card__title">{step.title}</h3>
-        
-        <div className="how-works-card__desc-wrap">
-          <p className="how-works-card__desc">{step.desc}</p>
-        </div>
 
-        <button className="how-works-card__btn" onClick={() => setOpen(!open)}>
-          {open ? 'Close' : 'Read more'}
-        </button>
-      </div>
-    </div>
-  );
-};
 
 /* ============================================
    INDRI PAGE
@@ -345,9 +326,13 @@ export const IndriPage: React.FC = () => {
               <p className="how-aindri-works__sub">See &rarr; Understand &rarr; Alert &rarr; Act</p>
             </div>
             
-            <div className="how-aindri-works__overlay">
-              {howWorksSteps.map((step) => (
-                <HowWorksStep key={step.num} step={step} />
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', marginTop: '3rem' }}>
+              {howWorksSteps.map((step, i) => (
+                <div key={step.num} className="feature-card fade-in-up" style={{ transitionDelay: `${i * 0.1}s`, textAlign: 'left', display: 'flex', flexDirection: 'column' }}>
+                  <span style={{ color: 'var(--accent)', fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.1em', display: 'block', marginBottom: '0.5rem' }}>STEP {step.num}</span>
+                  <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: '1rem' }}>{step.title}</h3>
+                  <p style={{ color: '#64748b', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>{step.desc}</p>
+                </div>
               ))}
             </div>
           </div>
