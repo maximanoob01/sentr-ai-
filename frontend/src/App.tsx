@@ -42,30 +42,108 @@ const NotFound: React.FC = () => (
 );
 
 const ContactPage: React.FC = () => (
-  <main style={{ 
-    paddingTop: 'calc(var(--nav-height) + 4rem)', 
-    paddingBottom: '6rem', 
-    minHeight: '70vh',
-    position: 'relative',
-    overflow: 'hidden'
-  }}>
-    <div style={{
-      position: 'absolute',
-      inset: 0,
-      backgroundImage: `url(${heroImg})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      opacity: 0.15,
-      zIndex: 0
-    }} />
-    <div className="container" style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-      <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 800, color: 'var(--text-primary)', letterSpacing: '-0.03em', marginBottom: '1rem', lineHeight: 1.1 }}>
-        Contact Sentr AI
-      </h1>
-      <p style={{ color: 'var(--text-secondary)', fontSize: '1.125rem', maxWidth: '520px', lineHeight: 1.7, marginBottom: '3rem' }}>
-        Whether you have a question about Indri, need enterprise IT support or want to explore how we can work together — we're here.
-      </p>
-    </div>
+  <main>
+    <section style={{ 
+      paddingTop: 'calc(var(--nav-height) + 4rem)', 
+      paddingBottom: '4rem', 
+      position: 'relative',
+      overflow: 'hidden'
+    }}>
+      <div style={{
+        position: 'absolute',
+        inset: 0,
+        backgroundImage: `url(${heroImg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        opacity: 0.15,
+        zIndex: 0
+      }} />
+      <div className="container" style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+        <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 800, color: 'var(--text-primary)', letterSpacing: '-0.03em', marginBottom: '1rem', lineHeight: 1.1 }}>
+          Contact Sentr AI
+        </h1>
+        <p style={{ color: 'var(--text-secondary)', fontSize: '1.125rem', maxWidth: '520px', lineHeight: 1.7 }}>
+          Whether you have a question about Indri, need enterprise IT support or want to explore how we can work together — we're here.
+        </p>
+      </div>
+    </section>
+
+    <section className="section-y" style={{ paddingTop: '2rem', paddingBottom: '8rem' }}>
+      <div className="container">
+        <div style={{ display: 'grid', gap: '3rem', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', alignItems: 'start' }}>
+          
+          {/* Left: Form */}
+          <div className="fade-in-up" style={{ background: 'var(--bg-surface-2)', padding: '2.5rem', borderRadius: 'var(--radius-xl)', border: '1px solid var(--border-default)' }}>
+            <h3 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '0.5rem', color: 'var(--text-primary)' }}>Send a Message</h3>
+            <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', fontSize: '0.95rem' }}>Fill out the form below and our team will get back to you shortly.</p>
+            
+            <form onSubmit={(e) => e.preventDefault()}>
+              <div className="form-group">
+                <label className="form-label" htmlFor="name">Name</label>
+                <input type="text" id="name" className="form-input" placeholder="Your Name" />
+              </div>
+              
+              <div className="form-group">
+                <label className="form-label" htmlFor="email">Email</label>
+                <input type="email" id="email" className="form-input" placeholder="you@company.com" />
+              </div>
+              
+              <div className="form-group">
+                <label className="form-label" htmlFor="subject">Subject</label>
+                <input type="text" id="subject" className="form-input" placeholder="How can we help?" />
+              </div>
+              
+              <div className="form-group">
+                <label className="form-label" htmlFor="message">Message</label>
+                <textarea id="message" className="form-textarea" placeholder="Your message..." rows={4}></textarea>
+              </div>
+              
+              <button type="submit" className="btn btn-primary" style={{ width: '100%', marginTop: '1rem' }}>Send Message</button>
+            </form>
+          </div>
+
+          {/* Right: Info Cards */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            
+            {/* Phone */}
+            <div className="fade-in-up" style={{ transitionDelay: '0.1s', background: 'var(--bg-surface)', padding: '2rem', borderRadius: 'var(--radius-xl)', border: '1px solid var(--border-default)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+              <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(56,189,248,0.1)', color: 'var(--accent)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '0.5rem', color: 'var(--text-primary)' }}>Phone Number</h4>
+              <a href="tel:+918851847821" style={{ color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={(e) => e.currentTarget.style.color = 'var(--accent)'} onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>+91 8851847821</a>
+            </div>
+
+            {/* Email */}
+            <div className="fade-in-up" style={{ transitionDelay: '0.2s', background: 'var(--bg-surface)', padding: '2rem', borderRadius: 'var(--radius-xl)', border: '1px solid var(--border-default)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+              <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(56,189,248,0.1)', color: 'var(--accent)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '0.5rem', color: 'var(--text-primary)' }}>Email Address</h4>
+              <a href="mailto:info@sentrai.in" style={{ color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={(e) => e.currentTarget.style.color = 'var(--accent)'} onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>info@sentrai.in</a>
+            </div>
+
+            {/* Location */}
+            <div className="fade-in-up" style={{ transitionDelay: '0.3s', background: 'var(--bg-surface)', padding: '2rem', borderRadius: 'var(--radius-xl)', border: '1px solid var(--border-default)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+              <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(56,189,248,0.1)', color: 'var(--accent)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '0.5rem', color: 'var(--text-primary)' }}>Our Location</h4>
+              <span style={{ color: 'var(--text-secondary)' }}>F2, Sector-8, Noida, Uttar Pradesh, India</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 );
 
