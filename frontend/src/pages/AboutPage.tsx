@@ -42,7 +42,7 @@ export const AboutPage: React.FC = () => {
           <div className="fade-in-up" style={{ maxWidth: '900px', margin: '0 auto' }}>
             <h2 style={{ 
               color: '#ffffff', 
-              fontSize: '1.75rem', 
+              fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', 
               fontWeight: 700, 
               textTransform: 'uppercase', 
               letterSpacing: '0.15em',
