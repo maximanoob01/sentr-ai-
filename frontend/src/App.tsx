@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
@@ -43,7 +43,12 @@ const NotFound: React.FC = () => (
   </main>
 );
 
-const ContactPage: React.FC = () => (
+const ContactPage: React.FC = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const scrollLeft = () => { if (scrollRef.current) scrollRef.current.scrollBy({ left: -366, behavior: 'smooth' }); };
+  const scrollRight = () => { if (scrollRef.current) scrollRef.current.scrollBy({ left: 366, behavior: 'smooth' }); };
+
+  return (
   <main>
     <section style={{ 
       paddingTop: 'calc(var(--nav-height) + 4rem)', 
@@ -206,13 +211,23 @@ const ContactPage: React.FC = () => (
     {/* Insights / Blog Section */}
     <section className="section-y" style={{ background: '#ffffff', borderTop: '1px solid var(--border-default)', paddingTop: '5rem', paddingBottom: '6rem' }}>
       <div className="container">
-        <div style={{ marginBottom: '3rem', textAlign: 'center' }}>
-          <span className="section-label" style={{ color: '#475569' }}>Latest Insights</span>
-          <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, color: '#0f172a', letterSpacing: '-0.03em' }}>
-            News & Resources
-          </h2>
+        <div style={{ marginBottom: '3rem', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '1rem' }}>
+          <div style={{ textAlign: 'left' }}>
+            <span className="section-label" style={{ color: '#475569' }}>Latest Insights</span>
+            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, color: '#0f172a', letterSpacing: '-0.03em', margin: 0 }}>
+              News & Resources
+            </h2>
+          </div>
+          <div style={{ display: 'flex', gap: '0.5rem' }}>
+            <button onClick={scrollLeft} style={{ width: '48px', height: '48px', borderRadius: '50%', background: '#f1f5f9', border: '1px solid #e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#0f172a', transition: 'all 0.2s' }} onMouseOver={(e) => { e.currentTarget.style.background = '#2563eb'; e.currentTarget.style.color = '#ffffff'; e.currentTarget.style.borderColor = '#2563eb'; }} onMouseOut={(e) => { e.currentTarget.style.background = '#f1f5f9'; e.currentTarget.style.color = '#0f172a'; e.currentTarget.style.borderColor = '#e2e8f0'; }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+            </button>
+            <button onClick={scrollRight} style={{ width: '48px', height: '48px', borderRadius: '50%', background: '#f1f5f9', border: '1px solid #e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#0f172a', transition: 'all 0.2s' }} onMouseOver={(e) => { e.currentTarget.style.background = '#2563eb'; e.currentTarget.style.color = '#ffffff'; e.currentTarget.style.borderColor = '#2563eb'; }} onMouseOut={(e) => { e.currentTarget.style.background = '#f1f5f9'; e.currentTarget.style.color = '#0f172a'; e.currentTarget.style.borderColor = '#e2e8f0'; }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+            </button>
+          </div>
         </div>
-        <div style={{ display: 'flex', gap: '2rem', overflowX: 'auto', paddingBottom: '2rem', scrollSnapType: 'x mandatory', scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
+        <div ref={scrollRef} style={{ display: 'flex', gap: '2rem', overflowX: 'auto', paddingBottom: '2rem', scrollSnapType: 'x mandatory', scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
           
           {/* Card 1 */}
           <div className="fade-in-up" style={{ flex: '0 0 min(100%, 350px)', scrollSnapAlign: 'start', transitionDelay: '0.1s', background: '#ffffff', padding: '2rem', borderRadius: 'var(--radius-xl)', border: '1px solid #e2e8f0', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05)', display: 'flex', flexDirection: 'column' }}>
@@ -274,7 +289,8 @@ const ContactPage: React.FC = () => (
       </div>
     </section>
   </main>
-);
+  );
+};
 
 // Inner app that has access to router context for hooks
 const AppInner: React.FC = () => {
