@@ -170,28 +170,28 @@ export const AboutPage: React.FC = () => {
             </h2>
           </div>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem', maxWidth: '1000px', margin: '0 auto' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', maxWidth: '1200px', margin: '0 auto' }}>
             {/* Card 1: Mission */}
             <div className="fade-in-up" style={{ background: '#ffffff', overflow: 'hidden', boxShadow: '0 15px 30px -10px rgba(0,0,0,0.1)', display: 'flex', flexDirection: 'column' }}>
               <div style={{ position: 'relative' }}>
                 <img src={img4} alt="Our Mission" style={{ width: '100%', height: '220px', objectFit: 'cover', display: 'block' }} />
                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '3px', background: '#f97316' }}></div>
               </div>
-              <div style={{ padding: '2.5rem 2.5rem 3rem', flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-                <span style={{ color: '#94a3b8', fontSize: '0.8rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.2em', marginBottom: '1rem' }}>Our Mission</span>
-                <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#0f172a', marginBottom: '1.25rem', lineHeight: 1.3 }}>
+              <div style={{ padding: '2.5rem 2rem 3rem', flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+                <span style={{ color: '#94a3b8', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.2em', marginBottom: '1rem' }}>Our Mission</span>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a', marginBottom: '1.25rem', lineHeight: 1.3 }}>
                   Empower Businesses With Intelligent, Secure & Scalable Technology
                 </h3>
-                <p style={{ color: '#64748b', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '1rem' }}>
+                <p style={{ color: '#64748b', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1rem' }}>
                   Our mission is to help businesses adopt technology with greater confidence.
                 </p>
-                <p style={{ color: '#64748b', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+                <p style={{ color: '#64748b', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
                   We combine AI, cybersecurity, cloud, enterprise IT, and managed services to create solutions that go beyond basic protection and support long-term business growth.
                 </p>
-                <p style={{ color: '#0f172a', fontSize: '0.95rem', fontWeight: 600, lineHeight: 1.6, marginBottom: '2.5rem', fontStyle: 'italic' }}>
+                <p style={{ color: '#0f172a', fontSize: '0.9rem', fontWeight: 600, lineHeight: 1.6, marginBottom: '2.5rem', fontStyle: 'italic' }}>
                   "To become a global technology partner for organizations looking to build secure, intelligent, and scalable digital environments."
                 </p>
-                <a href="#mission" style={{ marginTop: 'auto', display: 'inline-block', padding: '0.5rem 2rem', border: '2px solid #f97316', borderRadius: 'var(--radius-full)', color: '#f97316', fontSize: '0.9rem', fontWeight: 600, textDecoration: 'none', transition: 'all 0.2s ease' }}>
+                <a href="#mission" style={{ marginTop: 'auto', display: 'inline-block', padding: '0.5rem 1.75rem', border: '2px solid #f97316', borderRadius: 'var(--radius-full)', color: '#f97316', fontSize: '0.85rem', fontWeight: 600, textDecoration: 'none', transition: 'all 0.2s ease' }}>
                   Read more
                 </a>
               </div>
@@ -203,22 +203,57 @@ export const AboutPage: React.FC = () => {
                 <img src={img5} alt="Our Vision" style={{ width: '100%', height: '220px', objectFit: 'cover', display: 'block' }} />
                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '3px', background: '#f97316' }}></div>
               </div>
-              <div style={{ padding: '2.5rem 2.5rem 3rem', flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-                <span style={{ color: '#94a3b8', fontSize: '0.8rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.2em', marginBottom: '1rem' }}>Our Vision</span>
-                <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#0f172a', marginBottom: '1.25rem', lineHeight: 1.3 }}>
+              <div style={{ padding: '2.5rem 2rem 3rem', flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+                <span style={{ color: '#94a3b8', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.2em', marginBottom: '1rem' }}>Our Vision</span>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a', marginBottom: '1.25rem', lineHeight: 1.3 }}>
                   A World Where Innovation and Security Go Hand in Hand
                 </h3>
-                <p style={{ color: '#64748b', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '1rem' }}>
+                <p style={{ color: '#64748b', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1rem' }}>
                   We envision a future where organizations can adopt new technologies without compromising security or operational control.
                 </p>
-                <p style={{ color: '#64748b', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+                <p style={{ color: '#64748b', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
                   We believe proactive cybersecurity, intelligent monitoring, smart technology management, and continuous improvement should become fundamental parts of modern business.
                 </p>
-                <p style={{ color: '#0f172a', fontSize: '0.95rem', fontWeight: 600, lineHeight: 1.6, marginBottom: '2.5rem', fontStyle: 'italic' }}>
+                <p style={{ color: '#0f172a', fontSize: '0.9rem', fontWeight: 600, lineHeight: 1.6, marginBottom: '2.5rem', fontStyle: 'italic' }}>
                   "Make technology more intelligent. Make businesses more secure."
                 </p>
-                <a href="#vision" style={{ marginTop: 'auto', display: 'inline-block', padding: '0.5rem 2rem', border: '2px solid #f97316', borderRadius: 'var(--radius-full)', color: '#f97316', fontSize: '0.9rem', fontWeight: 600, textDecoration: 'none', transition: 'all 0.2s ease' }}>
+                <a href="#vision" style={{ marginTop: 'auto', display: 'inline-block', padding: '0.5rem 1.75rem', border: '2px solid #f97316', borderRadius: 'var(--radius-full)', color: '#f97316', fontSize: '0.85rem', fontWeight: 600, textDecoration: 'none', transition: 'all 0.2s ease' }}>
                   Read more
+                </a>
+              </div>
+            </div>
+
+            {/* Card 3: Capabilities */}
+            <div className="fade-in-up" style={{ transitionDelay: '0.4s', background: '#ffffff', overflow: 'hidden', boxShadow: '0 15px 30px -10px rgba(0,0,0,0.1)', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ position: 'relative' }}>
+                <img src={img3} alt="Capabilities" style={{ width: '100%', height: '220px', objectFit: 'cover', display: 'block' }} />
+                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '3px', background: '#f97316' }}></div>
+              </div>
+              <div style={{ padding: '2.5rem 2rem 3rem', flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+                <span style={{ color: '#94a3b8', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.2em', marginBottom: '1rem' }}>Our Core Capabilities</span>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a', marginBottom: '1.25rem', lineHeight: 1.3 }}>
+                  One Partner. Multiple Technology Capabilities.
+                </h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem', textAlign: 'left', width: '100%' }}>
+                  <div>
+                    <span style={{ color: '#0f172a', fontWeight: 700, fontSize: '0.9rem', display: 'block' }}>Intelligent Monitoring</span>
+                    <span style={{ color: '#64748b', fontSize: '0.85rem', lineHeight: 1.5 }}>AI-powered vision and real-time monitoring solutions.</span>
+                  </div>
+                  <div>
+                    <span style={{ color: '#0f172a', fontWeight: 700, fontSize: '0.9rem', display: 'block' }}>Cybersecurity</span>
+                    <span style={{ color: '#64748b', fontSize: '0.85rem', lineHeight: 1.5 }}>Strengthen cloud, workspace, identity, and access.</span>
+                  </div>
+                  <div>
+                    <span style={{ color: '#0f172a', fontWeight: 700, fontSize: '0.9rem', display: 'block' }}>Enterprise IT</span>
+                    <span style={{ color: '#64748b', fontSize: '0.85rem', lineHeight: 1.5 }}>Digital workplace and cloud infrastructure solutions.</span>
+                  </div>
+                  <div>
+                    <span style={{ color: '#0f172a', fontWeight: 700, fontSize: '0.9rem', display: 'block' }}>Managed Services</span>
+                    <span style={{ color: '#64748b', fontSize: '0.85rem', lineHeight: 1.5 }}>App & data management, compliance, and IT support.</span>
+                  </div>
+                </div>
+                <a href="#aindri" style={{ marginTop: 'auto', display: 'inline-block', padding: '0.5rem 1.75rem', border: '2px solid #f97316', borderRadius: 'var(--radius-full)', color: '#f97316', fontSize: '0.85rem', fontWeight: 600, textDecoration: 'none', transition: 'all 0.2s ease' }}>
+                  Explore Aindri →
                 </a>
               </div>
             </div>
