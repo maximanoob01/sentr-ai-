@@ -229,6 +229,33 @@ export const IndriPage: React.FC = () => {
       </section>
 
 
+      {/* ======== MARQUEE STRIP ======== */}
+      <div className="aindri-node__marquee-strip">
+        <div className="aindri-node__marquee-content">
+          <span>Real-Time Detection</span>
+          <span className="aindri-node__marquee-dot">•</span>
+          <span>5 Core Capabilities</span>
+          <span className="aindri-node__marquee-dot">•</span>
+          <span>Existing Camera Infrastructure</span>
+          <span className="aindri-node__marquee-dot">•</span>
+          <span>Snapshot-Based Evidence</span>
+          <span className="aindri-node__marquee-dot">•</span>
+          <span>24/7 Operational Visibility</span>
+          <span className="aindri-node__marquee-dot">•</span>
+          
+          {/* Duplicate for infinite loop */}
+          <span>Real-Time Detection</span>
+          <span className="aindri-node__marquee-dot">•</span>
+          <span>5 Core Capabilities</span>
+          <span className="aindri-node__marquee-dot">•</span>
+          <span>Existing Camera Infrastructure</span>
+          <span className="aindri-node__marquee-dot">•</span>
+          <span>Snapshot-Based Evidence</span>
+          <span className="aindri-node__marquee-dot">•</span>
+          <span>24/7 Operational Visibility</span>
+          <span className="aindri-node__marquee-dot">•</span>
+        </div>
+      </div>
 
       {/* ======== 2. AINDRI NODE GRAPH ======== */}
       <AindriNodeGraph />
