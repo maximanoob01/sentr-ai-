@@ -17,9 +17,9 @@ interface NavItem {
     tag: string;
     title: string;
     description: string;
+    buttonText: string;
+    href: string;
     image?: string;
-    buttonText?: string;
-    href?: string;
   };
 }
 
@@ -137,8 +137,10 @@ const navItems: NavItem[] = [
     ],
     sideCard: {
       tag: 'FEATURED IN',
-      title: 'SiliconIndia MAGAZINE',
+      title: 'SiliconIndia\nMAGAZINE',
       description: 'Top Company in Intelligent Monitoring System Solution — 2026',
+      buttonText: '',
+      href: '#',
       image: siliconImg
     }
   }
@@ -255,11 +257,11 @@ export const Navbar: React.FC = () => {
                               <div className="navbar__mega-sidecard">
                                 <span className="navbar__mega-sidecard-tag">{item.sideCard.tag}</span>
                                 {item.sideCard.image && (
-                                  <img src={item.sideCard.image} alt={item.sideCard.title} className="navbar__mega-sidecard-img" style={{ maxWidth: '120px', marginBottom: '1rem', objectFit: 'contain' }} />
+                                  <img src={item.sideCard.image} alt="SiliconIndia" className="navbar__mega-sidecard-img" style={{ width: '120px', margin: '1rem 0' }} />
                                 )}
-                                <h4 className="navbar__mega-sidecard-title">{item.sideCard.title}</h4>
+                                <h4 className="navbar__mega-sidecard-title" style={{ whiteSpace: 'pre-line' }}>{item.sideCard.title}</h4>
                                 <p className="navbar__mega-sidecard-desc">{item.sideCard.description}</p>
-                                {item.sideCard.href && item.sideCard.buttonText && (
+                                {item.sideCard.buttonText && (
                                   <Link to={item.sideCard.href} className="navbar__mega-sidecard-btn">
                                     {item.sideCard.buttonText}
                                   </Link>

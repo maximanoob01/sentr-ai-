@@ -1,4 +1,5 @@
 import React from 'react';
+import cameraImg from '../assets/aindri/camera.png';
 
 interface Node {
   id: string;
@@ -97,7 +98,11 @@ export const AindriNodeGraph: React.FC = () => {
 
   return (
     <section className="aindri-node-section section-y">
-      <div className="container">
+      <div className="aindri-node__bg">
+        <img src={cameraImg} alt="" className="aindri-node__bg-img" />
+        <div className="aindri-node__bg-overlay"></div>
+      </div>
+      <div className="container relative z-10">
 
         <div className="aindri-node__header fade-in-up">
           <span className="section-label">How It All Connects</span>
@@ -133,7 +138,7 @@ export const AindriNodeGraph: React.FC = () => {
 
               {/* Dot background */}
               <pattern id="dots" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
-                <circle cx="1.5" cy="1.5" r="1" fill="rgba(148,163,184,0.4)" />
+                <circle cx="1.5" cy="1.5" r="1" fill="rgba(148,163,184,0.12)" />
               </pattern>
               <rect width={viewW} height={viewH} fill="url(#dots)" />
 
