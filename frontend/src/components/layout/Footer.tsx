@@ -35,7 +35,7 @@ export const Footer: React.FC = () => {
               <ul>
                 <li><Link to="/products/indri">Indri IMS</Link></li>
                 <li><Link to="/products/roadmap">Roadmap</Link></li>
-                <li><Link to="/microsoft-azure">Microsoft & Azure</Link></li>
+                <li><Link to="/cloud-solutions">Cloud Solutions</Link></li>
               </ul>
             </div>
             <div className="footer-main__col">

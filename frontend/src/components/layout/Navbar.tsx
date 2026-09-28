@@ -108,7 +108,7 @@ const navItems: NavItem[] = [
       href: '/industries'
     }
   },
-  { label: 'Microsoft & Azure', href: '/microsoft-azure' },
+  { label: 'Cloud Solutions', href: '/cloud-solutions' },
   {
     label: 'About Us',
     href: '/company/about',

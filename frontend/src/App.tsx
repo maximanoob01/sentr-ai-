@@ -341,7 +341,7 @@ const AppInner: React.FC = () => {
         <Route path="/products/roadmap" element={<PlaceholderPage title="Product Roadmap" />} />
         <Route path="/industries" element={<PlaceholderPage title="Industries" />} />
         <Route path="/industries/:slug" element={<PlaceholderPage title="Industry Detail" />} />
-        <Route path="/microsoft-azure" element={<PlaceholderPage title="Microsoft & Azure" />} />
+        <Route path="/cloud-solutions" element={<PlaceholderPage title="Cloud Solutions" />} />
         <Route path="/resources" element={<PlaceholderPage title="Resources" />} />
         <Route path="/resources/:slug" element={<PlaceholderPage title="Resource" />} />
         <Route path="/company" element={<PlaceholderPage title="Company" />} />
