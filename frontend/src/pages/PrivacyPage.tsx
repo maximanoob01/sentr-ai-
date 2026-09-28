@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import heroImg from "../assets/contact us/hero.png";
 
 const tocSections = [
@@ -67,7 +67,6 @@ export const PrivacyPage: React.FC = () => {
         <img src={heroImg} alt="Privacy Policy" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(2,6,23,0.85) 0%, rgba(15,23,42,0.72) 100%)" }} />
         <div style={{ position: "relative", zIndex: 1, textAlign: "center", padding: "0 1.5rem" }}>
-          <span style={{ display: "inline-block", background: "rgba(249,115,22,0.18)", border: "1px solid rgba(249,115,22,0.4)", color: "#fb923c", fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", borderRadius: "999px", padding: "0.35rem 1.1rem", marginBottom: "1.25rem" }}>Legal</span>
           <h1 style={{ fontSize: "clamp(2.2rem, 5vw, 3.5rem)", fontWeight: 900, color: "#ffffff", letterSpacing: "-0.03em", lineHeight: 1.1, marginBottom: "0.85rem" }}>Privacy Policy</h1>
           <p style={{ color: "#cbd5e1", fontSize: "1.05rem" }}>How We Collect, Use, and Protect Your Information</p>
           <p style={{ color: "#94a3b8", fontSize: "0.85rem", marginTop: "0.5rem" }}>Last Updated: September 2026</p>
