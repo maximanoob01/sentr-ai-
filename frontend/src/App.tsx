@@ -5,6 +5,7 @@ import { Footer } from './components/layout/Footer';
 import { HomePage } from './pages/HomePage';
 import { IndriPage } from './pages/IndriPage';
 import { AboutPage } from './pages/AboutPage';
+import { PrivacyPage } from './pages/PrivacyPage';
 import { useScrollAnimation } from './hooks/useScrollAnimation';
 import heroImg from './assets/contact us/hero.png';
 import workImg from './assets/work.png';
@@ -348,7 +349,7 @@ const AppInner: React.FC = () => {
         <Route path="/company/about" element={<AboutPage />} />
         <Route path="/company/partners" element={<PlaceholderPage title="Partners" />} />
         <Route path="/company/careers" element={<PlaceholderPage title="Careers" />} />
-        <Route path="/privacy" element={<PlaceholderPage title="Privacy Policy" />} />
+        <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/terms" element={<PlaceholderPage title="Terms of Use" />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
