@@ -47,7 +47,7 @@ export const SecondaryServices: React.FC = () => {
           {/* Right Column: Text and CTA */}
           <div className="secondary-services__content">
             <p className="secondary-services__desc">
-              Alongside Indri, Sentr AI delivers a comprehensive range of enterprise IT services to help organisations build secure, efficient and connected technology environments.
+              Alongside Aindri, Sentr AI delivers a comprehensive range of enterprise IT services to help organisations build secure, efficient and connected technology environments.
             </p>
             <p className="secondary-services__desc">
               Our engineering direction prioritises open standards, API-first integration and scalable cloud deployment — ensuring that the solutions we build grow with your business.

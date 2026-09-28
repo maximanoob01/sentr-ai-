@@ -53,10 +53,10 @@ const navItems: NavItem[] = [
       }
     ],
     sideCard: {
-      tag: 'Solutions Overview',
-      title: 'End-to-End Industrial Intelligence',
-      description: 'Discover how our integrated suite of tools transforms complex operations into actionable insights.',
-      buttonText: 'Explore Solutions',
+      tag: 'Lenovo Hardware',
+      title: 'Lenovo Hardware Solutions',
+      description: 'Enterprise hardware solutions powered by Lenovo, delivered and supported by Sentr AI.',
+      buttonText: 'Explore Lenovo Solutions →',
       href: '/solutions'
     }
   },
@@ -68,7 +68,7 @@ const navItems: NavItem[] = [
       {
         title: 'PRODUCTS',
         items: [
-          { label: 'Indri', href: '/products/indri', description: 'Intelligent Monitoring System' }
+          { label: 'Aindri', href: '/products/indri', description: 'Intelligent Monitoring System' }
         ]
       },
       {
@@ -80,7 +80,7 @@ const navItems: NavItem[] = [
     ],
     sideCard: {
       tag: 'Featured Product',
-      title: 'Meet Indri',
+      title: 'Meet Aindri',
       description: 'The ultimate AI companion for your industrial plant operations.',
       buttonText: 'Request Demo',
       href: '/products/indri#demo'
@@ -275,7 +275,7 @@ export const Navbar: React.FC = () => {
                               <Link
                                 key={child.label}
                                 to={child.href}
-                                className={`navbar__dropdown-item ${child.label === 'Indri' ? 'navbar__dropdown-item--featured' : ''}`}
+                                className={`navbar__dropdown-item ${child.label === 'Aindri' ? 'navbar__dropdown-item--featured' : ''}`}
                                 role="menuitem"
                               >
                                 <span className="navbar__dropdown-label">{child.label}</span>

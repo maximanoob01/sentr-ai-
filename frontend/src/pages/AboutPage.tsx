@@ -135,8 +135,10 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* Section 2: What Drives Us */}
-      <section className="section-y" style={{ background: '#0f172a', paddingTop: '6rem', paddingBottom: '6rem' }}>
-        <div className="container">
+      <section className="section-y" style={{ background: '#0f172a', paddingTop: '6rem', paddingBottom: '6rem', position: 'relative', overflow: 'hidden' }}>
+        {/* Dot Pattern */}
+        <div className="dot-pattern" style={{ position: 'absolute', top: '-4rem', right: '-4rem', width: '400px', height: '400px', zIndex: 0, opacity: 0.15 }}></div>
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4rem', alignItems: 'center' }}>
             <div className="fade-in-up" style={{ flex: '1 1 500px' }}>
               <span className="section-label" style={{ color: '#94a3b8' }}>WHAT DRIVES US</span>

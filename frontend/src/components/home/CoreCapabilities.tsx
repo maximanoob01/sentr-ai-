@@ -135,10 +135,10 @@ export const CoreCapabilities: React.FC = () => {
         <div className="capabilities__header fade-in-up">
           <span className="section-label">Core Capabilities</span>
           <h2 id="capabilities-heading" className="capabilities__heading">
-            What Indri Connects,<br />Monitors and Analyses
+            What Aindri Connects,<br />Monitors and Analyses
           </h2>
           <p className="capabilities__sub">
-            Indri's capabilities are built around the real-world needs of industrial operations —
+            Aindri's capabilities are built around the real-world needs of industrial operations —
             connecting every data source that matters and turning it into structured, actionable intelligence.
           </p>
         </div>

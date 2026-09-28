@@ -6,7 +6,7 @@ import workBg from '../../assets/work.png';
 const steps = [
   {
     title: 'Connect Data Sources',
-    description: 'Cameras, industrial sensors, machines, testing equipment, PLCs and ERP/MES systems connect to Indri through standard protocols and APIs.',
+    description: 'Cameras, industrial sensors, machines, testing equipment, PLCs and ERP/MES systems connect to Aindri through standard protocols and APIs.',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
@@ -45,7 +45,7 @@ const steps = [
   },
   {
     title: 'Monitor in Real Time',
-    description: 'The Indri dashboard gives your teams a clear, live view of production lines, machine status, energy consumption and quality metrics.',
+    description: 'The Aindri dashboard gives your teams a clear, live view of production lines, machine status, energy consumption and quality metrics.',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
@@ -87,7 +87,7 @@ export const HowIndriWorks: React.FC = () => {
               Operational Action
             </h2>
             <p className="how-works__desc">
-              Indri creates a continuous intelligence loop — connecting your operations, analysing what matters and surfacing the insights your team needs to act.
+              Aindri creates a continuous intelligence loop — connecting your operations, analysing what matters and surfacing the insights your team needs to act.
             </p>
             <Link to="/products/indri" className="how-works__btn">
               More Features
