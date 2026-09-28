@@ -90,6 +90,7 @@ export const Footer: React.FC = () => {
             <p>© 2026 Sentr AI Technologies Pvt. Ltd. All rights reserved.</p>
             <div className="footer-main__legal">
               <Link to="/privacy">Privacy Policy</Link>
+              <Link to="/cookie">Cookie Policy</Link>
               <Link to="/terms">Terms of Use</Link>
             </div>
           </div>
