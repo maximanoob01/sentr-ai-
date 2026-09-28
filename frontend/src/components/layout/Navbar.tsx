@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 import logoImg from '../../assets/logo.png';
 import siliconImg from '../../assets/alliance logo/silicon.png';
+import lenovoImg from '../../assets/lenvo.png';
 
 interface NavItem {
   label: string;
@@ -15,7 +16,7 @@ interface NavItem {
   }[];
   sideCard?: {
     tag: string;
-    title: string;
+    title: React.ReactNode;
     description: string;
     buttonText: string;
     href: string;
@@ -53,8 +54,8 @@ const navItems: NavItem[] = [
       }
     ],
     sideCard: {
-      tag: 'Lenovo Hardware',
-      title: 'Lenovo Hardware Solutions',
+      tag: 'Hardware Solutions',
+      title: <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}><img src={lenovoImg} alt="Lenovo" style={{ height: '1.2em' }} /> Hardware Solutions</span>,
       description: 'Enterprise hardware solutions powered by Lenovo, delivered and supported by Sentr AI.',
       buttonText: 'Explore Lenovo Solutions →',
       href: '/solutions'
