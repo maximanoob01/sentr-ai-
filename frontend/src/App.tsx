@@ -7,6 +7,7 @@ import { IndriPage } from './pages/IndriPage';
 import { AboutPage } from './pages/AboutPage';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { TermsPage } from './pages/TermsPage';
+import { CookiePage } from './pages/CookiePage';
 import { useScrollAnimation } from './hooks/useScrollAnimation';
 import heroImg from './assets/contact us/hero.png';
 import workImg from './assets/work.png';
@@ -352,6 +353,7 @@ const AppInner: React.FC = () => {
         <Route path="/company/careers" element={<PlaceholderPage title="Careers" />} />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/terms" element={<TermsPage />} />
+        <Route path="/cookie" element={<CookiePage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
