@@ -80,7 +80,7 @@ export const PrivacyPage: React.FC = () => {
           <p style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#94a3b8", marginBottom: "1rem" }}>Table of Contents</p>
           <nav style={{ display: "flex", flexDirection: "column", gap: "0.2rem" }}>
             {tocSections.map(({ id, label }) => (
-              <button key={id} onClick={() => scrollTo(id)} style={{ textAlign: "left", background: activeSection === id ? "#fff7ed" : "transparent", border: "none", borderLeft: activeSection === id ? "3px solid #f97316" : "3px solid transparent", color: activeSection === id ? "#ea580c" : "#64748b", fontWeight: activeSection === id ? 700 : 500, fontSize: "0.82rem", padding: "0.45rem 0.75rem", borderRadius: "0 8px 8px 0", cursor: "pointer", transition: "all 0.2s ease" }}>
+              <button key={id} onClick={() => scrollTo(id)} style={{ textAlign: "left", background: activeSection === id ? "#eff6ff" : "transparent", border: "none", borderLeft: activeSection === id ? "3px solid #3b82f6" : "3px solid transparent", color: activeSection === id ? "#1d4ed8" : "#64748b", fontWeight: activeSection === id ? 700 : 500, fontSize: "0.82rem", padding: "0.45rem 0.75rem", borderRadius: "0 8px 8px 0", cursor: "pointer", transition: "all 0.2s ease" }}>
                 {label}
               </button>
             ))}
