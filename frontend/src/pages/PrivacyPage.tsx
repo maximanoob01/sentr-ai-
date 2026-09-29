@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+﻿import React, { useState, useEffect } from "react";
 import heroImg from "../assets/contact us/hero.png";
 
 const tocSections = [
@@ -27,7 +27,7 @@ const Bullet: React.FC<{ items: string[] }> = ({ items }) => (
   <ul style={{ listStyle: "none", padding: 0, margin: "0.5rem 0 1rem", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
     {items.map((item) => (
       <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem", color: "#475569", fontSize: "0.93rem", lineHeight: 1.7 }}>
-        <span style={{ width: "6px", height: "6px", background: "#f97316", borderRadius: "50%", marginTop: "0.55rem", flexShrink: 0 }} />
+        <span style={{ width: "6px", height: "6px", background: "#3b82f6", borderRadius: "50%", marginTop: "0.55rem", flexShrink: 0 }} />
         {item}
       </li>
     ))}
@@ -97,7 +97,7 @@ export const PrivacyPage: React.FC = () => {
             <div style={{ background: "#f1f5f9", borderRadius: "12px", padding: "1.5rem", marginTop: "1rem" }}>
               <p style={{ fontWeight: 700, color: "#0f172a", marginBottom: "0.5rem" }}>Contact</p>
               <p style={{ color: "#475569", fontSize: "0.9rem", lineHeight: 1.8 }}>
-                Email: <a href="mailto:info@sentrai.in" style={{ color: "#f97316" }}>info@sentrai.in</a><br />
+                Email: <a href="mailto:info@sentrai.in" style={{ color: "#3b82f6" }}>info@sentrai.in</a><br />
                 Phone: +91 8851847821<br />
                 Address: F-2, Block F, Sector 08, Noida, Uttar Pradesh - 201301, India
               </p>
@@ -139,7 +139,7 @@ export const PrivacyPage: React.FC = () => {
             <Prose>Sentr AI may use personal information for legitimate business and operational purposes including:</Prose>
             {[{ title: "Responding to Enquiries", desc: "Respond to questions, provide requested information, respond to demo requests, and communicate regarding our products and services." },{ title: "Providing Products and Services", desc: "Deliver services, configure solutions, provide technical assistance, manage customer relationships, and maintain service communications." },{ title: "Improving Our Website and Services", desc: "Improve website functionality and user experience, understand visitor interests, develop new services, and identify technical issues." },{ title: "Security and Fraud Prevention", desc: "Protect our website and systems, detect suspicious activity, prevent unauthorized access, and maintain system integrity." },{ title: "Legal and Regulatory Compliance", desc: "Comply with applicable laws, respond to lawful requests, meet regulatory obligations, or protect our legal rights." }].map((item) => (
               <div key={item.title} style={{ display: "flex", gap: "1rem", padding: "1rem 0", borderBottom: "1px solid #f1f5f9" }}>
-                <div style={{ width: "8px", height: "8px", background: "#f97316", borderRadius: "50%", marginTop: "0.5rem", flexShrink: 0 }} />
+                <div style={{ width: "8px", height: "8px", background: "#3b82f6", borderRadius: "50%", marginTop: "0.5rem", flexShrink: 0 }} />
                 <div>
                   <p style={{ fontWeight: 700, color: "#0f172a", marginBottom: "0.25rem" }}>{item.title}</p>
                   <p style={{ color: "#64748b", fontSize: "0.9rem", lineHeight: 1.7 }}>{item.desc}</p>
@@ -150,7 +150,7 @@ export const PrivacyPage: React.FC = () => {
 
           <SectionBlock id="aindri" title="6. Aindri and Intelligent Monitoring Data">
             <div style={{ background: "linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%)", borderRadius: "14px", padding: "2rem", marginBottom: "1.5rem" }}>
-              <p style={{ color: "#f97316", fontWeight: 700, fontSize: "0.8rem", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "0.75rem" }}>Platform Notice</p>
+              <p style={{ color: "#3b82f6", fontWeight: 700, fontSize: "0.8rem", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "0.75rem" }}>Platform Notice</p>
               <p style={{ color: "#e2e8f0", lineHeight: 1.8, fontSize: "0.95rem" }}>Aindri is Sentr AI's computer-vision platform designed to transform existing security-camera infrastructure into a real-time operational intelligence system. Because Aindri can analyze camera feeds and identify people, objects, activities, and operational anomalies, privacy and security are important considerations.</p>
             </div>
             <Sub>6.1 Camera and Video Information</Sub>
@@ -161,7 +161,7 @@ export const PrivacyPage: React.FC = () => {
 
           <SectionBlock id="sharing" title="10. How We Share Information">
             <Prose>Sentr AI does not sell personal information as a business practice. We may share information where reasonably necessary with:</Prose>
-            <Bullet items={["Service Providers – third-party providers that help us operate our website, infrastructure, communications, analytics, hosting, or security.","Technology Providers – where required to deliver services through cloud infrastructure, cybersecurity systems, or communication platforms.","Business Partners – where necessary to provide requested products or services.","Professional Advisors – legal, accounting, auditing, or consulting professionals.","Government or Law Enforcement Authorities – where required by applicable law, legal process, or lawful governmental request.","Corporate Transactions – as part of a merger, acquisition, restructuring, or similar business transaction."]} />
+            <Bullet items={["Service Providers â€“ third-party providers that help us operate our website, infrastructure, communications, analytics, hosting, or security.","Technology Providers â€“ where required to deliver services through cloud infrastructure, cybersecurity systems, or communication platforms.","Business Partners â€“ where necessary to provide requested products or services.","Professional Advisors â€“ legal, accounting, auditing, or consulting professionals.","Government or Law Enforcement Authorities â€“ where required by applicable law, legal process, or lawful governmental request.","Corporate Transactions â€“ as part of a merger, acquisition, restructuring, or similar business transaction."]} />
           </SectionBlock>
 
           <SectionBlock id="security" title="13. Data Security">
@@ -189,11 +189,11 @@ export const PrivacyPage: React.FC = () => {
           </SectionBlock>
 
           <div id="contact" style={{ background: "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)", borderRadius: "20px", padding: "3rem", textAlign: "center", scrollMarginTop: "110px" }}>
-            <span style={{ display: "inline-block", background: "rgba(249,115,22,0.2)", border: "1px solid rgba(249,115,22,0.4)", color: "#fb923c", fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", borderRadius: "999px", padding: "0.35rem 1rem", marginBottom: "1.25rem" }}>Privacy Requests</span>
+            <span style={{ display: "inline-block", background: "rgba(249,115,22,0.2)", border: "1px solid rgba(249,115,22,0.4)", color: "#3b82f6", fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", borderRadius: "999px", padding: "0.35rem 1rem", marginBottom: "1.25rem" }}>Privacy Requests</span>
             <h2 style={{ fontSize: "1.75rem", fontWeight: 800, color: "#ffffff", marginBottom: "0.75rem" }}>Submit a Privacy Request</h2>
             <p style={{ color: "#94a3b8", lineHeight: 1.8, marginBottom: "2rem", maxWidth: "520px", margin: "0 auto 2rem" }}>To submit a privacy-related request, please contact our team. We may need to verify your identity before processing certain requests.</p>
             <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
-              <a href="mailto:info@sentrai.in" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "#f97316", color: "#ffffff", textDecoration: "none", padding: "0.75rem 1.75rem", borderRadius: "999px", fontWeight: 700, fontSize: "0.9rem" }}>info@sentrai.in</a>
+              <a href="mailto:info@sentrai.in" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "#3b82f6", color: "#ffffff", textDecoration: "none", padding: "0.75rem 1.75rem", borderRadius: "999px", fontWeight: 700, fontSize: "0.9rem" }}>info@sentrai.in</a>
               <a href="tel:+918851847821" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "rgba(255,255,255,0.08)", color: "#e2e8f0", textDecoration: "none", padding: "0.75rem 1.75rem", borderRadius: "999px", fontWeight: 600, fontSize: "0.9rem", border: "1px solid rgba(255,255,255,0.15)" }}>+91 8851847821</a>
             </div>
             <p style={{ color: "#64748b", fontSize: "0.82rem", marginTop: "1.5rem" }}>F-2, Block F, Sector 08, Noida, Uttar Pradesh - 201301, India</p>
