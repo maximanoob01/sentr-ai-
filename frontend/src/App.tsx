@@ -8,6 +8,7 @@ import { AboutPage } from './pages/AboutPage';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { TermsPage } from './pages/TermsPage';
 import { CookiePage } from './pages/CookiePage';
+import { CareerPage } from './pages/CareerPage';
 import { useScrollAnimation } from './hooks/useScrollAnimation';
 import heroImg from './assets/contact us/hero.png';
 import workImg from './assets/work.png';
@@ -103,76 +104,120 @@ const ContactPage: React.FC = () => {
             border-color: var(--accent);
           }
         `}</style>
-        <div style={{ display: 'grid', gap: '3rem', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', alignItems: 'start' }}>
-          
-          {/* Left: Form */}
-          <div className="fade-in-up" style={{ background: '#ffffff', padding: '2.5rem', borderRadius: 'var(--radius-xl)', border: '1px solid var(--border-default)', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05)' }}>
-            <h3 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '0.5rem', color: 'var(--text-primary)' }}>Send a Message</h3>
-            <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', fontSize: '0.95rem' }}>Fill out the form below and our team will get back to you shortly.</p>
-            
-            <form onSubmit={(e) => e.preventDefault()}>
-              <div className="form-group">
-                <label className="form-label" htmlFor="name">Name</label>
-                <input type="text" id="name" className="form-input" placeholder="Your Name" />
+        <div style={{ 
+          background: '#ffffff', 
+          borderRadius: '24px', 
+          boxShadow: '0 20px 40px rgba(0,0,0,0.08)',
+          display: 'grid',
+          gridTemplateColumns: '1fr 1.3fr',
+          overflow: 'hidden'
+        }} className="contact-grid-override fade-in-up">
+          <style>{`
+            @media (max-width: 900px) {
+              .contact-grid-override {
+                grid-template-columns: 1fr !important;
+              }
+              .contact-left-panel {
+                padding: 2.5rem !important;
+              }
+              .contact-right-panel {
+                padding: 2.5rem !important;
+              }
+            }
+          `}</style>
+
+          {/* Left Panel */}
+          <div className="contact-left-panel" style={{ background: '#f8fafc', padding: '4rem 3.5rem' }}>
+            <h3 style={{ fontSize: '1.75rem', fontWeight: 800, color: '#0f172a', marginBottom: '1rem' }}>Get in touch</h3>
+            <p style={{ color: '#64748b', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '2.5rem' }}>
+              Fill out the form or reach out to us using the contact details provided. We would love to hear from you.
+            </p>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+              {/* Location */}
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
+                <div style={{ width: '44px', height: '44px', borderRadius: '50%', background: '#2563eb', color: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#0f172a', marginBottom: '0.25rem' }}>Our Location</h4>
+                  <p style={{ color: '#475569', fontSize: '0.9rem', lineHeight: 1.5 }}>F2, Sector-8, Noida,<br/>Uttar Pradesh, India</p>
+                </div>
               </div>
-              
-              <div className="form-group">
-                <label className="form-label" htmlFor="email">Email</label>
-                <input type="email" id="email" className="form-input" placeholder="you@company.com" />
+
+              {/* Email */}
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
+                <div style={{ width: '44px', height: '44px', borderRadius: '50%', background: '#2563eb', color: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div>
+                  <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#0f172a', marginBottom: '0.25rem' }}>Email Address</h4>
+                  <a href="mailto:info@sentrai.in" style={{ color: '#475569', fontSize: '0.9rem', textDecoration: 'none' }}>info@sentrai.in</a>
+                </div>
               </div>
-              
-              <div className="form-group">
-                <label className="form-label" htmlFor="subject">Subject</label>
-                <input type="text" id="subject" className="form-input" placeholder="How can we help?" />
+
+              {/* Phone */}
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
+                <div style={{ width: '44px', height: '44px', borderRadius: '50%', background: '#2563eb', color: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <div>
+                  <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#0f172a', marginBottom: '0.25rem' }}>Phone Number</h4>
+                  <a href="tel:+918851847821" style={{ color: '#475569', fontSize: '0.9rem', textDecoration: 'none' }}>+91 8851847821</a>
+                </div>
               </div>
-              
-              <div className="form-group">
-                <label className="form-label" htmlFor="message">Message</label>
-                <textarea id="message" className="form-textarea" placeholder="Your message..." rows={4}></textarea>
+            </div>
+
+            {/* Socials */}
+            <div style={{ marginTop: '3.5rem' }}>
+              <h4 style={{ fontSize: '0.9rem', fontWeight: 700, color: '#0f172a', marginBottom: '1rem' }}>Follow our social media</h4>
+              <div style={{ display: 'flex', gap: '0.75rem' }}>
+                <a href="#" style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#2563eb', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                <a href="#" style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#2563eb', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+                <a href="#" style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#2563eb', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
               </div>
-              
-              <button type="submit" className="btn btn-primary btn-lg" style={{ width: '100%', marginTop: '1.5rem', fontSize: '1.1rem', fontWeight: 600, padding: '1rem', backgroundColor: '#2563eb', color: '#ffffff', borderColor: '#2563eb' }}>Send Message</button>
-            </form>
+            </div>
           </div>
 
-          {/* Right: Info Cards */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          {/* Right Panel */}
+          <div className="contact-right-panel" style={{ padding: '4rem 3.5rem', background: '#ffffff' }}>
+            <h3 style={{ fontSize: '1.75rem', fontWeight: 800, color: '#0f172a', marginBottom: '2rem' }}>Send us a message</h3>
             
-            {/* Phone */}
-            <div className="fade-in-up" style={{ transitionDelay: '0.1s', background: '#2563eb', padding: '2rem', borderRadius: 'var(--radius-xl)', border: '1px solid rgba(255,255,255,0.1)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', boxShadow: '0 10px 15px -3px rgba(37, 99, 235, 0.3)' }}>
-              <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(255,255,255,0.15)', color: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                </svg>
+            <form onSubmit={(e) => e.preventDefault()}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.25rem' }}>
+                <div className="form-group" style={{ marginBottom: 0 }}>
+                  <label className="form-label" style={{ fontSize: '0.8rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em' }} htmlFor="name">Name</label>
+                  <input type="text" id="name" className="form-input" placeholder="Name" style={{ background: '#f8fafc', border: '1px solid transparent', borderRadius: '12px' }} />
+                </div>
+                <div className="form-group" style={{ marginBottom: 0 }}>
+                  <label className="form-label" style={{ fontSize: '0.8rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em' }} htmlFor="company">Company</label>
+                  <input type="text" id="company" className="form-input" placeholder="Company" style={{ background: '#f8fafc', border: '1px solid transparent', borderRadius: '12px' }} />
+                </div>
               </div>
-              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '0.5rem', color: '#ffffff' }}>Phone Number</h4>
-              <a href="tel:+918851847821" style={{ color: '#e0e7ff', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={(e) => e.currentTarget.style.color = '#ffffff'} onMouseOut={(e) => e.currentTarget.style.color = '#e0e7ff'}>+91 8851847821</a>
-            </div>
 
-            {/* Email */}
-            <div className="fade-in-up" style={{ transitionDelay: '0.2s', background: '#2563eb', padding: '2rem', borderRadius: 'var(--radius-xl)', border: '1px solid rgba(255,255,255,0.1)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', boxShadow: '0 10px 15px -3px rgba(37, 99, 235, 0.3)' }}>
-              <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(255,255,255,0.15)', color: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                  <polyline points="22,6 12,13 2,6"/>
-                </svg>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.25rem' }}>
+                <div className="form-group" style={{ marginBottom: 0 }}>
+                  <label className="form-label" style={{ fontSize: '0.8rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em' }} htmlFor="phone">Phone</label>
+                  <input type="tel" id="phone" className="form-input" placeholder="Phone" style={{ background: '#f8fafc', border: '1px solid transparent', borderRadius: '12px' }} />
+                </div>
+                <div className="form-group" style={{ marginBottom: 0 }}>
+                  <label className="form-label" style={{ fontSize: '0.8rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em' }} htmlFor="email">Email</label>
+                  <input type="email" id="email" className="form-input" placeholder="Email" style={{ background: '#f8fafc', border: '1px solid transparent', borderRadius: '12px' }} />
+                </div>
               </div>
-              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '0.5rem', color: '#ffffff' }}>Email Address</h4>
-              <a href="mailto:info@sentrai.in" style={{ color: '#e0e7ff', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={(e) => e.currentTarget.style.color = '#ffffff'} onMouseOut={(e) => e.currentTarget.style.color = '#e0e7ff'}>info@sentrai.in</a>
-            </div>
-
-            {/* Location */}
-            <div className="fade-in-up" style={{ transitionDelay: '0.3s', background: '#2563eb', padding: '2rem', borderRadius: 'var(--radius-xl)', border: '1px solid rgba(255,255,255,0.1)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', boxShadow: '0 10px 15px -3px rgba(37, 99, 235, 0.3)' }}>
-              <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(255,255,255,0.15)', color: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                  <circle cx="12" cy="10" r="3"/>
-                </svg>
+              
+              <div className="form-group" style={{ marginBottom: '1.25rem' }}>
+                <label className="form-label" style={{ fontSize: '0.8rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em' }} htmlFor="subject">Subject</label>
+                <input type="text" id="subject" className="form-input" placeholder="Subject" style={{ background: '#f8fafc', border: '1px solid transparent', borderRadius: '12px' }} />
               </div>
-              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '0.5rem', color: '#ffffff' }}>Our Location</h4>
-              <span style={{ color: '#e0e7ff' }}>F2, Sector-8, Noida, Uttar Pradesh, India</span>
-            </div>
-
+              
+              <div className="form-group" style={{ marginBottom: '2rem' }}>
+                <label className="form-label" style={{ fontSize: '0.8rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em' }} htmlFor="message">Message</label>
+                <textarea id="message" className="form-textarea" placeholder="Message" rows={4} style={{ background: '#f8fafc', border: '1px solid transparent', borderRadius: '12px', resize: 'vertical' }}></textarea>
+              </div>
+              
+              <button type="submit" className="btn btn-primary btn-lg" style={{ width: '100%', borderRadius: '100px', fontSize: '1.05rem', fontWeight: 600, padding: '1rem', backgroundColor: '#1d4ed8', color: '#ffffff', border: 'none', transition: 'all 0.2s', cursor: 'pointer', boxShadow: '0 4px 14px 0 rgba(29, 78, 216, 0.39)' }} onMouseOver={(e) => { e.currentTarget.style.backgroundColor = '#1e40af'; e.currentTarget.style.transform = 'translateY(-2px)' }} onMouseOut={(e) => { e.currentTarget.style.backgroundColor = '#1d4ed8'; e.currentTarget.style.transform = 'translateY(0)' }}>Send</button>
+            </form>
           </div>
         </div>
       </div>
@@ -350,7 +395,7 @@ const AppInner: React.FC = () => {
         <Route path="/company" element={<PlaceholderPage title="Company" />} />
         <Route path="/company/about" element={<AboutPage />} />
         <Route path="/company/partners" element={<PlaceholderPage title="Partners" />} />
-        <Route path="/company/careers" element={<PlaceholderPage title="Careers" />} />
+        <Route path="/company/careers" element={<CareerPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/terms" element={<TermsPage />} />
         <Route path="/cookie" element={<CookiePage />} />
