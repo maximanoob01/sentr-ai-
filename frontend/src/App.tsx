@@ -12,6 +12,7 @@ import { CareerPage } from './pages/CareerPage';
 import { BlogPage } from './pages/BlogPage';
 import { CloudSolutionsPage } from './pages/CloudSolutionsPage';
 import { useScrollAnimation } from './hooks/useScrollAnimation';
+import { AdminApp } from './admin/AdminApp';
 import heroImg from './assets/contact us/hero.png';
 import workImg from './assets/work.png';
 import siliconImg from './assets/alliance logo/silicon.png';
@@ -380,8 +381,9 @@ const AppInner: React.FC = () => {
 
   return (
     <>
-      {location.pathname !== '/products/indri' && <Navbar />}
+      {!location.pathname.startsWith('/admin') && location.pathname !== '/products/indri' && <Navbar />}
       <Routes>
+        <Route path="/admin/*" element={<AdminApp />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/products/indri" element={<IndriPage />} />
         <Route path="/company/contact" element={<ContactPage />} />
@@ -404,7 +406,7 @@ const AppInner: React.FC = () => {
         <Route path="/cookie" element={<CookiePage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <Footer />
+      {!location.pathname.startsWith('/admin') && <Footer />}
     </>
   );
 };

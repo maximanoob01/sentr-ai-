@@ -115,3 +115,19 @@ class HealthCheckView(APIView):
     """
     def get(self, request):
         return Response({'status': 'ok', 'service': 'Sentr AI API'})
+
+from rest_framework.generics import ListAPIView, RetrieveAPIView
+from .admin_models import Blog
+from .admin_serializers import BlogSerializer
+
+class PublicBlogListView(ListAPIView):
+    serializer_class = BlogSerializer
+    def get_queryset(self):
+        return Blog.objects.filter(status='PUBLISHED').order_by('-published_date', '-created_at')
+
+class PublicBlogDetailView(RetrieveAPIView):
+    serializer_class = BlogSerializer
+    lookup_field = 'slug'
+    def get_queryset(self):
+        return Blog.objects.filter(status='PUBLISHED')
+

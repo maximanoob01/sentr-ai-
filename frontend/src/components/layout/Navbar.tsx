@@ -42,7 +42,7 @@ const navItems: NavItem[] = [
         title: 'INFRASTRUCTURE',
         items: [
           { label: 'IoT & Industrial Tech', href: '/solutions/iot', description: 'Sensors, OPC & device connectivity' },
-          { label: 'Cloud Infrastructure', href: '/solutions/cloud-infrastructure', description: 'Scalable cloud environments' }
+          { label: 'Cloud Infrastructure', href: '/solutions/cloud-infrastructure#services', description: 'Scalable cloud environments' }
         ]
       },
       {

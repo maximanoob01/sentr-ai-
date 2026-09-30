@@ -72,3 +72,4 @@ class ContactInquiry(models.Model):
 
     def __str__(self):
         return f"{self.full_name} — {self.get_inquiry_type_display()} ({self.created_at.strftime('%d %b %Y')})"
+from .admin_models import *

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './CloudSolutionsPage.css';
 import cloudHeroBg from '../assets/cloud solutions/hero.png';
 import msLogo from '../assets/alliance logo/2.png';
@@ -274,6 +274,7 @@ export const CloudSolutionsPage: React.FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [activeAzureImg, setActiveAzureImg] = useState(0);
   const servicesScrollRef = React.useRef<HTMLDivElement>(null);
+  const location = useLocation();
 
   const scrollServices = (dir: 'left' | 'right') => {
     if (servicesScrollRef.current) {
@@ -284,8 +285,18 @@ export const CloudSolutionsPage: React.FC = () => {
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    if (location.hash) {
+      // Small timeout to ensure DOM is ready and page transitioned
+      setTimeout(() => {
+        const element = document.querySelector(location.hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
 
   // Auto-scroll the services carousel every 5 seconds
   useEffect(() => {
@@ -521,7 +532,8 @@ export const CloudSolutionsPage: React.FC = () => {
 
       {/* ── SERVICES ── */}
       <section id="services" className="cs-services" aria-labelledby="services-heading">
-        <div className="cs-container">
+        <div className="cs-services__dots" aria-hidden="true" />
+        <div className="cs-container" style={{ position: 'relative', zIndex: 1 }}>
           <div className="cs-services__header-wrapper">
             <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto' }}>
               <div className="cs-eyebrow fade-in-up" style={{ color: '#2563eb', justifyContent: 'center' }}>Cloud Services</div>
