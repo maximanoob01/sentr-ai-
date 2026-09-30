@@ -34,7 +34,7 @@ export const JobEditor: React.FC = () => {
     }));
   };
 
-  const handleSave = (status: 'DRAFT' | 'PUBLISHED') => {
+  const handleSave = (_status: 'DRAFT' | 'PUBLISHED') => {
     setLoading(true);
     // TODO: Connect to backend API
     setTimeout(() => {

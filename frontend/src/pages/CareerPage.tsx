@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import careerHero from '../assets/career/hero.png';
-import careerTeam from '../assets/career/ww.png';
 import legalHero from '../assets/LEGAL/hero.png';
 import careerAb from '../assets/career/ab.png';
 import careerAba from '../assets/career/aba.png';
@@ -88,15 +87,7 @@ const whyJoinItems = [
 
 
 
-const hiringAreas = [
-  { dept: 'Software Engineering', roles: ['Frontend Development', 'Backend Development', 'Full-Stack Development', 'API Development', 'Application Development'] },
-  { dept: 'AI & Intelligent Systems', roles: ['Artificial Intelligence', 'Machine Learning', 'Computer Vision', 'Data Engineering', 'Automation'] },
-  { dept: 'Cybersecurity', roles: ['Security Engineering', 'Security Operations', 'Cloud Security', 'Application Security', 'Identity & Access Management'] },
-  { dept: 'Cloud & Infrastructure', roles: ['Cloud Engineering', 'DevOps', 'Infrastructure', 'System Administration', 'Network Engineering'] },
-  { dept: 'Enterprise IT', roles: ['IT Support', 'IT Infrastructure', 'Digital Workplace', 'IT Asset Management', 'Enterprise Technology'] },
-  { dept: 'Business & Operations', roles: ['Sales', 'Business Development', 'Customer Success', 'Project Management', 'Marketing'] },
-];
-
+// hiringAreas unused for now
 // ─── Form State ───────────────────────────────────────────────────────────────
 interface FormData {
   fullName: string;
