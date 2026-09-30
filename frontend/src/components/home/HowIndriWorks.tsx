@@ -5,50 +5,12 @@ import workBg from '../../assets/work.png';
 
 const steps = [
   {
-    title: 'Connect Data Sources',
-    description: 'Cameras, industrial sensors, machines, testing equipment, PLCs and ERP/MES systems connect to Aindri through standard protocols and APIs.',
+    title: 'Connect Your Systems',
+    description: 'Bring your cameras, machines, sensors, testing equipment, and business systems together in one place.',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
         <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-      </svg>
-    ),
-  },
-  {
-    title: 'Collect & Normalise',
-    description: 'Raw operational data from every connected source is collected in real time, normalised into a unified format and stored securely.',
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-        <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-        <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-      </svg>
-    ),
-  },
-  {
-    title: 'AI & Intelligent Analysis',
-    description: 'Computer vision algorithms and AI models analyse video feeds, sensor data and production metrics to identify patterns, anomalies and deviations.',
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
-        <rect x="9" y="9" width="6" height="6"></rect>
-        <line x1="9" y1="1" x2="9" y2="4"></line>
-        <line x1="15" y1="1" x2="15" y2="4"></line>
-        <line x1="9" y1="20" x2="9" y2="23"></line>
-        <line x1="15" y1="20" x2="15" y2="23"></line>
-        <line x1="20" y1="9" x2="23" y2="9"></line>
-        <line x1="20" y1="14" x2="23" y2="14"></line>
-        <line x1="1" y1="9" x2="4" y2="9"></line>
-        <line x1="1" y1="14" x2="4" y2="14"></line>
-      </svg>
-    ),
-  },
-  {
-    title: 'Monitor in Real Time',
-    description: 'The Aindri dashboard gives your teams a clear, live view of production lines, machine status, energy consumption and quality metrics.',
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
       </svg>
     ),
   },

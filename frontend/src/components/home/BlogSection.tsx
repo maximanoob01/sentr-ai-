@@ -91,7 +91,7 @@ export const BlogSection: React.FC = () => {
                 <span className="blog-card__tag">{blog.tag}</span>
                 <h3 className="blog-card__title">{blog.title}</h3>
                 <p className="blog-card__desc">{blog.desc}</p>
-                <Link to="#" className="blog-card__link">
+                <Link to="/blog" className="blog-card__link">
                   Read Article
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
                 </Link>

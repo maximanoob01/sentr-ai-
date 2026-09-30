@@ -12,7 +12,7 @@ interface NavItem {
   megaMenu?: boolean;
   columns?: {
     title: string;
-    items: { label: string; href: string; description?: string }[];
+    items: { label: string; href: string; description?: string; icon?: React.ReactNode }[];
   }[];
   sideCard?: {
     tag: string;
@@ -118,15 +118,28 @@ const navItems: NavItem[] = [
         title: 'COMPANY',
         items: [
           { label: 'About Us', description: 'Our mission and values', href: '/company/about' },
-          { label: 'Leadership', description: 'Meet our executive team', href: '/company/leadership' },
-          { label: 'Careers', description: 'Join our team', href: '/company/careers' }
+          { label: 'Careers', description: 'Join our team', href: '/company/careers' },
+          {
+            label: 'Blog',
+            description: 'Insights, news and updates',
+            href: '/blog',
+            icon: (
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                <line x1="9" y1="7" x2="15" y2="7"/>
+                <line x1="9" y1="11" x2="15" y2="11"/>
+                <line x1="9" y1="15" x2="12" y2="15"/>
+              </svg>
+            )
+          }
         ]
       },
       {
         title: 'CUSTOMERS & PARTNERS',
         items: [
-          { label: 'Partner Network', description: 'Find a partner or become a partner', href: '/partners' },
-          { label: 'Customer Ambassadors', description: 'Become a SentrAI ambassador', href: '/ambassadors' }
+          { label: 'Partner Network', description: 'Find a partner or become a partner', href: '/company/contact' },
+          { label: 'Customer Ambassadors', description: 'Become a SentrAI ambassador', href: '/company/contact' }
         ]
       },
       {
@@ -246,7 +259,10 @@ export const Navbar: React.FC = () => {
                                   <div className="navbar__mega-items">
                                     {col.items.map((child) => (
                                       <Link key={child.label} to={child.href} className="navbar__mega-item" role="menuitem">
-                                        <span className="navbar__mega-label">{child.label}</span>
+                                        <span className="navbar__mega-label" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                          {child.icon && <span className="navbar__mega-icon" style={{ opacity: 0.7, display: 'flex', alignItems: 'center' }}>{child.icon}</span>}
+                                          {child.label}
+                                        </span>
                                         {child.description && <span className="navbar__mega-desc">{child.description}</span>}
                                       </Link>
                                     ))}

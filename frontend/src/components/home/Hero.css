@@ -90,7 +90,7 @@
   color: #ffffff;
   margin-bottom: var(--space-4);
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .hero__sub-new {
@@ -100,6 +100,66 @@
   max-width: 700px;
   margin-bottom: var(--space-8);
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ---- Slide label pill ---- */
+.hero__label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(0, 196, 161, 0.9);
+  border: 1px solid rgba(0, 196, 161, 0.35);
+  border-radius: 999px;
+  padding: 0.3em 1em;
+  margin-bottom: var(--space-4);
+  backdrop-filter: blur(6px);
+  background: rgba(0, 196, 161, 0.08);
+}
+
+/* ---- Slide transition wrapper ---- */
+.hero__slide-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.hero__slide-wrap--in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero__slide-wrap--out {
+  opacity: 0;
+  transform: translateY(-18px);
+}
+
+/* ---- Dot navigation ---- */
+.hero__dots {
+  display: flex;
+  gap: 8px;
+  margin-bottom: var(--space-6);
+  align-items: center;
+}
+
+.hero__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s ease, transform 0.3s ease, width 0.3s ease;
+}
+
+.hero__dot--active {
+  background: rgba(0, 196, 161, 0.9);
+  width: 24px;
+  border-radius: 4px;
+  transform: none;
 }
 
 .hero__badge {

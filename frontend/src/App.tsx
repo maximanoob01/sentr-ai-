@@ -9,6 +9,8 @@ import { PrivacyPage } from './pages/PrivacyPage';
 import { TermsPage } from './pages/TermsPage';
 import { CookiePage } from './pages/CookiePage';
 import { CareerPage } from './pages/CareerPage';
+import { BlogPage } from './pages/BlogPage';
+import { CloudSolutionsPage } from './pages/CloudSolutionsPage';
 import { useScrollAnimation } from './hooks/useScrollAnimation';
 import heroImg from './assets/contact us/hero.png';
 import workImg from './assets/work.png';
@@ -389,13 +391,14 @@ const AppInner: React.FC = () => {
         <Route path="/products/roadmap" element={<PlaceholderPage title="Product Roadmap" />} />
         <Route path="/industries" element={<PlaceholderPage title="Industries" />} />
         <Route path="/industries/:slug" element={<PlaceholderPage title="Industry Detail" />} />
-        <Route path="/cloud-solutions" element={<PlaceholderPage title="Cloud Solutions" />} />
+        <Route path="/cloud-solutions" element={<CloudSolutionsPage />} />
         <Route path="/resources" element={<PlaceholderPage title="Resources" />} />
         <Route path="/resources/:slug" element={<PlaceholderPage title="Resource" />} />
         <Route path="/company" element={<PlaceholderPage title="Company" />} />
         <Route path="/company/about" element={<AboutPage />} />
         <Route path="/company/partners" element={<PlaceholderPage title="Partners" />} />
         <Route path="/company/careers" element={<CareerPage />} />
+        <Route path="/blog" element={<BlogPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/terms" element={<TermsPage />} />
         <Route path="/cookie" element={<CookiePage />} />
