@@ -385,6 +385,76 @@ export const CloudSolutionsPage: React.FC = () => {
         </div>
       </nav>
 
+      {/* ── PLATFORMS ── */}
+      <section className="cs-platforms" aria-labelledby="platforms-heading" style={{ position: 'relative', background: '#0f172a' }}>
+        <div 
+          style={{
+            position: 'absolute',
+            inset: 0,
+            backgroundImage: `url(${hhBg})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            opacity: 0.25,
+            zIndex: 0
+          }}
+          aria-hidden="true"
+        />
+        <div className="cs-container" style={{ position: 'relative', zIndex: 1 }}>
+          <div className="cs-eyebrow fade-in-up" style={{ color: '#60a5fa' }}>Cloud Platforms</div>
+          <h2 id="platforms-heading" className="cs-section-heading cs-platforms__heading fade-in-up" style={{ color: '#ffffff' }}>
+            Cloud Solutions Across Leading Platforms
+          </h2>
+          <p className="cs-section-sub fade-in-up" style={{ color: '#94a3b8' }}>
+            Different businesses have different technology requirements. Sentr AI can help organizations evaluate and work with the cloud platform that best fits their workloads, architecture, security requirements and business objectives.
+          </p>
+          <div className="cs-platforms__grid">
+            {platforms.map((p, i) => (
+              <article key={p.title} className="cs-platform-card fade-in-up" style={{ transitionDelay: `${i * 0.1}s` }}>
+                {p.badgeImg ? (
+                  <img src={p.badgeImg} alt={p.title} style={{ height: '48px', marginBottom: '1.25rem', alignSelf: 'flex-start', objectFit: 'contain' }} />
+                ) : (
+                  <span className="cs-platform-card__badge">{p.badge}</span>
+                )}
+                <h3 className="cs-platform-card__title">{p.title}</h3>
+                <p className="cs-platform-card__desc">{p.desc}</p>
+                {p.midImg && Array.isArray(p.midImg) ? (
+                  <div style={{ position: 'relative', width: '85%', margin: '0 auto 1.5rem' }}>
+                    {p.midImg.map((imgSrc, idx) => (
+                      <img 
+                        key={idx}
+                        src={imgSrc} 
+                        alt="" 
+                        style={{ 
+                          position: idx === 0 ? 'relative' : 'absolute', 
+                          top: idx === 0 ? 'auto' : 0, 
+                          left: idx === 0 ? 'auto' : 0,
+                          width: '100%', 
+                          height: idx === 0 ? 'auto' : '100%', 
+                          borderRadius: '8px', 
+                          objectFit: 'contain', 
+                          transition: 'opacity 0.5s ease', 
+                          opacity: (activeAzureImg % p.midImg.length) === idx ? 1 : 0 
+                        }} 
+                      />
+                    ))}
+                  </div>
+                ) : p.midImg ? (
+                  <img src={p.midImg as string} alt="" style={{ width: '80%', height: 'auto', margin: '0 auto 1.5rem', borderRadius: '8px', objectFit: 'contain' }} />
+                ) : null}
+                <div className="cs-platform-card__caps" aria-label="Platform capabilities">
+                  {p.caps.map((cap) => (
+                    <span key={cap} className="cs-platform-card__cap-tag">{cap}</span>
+                  ))}
+                </div>
+                <Link to={p.href} className="cs-btn-primary" style={{ alignSelf: 'flex-start' }}>
+                  {p.cta} <IconArrow />
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── INTRODUCTION ── */}
       <section className="cs-intro" aria-labelledby="intro-heading" style={{ position: 'relative', background: 'transparent' }}>
         {/* Photo background */}
@@ -492,75 +562,7 @@ export const CloudSolutionsPage: React.FC = () => {
       </section>
 
 
-      {/* ── PLATFORMS ── */}
-      <section className="cs-platforms" aria-labelledby="platforms-heading" style={{ position: 'relative', background: '#0f172a' }}>
-        <div 
-          style={{
-            position: 'absolute',
-            inset: 0,
-            backgroundImage: `url(${hhBg})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            opacity: 0.25,
-            zIndex: 0
-          }}
-          aria-hidden="true"
-        />
-        <div className="cs-container" style={{ position: 'relative', zIndex: 1 }}>
-          <div className="cs-eyebrow fade-in-up" style={{ color: '#60a5fa' }}>Cloud Platforms</div>
-          <h2 id="platforms-heading" className="cs-section-heading cs-platforms__heading fade-in-up" style={{ color: '#ffffff' }}>
-            Cloud Solutions Across Leading Platforms
-          </h2>
-          <p className="cs-section-sub fade-in-up" style={{ color: '#94a3b8' }}>
-            Different businesses have different technology requirements. Sentr AI can help organizations evaluate and work with the cloud platform that best fits their workloads, architecture, security requirements and business objectives.
-          </p>
-          <div className="cs-platforms__grid">
-            {platforms.map((p, i) => (
-              <article key={p.title} className="cs-platform-card fade-in-up" style={{ transitionDelay: `${i * 0.1}s` }}>
-                {p.badgeImg ? (
-                  <img src={p.badgeImg} alt={p.title} style={{ height: '48px', marginBottom: '1.25rem', alignSelf: 'flex-start', objectFit: 'contain' }} />
-                ) : (
-                  <span className="cs-platform-card__badge">{p.badge}</span>
-                )}
-                <h3 className="cs-platform-card__title">{p.title}</h3>
-                <p className="cs-platform-card__desc">{p.desc}</p>
-                {p.midImg && Array.isArray(p.midImg) ? (
-                  <div style={{ position: 'relative', width: '85%', margin: '0 auto 1.5rem' }}>
-                    {p.midImg.map((imgSrc, idx) => (
-                      <img 
-                        key={idx}
-                        src={imgSrc} 
-                        alt="" 
-                        style={{ 
-                          position: idx === 0 ? 'relative' : 'absolute', 
-                          top: idx === 0 ? 'auto' : 0, 
-                          left: idx === 0 ? 'auto' : 0,
-                          width: '100%', 
-                          height: idx === 0 ? 'auto' : '100%', 
-                          borderRadius: '8px', 
-                          objectFit: 'contain', 
-                          transition: 'opacity 0.5s ease', 
-                          opacity: (activeAzureImg % p.midImg.length) === idx ? 1 : 0 
-                        }} 
-                      />
-                    ))}
-                  </div>
-                ) : p.midImg ? (
-                  <img src={p.midImg as string} alt="" style={{ width: '80%', height: 'auto', margin: '0 auto 1.5rem', borderRadius: '8px', objectFit: 'contain' }} />
-                ) : null}
-                <div className="cs-platform-card__caps" aria-label="Platform capabilities">
-                  {p.caps.map((cap) => (
-                    <span key={cap} className="cs-platform-card__cap-tag">{cap}</span>
-                  ))}
-                </div>
-                <Link to={p.href} className="cs-btn-primary" style={{ alignSelf: 'flex-start' }}>
-                  {p.cta} <IconArrow />
-                </Link>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* ── CLOUD SECURITY ── */}
       <section className="cs-security" aria-labelledby="security-heading">
