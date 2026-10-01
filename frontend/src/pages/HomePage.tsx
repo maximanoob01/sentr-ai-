@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Hero } from '../components/home/Hero';
 import { TechStrip } from '../components/home/TechStrip';
@@ -20,6 +20,23 @@ import whyImg5 from '../assets/why us/5.png';
 
 // Inline Why Sentr AI section
 const WhySentrAI: React.FC = () => {
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (window.innerWidth <= 768 && trackRef.current) {
+        const track = trackRef.current;
+        const scrollAmount = track.clientWidth;
+        if (track.scrollLeft + scrollAmount >= track.scrollWidth - 10) {
+          track.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+      }
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   const pillars = [
     {
       num: '01',
@@ -83,7 +100,7 @@ const WhySentrAI: React.FC = () => {
         </div>
 
         <div className="why-sentrai__track-container fade-in-up" style={{ transitionDelay: '0.1s' }}>
-          <div className="why-sentrai__track">
+          <div className="why-sentrai__track" ref={trackRef}>
             {pillars.map((p) => (
               <div key={p.num} className="why-sentrai__card">
                 <div className="why-sentrai__card-img-wrap">

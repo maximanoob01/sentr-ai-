@@ -345,15 +345,8 @@ export const Navbar: React.FC = () => {
       {/* Mobile Menu Overlay */}
       <div className={`mobile-menu ${mobileOpen ? 'mobile-menu--open' : ''}`} aria-hidden={!mobileOpen}>
         <div className="mobile-menu__header">
-          <Link to="/" className="navbar__logo">
-            <div className="navbar__logo-mark">
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                <rect width="28" height="28" rx="6" fill="var(--accent)"/>
-                <path d="M7 14L12 9L17 14L22 9" stroke="#080B12" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M7 19L12 14L17 19L22 14" stroke="#080B12" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.6"/>
-              </svg>
-            </div>
-            <span className="navbar__logo-text">Sentr<span className="navbar__logo-ai">AI</span></span>
+          <Link to="/" className="navbar__logo" onClick={() => setMobileOpen(false)}>
+            <img src={logoImg} alt="Sentr AI" className="navbar__logo-img" style={{ height: '32px', width: 'auto' }} />
           </Link>
           <button
             className="mobile-menu__close"

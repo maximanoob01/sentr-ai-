@@ -155,3 +155,23 @@
     padding-right: 0;
   }
 }
+
+@media (max-width: 768px) {
+  .secondary-services {
+    padding-block: var(--space-8);
+  }
+  .secondary-services__header {
+    margin-bottom: var(--space-6);
+  }
+  .secondary-services__header .section-label {
+    font-size: 0.85rem;
+  }
+  .secondary-services__heading {
+    font-size: 1.5rem;
+    line-height: 1.25;
+  }
+  .secondary-services__desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+}

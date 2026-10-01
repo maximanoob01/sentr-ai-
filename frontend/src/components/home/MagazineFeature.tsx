@@ -109,36 +109,6 @@ export const MagazineFeature: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="magazine-feature__bottom fade-in-up" style={{ transitionDelay: '0.3s' }}>
-          <h4 className="magazine-feature__stats-header">Publication Recognition</h4>
-          <div className="magazine-feature__stats-grid">
-            
-            <div className="magazine-feature__stat-item">
-              <div className="magazine-feature__stat-val"><AnimatedNumber target={125000} suffix="+" isVisible={isStatsVisible} /></div>
-              <div className="magazine-feature__stat-label">Print Circulation</div>
-            </div>
-            
-            <div className="magazine-feature__stat-item">
-              <div className="magazine-feature__stat-val"><AnimatedNumber target={480000} suffix="+" isVisible={isStatsVisible} /></div>
-              <div className="magazine-feature__stat-label">Monthly Website Readership</div>
-            </div>
-            
-            <div className="magazine-feature__stat-item">
-              <div className="magazine-feature__stat-val"><AnimatedNumber target={530000} suffix="+" isVisible={isStatsVisible} /></div>
-              <div className="magazine-feature__stat-label">Digital Subscribers</div>
-            </div>
-            
-            <div className="magazine-feature__stat-item">
-              <div className="magazine-feature__stat-val">PAN India</div>
-              <div className="magazine-feature__stat-label">Publication Reach</div>
-            </div>
-
-          </div>
-          
-
-        </div>
-
       </div>
     </section>
   );

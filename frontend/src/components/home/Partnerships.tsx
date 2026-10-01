@@ -38,6 +38,12 @@ export const Partnerships: React.FC = () => {
               <img src={partner.logo} alt={partner.name} className="partnerships__logo" />
             </div>
           ))}
+          {/* Duplicated for mobile marquee */}
+          {partners.map(partner => (
+            <div key={`dup-${partner.id}`} className="partnerships__card partnerships__card--dup">
+              <img src={partner.logo} alt={partner.name} className="partnerships__logo" />
+            </div>
+          ))}
         </div>
       </div>
     </section>

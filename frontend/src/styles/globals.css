@@ -255,3 +255,16 @@ ul, ol {
 .fade-in.visible {
   opacity: 1;
 }
+
+/* ============================================
+   Insight Cards (App.tsx)
+   ============================================ */
+@media (max-width: 640px) {
+  .insight-card {
+    flex: 0 0 min(100%, 280px) !important;
+    padding: 1.5rem !important;
+  }
+  .insight-card-desc {
+    display: none !important;
+  }
+}

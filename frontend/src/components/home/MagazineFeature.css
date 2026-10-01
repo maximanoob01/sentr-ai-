@@ -4,9 +4,9 @@
 
 .magazine-feature {
   position: relative;
-  background-color: #ffffff; /* White background */
-  padding: 50px 0; /* Reduced from 80px */
-  color: #0f172a; /* Dark text */
+  background-color: #ffffff;
+  padding: 50px 0 80px; /* Added bottom padding to accommodate floating card */
+  color: #0f172a;
   font-family: 'Inter', sans-serif;
   overflow: hidden;
 }
@@ -16,7 +16,6 @@
   grid-template-columns: 1fr 1.2fr;
   gap: 40px; /* Reduced from 60px */
   align-items: center;
-  margin-bottom: 50px; /* Reduced from 80px */
 }
 
 /* Left Text Column */
@@ -169,7 +168,7 @@
 /* Floating Card */
 .magazine-feature__floating-card {
   position: absolute;
-  bottom: -80px; /* Pushed further lower */
+  bottom: -40px; /* Adjusted to keep it in frame */
   right: 20px;
   background-color: #facc15; /* Yellow highlight */
   color: #0f172a;
@@ -215,79 +214,7 @@
   margin-bottom: 0;
 }
 
-/* Bottom Section */
-.magazine-feature__bottom {
-  margin-top: 110px; /* Increased to account for the card moving down */
-}
 
-.magazine-feature__stats-header {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: #64748b;
-  text-transform: uppercase;
-  margin-bottom: 24px;
-  text-align: center;
-}
-
-.magazine-feature__stats-grid {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-top: 1px solid #e2e8f0;
-  border-bottom: 1px solid #e2e8f0;
-  padding: 32px 0;
-  margin-bottom: 0;
-}
-
-.magazine-feature__stat-item {
-  flex: 1;
-  text-align: center;
-  position: relative;
-}
-
-.magazine-feature__stat-item:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 1px;
-  height: 40px;
-  background-color: #e2e8f0;
-}
-
-.magazine-feature__stat-val {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #2563eb; /* Blue accent */
-  margin-bottom: 4px;
-}
-
-.magazine-feature__stat-label {
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: #475569;
-}
-
-.magazine-feature__recognition-strip {
-  text-align: center;
-  font-size: 0.75rem;
-  color: #64748b;
-  line-height: 1.6;
-  padding: 12px;
-  border-top: 1px solid #e2e8f0;
-  border-bottom: 1px solid #e2e8f0;
-}
-
-.magazine-feature__recognition-strip strong {
-  color: #0f172a;
-}
-
-.magazine-feature__recognition-strip .dot {
-  margin: 0 6px;
-  color: #2563eb;
-}
 
 /* Responsive */
 @media (max-width: 1024px) {
@@ -302,36 +229,6 @@
     width: 90%;
   }
 
-  .magazine-feature__stats-grid {
-    flex-wrap: wrap;
-  }
-  
-  .magazine-feature__stat-item {
-    flex: 0 0 50%;
-    margin-bottom: 24px;
-  }
-  
-  .magazine-feature__stat-item:nth-child(2)::after,
-  .magazine-feature__stat-item:last-child::after {
-    display: none;
-  }
-}
-
-@media (max-width: 640px) {
-  .magazine-feature__stats-grid {
-    flex-direction: column;
-    padding: 16px 0;
-  }
-  
-  .magazine-feature__stat-item {
-    flex: 0 0 100%;
-    margin-bottom: 32px;
-  }
-
-  .magazine-feature__stat-item::after {
-    display: none;
-  }
-  
   .magazine-feature__floating-card {
     position: relative;
     right: auto;

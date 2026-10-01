@@ -190,6 +190,27 @@
   }
 }
 
+@media (max-width: 768px) {
+  .how-works {
+    padding-block: var(--space-8);
+  }
+  .how-works__split {
+    gap: 3rem;
+  }
+  .how-works__title {
+    font-size: 1.5rem; /* Very compact title */
+    line-height: 1.25;
+  }
+  .how-works__desc {
+    font-size: 0.9rem; /* Smaller description */
+    line-height: 1.5;
+  }
+  .how-works__btn {
+    padding: 10px 24px;
+    font-size: 0.9rem;
+  }
+}
+
 @media (max-width: 640px) {
   .how-works__grid-col {
     grid-template-columns: 1fr;

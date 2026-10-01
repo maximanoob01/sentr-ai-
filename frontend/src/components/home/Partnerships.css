@@ -84,6 +84,10 @@
   transform: scale(1.05); /* Added slight scale instead of color change */
 }
 
+.partnerships__card--dup {
+  display: none;
+}
+
 @media (max-width: 992px) {
   .partnerships__grid {
     grid-template-columns: repeat(3, 1fr);
@@ -91,13 +95,39 @@
 }
 
 @media (max-width: 768px) {
+  .partnerships-section {
+    padding-block: var(--space-6); /* Very compact padding */
+  }
+  .partnerships__header {
+    margin-bottom: var(--space-4); /* Very compact margin */
+    text-align: center;
+  }
+  .partnerships__header .section-label {
+    font-size: 0.7rem;
+    margin-bottom: var(--space-2);
+  }
+  .partnerships__heading {
+    font-size: 1.25rem; /* Smaller heading for compactness */
+  }
   .partnerships__grid {
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    overflow: visible; /* Let marquee slide outside container bounds */
+    gap: var(--space-3);
+    padding-bottom: 0;
+    width: max-content;
+    animation: marquee 20s linear infinite;
+  }
+  .partnerships__card {
+    flex: 0 0 120px; /* Even smaller cards */
+    height: 55px;
+    padding: var(--space-2);
+  }
+  .partnerships__card--dup {
+    display: flex;
   }
 }
 
-@media (max-width: 480px) {
-  .partnerships__grid {
-    grid-template-columns: 1fr;
-  }
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - (var(--space-4) / 2))); }
 }

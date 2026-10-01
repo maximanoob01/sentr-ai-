@@ -283,13 +283,13 @@ const ContactPage: React.FC = () => {
         <div ref={scrollRef} style={{ display: 'flex', gap: '2rem', overflowX: 'auto', paddingBottom: '2rem', scrollSnapType: 'x mandatory', scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
           
           {/* Card 1 */}
-          <div className="fade-in-up" style={{ flex: '0 0 min(100%, 350px)', scrollSnapAlign: 'start', transitionDelay: '0.1s', background: '#ffffff', padding: '2rem', borderRadius: 'var(--radius-xl)', border: '1px solid #e2e8f0', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05)', display: 'flex', flexDirection: 'column' }}>
+          <div className="fade-in-up insight-card" style={{ flex: '0 0 min(100%, 350px)', scrollSnapAlign: 'start', transitionDelay: '0.1s', background: '#ffffff', padding: '2rem', borderRadius: 'var(--radius-xl)', border: '1px solid #e2e8f0', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05)', display: 'flex', flexDirection: 'column' }}>
             <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: '#3b82f6', fontWeight: 700, marginBottom: '0.75rem', display: 'block' }}>Technology</span>
             <h4 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: '0.75rem', lineHeight: 1.4 }}>Why Business Email Is Essential for Every Organization</h4>
-            <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.6, flexGrow: 1, marginBottom: '2rem' }}>
+            <p className="insight-card-desc" style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.6, flexGrow: 1, marginBottom: '2rem' }}>
               Discover why reliable business email remains a critical communication channel for modern organizations, supporting professional communication, collaboration, and day-to-day business operations.
             </p>
-            <div style={{ alignSelf: 'flex-start', borderTop: '1px solid #e2e8f0', paddingTop: '1.25rem', width: '100%' }}>
+            <div className="insight-card-footer" style={{ alignSelf: 'flex-start', borderTop: '1px solid #e2e8f0', paddingTop: '1.25rem', width: '100%' }}>
               <Link to="/blog" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: '#0f172a', fontSize: '0.95rem', fontWeight: 600, textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={(e) => e.currentTarget.style.color = '#3b82f6'} onMouseOut={(e) => e.currentTarget.style.color = '#0f172a'}>
                 Read Article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
               </Link>
@@ -297,13 +297,13 @@ const ContactPage: React.FC = () => {
           </div>
 
           {/* Card 2 */}
-          <div className="fade-in-up" style={{ flex: '0 0 min(100%, 350px)', scrollSnapAlign: 'start', transitionDelay: '0.2s', background: '#ffffff', padding: '2rem', borderRadius: 'var(--radius-xl)', border: '1px solid #e2e8f0', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05)', display: 'flex', flexDirection: 'column' }}>
+          <div className="fade-in-up insight-card" style={{ flex: '0 0 min(100%, 350px)', scrollSnapAlign: 'start', transitionDelay: '0.2s', background: '#ffffff', padding: '2rem', borderRadius: 'var(--radius-xl)', border: '1px solid #e2e8f0', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05)', display: 'flex', flexDirection: 'column' }}>
             <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: '#3b82f6', fontWeight: 700, marginBottom: '0.75rem', display: 'block' }}>Artificial Intelligence</span>
             <h4 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: '0.75rem', lineHeight: 1.4 }}>How AI Is Impacting the Technology Industry</h4>
-            <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.6, flexGrow: 1, marginBottom: '2rem' }}>
+            <p className="insight-card-desc" style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.6, flexGrow: 1, marginBottom: '2rem' }}>
               Artificial Intelligence is reshaping the technology landscape—from everyday digital experiences to cloud computing and enterprise systems. Explore how AI is changing the way businesses use and deliver technology.
             </p>
-            <div style={{ alignSelf: 'flex-start', borderTop: '1px solid #e2e8f0', paddingTop: '1.25rem', width: '100%' }}>
+            <div className="insight-card-footer" style={{ alignSelf: 'flex-start', borderTop: '1px solid #e2e8f0', paddingTop: '1.25rem', width: '100%' }}>
               <Link to="/blog" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: '#0f172a', fontSize: '0.95rem', fontWeight: 600, textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={(e) => e.currentTarget.style.color = '#3b82f6'} onMouseOut={(e) => e.currentTarget.style.color = '#0f172a'}>
                 Read Article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
               </Link>
@@ -311,13 +311,13 @@ const ContactPage: React.FC = () => {
           </div>
 
           {/* Card 3 */}
-          <div className="fade-in-up" style={{ flex: '0 0 min(100%, 350px)', scrollSnapAlign: 'start', transitionDelay: '0.3s', background: '#ffffff', padding: '2rem', borderRadius: 'var(--radius-xl)', border: '1px solid #e2e8f0', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05)', display: 'flex', flexDirection: 'column' }}>
+          <div className="fade-in-up insight-card" style={{ flex: '0 0 min(100%, 350px)', scrollSnapAlign: 'start', transitionDelay: '0.3s', background: '#ffffff', padding: '2rem', borderRadius: 'var(--radius-xl)', border: '1px solid #e2e8f0', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05)', display: 'flex', flexDirection: 'column' }}>
             <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: '#3b82f6', fontWeight: 700, marginBottom: '0.75rem', display: 'block' }}>Cloud Infrastructure</span>
             <h4 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: '0.75rem', lineHeight: 1.4 }}>Understanding Cloud Management: Why It Matters for Businesses</h4>
-            <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.6, flexGrow: 1, marginBottom: '2rem' }}>
+            <p className="insight-card-desc" style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.6, flexGrow: 1, marginBottom: '2rem' }}>
               As businesses increasingly depend on cloud infrastructure, effective cloud management has become essential. Learn why organizations need better visibility, control, and management across their cloud environments.
             </p>
-            <div style={{ alignSelf: 'flex-start', borderTop: '1px solid #e2e8f0', paddingTop: '1.25rem', width: '100%' }}>
+            <div className="insight-card-footer" style={{ alignSelf: 'flex-start', borderTop: '1px solid #e2e8f0', paddingTop: '1.25rem', width: '100%' }}>
               <Link to="/blog" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: '#0f172a', fontSize: '0.95rem', fontWeight: 600, textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={(e) => e.currentTarget.style.color = '#3b82f6'} onMouseOut={(e) => e.currentTarget.style.color = '#0f172a'}>
                 Read Article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
               </Link>
@@ -325,13 +325,13 @@ const ContactPage: React.FC = () => {
           </div>
 
           {/* Card 4 */}
-          <div className="fade-in-up" style={{ flex: '0 0 min(100%, 350px)', scrollSnapAlign: 'start', transitionDelay: '0.4s', background: '#ffffff', padding: '2rem', borderRadius: 'var(--radius-xl)', border: '1px solid #e2e8f0', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05)', display: 'flex', flexDirection: 'column' }}>
+          <div className="fade-in-up insight-card" style={{ flex: '0 0 min(100%, 350px)', scrollSnapAlign: 'start', transitionDelay: '0.4s', background: '#ffffff', padding: '2rem', borderRadius: 'var(--radius-xl)', border: '1px solid #e2e8f0', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05)', display: 'flex', flexDirection: 'column' }}>
             <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: '#3b82f6', fontWeight: 700, marginBottom: '0.75rem', display: 'block' }}>Cybersecurity</span>
             <h4 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: '0.75rem', lineHeight: 1.4 }}>How AI Is Transforming Cybersecurity in India</h4>
-            <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.6, flexGrow: 1, marginBottom: '2rem' }}>
+            <p className="insight-card-desc" style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.6, flexGrow: 1, marginBottom: '2rem' }}>
               Explore how Artificial Intelligence is being applied to cybersecurity through real-time threat detection, predictive analysis, automated responses, and more proactive security strategies.
             </p>
-            <div style={{ alignSelf: 'flex-start', borderTop: '1px solid #e2e8f0', paddingTop: '1.25rem', width: '100%' }}>
+            <div className="insight-card-footer" style={{ alignSelf: 'flex-start', borderTop: '1px solid #e2e8f0', paddingTop: '1.25rem', width: '100%' }}>
               <Link to="/blog" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: '#0f172a', fontSize: '0.95rem', fontWeight: 600, textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={(e) => e.currentTarget.style.color = '#3b82f6'} onMouseOut={(e) => e.currentTarget.style.color = '#0f172a'}>
                 Read Article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
               </Link>
