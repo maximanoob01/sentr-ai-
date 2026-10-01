@@ -23,7 +23,12 @@ export const BlogPage: React.FC = () => {
     fetch('http://localhost:8000/api/blogs/')
       .then(res => res.json())
       .then(data => {
-        setBlogs(data);
+        if (Array.isArray(data)) {
+          setBlogs(data);
+        } else {
+          console.error('Expected array of blogs but got:', data);
+          setBlogs([]);
+        }
         setLoading(false);
       })
       .catch(err => {

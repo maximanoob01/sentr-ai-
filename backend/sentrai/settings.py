@@ -114,7 +114,7 @@ REST_FRAMEWORK = {
         'rest_framework.throttling.AnonRateThrottle',
     ],
     'DEFAULT_THROTTLE_RATES': {
-        'anon': '30/hour',
+        'anon': '3000/hour',
     },
 }
 

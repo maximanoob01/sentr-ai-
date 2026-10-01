@@ -17,6 +17,7 @@ import ind1 from '../assets/cloud solutions/1.png';
 import ind2 from '../assets/cloud solutions/2.png';
 import ind3 from '../assets/cloud solutions/3.png';
 import ind4 from '../assets/cloud solutions/4.png';
+import buildingBg from '../assets/cloud solutions/building.png';
 
 /* ── SVG Icons ── */
 const IconCompass = () => (
@@ -638,8 +639,19 @@ export const CloudSolutionsPage: React.FC = () => {
       </section>
 
       {/* ── WHAT DOES YOUR BUSINESS NEED ── */}
-      <section className="cs-needs" aria-labelledby="needs-heading">
-        <div className="cs-container">
+      <section 
+        className="cs-needs" 
+        aria-labelledby="needs-heading"
+        style={{
+          backgroundImage: `url(${buildingBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+          position: 'relative'
+        }}
+      >
+        <div className="cs-needs__overlay" style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(15, 23, 42, 0.75)', zIndex: 0 }}></div>
+        <div className="cs-container" style={{ position: 'relative', zIndex: 1 }}>
           <div className="cs-eyebrow fade-in-up" style={{ color: '#60a5fa' }}>Quick Guide</div>
           <h2 id="needs-heading" className="cs-section-heading cs-needs__heading fade-in-up">
             What Does Your Business Need?
@@ -649,18 +661,21 @@ export const CloudSolutionsPage: React.FC = () => {
               { need: 'Need to move to cloud?', service: 'Cloud Migration', desc: 'Move existing workloads, applications and data into a modern cloud environment.', link: '/company/contact' },
               { need: 'Need to build new infrastructure?', service: 'Cloud Infrastructure', desc: 'Build scalable infrastructure for modern applications and business operations.', link: '/company/contact' },
               { need: 'Already running in the cloud?', service: 'Managed Cloud', desc: 'Monitor, secure and optimize your existing cloud environment.', link: '/company/contact' },
-            ].map((card, i) => (
-              <Link
-                key={card.service}
-                to={card.link}
-                className="cs-need-card fade-in-up"
-                style={{ transitionDelay: `${i * 0.1}s`, display: 'block', textDecoration: 'none' }}
-              >
-                <div className="cs-need-card__need">{card.need}</div>
-                <div className="cs-need-card__service">{card.service}</div>
-                <div className="cs-need-card__desc">{card.desc}</div>
-              </Link>
-            ))}
+            ].map((card, i) => {
+              const variantClass = i === 0 ? 'cs-need-card--white' : i === 1 ? 'cs-need-card--dark' : 'cs-need-card--blue';
+              return (
+                <Link
+                  key={card.service}
+                  to={card.link}
+                  className={`cs-need-card fade-in-up ${variantClass}`}
+                  style={{ transitionDelay: `${i * 0.1}s`, display: 'block', textDecoration: 'none' }}
+                >
+                  <div className="cs-need-card__need">{card.need}</div>
+                  <div className="cs-need-card__service">{card.service}</div>
+                  <div className="cs-need-card__desc">{card.desc}</div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>

@@ -1217,6 +1217,45 @@
   line-height: 1.65;
 }
 
+.cs-need-card--white {
+  background: #ffffff;
+  border-color: transparent;
+}
+.cs-need-card--white:hover {
+  background: #f8fafc;
+  border-color: transparent;
+}
+.cs-need-card--white::after { display: none; }
+.cs-need-card--white .cs-need-card__need { color: #3b82f6; }
+.cs-need-card--white .cs-need-card__service { color: #0f172a; }
+.cs-need-card--white .cs-need-card__desc { color: #475569; }
+
+.cs-need-card--dark {
+  background: #0f172a;
+  border-color: transparent;
+}
+.cs-need-card--dark:hover {
+  background: #1e293b;
+  border-color: transparent;
+}
+.cs-need-card--dark::after { display: none; }
+.cs-need-card--dark .cs-need-card__need { color: #86efac; }
+.cs-need-card--dark .cs-need-card__service { color: #ffffff; }
+.cs-need-card--dark .cs-need-card__desc { color: #94a3b8; }
+
+.cs-need-card--blue {
+  background: #035ca3;
+  border-color: transparent;
+}
+.cs-need-card--blue:hover {
+  background: #026bbd;
+  border-color: transparent;
+}
+.cs-need-card--blue::after { display: none; }
+.cs-need-card--blue .cs-need-card__need { color: #bae6fd; }
+.cs-need-card--blue .cs-need-card__service { color: #ffffff; }
+.cs-need-card--blue .cs-need-card__desc { color: rgba(255, 255, 255, 0.85); }
+
 /* ================================================================
    INDUSTRIES
    ================================================================ */

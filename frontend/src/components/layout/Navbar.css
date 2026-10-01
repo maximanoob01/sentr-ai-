@@ -567,6 +567,24 @@
    ============================================ */
 
 @media (max-width: 1024px) {
+  .navbar {
+    height: 52px;
+    padding: 0 1rem;
+    top: 0.5rem;
+    width: calc(100% - 1.5rem);
+  }
+  
+  .navbar__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navbar__logo-img {
+    height: 32px !important;
+  }
+
   .navbar__links {
     display: none;
   }
@@ -577,6 +595,7 @@
 
   .navbar__hamburger {
     display: flex;
+    padding: 4px;
   }
 }
 

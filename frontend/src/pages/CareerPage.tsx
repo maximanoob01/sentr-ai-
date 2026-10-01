@@ -331,9 +331,18 @@ export const CareerPage: React.FC = () => {
                     <span className="career-job-card__dept">{job.department}</span>
                     <h3 className="career-job-card__title">{job.title}</h3>
                     <div className="career-job-card__tags">
-                      <span className="career-tag career-tag--location">📍 {job.location}</span>
-                      <span className="career-tag career-tag--exp">⏳ {job.experience}</span>
-                      <span className="career-tag career-tag--type">💼 {job.type}</span>
+                      <span className="career-tag career-tag--location" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        {job.location}
+                      </span>
+                      <span className="career-tag career-tag--exp" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        {job.experience}
+                      </span>
+                      <span className="career-tag career-tag--type" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                        {job.type}
+                      </span>
                     </div>
                   </div>
                   <div className="career-job-card__actions">
