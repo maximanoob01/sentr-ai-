@@ -17,15 +17,21 @@ export const JobList: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Placeholder data
-    setTimeout(() => {
-      setJobs([
-        { id: 1, title: 'Senior Cloud Architect', department: 'Engineering', location: 'Noida, India', employment_type: 'Full-time', status: 'PUBLISHED', applications_count: 12, created_at: '2026-09-20T10:00:00Z' },
-        { id: 2, title: 'Frontend Developer (React)', department: 'Engineering', location: 'Remote', employment_type: 'Full-time', status: 'PUBLISHED', applications_count: 45, created_at: '2026-09-25T11:00:00Z' },
-        { id: 3, title: 'Cybersecurity Analyst', department: 'Security', location: 'Hybrid', employment_type: 'Contract', status: 'DRAFT', applications_count: 0, created_at: '2026-10-01T09:00:00Z' },
-      ]);
-      setLoading(false);
-    }, 500);
+    fetch('http://127.0.0.1:8000/api/admin/jobs/')
+      .then(res => res.json())
+      .then(data => {
+        if (Array.isArray(data)) {
+          setJobs(data);
+        } else {
+          console.error('Expected array of jobs but got:', data);
+          setJobs([]);
+        }
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error('Error fetching jobs:', err);
+        setLoading(false);
+      });
   }, []);
 
   return (

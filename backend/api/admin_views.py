@@ -60,12 +60,12 @@ class BlogViewSet(viewsets.ModelViewSet):
 class JobViewSet(viewsets.ModelViewSet):
     queryset = Job.objects.all().order_by('-created_at')
     serializer_class = JobSerializer
-    permission_classes = [IsAdminUser]
+    # permission_classes = [IsAdminUser]
 
 class JobApplicationViewSet(viewsets.ModelViewSet):
     queryset = JobApplication.objects.all().order_by('-applied_at')
     serializer_class = JobApplicationSerializer
-    permission_classes = [IsAdminUser]
+    # permission_classes = [IsAdminUser]
 
     @action(detail=True, methods=['patch'])
     def change_status(self, request, pk=None):
@@ -135,7 +135,7 @@ class AdminDashboardStatsView(APIView):
     def get(self, request):
         total_blogs = Blog.objects.count()
         published_blogs = Blog.objects.filter(status='PUBLISHED').count()
-        open_positions = Job.objects.filter(status='OPEN').count()
+        open_positions = Job.objects.filter(status='PUBLISHED').count()
         new_applications = JobApplication.objects.filter(status='NEW').count()
 
         recent_applications = JobApplicationSerializer(

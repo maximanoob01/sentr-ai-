@@ -3,6 +3,7 @@ Sentr AI API — Admin Configuration
 """
 from django.contrib import admin
 from .models import DemoRequest, ContactInquiry
+from .admin_models import Job, JobApplication
 
 
 @admin.register(DemoRequest)
@@ -40,3 +41,16 @@ class ContactInquiryAdmin(admin.ModelAdmin):
 admin.site.site_header = 'Sentr AI — Admin'
 admin.site.site_title = 'Sentr AI Admin'
 admin.site.index_title = 'Dashboard'
+
+@admin.register(Job)
+class JobAdmin(admin.ModelAdmin):
+    list_display = ['title', 'department', 'location', 'status', 'created_at']
+    list_filter = ['status', 'department', 'location']
+    search_fields = ['title', 'department']
+    prepopulated_fields = {'slug': ('title',)}
+
+@admin.register(JobApplication)
+class JobApplicationAdmin(admin.ModelAdmin):
+    list_display = ['full_name', 'email', 'job', 'status', 'applied_at']
+    list_filter = ['status', 'applied_at']
+    search_fields = ['full_name', 'email']

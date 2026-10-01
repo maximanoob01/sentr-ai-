@@ -37,9 +37,13 @@ class BlogSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class JobSerializer(serializers.ModelSerializer):
+    applications_count = serializers.SerializerMethodField()
     class Meta:
         model = Job
         fields = '__all__'
+
+    def get_applications_count(self, obj):
+        return obj.applications.count()
 
 class JobApplicationSerializer(serializers.ModelSerializer):
     job_details = JobSerializer(source='job', read_only=True)

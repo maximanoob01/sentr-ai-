@@ -16,15 +16,30 @@ export const ApplicationList: React.FC = () => {
   const [filter, setFilter] = useState('ALL');
 
   useEffect(() => {
-    setTimeout(() => {
-      setApplications([
-        { id: 101, candidate_name: 'Jane Smith', job_title: 'Senior Cloud Architect', status: 'NEW', experience: '8 Years', applied_at: '2026-10-01T08:30:00Z' },
-        { id: 102, candidate_name: 'Alex Johnson', job_title: 'Frontend Developer (React)', status: 'REVIEW', experience: '3 Years', applied_at: '2026-09-30T14:15:00Z' },
-        { id: 103, candidate_name: 'Michael Chen', job_title: 'Senior Cloud Architect', status: 'INTERVIEW', experience: '10 Years', applied_at: '2026-09-28T09:45:00Z' },
-        { id: 104, candidate_name: 'Sarah Williams', job_title: 'Frontend Developer (React)', status: 'REJECTED', experience: '1 Year', applied_at: '2026-09-27T11:20:00Z' },
-      ]);
-      setLoading(false);
-    }, 400);
+    fetch('http://127.0.0.1:8000/api/admin/applications/')
+      .then(res => res.json())
+      .then(data => {
+        if (Array.isArray(data)) {
+          // Map the backend response to the expected frontend interface
+          const mappedApps = data.map((app: any) => ({
+            id: app.id,
+            candidate_name: app.full_name,
+            job_title: app.job_details?.title || 'Unknown Job',
+            status: app.status,
+            experience: app.experience,
+            applied_at: app.applied_at
+          }));
+          setApplications(mappedApps);
+        } else {
+          console.error('Expected array of applications but got:', data);
+          setApplications([]);
+        }
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error('Error fetching applications:', err);
+        setLoading(false);
+      });
   }, []);
 
   const getStatusBadge = (status: string) => {
