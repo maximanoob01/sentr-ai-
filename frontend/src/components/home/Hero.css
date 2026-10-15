@@ -87,19 +87,19 @@
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  color: #ffffff;
+  color: #0f172a;
   margin-bottom: var(--space-4);
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  text-shadow: none;
   white-space: normal;
 }
 
 .hero__sub-new {
   font-size: clamp(1rem, 1.5vw, 1.25rem);
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(15, 23, 42, 0.7);
   line-height: 1.6;
   max-width: 700px;
   margin-bottom: var(--space-8);
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  text-shadow: none;
 }
 
 /* ---- Slide label pill ---- */
@@ -149,14 +149,14 @@
   height: 8px;
   border-radius: 50%;
   border: none;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.25);
   cursor: pointer;
   padding: 0;
   transition: background 0.3s ease, transform 0.3s ease, width 0.3s ease;
 }
 
 .hero__dot--active {
-  background: rgba(0, 196, 161, 0.9);
+  background: #0f172a;
   width: 24px;
   border-radius: 4px;
   transform: none;
@@ -265,4 +265,56 @@
     width: 100%;
     justify-content: center;
   }
+}
+
+/* ---- CTA Buttons ---- */
+.hero__cta-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero__btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  background: #2563eb;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+}
+
+.hero__btn-primary:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+}
+
+.hero__btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  background: transparent;
+  color: #0f172a;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1.5px solid rgba(15, 23, 42, 0.35);
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.hero__btn-outline:hover {
+  background: rgba(15, 23, 42, 0.07);
+  border-color: rgba(15, 23, 42, 0.6);
+  transform: translateY(-2px);
 }

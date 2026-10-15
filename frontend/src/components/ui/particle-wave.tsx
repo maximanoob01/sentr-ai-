@@ -35,7 +35,7 @@ const ParticleWave: React.FC<ParticleWaveProps> = ({ className = '' }) => {
   const particleFragment = `
     uniform vec3 uColor;
     void main() {
-      gl_FragColor = vec4(uColor, 0.4);
+      gl_FragColor = vec4(uColor, 1.0);
     }
   `;
 
@@ -93,7 +93,7 @@ const ParticleWave: React.FC<ParticleWaveProps> = ({ className = '' }) => {
       fragmentShader: particleFragment,
       uniforms: {
         uTime: { value: 0 },
-        uColor: { value: new THREE.Vector3(1.0, 1.0, 1.0) }, // white particles
+        uColor: { value: new THREE.Vector3(0.0, 0.0, 0.0) }, // black particles
       }
     });
 

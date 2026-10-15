@@ -328,20 +328,19 @@ export const CloudSolutionsPage: React.FC = () => {
           <div className="cs-hero__inner" style={{ gridTemplateColumns: '1fr', maxWidth: '780px', margin: '0 auto', textAlign: 'center' }}>
             {/* Content */}
             <div className="cs-hero__content">
-              <div className="cs-eyebrow fade-in-up" style={{ justifyContent: 'center' }}>Cloud Solutions</div>
               <h1 className="cs-hero__headline fade-in-up" style={{ transitionDelay: '0.1s' }}>
-                Cloud Infrastructure{' '}
+                Modern Cloud Infrastructure.{' '}
                 <span className="cs-hero__headline-accent">Built Around Your Business</span>
               </h1>
 
               <div className="cs-hero__actions fade-in-up" style={{ transitionDelay: '0.2s', justifyContent: 'center' }}>
-                <Link to="/company/contact" className="cs-btn-primary">
-                  Talk to a Cloud Expert
+                <Link to="/products/indri" className="cs-btn-primary">
+                  Explore Aindri
                   <IconArrow />
                 </Link>
-                <a href="#services" className="cs-btn-outline">
-                  Explore Cloud Services
-                </a>
+                <Link to="/solutions/intelligent-monitoring" className="cs-btn-outline">
+                  Explore Our Solutions
+                </Link>
               </div>
             </div>
           </div>
@@ -415,7 +414,7 @@ export const CloudSolutionsPage: React.FC = () => {
                     ))}
                   </div>
                 ) : p.midImg ? (
-                  <img src={p.midImg as string} alt="" style={{ width: '80%', height: 'auto', margin: '0 auto 1.5rem', borderRadius: '8px', objectFit: 'contain' }} />
+                  <img src={p.midImg as unknown as string} alt="" style={{ width: '80%', height: 'auto', margin: '0 auto 1.5rem', borderRadius: '8px', objectFit: 'contain' }} />
                 ) : null}
                 <div className="cs-platform-card__caps" aria-label="Platform capabilities">
                   {p.caps.map((cap) => (

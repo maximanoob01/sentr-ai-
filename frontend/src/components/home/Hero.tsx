@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Hero.css';
-import oceanBg from '../../assets/bob.png';
+import newBg from '../../assets/newbg.png';
 import { ParticleWave } from '../ui/particle-wave';
 
 const SLIDES = [
@@ -74,15 +75,15 @@ export const Hero: React.FC = () => {
         className="hero__bg"
         aria-hidden="true"
         style={{
-          backgroundImage: `url(${oceanBg})`,
+          backgroundImage: `url(${newBg})`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center 20%',
+          backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
         }}
       >
         <div
           className="hero__bg-overlay"
-          style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(8, 11, 18, 0.5)' }}
+          style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(255,255,255,0)' }}
         />
         <ParticleWave />
         <div className="hero__glow hero__glow--1" />
@@ -110,13 +111,21 @@ export const Hero: React.FC = () => {
           </div>
 
           <div className={`hero__slide-wrap${animating ? ' hero__slide-wrap--out' : ' hero__slide-wrap--in'}`}>
-            <span className="hero__label">{slide.label}</span>
             <h1 className="hero__headline-new">
               {slide.headline}
             </h1>
             <p className="hero__sub-new">
               {slide.sub}
             </p>
+            <div className="hero__cta-row">
+              <Link to="/products/indri" className="hero__btn-primary">
+                Explore Aindri
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </Link>
+              <Link to="/solutions/intelligent-monitoring" className="hero__btn-outline">
+                Explore Our Solutions
+              </Link>
+            </div>
           </div>
         </div>
       </div>

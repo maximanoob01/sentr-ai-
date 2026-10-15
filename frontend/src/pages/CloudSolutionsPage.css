@@ -100,7 +100,6 @@
   align-items: center;
 }
 
-.cs-hero__content {}
 
 .cs-hero__headline {
   font-size: clamp(2.2rem, 4.5vw, 3.75rem);
