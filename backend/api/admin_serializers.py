@@ -5,6 +5,13 @@ from .admin_models import (
     ApplicationNote, ApplicationStatusHistory, PageContent, FAQ,
     Testimonial, SiteSettings, SEO, ActivityLog
 )
+from .models import DemoRequest
+
+class DemoRequestAdminSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = DemoRequest
+        fields = '__all__'
+
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:

@@ -6,6 +6,8 @@ from .models import DemoRequest, ContactInquiry
 
 
 class DemoRequestSerializer(serializers.ModelSerializer):
+    industry = serializers.CharField(required=False, default='other')
+
     class Meta:
         model = DemoRequest
         fields = ['full_name', 'company', 'email', 'phone', 'industry', 'requirement']
@@ -14,7 +16,7 @@ class DemoRequestSerializer(serializers.ModelSerializer):
             'company': {'required': True},
             'email': {'required': True},
             'phone': {'required': True},
-            'industry': {'required': True},
+            'industry': {'required': False},
             'requirement': {'required': False},
         }
 

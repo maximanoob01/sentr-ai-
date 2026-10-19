@@ -1,25 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import './Testimonials.css';
 import manImg from '../../assets/blogs/man.png';
+import person1 from '../../assets/people/1.png';
+import person2 from '../../assets/people/2.png';
+import person4 from '../../assets/people/4.png';
 
 const testimonials = [
   {
     id: 1,
     quote: "“Sentr AI understood our operational requirements and helped us build a technology environment that is more reliable, secure, and easier to manage. Their team has been responsive throughout the engagement.”",
     name: "Rahul Mehta",
-    title: "Head of Operations · Manufacturing"
+    title: "Head of Operations · Manufacturing",
+    avatar: person1
   },
   {
     id: 2,
     quote: "“What stood out was their proactive approach. Instead of simply responding to issues, the team worked with us to identify potential gaps and improve our overall IT infrastructure.”",
     name: "Ankit Sharma",
-    title: "IT Director · Enterprise Services"
+    title: "IT Director · Enterprise Services",
+    avatar: person2
   },
   {
     id: 3,
     quote: "“Sentr AI brought together infrastructure, security, and managed services under one team. This made it much easier for us to manage our technology requirements.”",
     name: "Priya Nair",
-    title: "Technology & Digital Transformation Lead · Logistics"
+    title: "Technology & Digital Transformation Lead · Logistics",
+    avatar: person4
   }
 ];
 
@@ -83,14 +89,19 @@ export const Testimonials: React.FC = () => {
               </div>
             </div>
             
-            {/* Thumbnails placeholder for future if needed */}
-            <div className="testimonials__thumbnails">
+            {/* Client avatar dots */}
+            <div className="testimonials__thumbnails" role="tablist" aria-label="Select testimonial">
               {testimonials.map((t, index) => (
-                <div 
+                <button 
                   key={t.id} 
+                  type="button"
                   className={`testimonials__thumb ${index === activeIndex ? 'active' : ''}`}
                   onClick={() => setActiveIndex(index)}
-                />
+                  aria-label={`View testimonial from ${t.name}`}
+                  aria-selected={index === activeIndex}
+                >
+                  <img src={t.avatar} alt={t.name} className="testimonials__thumb-img" />
+                </button>
               ))}
             </div>
           </div>

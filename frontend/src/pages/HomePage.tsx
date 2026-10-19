@@ -2,9 +2,9 @@ import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Hero } from '../components/home/Hero';
 import { TechStrip } from '../components/home/TechStrip';
-import { IndriIntro } from '../components/home/IndriIntro';
+import { AindriIntro } from '../components/home/AindriIntro';
 import { MagazineFeature } from '../components/home/MagazineFeature';
-import { HowIndriWorks } from '../components/home/HowIndriWorks';
+import { HowAindriWorks } from '../components/home/HowAindriWorks';
 import { SecondaryServices } from '../components/home/SecondaryServices';
 import { FinalCTA } from '../components/home/FinalCTA';
 import { BlogSection } from '../components/home/BlogSection';
@@ -14,7 +14,6 @@ import './HomePage.css';
 
 import whyImg1 from '../assets/why us/1.png';
 import whyImg2 from '../assets/why us/2.png';
-import whyImg3 from '../assets/why us/3.png';
 import whyImg4 from '../assets/why us/4.png';
 import whyImg5 from '../assets/why us/5.png';
 
@@ -56,14 +55,6 @@ const WhySentrAI: React.FC = () => {
     },
     {
       num: '03',
-      tag: 'Planning',
-      title: 'Proactive Planning',
-      desc: 'We identify potential risks, technology gaps, and operational challenges before they become major problems. Our approach focuses on long-term stability, scalability, and business continuity.',
-      image: whyImg3,
-      color: '#f59e0b' // amber
-    },
-    {
-      num: '04',
       tag: 'Security',
       title: '24/7 Cybersecurity Monitoring',
       desc: 'Protect your digital environment with continuous security monitoring, threat detection, and timely response designed to help reduce exposure to evolving cyber risks.',
@@ -71,7 +62,7 @@ const WhySentrAI: React.FC = () => {
       color: '#ef4444' // red
     },
     {
-      num: '05',
+      num: '04',
       tag: 'Consulting',
       title: 'vCISO Consulting',
       desc: 'Access strategic cybersecurity leadership without the cost of a full-time Chief Information Security Officer. Our vCISO consulting helps strengthen security planning, governance, risk management, and compliance readiness.',
@@ -203,9 +194,9 @@ export const HomePage: React.FC = () => {
     <main>
       <Hero />
       <TechStrip />
-      <IndriIntro />
+      <AindriIntro />
       <MagazineFeature />
-      <HowIndriWorks />
+      <HowAindriWorks />
       <MarqueeBanner />
       <WhySentrAI />
       <SecondaryServices />

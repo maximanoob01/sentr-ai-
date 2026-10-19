@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import './IndriPage.css';
+import './AindriPage.css';
 import { AindriNodeGraph } from '../components/AindriNodeGraph';
+import { AindriDemoModal } from '../components/AindriDemoModal';
 
 /* ---- FAQ ---- */
 const faqs = [
@@ -74,7 +75,6 @@ import acImg from '../assets/aindri/ac.png';
 import adImg from '../assets/aindri/ad.png';
 import aeImg from '../assets/aindri/ae.png';
 import warehouseImg from '../assets/aindri/warehouse.png';
-import axImg from '../assets/aindri/ax.png';
 import workImg from '../assets/work.png';
 
 const howWorksSteps = [
@@ -88,10 +88,11 @@ const howWorksSteps = [
 
 
 /* ============================================
-   INDRI PAGE
+   AINDRI PAGE
    ============================================ */
-export const IndriPage: React.FC = () => {
+export const AindriPage: React.FC = () => {
   const heroRef = useRef<HTMLElement>(null);
+  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -102,6 +103,27 @@ export const IndriPage: React.FC = () => {
     document.querySelectorAll('.fade-in-up').forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
+
+  // Check URL hash for #demo on load or change
+  useEffect(() => {
+    if (window.location.hash === '#demo') {
+      setIsDemoModalOpen(true);
+    }
+    const handleHashChange = () => {
+      if (window.location.hash === '#demo') {
+        setIsDemoModalOpen(true);
+      }
+    };
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  const handleCloseModal = () => {
+    setIsDemoModalOpen(false);
+    if (window.location.hash === '#demo') {
+      window.history.replaceState(null, '', window.location.pathname);
+    }
+  };
 
   return (
     <main className="indri-page">
@@ -121,7 +143,9 @@ export const IndriPage: React.FC = () => {
           </ul>
           <div className="indri-custom-nav__actions">
             <a href="mailto:info@sentrai.in" className="indri-btn-nav-outline">Contact</a>
-            <a href="#demo" className="indri-btn-nav-primary">Request a Demo &rarr;</a>
+            <button type="button" onClick={() => setIsDemoModalOpen(true)} className="indri-btn-nav-primary">
+              Request a Demo
+            </button>
           </div>
         </div>
       </nav>
@@ -143,7 +167,9 @@ export const IndriPage: React.FC = () => {
             </p>
             
             <div className="indri-hero__cta-group fade-in-up" style={{ transitionDelay: '0.3s' }}>
-              <a href="#demo" className="indri-btn-white">Request a Demo &rarr;</a>
+              <button type="button" onClick={() => setIsDemoModalOpen(true)} className="indri-btn-white">
+                Request a Demo
+              </button>
               <button className="indri-btn-play">
                 <div className="indri-play-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
@@ -162,12 +188,12 @@ export const IndriPage: React.FC = () => {
           <div className="indri-issues__header fade-in-up">
             <div className="indri-issues__header-left">
               <h2 className="indri-issues__heading">
-                Your Cameras See Everything.<br />But Who Is Watching?
+                Your Cameras Record Everything.<br />Who Is Watching?
               </h2>
             </div>
             <div className="indri-issues__header-right">
               <p className="indri-issues__subtext">
-                Traditional CCTV is excellent at recording what happened. The problem is that someone usually has to discover the incident after it has already happened.
+                Normal CCTV shows you what went wrong after the damage is done. Aindri turns your existing cameras into an AI monitor that spots problems as they happen and alerts your team right away.
               </p>
             </div>
           </div>
@@ -508,7 +534,7 @@ export const IndriPage: React.FC = () => {
 
 
               <div className="see-why__center-image fade-in-up">
-                <img src={axImg} alt="Intelligence visual" />
+                <img src={aeImg} alt="Evidence and anomaly capture visual" />
               </div>
             </div>
 
@@ -565,8 +591,10 @@ export const IndriPage: React.FC = () => {
               </div>
               
               <div className="indri-smart__actions">
-                <a href="#demo" className="indri-btn-white">Request a Demo</a>
-                <a href="/contact" className="indri-btn-outline">Explore a Custom Solution &rarr;</a>
+                <button type="button" onClick={() => setIsDemoModalOpen(true)} className="indri-btn-white">
+                  Request a Demo
+                </button>
+                <Link to="/company/contact" className="indri-btn-outline">Explore a Custom Solution &rarr;</Link>
               </div>
             </div>
           </div>
@@ -610,6 +638,12 @@ export const IndriPage: React.FC = () => {
         </div>
       </section>
 
+      {/* ======== DEMO POPUP MODAL ======== */}
+      <AindriDemoModal isOpen={isDemoModalOpen} onClose={handleCloseModal} />
+
     </main>
   );
 };
+
+export const IndriPage = AindriPage;
+

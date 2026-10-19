@@ -3,7 +3,8 @@ from rest_framework.routers import DefaultRouter
 from .admin_views import (
     MediaViewSet, BlogCategoryViewSet, BlogViewSet, JobViewSet,
     JobApplicationViewSet, PageContentViewSet, FAQViewSet, TestimonialViewSet,
-    SiteSettingsViewSet, SEOViewSet, ActivityLogViewSet, AdminDashboardStatsView
+    SiteSettingsViewSet, SEOViewSet, ActivityLogViewSet, AdminDashboardStatsView,
+    DemoRequestViewSet
 )
 
 router = DefaultRouter()
@@ -12,6 +13,7 @@ router.register(r'blog-categories', BlogCategoryViewSet)
 router.register(r'blogs', BlogViewSet)
 router.register(r'jobs', JobViewSet)
 router.register(r'applications', JobApplicationViewSet)
+router.register(r'demo-requests', DemoRequestViewSet)
 router.register(r'page-content', PageContentViewSet)
 router.register(r'faqs', FAQViewSet)
 router.register(r'testimonials', TestimonialViewSet)

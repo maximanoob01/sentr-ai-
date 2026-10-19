@@ -4,7 +4,10 @@ import './SecondaryServices.css';
 
 // Import images
 import bgImage from '../../assets/why us/ee.png';
-import fgImage from '../../assets/indri.png';
+import fgImage from '../../assets/aindri.png';
+import person1 from '../../assets/people/1.png';
+import person2 from '../../assets/people/2.png';
+import person3 from '../../assets/people/3.png';
 
 export const SecondaryServices: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -58,6 +61,19 @@ export const SecondaryServices: React.FC = () => {
                 Find out more
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
               </Link>
+
+              <div className="secondary-services__trusted-badge">
+                <div className="secondary-services__trusted-avatars">
+                  <img src={person1} alt="Client 1" className="secondary-services__trusted-avatar" />
+                  <img src={person2} alt="Client 2" className="secondary-services__trusted-avatar" />
+                  <img src={person3} alt="Client 3" className="secondary-services__trusted-avatar" />
+                </div>
+                <div className="secondary-services__trusted-text">
+                  <span className="secondary-services__trusted-highlight">100+</span> Enterprises who have
+                  <br />
+                  trusted Sentr AI
+                </div>
+              </div>
             </div>
           </div>
         </div>

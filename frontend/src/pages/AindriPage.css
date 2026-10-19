@@ -1,5 +1,5 @@
 /* ============================================
-   Indri Product Page Styles
+   Aindri Product Page Styles
    ============================================ */
 
 /* ======== AINDRI NODE GRAPH ======== */
@@ -1402,15 +1402,17 @@
 
 .see-why__layout {
   display: flex;
-  gap: 2rem;
-  align-items: stretch;
+  gap: 2.5rem;
+  align-items: center;
 }
 
 .see-why__left-col {
-  flex: 0 0 400px;
+  flex: 0 0 320px;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .see-why__main-card {
@@ -1430,13 +1432,23 @@
 .see-why__center-image {
   display: flex;
   justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .see-why__center-image img {
-  max-width: 100%;
+  max-width: 280px;
+  width: 100%;
   height: auto;
-  border-radius: 16px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.see-why__center-image img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.12);
 }
 
 .see-why__main-card::before {
@@ -1506,7 +1518,7 @@
   display: flex;
   align-items: center;
   padding: 1rem 0;
-  margin-top: 2.5rem;
+  margin-top: 0;
 }
 
 .see-why__marquee {
@@ -1803,6 +1815,12 @@
   font-size: 1rem;
   transition: transform 0.2s, box-shadow 0.2s;
   text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .indri-smart__actions .indri-btn-white:hover {
@@ -2282,6 +2300,12 @@
   text-decoration: none;
   transition: background 0.2s;
   box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .indri-btn-nav-primary:hover {
   background: #1d4ed8;
@@ -2351,6 +2375,12 @@
   text-decoration: none;
   transition: all 0.2s;
   box-shadow: 0 4px 15px rgba(30, 58, 138, 0.2);
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .indri-btn-white:hover {
   transform: translateY(-2px);

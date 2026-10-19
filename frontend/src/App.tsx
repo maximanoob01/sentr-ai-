@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
-import { BrowserRouter, Routes, Route, useLocation, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation, Link, Navigate } from 'react-router-dom';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { HomePage } from './pages/HomePage';
-import { IndriPage } from './pages/IndriPage';
+import { AindriPage } from './pages/AindriPage';
 import { AboutPage } from './pages/AboutPage';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { TermsPage } from './pages/TermsPage';
@@ -244,7 +244,7 @@ const ContactPage: React.FC = () => {
             <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.7, marginBottom: '2rem' }}>
               The feature highlights Sentr AI's work across intelligent monitoring, cybersecurity, enterprise IT, cloud and managed services.
             </p>
-            <a href="#" className="btn btn-primary btn-lg" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', backgroundColor: '#2563eb', color: '#ffffff', borderColor: '#2563eb', padding: '1rem 2rem', fontSize: '1.1rem', fontWeight: 600 }}>
+            <a href="#" className="btn btn-primary btn-lg" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', backgroundColor: '#2563eb', color: '#ffffff', borderColor: '#2563eb', padding: '0.85rem 2.25rem', borderRadius: '9999px', fontSize: '1.05rem', fontWeight: 600 }}>
               Read the Feature 
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
             </a>
@@ -367,6 +367,11 @@ const ContactPage: React.FC = () => {
   );
 };
 
+const IndriRedirect: React.FC = () => {
+  const location = useLocation();
+  return <Navigate to={`/products/aindri${location.hash || ''}`} replace />;
+};
+
 // Inner app that has access to router context for hooks
 const AppInner: React.FC = () => {
   const location = useLocation();
@@ -381,12 +386,14 @@ const AppInner: React.FC = () => {
 
   return (
     <>
-      {!location.pathname.startsWith('/admin') && location.pathname !== '/products/indri' && <Navbar />}
+      {!location.pathname.startsWith('/admin') && location.pathname !== '/products/indri' && location.pathname !== '/products/aindri' && <Navbar />}
       <Routes>
         <Route path="/admin/*" element={<AdminApp />} />
         <Route path="/" element={<HomePage />} />
-        <Route path="/products/indri" element={<IndriPage />} />
+        <Route path="/products/indri" element={<IndriRedirect />} />
+        <Route path="/products/aindri" element={<AindriPage />} />
         <Route path="/company/contact" element={<ContactPage />} />
+        <Route path="/contact" element={<Navigate to="/company/contact" replace />} />
         <Route path="/solutions" element={<PlaceholderPage title="Solutions" />} />
         <Route path="/solutions/:slug" element={<PlaceholderPage title="Solution Detail" />} />
         <Route path="/products" element={<PlaceholderPage title="Products" />} />

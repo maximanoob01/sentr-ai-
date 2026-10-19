@@ -15,6 +15,7 @@ export const AdminLayout: React.FC = () => {
 
   const menuItems = [
     { label: 'Dashboard', path: '/admin/dashboard', icon: '📊' },
+    { label: 'Demo Requests', path: '/admin/demo-requests', icon: '🎯' },
     { label: 'Content', path: '/admin/content', icon: '📝' },
     { label: 'Blogs', path: '/admin/blogs', icon: '✍️' },
     { label: 'Careers', path: '/admin/careers', icon: '💼' },

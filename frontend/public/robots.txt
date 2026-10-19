@@ -1,0 +1,19 @@
+# robots.txt for Sentr AI (https://sentrai.in)
+
+User-agent: *
+Allow: /
+
+# Disallow admin portal & internal API routes
+Disallow: /admin/
+Disallow: /admin/*
+Disallow: /api/
+Disallow: /api/*
+
+# Crawl Delay
+Crawl-delay: 1
+
+# Host
+Host: https://sentrai.in
+
+# Sitemap
+Sitemap: https://sentrai.in/sitemap.xml

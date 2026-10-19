@@ -175,15 +175,7 @@ const platforms = [
   },
 ];
 
-// securityCards removed
-
-const whyCards = [
-  { icon: <IconCompass />, title: 'Business-Focused Approach', desc: 'We start with your business and technology requirements rather than forcing a predefined architecture.' },
-  { icon: <IconServer />, title: 'Cross-Technology Expertise', desc: 'Cloud works alongside cybersecurity, enterprise IT, infrastructure and intelligent technologies.' },
-  { icon: <IconShield />, title: 'Security-Conscious Approach', desc: 'Security considerations are included throughout cloud planning and implementation.' },
-  { icon: <IconCloud />, title: 'Scalable Architecture', desc: 'Design environments that can evolve as your business grows and requirements change.' },
-  { icon: <IconMonitor />, title: 'Ongoing Support', desc: 'Support can extend beyond implementation into monitoring, management and optimization depending on the engagement.' },
-];
+// securityCards & whyPoints removed
 
 const industries = [
   { img: ind1, title: 'Manufacturing', desc: 'Support modern manufacturing environments with scalable infrastructure, connected systems and intelligent technology.' },
@@ -325,18 +317,17 @@ export const CloudSolutionsPage: React.FC = () => {
         <div className="cs-hero__glow-2" aria-hidden="true" />
 
         <div className="cs-container">
-          <div className="cs-hero__inner" style={{ gridTemplateColumns: '1fr', maxWidth: '780px', margin: '0 auto', textAlign: 'center' }}>
+          <div className="cs-hero__inner" style={{ gridTemplateColumns: '1fr', maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
             {/* Content */}
             <div className="cs-hero__content">
               <h1 className="cs-hero__headline fade-in-up" style={{ transitionDelay: '0.1s' }}>
-                Modern Cloud Infrastructure.{' '}
+                <span className="cs-hero__headline-main">Modern Cloud Infrastructure.</span>
                 <span className="cs-hero__headline-accent">Built Around Your Business</span>
               </h1>
 
               <div className="cs-hero__actions fade-in-up" style={{ transitionDelay: '0.2s', justifyContent: 'center' }}>
-                <Link to="/products/indri" className="cs-btn-primary">
+                <Link to="/products/aindri" className="cs-btn-primary">
                   Explore Aindri
-                  <IconArrow />
                 </Link>
                 <Link to="/solutions/intelligent-monitoring" className="cs-btn-outline">
                   Explore Our Solutions
@@ -586,7 +577,6 @@ export const CloudSolutionsPage: React.FC = () => {
       <section className="cs-journey" aria-labelledby="journey-heading">
         <div className="cs-container">
           <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 4rem' }}>
-            <div className="cs-eyebrow fade-in-up" style={{ color: '#2563eb', justifyContent: 'center', background: '#eff6ff', padding: '0.4rem 1rem', borderRadius: '999px', display: 'inline-flex', fontSize: '0.75rem', letterSpacing: '0.1em' }}>OUR APPROACH</div>
             <h2 id="journey-heading" className="cs-journey__heading fade-in-up">
               From Cloud Planning to <span style={{ color: '#2563eb' }}>Continuous Improvement</span>
             </h2>
@@ -623,16 +613,17 @@ export const CloudSolutionsPage: React.FC = () => {
       >
         <div className="cs-why__overlay"></div>
         <div className="cs-container" style={{ position: 'relative', zIndex: 1 }}>
-          <div className="cs-eyebrow fade-in-up" style={{ color: '#2563eb' }}>Why Sentr AI</div>
-          <h2 id="why-heading" className="cs-section-heading fade-in-up">Why Work With Sentr AI?</h2>
-          <div className="cs-why__grid">
-            {whyCards.map((card, i) => (
-              <div key={card.title} className="cs-why-card fade-in-up" style={{ transitionDelay: `${i * 0.07}s` }}>
-                <div className="cs-why-card__icon" aria-hidden="true">{card.icon}</div>
-                <div className="cs-why-card__title">{card.title}</div>
-                <div className="cs-why-card__desc">{card.desc}</div>
-              </div>
-            ))}
+          <div className="cs-why__layout">
+            <div className="cs-why__header fade-in-up">
+              <div className="cs-eyebrow" style={{ color: '#2563eb' }}>Why Sentr AI</div>
+              <h2 id="why-heading" className="cs-section-heading">Why Work With Sentr AI?</h2>
+            </div>
+
+            <div className="cs-why__body fade-in-up" style={{ transitionDelay: '0.1s' }}>
+              <p className="cs-why__text">
+                We start with your business and technology needs, not a fixed architecture. Cloud work sits alongside cybersecurity, enterprise IT, infrastructure and intelligent technologies, so nothing is planned in isolation. Security is part of every stage, from planning to implementation. We design environments that can grow and change as your business does. And depending on the engagement, our support can continue after launch into monitoring, management and optimization.
+              </p>
+            </div>
           </div>
         </div>
       </section>

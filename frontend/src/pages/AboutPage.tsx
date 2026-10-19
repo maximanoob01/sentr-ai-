@@ -27,14 +27,14 @@ export const AboutPage: React.FC = () => {
     <main style={{ minHeight: '100vh', background: 'var(--bg-base)' }}>
       {/* Hero Section */}
       <section style={{ 
-        paddingTop: 'calc(var(--nav-height) + 4rem)', 
-        paddingBottom: '8rem', 
+        paddingTop: 'calc(var(--nav-height) + 3.25rem)', 
+        paddingBottom: '3.75rem', 
         position: 'relative',
         overflow: 'hidden',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        minHeight: '60vh'
+        minHeight: '44vh'
       }}>
         {/* Background Image with Overlay */}
         <div style={{
@@ -53,27 +53,27 @@ export const AboutPage: React.FC = () => {
         }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-          <div className="fade-in-up" style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <div className="fade-in-up" style={{ maxWidth: '800px', margin: '0 auto' }}>
             <h2 style={{ 
               color: '#ffffff', 
-              fontSize: 'clamp(2.5rem, 6vw, 4rem)', 
-              fontWeight: 700, 
-              textTransform: 'uppercase', 
-              letterSpacing: '0.15em',
-              marginBottom: '1.5rem'
+              fontSize: 'clamp(2rem, 5vw, 3.5rem)', 
+              fontWeight: 800, 
+              letterSpacing: '-0.03em',
+              lineHeight: 1.1,
+              marginBottom: '1rem'
             }}>
               About Sentr AI
             </h2>
             <h1 style={{ 
-              fontSize: 'clamp(1.5rem, 3.5vw, 2.5rem)', 
-              fontWeight: 800, 
-              color: '#ffffff', 
-              letterSpacing: '-0.02em', 
-              lineHeight: 1.2,
+              fontSize: 'clamp(1.05rem, 2vw, 1.25rem)', 
+              fontWeight: 500, 
+              color: 'rgba(255, 255, 255, 0.9)', 
+              letterSpacing: '-0.01em', 
+              lineHeight: 1.4,
               margin: 0
             }}>
               Building Intelligent Technology for a <br />
-              <span style={{ color: '#3b82f6' }}>More Secure Future</span>
+              <span style={{ color: '#60a5fa', fontWeight: 600 }}>More Secure Future</span>
             </h1>
           </div>
         </div>

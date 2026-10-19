@@ -40,7 +40,7 @@ export const FinalCTA: React.FC = () => {
               </p>
 
             <div className="final-cta__actions">
-              <Link to="/products/indri#demo" className="btn btn-primary btn-lg btn-arrow">
+              <Link to="/products/aindri#demo" className="btn btn-primary btn-lg btn-arrow">
                 Request an Aindri Demo
               </Link>
               <Link to="/company/contact" className="btn btn-secondary btn-lg">

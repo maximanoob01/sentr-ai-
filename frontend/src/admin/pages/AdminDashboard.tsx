@@ -7,9 +7,12 @@ export const AdminDashboard: React.FC = () => {
     published_blogs: 0,
     open_positions: 0,
     new_applications: 0,
+    total_demo_requests: 0,
+    new_demo_requests: 0,
     recent_applications: [] as any[],
     recent_blogs: [] as any[],
-    recent_activity: [] as any[]
+    recent_activity: [] as any[],
+    recent_demo_requests: [] as any[]
   });
   const [loading, setLoading] = useState(true);
 
@@ -34,6 +37,7 @@ export const AdminDashboard: React.FC = () => {
           <p style={{ color: '#64748b' }}>Welcome back. Here's what's happening today.</p>
         </div>
         <div style={{ display: 'flex', gap: '0.75rem' }}>
+          <Link to="/admin/demo-requests" className="admin-btn-primary" style={{ background: '#0f172a' }}>🎯 View Demos</Link>
           <Link to="/admin/blogs/new" className="admin-btn-primary">+ New Blog</Link>
           <Link to="/admin/careers/new" className="admin-btn-outline">+ Add Job</Link>
         </div>
@@ -41,6 +45,17 @@ export const AdminDashboard: React.FC = () => {
 
       {/* Summary Cards */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem', marginBottom: '2.5rem' }}>
+        <Link to="/admin/demo-requests" style={{ textDecoration: 'none' }}>
+          <div className="admin-stat-card" style={{ borderLeft: '4px solid #2563eb' }}>
+            <div className="stat-label">Demo Requests</div>
+            <div className="stat-value" style={{ color: '#2563eb' }}>
+              {loading ? '...' : stats.total_demo_requests || 0}
+            </div>
+            <div style={{ fontSize: '0.75rem', color: '#64748b', marginTop: '0.35rem' }}>
+              {stats.new_demo_requests || 0} pending follow-up
+            </div>
+          </div>
+        </Link>
         <div className="admin-stat-card">
           <div className="stat-label">Total Blogs</div>
           <div className="stat-value">{loading ? '...' : stats.total_blogs}</div>
@@ -62,6 +77,45 @@ export const AdminDashboard: React.FC = () => {
       {/* Tables Grid */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '2rem' }}>
         
+        {/* Recent Demo Requests */}
+        <section className="admin-panel" style={{ borderTop: '3px solid #2563eb' }}>
+          <div className="admin-panel-header">
+            <h3>Recent Demo Inquiries</h3>
+            <Link to="/admin/demo-requests">View All</Link>
+          </div>
+          <div className="admin-table-container">
+            <table className="admin-table">
+              <thead>
+                <tr>
+                  <th>Contact</th>
+                  <th>Company</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {(!stats.recent_demo_requests || stats.recent_demo_requests.length === 0) ? (
+                  <tr><td colSpan={3} style={{ textAlign: 'center', color: '#64748b' }}>No recent demo requests</td></tr>
+                ) : (
+                  stats.recent_demo_requests.map((demo: any) => (
+                    <tr key={demo.id}>
+                      <td>
+                        <strong>{demo.full_name}</strong><br />
+                        <span style={{ fontSize: '0.8rem', color: '#64748b' }}>{demo.phone}</span>
+                      </td>
+                      <td>{demo.company}</td>
+                      <td>
+                        <span className="admin-badge" style={{ background: demo.is_contacted ? '#dcfce7' : '#fef3c7', color: demo.is_contacted ? '#166534' : '#92400e' }}>
+                          {demo.is_contacted ? 'Contacted' : 'Pending'}
+                        </span>
+                      </td>
+                    </tr>
+                  ))
+                )}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
         {/* Recent Applications */}
         <section className="admin-panel">
           <div className="admin-panel-header">

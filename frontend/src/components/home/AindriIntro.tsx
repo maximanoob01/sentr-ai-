@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import './IndriIntro.css';
+import './AindriIntro.css';
 import indriiBg from '../../assets/cctv.png';
 import aindriLogo from '../../assets/aindrii.png';
 
-export const IndriIntro: React.FC = () => {
+export const AindriIntro: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -50,7 +50,7 @@ export const IndriIntro: React.FC = () => {
             <strong>Aindri</strong> transforms ordinary security cameras into a real-time operational intelligence system for factories and warehouses.
           </p>
           <div className="aindri-hero__actions">
-            <Link to="/products/indri" className="aindri-hero__btn aindri-hero__btn--primary">
+            <Link to="/products/aindri" className="aindri-hero__btn aindri-hero__btn--primary">
               Get Started
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -73,3 +73,6 @@ export const IndriIntro: React.FC = () => {
     </section>
   );
 };
+
+export const IndriIntro = AindriIntro;
+

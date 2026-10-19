@@ -1,40 +1,18 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from 'react';
 import './MagazineFeature.css';
-import workImg from '../../assets/work.png';
+import magzineImg from '../../assets/magzine.png';
+import certificateImg from '../../assets/certificate.png';
 import siliconLogo from '../../assets/alliance logo/silicon.png';
 
-const AnimatedNumber: React.FC<{ target: number; suffix?: string; isVisible: boolean }> = ({ target, suffix = '', isVisible }) => {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (!isVisible) return;
-    
-    let startTimestamp: number | null = null;
-    const duration = 2000;
-
-    const step = (timestamp: number) => {
-      if (!startTimestamp) startTimestamp = timestamp;
-      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-      
-      const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-      
-      setCount(Math.floor(easeProgress * target));
-      
-      if (progress < 1) {
-        window.requestAnimationFrame(step);
-      }
-    };
-    
-    window.requestAnimationFrame(step);
-  }, [target, isVisible]);
-
-  return <>{count.toLocaleString('en-IN')}{suffix}</>;
-};
+interface ModalImageState {
+  src: string;
+  alt: string;
+  title: string;
+}
 
 export const MagazineFeature: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const [isStatsVisible, setIsStatsVisible] = useState(false);
+  const [modalData, setModalData] = useState<ModalImageState | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -42,9 +20,6 @@ export const MagazineFeature: React.FC = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            if (entry.target.classList.contains('magazine-feature__bottom')) {
-              setIsStatsVisible(true);
-            }
           }
         });
       },
@@ -54,6 +29,27 @@ export const MagazineFeature: React.FC = () => {
     elements?.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
+
+  // Lock body scroll and listen for Escape key when modal is open
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && modalData) {
+        setModalData(null);
+      }
+    };
+
+    if (modalData) {
+      document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleKeyDown);
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [modalData]);
 
   return (
     <section className="magazine-feature" ref={sectionRef}>
@@ -81,23 +77,52 @@ export const MagazineFeature: React.FC = () => {
             </p>
             <div className="magazine-feature__divider"></div>
             <div className="magazine-feature__btn-wrapper">
-              <Link to="/contact" className="magazine-feature__btn">
-                Explore the Feature <span>→</span>
-              </Link>
+              <div className="magazine-feature__btn-group">
+                <button
+                  type="button"
+                  className="magazine-feature__btn magazine-feature__btn--primary"
+                  onClick={() => setModalData({
+                    src: magzineImg,
+                    alt: 'SiliconIndia Magazine Feature - Sentr AI',
+                    title: 'SiliconIndia Magazine Feature'
+                  })}
+                >
+                  Read More
+                </button>
+                <button
+                  type="button"
+                  className="magazine-feature__btn magazine-feature__btn--secondary"
+                  onClick={() => setModalData({
+                    src: certificateImg,
+                    alt: 'Certificate of Recognition - Sentr AI',
+                    title: 'Certificate of Recognition'
+                  })}
+                >
+                  View Certificate
+                </button>
+              </div>
             </div>
           </div>
 
           {/* Right Image Column */}
           <div className="magazine-feature__image-col fade-in-up" style={{ transitionDelay: '0.2s' }}>
-            <div className="magazine-feature__image-wrapper">
-              <img src={workImg} alt="Sentr AI Team" className="magazine-feature__image" />
-              
-              <div className="magazine-feature__overlay-logo-wrapper">
-                <img src={siliconLogo} alt="SiliconIndia" className="magazine-feature__overlay-logo" />
-              </div>
+            <div
+              className="magazine-feature__image-wrapper"
+              onClick={() => setModalData({
+                src: magzineImg,
+                alt: 'SiliconIndia Magazine Feature - Sentr AI',
+                title: 'SiliconIndia Magazine Feature'
+              })}
+              style={{ cursor: 'pointer' }}
+              title="Click to view full feature"
+            >
+              <img src={magzineImg} alt="SiliconIndia Magazine Feature" className="magazine-feature__image" />
 
               <div className="magazine-feature__floating-card">
-                <h3 className="magazine-feature__card-title">The Feature Highlights</h3>
+                <div className="magazine-feature__card-header">
+                  <h3 className="magazine-feature__card-title">The Feature Highlights</h3>
+                  <img src={siliconLogo} alt="SiliconIndia" className="magazine-feature__card-logo" />
+                </div>
                 <ul className="magazine-feature__card-list">
                   <li>Sentr AI’s journey, vision, and evolution</li>
                   <li>Intelligent monitoring and proactive threat detection</li>
@@ -110,6 +135,36 @@ export const MagazineFeature: React.FC = () => {
         </div>
 
       </div>
+
+      {/* Lightbox Pop-up Modal */}
+      {modalData && (
+        <div
+          className="magazine-modal-overlay"
+          onClick={() => setModalData(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label={modalData.title}
+        >
+          <div
+            className="magazine-modal-container"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              className="magazine-modal-close"
+              onClick={() => setModalData(null)}
+              aria-label="Close popup"
+            >
+              ✕
+            </button>
+            <img
+              src={modalData.src}
+              alt={modalData.alt}
+              className="magazine-modal-img"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 };

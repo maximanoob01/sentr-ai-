@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import './HowIndriWorks.css';
+import './HowAindriWorks.css';
 import workBg from '../../assets/work.png';
 
 const steps = [
@@ -54,7 +54,7 @@ const steps = [
   },
 ];
 
-export const HowIndriWorks: React.FC = () => {
+export const HowAindriWorks: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -89,7 +89,7 @@ export const HowIndriWorks: React.FC = () => {
             <p className="how-works__desc">
               Aindri creates a continuous intelligence loop — connecting your operations, analysing what matters and surfacing the insights your team needs to act.
             </p>
-            <Link to="/products/indri" className="how-works__btn">
+            <Link to="/products/aindri" className="how-works__btn">
               More Features
             </Link>
           </div>
@@ -120,3 +120,6 @@ export const HowIndriWorks: React.FC = () => {
     </section>
   );
 };
+
+export const HowIndriWorks = HowAindriWorks;
+

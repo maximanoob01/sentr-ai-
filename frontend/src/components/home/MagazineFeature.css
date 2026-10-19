@@ -103,31 +103,56 @@
   pointer-events: none;
 }
 
+.magazine-feature__btn-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
 .magazine-feature__btn {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-size: 1.15rem;
+  justify-content: center;
+  font-size: 1.05rem;
   font-weight: 700;
+  text-decoration: none;
+  padding: 13px 26px;
+  border-radius: 999px; /* Pill shape */
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.25s ease;
+}
+
+.magazine-feature__btn--primary {
   color: #ffffff;
   background: #2563eb;
-  text-decoration: none;
-  padding: 14px 28px;
-  border-radius: 999px; /* Pill shape */
-  transition: all 0.3s ease;
+  border-color: #2563eb;
   box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
 }
 
-.magazine-feature__btn span {
-  transition: transform 0.3s ease;
+.magazine-feature__btn--primary:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.45);
 }
 
-.magazine-feature__btn:hover {
-  color: #1d4ed8;
+.magazine-feature__btn--secondary {
+  color: #0f172a;
+  background: #ffffff;
+  border-color: #cbd5e1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-.magazine-feature__btn:hover span {
-  transform: translateX(4px);
+.magazine-feature__btn--secondary:hover {
+  background: #f8fafc;
+  border-color: #2563eb;
+  color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.18);
 }
 
 /* Right Image Column */
@@ -180,11 +205,27 @@
   z-index: 2;
 }
 
+.magazine-feature__card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
 .magazine-feature__card-title {
   font-size: 1.1rem;
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 0;
   color: #0f172a;
+}
+
+.magazine-feature__card-logo {
+  height: 22px;
+  max-width: 110px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .magazine-feature__card-list {
@@ -238,5 +279,115 @@
     max-width: 100%;
     margin-top: -16px;
     border-radius: 0 0 8px 8px;
+  }
+}
+
+/* ============================================
+   Magazine Feature Lightbox Modal
+   ============================================ */
+
+.magazine-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+  animation: magFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes magFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.magazine-modal-container {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: magScaleUp 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes magScaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.magazine-modal-close {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  font-weight: 700;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.magazine-modal-close:hover {
+  background: #f1f5f9;
+  color: #ef4444;
+  transform: scale(1.1);
+}
+
+.magazine-modal-img {
+  max-width: 100%;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7);
+  background: #ffffff;
+}
+
+@media (max-width: 640px) {
+  .magazine-modal-overlay {
+    padding: 16px 12px;
+  }
+
+  .magazine-modal-container {
+    max-width: 96vw;
+    max-height: 92vh;
+  }
+
+  .magazine-modal-close {
+    top: 8px;
+    right: 8px;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  .magazine-modal-img {
+    max-height: 80vh;
+    border-radius: 8px;
   }
 }

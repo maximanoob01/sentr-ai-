@@ -9,6 +9,7 @@ import { JobList } from './pages/JobList';
 import { JobEditor } from './pages/JobEditor';
 import { ApplicationList } from './pages/ApplicationList';
 import { ApplicationDetail } from './pages/ApplicationDetail';
+import { DemoRequestList } from './pages/DemoRequestList';
 
 // Placeholder component for unimplemented pages
 const Placeholder: React.FC<{ title: string }> = ({ title }) => (
@@ -25,6 +26,7 @@ export const AdminApp: React.FC = () => {
       <Route path="/" element={<AdminLayout />}>
         <Route index element={<Navigate to="dashboard" replace />} />
         <Route path="dashboard" element={<AdminDashboard />} />
+        <Route path="demo-requests" element={<DemoRequestList />} />
         
         {/* Module Placeholders */}
         <Route path="content" element={<Placeholder title="Page Content Management" />} />

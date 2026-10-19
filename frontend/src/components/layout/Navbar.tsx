@@ -69,7 +69,7 @@ const navItems: NavItem[] = [
       {
         title: 'PRODUCTS',
         items: [
-          { label: 'Aindri', href: '/products/indri', description: 'Intelligent Monitoring System' }
+          { label: 'Aindri', href: '/products/aindri', description: 'Intelligent Monitoring System' }
         ]
       },
       {
@@ -84,7 +84,7 @@ const navItems: NavItem[] = [
       title: 'Meet Aindri',
       description: 'The ultimate AI companion for your industrial plant operations.',
       buttonText: 'Request Demo',
-      href: '/products/indri#demo'
+      href: '/products/aindri#demo'
     }
   },
   {
@@ -204,9 +204,11 @@ export const Navbar: React.FC = () => {
     dropdownTimer.current = setTimeout(() => setActiveDropdown(null), 120);
   };
 
+  const isHomePage = location.pathname === '/';
+
   return (
     <>
-      <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`} role="navigation" aria-label="Main navigation">
+      <nav className={`navbar ${isHomePage ? 'navbar--home' : 'navbar--solid'} ${scrolled ? 'navbar--scrolled' : ''}`} role="navigation" aria-label="Main navigation">
         <div className="navbar__inner">
           {/* Logo */}
           <Link to="/" className="navbar__logo" aria-label="Sentr AI — Home">
@@ -323,7 +325,7 @@ export const Navbar: React.FC = () => {
             <Link to="/company/contact" className="btn btn-secondary btn-sm">
               Contact
             </Link>
-            <Link to="/products/indri#demo" className="btn btn-primary btn-sm">
+            <Link to="/products/aindri#demo" className="btn btn-primary btn-sm">
               Request Demo
             </Link>
           </div>
@@ -409,7 +411,7 @@ export const Navbar: React.FC = () => {
         </nav>
 
         <div className="mobile-menu__footer">
-          <Link to="/products/indri#demo" className="btn btn-primary btn-lg" style={{ width: '100%' }}>
+          <Link to="/products/aindri#demo" className="btn btn-primary btn-lg" style={{ width: '100%' }}>
             Request a Demo
           </Link>
           <div className="mobile-menu__contact">

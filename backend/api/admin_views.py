@@ -1,4 +1,5 @@
 from rest_framework import viewsets, status, permissions
+from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.decorators import action
 from django.contrib.auth.models import User
@@ -7,13 +8,14 @@ from .admin_models import (
     ApplicationNote, ApplicationStatusHistory, PageContent, FAQ,
     Testimonial, SiteSettings, SEO, ActivityLog
 )
+from .models import DemoRequest
 from .admin_serializers import (
     AdminProfileSerializer, MediaSerializer, BlogCategorySerializer,
     BlogSerializer, JobSerializer, JobApplicationSerializer,
     ApplicationNoteSerializer, ApplicationStatusHistorySerializer,
     PageContentSerializer, FAQSerializer, TestimonialSerializer,
     SiteSettingsSerializer, SEOSerializer, ActivityLogSerializer,
-    UserSerializer
+    UserSerializer, DemoRequestAdminSerializer
 )
 from rest_framework.parsers import MultiPartParser, FormParser, JSONParser
 
@@ -128,7 +130,17 @@ class ActivityLogViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = ActivityLogSerializer
     permission_classes = [IsAdminUser]
 
-from rest_framework.views import APIView
+class DemoRequestViewSet(viewsets.ModelViewSet):
+    queryset = DemoRequest.objects.all().order_by('-created_at')
+    serializer_class = DemoRequestAdminSerializer
+    # permission_classes = [IsAdminUser]
+
+    @action(detail=True, methods=['patch'])
+    def toggle_contacted(self, request, pk=None):
+        demo = self.get_object()
+        demo.is_contacted = not demo.is_contacted
+        demo.save()
+        return Response({'status': 'updated', 'is_contacted': demo.is_contacted})
 
 class AdminDashboardStatsView(APIView):
     # permission_classes = [IsAdminUser] # Temporarily disabled
@@ -137,6 +149,8 @@ class AdminDashboardStatsView(APIView):
         published_blogs = Blog.objects.filter(status='PUBLISHED').count()
         open_positions = Job.objects.filter(status='PUBLISHED').count()
         new_applications = JobApplication.objects.filter(status='NEW').count()
+        total_demo_requests = DemoRequest.objects.count()
+        new_demo_requests = DemoRequest.objects.filter(is_contacted=False).count()
 
         recent_applications = JobApplicationSerializer(
             JobApplication.objects.order_by('-applied_at')[:5], many=True
@@ -150,13 +164,20 @@ class AdminDashboardStatsView(APIView):
             ActivityLog.objects.order_by('-created_at')[:5], many=True
         ).data
 
+        recent_demo_requests = DemoRequestAdminSerializer(
+            DemoRequest.objects.order_by('-created_at')[:5], many=True
+        ).data
+
         return Response({
             'total_blogs': total_blogs,
             'published_blogs': published_blogs,
             'open_positions': open_positions,
             'new_applications': new_applications,
+            'total_demo_requests': total_demo_requests,
+            'new_demo_requests': new_demo_requests,
             'recent_applications': recent_applications,
             'recent_blogs': recent_blogs,
-            'recent_activity': recent_activity
+            'recent_activity': recent_activity,
+            'recent_demo_requests': recent_demo_requests
         })
 

@@ -33,7 +33,7 @@ export const Footer: React.FC = () => {
             <div className="footer-main__col">
               <h3>Products</h3>
               <ul>
-                <li><Link to="/products/indri">Indri IMS</Link></li>
+                <li><Link to="/products/aindri">Aindri IMS</Link></li>
                 <li><Link to="/products/roadmap">Roadmap</Link></li>
                 <li><Link to="/cloud-solutions">Cloud Solutions</Link></li>
               </ul>
