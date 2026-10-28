@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Hero } from '../components/home/Hero';
-import { TechStrip } from '../components/home/TechStrip';
 import { AindriIntro } from '../components/home/AindriIntro';
 import { MagazineFeature } from '../components/home/MagazineFeature';
 import { HowAindriWorks } from '../components/home/HowAindriWorks';
@@ -85,7 +84,6 @@ const WhySentrAI: React.FC = () => {
             <div className="why-sentrai__header-dots" aria-hidden="true"></div>
             <Link to="/company/contact" className="why-sentrai__header-btn">
               Contact Us
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
             </Link>
           </div>
         </div>
@@ -193,7 +191,6 @@ export const HomePage: React.FC = () => {
   return (
     <main>
       <Hero />
-      <TechStrip />
       <AindriIntro />
       <MagazineFeature />
       <HowAindriWorks />

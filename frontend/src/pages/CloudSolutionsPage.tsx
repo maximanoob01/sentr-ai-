@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './CloudSolutionsPage.css';
-import cloudHeroBg from '../assets/cloud solutions/hero.png';
+import herooBg from '../assets/heroo.png';
 import msLogo from '../assets/alliance logo/2.png';
 import aavBg from '../assets/cloud solutions/aav.png';
 import amazonLogo from '../assets/cloud solutions/amazon.png';
@@ -297,9 +297,9 @@ export const CloudSolutionsPage: React.FC = () => {
         <div
           className="cs-hero__bg"
           style={{
-            backgroundImage: `url(${cloudHeroBg})`,
+            backgroundImage: `url(${herooBg})`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center 30%',
+            backgroundPosition: 'center',
           }}
         />
         {/* Dark overlay */}
@@ -307,12 +307,11 @@ export const CloudSolutionsPage: React.FC = () => {
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'linear-gradient(135deg, rgba(6,12,26,0.82) 0%, rgba(10,22,40,0.75) 100%)',
+            background: 'linear-gradient(135deg, rgba(6,12,26,0.65) 0%, rgba(10,22,40,0.58) 100%)',
             zIndex: 1,
           }}
           aria-hidden="true"
         />
-        <div className="cs-hero__grid" aria-hidden="true" />
         <div className="cs-hero__glow-1" aria-hidden="true" />
         <div className="cs-hero__glow-2" aria-hidden="true" />
 
@@ -322,8 +321,10 @@ export const CloudSolutionsPage: React.FC = () => {
             <div className="cs-hero__content">
               <h1 className="cs-hero__headline fade-in-up" style={{ transitionDelay: '0.1s' }}>
                 <span className="cs-hero__headline-main">Modern Cloud Infrastructure.</span>
-                <span className="cs-hero__headline-accent">Built Around Your Business</span>
               </h1>
+              <p className="cs-hero__sub fade-in-up" style={{ transitionDelay: '0.15s', color: '#94a3b8', fontSize: '1.125rem', maxWidth: '720px', margin: '0 auto 2rem', lineHeight: '1.7' }}>
+                Modernize infrastructure, migrate workloads, strengthen cloud security, and build scalable solutions with Microsoft and Azure technologies.
+              </p>
 
               <div className="cs-hero__actions fade-in-up" style={{ transitionDelay: '0.2s', justifyContent: 'center' }}>
                 <Link to="/products/aindri" className="cs-btn-primary">

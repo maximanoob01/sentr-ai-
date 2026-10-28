@@ -53,7 +53,17 @@ export const Testimonials: React.FC = () => {
       <div className="container">
         <div className="testimonials__header">
           <h2 className="testimonials__heading">WHAT OUR CLIENTS SAY</h2>
-          <p className="testimonials__sub">Real technology. Real business impact.</p>
+          <div className="testimonials__header-right">
+            <p className="testimonials__sub">Real technology. Real business impact.</p>
+            <a
+              href="https://www.google.com/search?q=sentr+ai&ie=UTF-8#lrd=0x390ce5e32ca786a7:0x29a4a49b64728dfe,3,,,,"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="testimonials__review-btn"
+            >
+              Write us a review
+            </a>
+          </div>
         </div>
 
         <div className="testimonials__content">

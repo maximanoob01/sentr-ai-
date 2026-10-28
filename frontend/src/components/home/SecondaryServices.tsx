@@ -32,7 +32,7 @@ export const SecondaryServices: React.FC = () => {
         <div className="secondary-services__header fade-in-up">
           <span className="section-label">Enterprise Technology</span>
           <h2 id="services-heading" className="secondary-services__heading">
-            Beyond Monitoring:<br />Enterprise Technology Capabilities
+            Beyond Monitoring: Enterprise Technology Capabilities
           </h2>
         </div>
 

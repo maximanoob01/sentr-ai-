@@ -29,24 +29,26 @@
 }
 
 .blog-section__header-content {
-  max-width: 600px;
+  max-width: 800px;
   position: relative;
   z-index: 1;
 }
 
 .blog-section__heading {
-  font-size: clamp(2rem, 3.5vw, 3rem); /* Slightly smaller heading */
+  font-size: clamp(1.75rem, 3.2vw, 2.75rem);
   font-weight: 800; /* Bold as requested */
   color: #ffffff; /* White text for dark background */
-  line-height: 1.1;
-  letter-spacing: -0.04em;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
   margin-bottom: 12px;
+  white-space: nowrap;
 }
 
 .blog-section__sub {
   font-size: 1.1rem;
   color: #94A3B8; /* Lighter grey for dark background */
   line-height: 1.6;
+  max-width: 600px;
 }
 
 .blog-section__controls {
@@ -250,7 +252,8 @@
     margin-bottom: var(--space-3);
   }
   .blog-section__heading {
-    font-size: 1.5rem; /* Drastically reduced for mobile */
+    font-size: clamp(1.2rem, 4.2vw, 1.5rem);
+    white-space: nowrap;
     margin-bottom: 8px; /* Tighter spacing */
   }
   .blog-section__sub {

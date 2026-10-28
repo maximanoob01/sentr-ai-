@@ -87,7 +87,20 @@ export const Footer: React.FC = () => {
             </a>
           </div>
           <div className="footer-main__meta">
-            <p>© 2026 Sentr AI Technologies Pvt. Ltd. All rights reserved.</p>
+            <p className="footer-main__copyright">© 2026 Sentr AI Technologies Pvt. Ltd. All rights reserved.</p>
+            <div className="footer-credit footer-credit--center">
+              Designed and Developed by{' '}
+              <a 
+                href="mailto:hypenbloom@gmail.com" 
+                className="footer-credit__link"
+                title="send email to hypenbloom@gmail.com"
+              >
+                <strong>Hypenbloom</strong>
+                <span className="footer-tooltip" role="tooltip">
+                  send email to hypenbloom@gmail.com
+                </span>
+              </a>
+            </div>
             <div className="footer-main__legal">
               <Link to="/privacy">Privacy Policy</Link>
               <Link to="/cookie">Cookie Policy</Link>

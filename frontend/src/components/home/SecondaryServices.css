@@ -25,10 +25,12 @@
 }
 
 .secondary-services__heading {
-  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
   font-weight: 800;
   color: #1f2937;
-  line-height: 1.2;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  white-space: nowrap;
 }
 
 .secondary-services__grid {
@@ -236,7 +238,8 @@
     font-size: 0.85rem;
   }
   .secondary-services__heading {
-    font-size: 1.5rem;
+    font-size: clamp(1.15rem, 3.6vw, 1.35rem);
+    white-space: normal;
     line-height: 1.25;
   }
   .secondary-services__desc {

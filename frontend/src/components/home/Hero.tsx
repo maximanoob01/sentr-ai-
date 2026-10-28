@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Hero.css';
 import newBg from '../../assets/newbg.png';
-import { ParticleWave } from '../ui/particle-wave';
+import ConstellationGrid from '../ui/constellation-grid';
 
 const SLIDES = [
   {
@@ -85,7 +85,13 @@ export const Hero: React.FC = () => {
           className="hero__bg-overlay"
           style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(255,255,255,0)' }}
         />
-        <ParticleWave />
+        <ConstellationGrid
+          showDefaultOverlay={false}
+          transparentBg={true}
+          nodeColor="15, 23, 42"
+          accentColor="0, 196, 161"
+          className="hero__constellation"
+        />
         <div className="hero__glow hero__glow--1" />
         <div className="hero__glow hero__glow--2" />
       </div>

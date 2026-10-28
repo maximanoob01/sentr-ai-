@@ -3,8 +3,8 @@
    ============================================ */
 
 .footer-main {
-  background: #1C2135; /* Lighter navy — matches --bg-surface-3 */
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(160deg, #2563eb 0%, #1e40af 22%, #172554 48%, #0f172a 78%, #080b12 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
   padding-top: clamp(2.5rem, 5vw, 4rem);
   position: relative;
   overflow: hidden;
@@ -37,7 +37,7 @@
 
 .footer-main__desc {
   font-size: 0.875rem;
-  color: #a0aec0;
+  color: #e2e8f0;
   line-height: 1.6;
 }
 
@@ -53,7 +53,7 @@
   margin-top: 0;
   margin-bottom: var(--space-4);
   padding-bottom: var(--space-4);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .footer-main__contact-list {
@@ -69,18 +69,23 @@
   align-items: center;
   gap: 0.75rem;
   font-size: 0.95rem;
-  color: var(--text-secondary);
+  color: #e2e8f0;
   text-decoration: none;
   transition: color var(--transition-fast);
 }
 
 a.footer-contact-item:hover {
-  color: var(--accent);
+  color: #ffffff;
 }
 
 .footer-contact-item svg {
-  color: var(--accent);
+  color: #93c5fd;
   flex-shrink: 0;
+  transition: color var(--transition-fast);
+}
+
+a.footer-contact-item:hover svg {
+  color: #ffffff;
 }
 
 .footer-main__social a {
@@ -92,15 +97,17 @@ a.footer-contact-item:hover {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #ef4444; /* Bright Red */
-  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.2);
+  background: #2563eb; /* Button Blue */
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .footer-main__social a:hover {
   color: #ffffff;
-  background: #dc2626; /* Darker Red */
+  background: #1d4ed8; /* Darker Blue */
+  border-color: rgba(255, 255, 255, 0.45);
   transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(239, 68, 68, 0.4);
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.4);
 }
 
 .footer-main__links-grid {
@@ -127,7 +134,7 @@ a.footer-contact-item:hover {
 }
 
 .footer-main__col a {
-  color: #a0aec0;
+  color: #cbd5e1;
   font-size: 0.875rem;
   text-decoration: none;
   transition: all var(--transition-fast);
@@ -137,7 +144,7 @@ a.footer-contact-item:hover {
 }
 
 .footer-main__col a:hover {
-  color: var(--accent);
+  color: #ffffff;
   transform: translateX(4px);
 }
 
@@ -151,12 +158,92 @@ a.footer-contact-item:hover {
   justify-content: space-between;
   align-items: center;
   font-size: 0.75rem;
-  color: #a0aec0;
+  color: #cbd5e1;
   position: relative;
   z-index: 2;
   flex-wrap: wrap;
   gap: var(--space-4);
   padding-bottom: 2rem;
+}
+
+.footer-main__copyright {
+  flex: 1;
+  min-width: 240px;
+}
+
+.footer-credit--center {
+  flex: 1;
+  text-align: center;
+  min-width: 240px;
+}
+
+.footer-main__legal {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-6);
+  min-width: 240px;
+}
+
+.footer-credit {
+  color: #94a3b8;
+  margin-left: 0.25rem;
+}
+
+.footer-credit__link {
+  position: relative;
+  display: inline-block;
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.footer-credit__link:hover {
+  color: #93c5fd;
+}
+
+.footer-credit__link strong {
+  font-weight: 700;
+}
+
+.footer-tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: #0f172a;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  z-index: 100;
+}
+
+.footer-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #0f172a transparent transparent transparent;
+}
+
+.footer-credit__link:hover .footer-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
 }
 
 .footer-main__legal {

@@ -212,7 +212,7 @@ export const Navbar: React.FC = () => {
         <div className="navbar__inner">
           {/* Logo */}
           <Link to="/" className="navbar__logo" aria-label="Sentr AI — Home">
-            <img src={logoImg} alt="Sentr AI" className="navbar__logo-img" style={{ height: '60px', width: 'auto' }} />
+            <img src={logoImg} alt="Sentr AI" className="navbar__logo-img" style={{ height: '40px', width: 'auto' }} />
           </Link>
 
           {/* Desktop Nav */}

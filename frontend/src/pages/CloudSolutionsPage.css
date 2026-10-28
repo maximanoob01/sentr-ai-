@@ -42,31 +42,19 @@
    ================================================================ */
 .cs-hero {
   position: relative;
-  min-height: 52vh;
+  min-height: 56vh;
   display: flex;
   align-items: center;
-  padding-top: calc(var(--nav-height) + 1.25rem);
-  padding-bottom: 2.75rem;
+  padding-top: calc(var(--nav-height) + 4.25rem);
+  padding-bottom: 4rem;
   overflow: hidden;
 }
 
-/* Animated grid background */
+/* Background image */
 .cs-hero__bg {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(135deg, #060c1a 0%, #0a1628 50%, #060c1a 100%);
   z-index: 0;
-}
-
-.cs-hero__grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(96, 165, 250, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(96, 165, 250, 0.04) 1px, transparent 1px);
-  background-size: 56px 56px;
-  z-index: 1;
 }
 
 .cs-hero__glow-1 {
@@ -1622,7 +1610,7 @@
 }
 
 @media (max-width: 768px) {
-  .cs-hero { min-height: auto; padding-top: calc(var(--nav-height) + 1.25rem); padding-bottom: 2.5rem; }
+  .cs-hero { min-height: auto; padding-top: calc(var(--nav-height) + 3.25rem); padding-bottom: 3rem; }
   .cs-hero__headline { font-size: 2rem; }
   .cs-services__grid { grid-template-columns: 1fr; }
   .cs-journey__steps { grid-template-columns: 1fr; }

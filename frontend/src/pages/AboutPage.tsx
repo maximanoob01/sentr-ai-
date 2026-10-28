@@ -13,7 +13,11 @@ import partner4 from '../assets/alliance logo/4.png';
 import partner5 from '../assets/alliance logo/5.png';
 import partner6 from '../assets/alliance logo/6.png';
 import partner7 from '../assets/alliance logo/7.png';
-import partner8 from '../assets/alliance logo/8.png';
+import partner9 from '../assets/alliance logo/9.png';
+import partner10 from '../assets/alliance logo/10.png';
+import partner11 from '../assets/alliance logo/11.png';
+import partner12 from '../assets/alliance logo/12.png';
+import partner13 from '../assets/alliance logo/13.png';
 
 
 export const AboutPage: React.FC = () => {
@@ -180,9 +184,13 @@ export const AboutPage: React.FC = () => {
         </div>
         <div className="logo-slider-container">
           <div className="logo-slider-track">
-            {[partner1, partner2, partner3, partner4, partner5, partner6, partner7, partner8, partner1, partner2, partner3, partner4, partner5, partner6, partner7, partner8].map((logo, index) => (
+            {[partner1, partner2, partner3, partner4, partner5, partner6, partner7, partner9, partner10, partner11, partner12, partner13, partner1, partner2, partner3, partner4, partner5, partner6, partner7, partner9, partner10, partner11, partner12, partner13].map((logo, index) => (
               <div key={index} className="logo-slide">
-                <img src={logo} alt={`Partner ${index + 1}`} />
+                <img 
+                  src={logo} 
+                  alt={`Partner ${index + 1}`} 
+                  style={logo === partner12 ? { transform: 'scale(1.25)' } : undefined}
+                />
               </div>
             ))}
           </div>

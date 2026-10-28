@@ -53,6 +53,13 @@
   flex-shrink: 0;
 }
 
+.navbar__logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
 .navbar__logo-mark {
   display: flex;
   align-items: center;
