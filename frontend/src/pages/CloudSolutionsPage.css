@@ -140,6 +140,7 @@
 .cs-btn-primary {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   background: linear-gradient(135deg, #2563eb, #1d4ed8);
   color: #ffffff;
@@ -147,9 +148,10 @@
   font-weight: 700;
   padding: 0.875rem 2rem;
   border-radius: 999px;
-  border: none;
+  border: 1.5px solid transparent;
   cursor: pointer;
   text-decoration: none;
+  white-space: nowrap;
   transition: all 0.25s ease;
   box-shadow: 0 4px 20px rgba(37, 99, 235, 0.35);
 }
@@ -162,6 +164,7 @@
 .cs-btn-outline {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   background: transparent;
   color: #93c5fd;
@@ -169,9 +172,10 @@
   font-weight: 600;
   padding: 0.875rem 2rem;
   border-radius: 999px;
-  border: 1px solid rgba(96, 165, 250, 0.3);
+  border: 1.5px solid rgba(96, 165, 250, 0.4);
   cursor: pointer;
   text-decoration: none;
+  white-space: nowrap;
   transition: all 0.25s ease;
 }
 

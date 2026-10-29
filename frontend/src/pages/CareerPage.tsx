@@ -8,7 +8,7 @@ import careerAbb from '../assets/career/abb.png';
 import careerHandshake from '../assets/career/handshake.png';
 import careerOwner from '../assets/career/owner.png';
 import careerTt from '../assets/career/tt.png';
-import logo1 from '../assets/logo1.png';
+import logo from '../assets/logo.png';
 import './CareerPage.css';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
@@ -401,7 +401,7 @@ export const CareerPage: React.FC = () => {
                     `Apply — ${selectedJob.title}`
                   ) : (
                     <span style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-                      Apply at <img src={logo1} alt="Sentr AI" style={{ height: '1.4em', objectFit: 'contain' }} />
+                      Apply at <img src={logo} alt="Sentr AI" style={{ height: '1.4em', objectFit: 'contain' }} />
                     </span>
                   )}
                 </h2>

@@ -11,6 +11,7 @@ import { CookiePage } from './pages/CookiePage';
 import { CareerPage } from './pages/CareerPage';
 import { BlogPage } from './pages/BlogPage';
 import { CloudSolutionsPage } from './pages/CloudSolutionsPage';
+import { AISolutionsPage } from './pages/AISolutionsPage';
 import { useScrollAnimation } from './hooks/useScrollAnimation';
 import { AdminApp } from './admin/AdminApp';
 import heroImg from './assets/contact us/hero.png';
@@ -395,6 +396,7 @@ const AppInner: React.FC = () => {
         <Route path="/company/contact" element={<ContactPage />} />
         <Route path="/contact" element={<Navigate to="/company/contact" replace />} />
         <Route path="/solutions" element={<PlaceholderPage title="Solutions" />} />
+        <Route path="/solutions/ai" element={<AISolutionsPage />} />
         <Route path="/solutions/:slug" element={<PlaceholderPage title="Solution Detail" />} />
         <Route path="/products" element={<PlaceholderPage title="Products" />} />
         <Route path="/products/roadmap" element={<PlaceholderPage title="Product Roadmap" />} />
