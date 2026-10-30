@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import './AboutPage.css';
 import heroImg from '../assets/about us/hero.png';
 import img1 from '../assets/about us/1.png';
 import img2 from '../assets/about us/2.png';
@@ -20,11 +21,83 @@ import partner12 from '../assets/alliance logo/12.png';
 import partner13 from '../assets/alliance logo/13.png';
 
 
+const HERO_SUBTITLE_PART1 = 'Building Intelligent Technology for a ';
+const HERO_SUBTITLE_PART2 = 'More Secure Future';
+const FULL_HERO_SUBTITLE = HERO_SUBTITLE_PART1 + HERO_SUBTITLE_PART2;
+
+const CAPABILITIES = [
+  'AI & Intelligent Monitoring',
+  'Cybersecurity',
+  'Enterprise IT',
+  'Cloud Infrastructure',
+  'Managed Services',
+  'IT Asset Management',
+  'Digital Workplace',
+  'Compliance & Reporting',
+];
+
 export const AboutPage: React.FC = () => {
   useScrollAnimation();
+  const [displayedLength, setDisplayedLength] = useState(0);
+  const [isTypingDone, setIsTypingDone] = useState(false);
+  const [visibleItemsCount, setVisibleItemsCount] = useState(0);
+  const capabilitiesRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  // Capabilities 1-by-1 reveal observer
+  useEffect(() => {
+    const el = capabilitiesRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          let count = 0;
+          const intervalId = window.setInterval(() => {
+            count++;
+            setVisibleItemsCount(count);
+            if (count >= CAPABILITIES.length) {
+              window.clearInterval(intervalId);
+            }
+          }, 140);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    observer.observe(el);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    let currentLen = 0;
+    let timeoutId: number;
+    const totalLen = FULL_HERO_SUBTITLE.length;
+
+    const typeNextChar = () => {
+      if (currentLen < totalLen) {
+        currentLen++;
+        setDisplayedLength(currentLen);
+        const char = FULL_HERO_SUBTITLE[currentLen - 1];
+        const delay = char === '.' ? 180 : char === ',' ? 90 : 28;
+        timeoutId = window.setTimeout(typeNextChar, delay);
+      } else {
+        setIsTypingDone(true);
+      }
+    };
+
+    timeoutId = window.setTimeout(typeNextChar, 300);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
   }, []);
 
   return (
@@ -68,16 +141,39 @@ export const AboutPage: React.FC = () => {
             }}>
               About Sentr AI
             </h2>
-            <h1 style={{ 
-              fontSize: 'clamp(1.05rem, 2vw, 1.25rem)', 
-              fontWeight: 500, 
-              color: 'rgba(255, 255, 255, 0.9)', 
-              letterSpacing: '-0.01em', 
-              lineHeight: 1.4,
-              margin: 0
-            }}>
-              Building Intelligent Technology for a <br />
-              <span style={{ color: '#60a5fa', fontWeight: 600 }}>More Secure Future</span>
+            <h1
+              style={{ 
+                fontSize: 'clamp(1.05rem, 2vw, 1.25rem)', 
+                fontWeight: 500, 
+                color: 'rgba(255, 255, 255, 0.9)', 
+                letterSpacing: '-0.01em', 
+                lineHeight: 1.4,
+                margin: 0,
+                minHeight: '2.8em',
+              }}
+              aria-label={FULL_HERO_SUBTITLE}
+            >
+              {displayedLength <= HERO_SUBTITLE_PART1.length ? (
+                <>
+                  {HERO_SUBTITLE_PART1.slice(0, displayedLength)}
+                  <span
+                    className={`about-typing-cursor ${isTypingDone ? 'about-typing-cursor--done' : ''}`}
+                    aria-hidden="true"
+                  />
+                </>
+              ) : (
+                <>
+                  {HERO_SUBTITLE_PART1}
+                  <br />
+                  <span style={{ color: '#60a5fa', fontWeight: 600 }}>
+                    {HERO_SUBTITLE_PART2.slice(0, displayedLength - HERO_SUBTITLE_PART1.length)}
+                  </span>
+                  <span
+                    className={`about-typing-cursor ${isTypingDone ? 'about-typing-cursor--done' : ''}`}
+                    aria-hidden="true"
+                  />
+                </>
+              )}
             </h1>
           </div>
         </div>
@@ -116,22 +212,22 @@ export const AboutPage: React.FC = () => {
                 Our name reflects our philosophy: Sentr AI acts as a digital sentinel, combining artificial intelligence and technical expertise to help organizations protect their digital assets, improve visibility, and operate more effectively.
               </p>
               
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
-                {[
-                  'AI & Intelligent Monitoring',
-                  'Cybersecurity',
-                  'Enterprise IT',
-                  'Cloud Infrastructure',
-                  'Managed Services',
-                  'IT Asset Management',
-                  'Digital Workplace',
-                  'Compliance & Reporting'
-                ].map((item, i) => (
-                  <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <div style={{ width: '6px', height: '6px', background: '#eab308', borderRadius: '50%' }}></div>
-                    <span style={{ color: '#0f172a', fontWeight: 600, fontSize: '0.9rem' }}>{item}</span>
-                  </div>
-                ))}
+              <div
+                ref={capabilitiesRef}
+                className="about-capabilities-grid"
+              >
+                {CAPABILITIES.map((item, i) => {
+                  const isItemVisible = i < visibleItemsCount;
+                  return (
+                    <div
+                      key={item}
+                      className={`about-capability-item ${isItemVisible ? 'about-capability-item--visible' : ''}`}
+                    >
+                      <div className="about-capability-dot" />
+                      <span className="about-capability-text">{item}</span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>

@@ -19,6 +19,9 @@ import ind3 from '../assets/cloud solutions/3.png';
 import ind4 from '../assets/cloud solutions/4.png';
 import buildingBg from '../assets/cloud solutions/building.png';
 
+const FULL_CLOUD_SUBTITLE =
+  'Modernize infrastructure, migrate workloads, strengthen cloud security, and build scalable solutions with Microsoft and Azure technologies.';
+
 /* ── SVG Icons ── */
 const IconCompass = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -230,8 +233,34 @@ const ecoNodes = [
 export const CloudSolutionsPage: React.FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [activeAzureImg, setActiveAzureImg] = useState(0);
+  const [displayedSubtitle, setDisplayedSubtitle] = useState('');
+  const [isTypingDone, setIsTypingDone] = useState(false);
   const servicesScrollRef = React.useRef<HTMLDivElement>(null);
   const location = useLocation();
+
+  // Subtitle typing animation
+  useEffect(() => {
+    let currentIndex = 0;
+    let timeoutId: number;
+
+    const typeNextChar = () => {
+      if (currentIndex < FULL_CLOUD_SUBTITLE.length) {
+        currentIndex++;
+        setDisplayedSubtitle(FULL_CLOUD_SUBTITLE.slice(0, currentIndex));
+        const char = FULL_CLOUD_SUBTITLE[currentIndex - 1];
+        const delay = char === '.' ? 180 : char === ',' ? 90 : 16;
+        timeoutId = window.setTimeout(typeNextChar, delay);
+      } else {
+        setIsTypingDone(true);
+      }
+    };
+
+    timeoutId = window.setTimeout(typeNextChar, 350);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
+  }, []);
 
   const scrollServices = (dir: 'left' | 'right') => {
     if (servicesScrollRef.current) {
@@ -300,6 +329,8 @@ export const CloudSolutionsPage: React.FC = () => {
             backgroundImage: `url(${herooBg})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
+            filter: 'brightness(0.65) contrast(1.05)',
+            opacity: 0.78,
           }}
         />
         {/* Dark overlay */}
@@ -307,7 +338,7 @@ export const CloudSolutionsPage: React.FC = () => {
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'linear-gradient(135deg, rgba(6,12,26,0.65) 0%, rgba(10,22,40,0.58) 100%)',
+            background: 'linear-gradient(135deg, rgba(6,12,26,0.82) 0%, rgba(10,22,40,0.76) 100%)',
             zIndex: 1,
           }}
           aria-hidden="true"
@@ -322,15 +353,31 @@ export const CloudSolutionsPage: React.FC = () => {
               <h1 className="cs-hero__headline fade-in-up" style={{ transitionDelay: '0.1s' }}>
                 <span className="cs-hero__headline-main">Modern Cloud Infrastructure.</span>
               </h1>
-              <p className="cs-hero__sub fade-in-up" style={{ transitionDelay: '0.15s', color: '#94a3b8', fontSize: '1.125rem', maxWidth: '720px', margin: '0 auto 2rem', lineHeight: '1.7' }}>
-                Modernize infrastructure, migrate workloads, strengthen cloud security, and build scalable solutions with Microsoft and Azure technologies.
+              <p
+                className="cs-hero__sub fade-in-up"
+                style={{
+                  transitionDelay: '0.15s',
+                  color: '#94a3b8',
+                  fontSize: '1.125rem',
+                  maxWidth: '720px',
+                  margin: '0 auto 2rem',
+                  lineHeight: '1.7',
+                  minHeight: '3.4em',
+                }}
+                aria-label={FULL_CLOUD_SUBTITLE}
+              >
+                {displayedSubtitle}
+                <span
+                  className={`cs-typing-cursor ${isTypingDone ? 'cs-typing-cursor--done' : ''}`}
+                  aria-hidden="true"
+                />
               </p>
 
               <div className="cs-hero__actions fade-in-up" style={{ transitionDelay: '0.2s', justifyContent: 'center' }}>
                 <Link to="/products/aindri" className="cs-btn-primary">
                   Explore Aindri
                 </Link>
-                <Link to="/solutions/intelligent-monitoring" className="cs-btn-outline">
+                <Link to="/solutions" className="cs-btn-white">
                   Explore Our Solutions
                 </Link>
               </div>

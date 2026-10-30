@@ -14,10 +14,40 @@ interface Blog {
   views: number;
 }
 
+const BLOG_SUB_PART1 = 'Practical insights across AI, cybersecurity, cloud technology, ';
+const BLOG_SUB_PART2 = 'and modern business IT — from the Sentr AI team.';
+const FULL_BLOG_SUBTITLE = BLOG_SUB_PART1 + BLOG_SUB_PART2;
+
 export const BlogPage: React.FC = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [selectedBlog, setSelectedBlog] = useState<Blog | null>(null);
   const [loading, setLoading] = useState(true);
+  const [displayedLength, setDisplayedLength] = useState(0);
+  const [isTypingDone, setIsTypingDone] = useState(false);
+
+  useEffect(() => {
+    let currentLen = 0;
+    let timeoutId: number;
+    const totalLen = FULL_BLOG_SUBTITLE.length;
+
+    const typeNextChar = () => {
+      if (currentLen < totalLen) {
+        currentLen++;
+        setDisplayedLength(currentLen);
+        const char = FULL_BLOG_SUBTITLE[currentLen - 1];
+        const delay = char === '.' ? 180 : char === '—' ? 120 : char === ',' ? 75 : 20;
+        timeoutId = window.setTimeout(typeNextChar, delay);
+      } else {
+        setIsTypingDone(true);
+      }
+    };
+
+    timeoutId = window.setTimeout(typeNextChar, 300);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
+  }, []);
 
   useEffect(() => {
     fetch('http://localhost:8000/api/blogs/')
@@ -69,9 +99,26 @@ export const BlogPage: React.FC = () => {
           <h1 className="blog-page__hero-title">
             Sentr<span className="blog-page__hero-accent">AI</span> Blog
           </h1>
-          <p className="blog-page__hero-sub">
-            Practical insights across AI, cybersecurity, cloud technology,<br />
-            and modern business IT — from the Sentr AI team.
+          <p className="blog-page__hero-sub" aria-label={FULL_BLOG_SUBTITLE}>
+            {displayedLength <= BLOG_SUB_PART1.length ? (
+              <>
+                {BLOG_SUB_PART1.slice(0, displayedLength)}
+                <span
+                  className={`blog-typing-cursor ${isTypingDone ? 'blog-typing-cursor--done' : ''}`}
+                  aria-hidden="true"
+                />
+              </>
+            ) : (
+              <>
+                {BLOG_SUB_PART1}
+                <br />
+                {BLOG_SUB_PART2.slice(0, displayedLength - BLOG_SUB_PART1.length)}
+                <span
+                  className={`blog-typing-cursor ${isTypingDone ? 'blog-typing-cursor--done' : ''}`}
+                  aria-hidden="true"
+                />
+              </>
+            )}
           </p>
         </div>
       </section>

@@ -67,6 +67,39 @@
   color: rgba(255, 255, 255, 0.75);
   line-height: 1.7;
   max-width: 560px;
+  min-height: 3.4em;
+}
+
+/* Typing Cursor */
+.blog-typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background-color: #00c4a1;
+  margin-left: 3px;
+  vertical-align: -0.15em;
+  box-shadow: 0 0 8px #00c4a1;
+  animation: blogCursorBlink 0.8s infinite;
+}
+
+.blog-typing-cursor--done {
+  animation: blogCursorFadeOut 1.5s forwards 2.5s;
+}
+
+@keyframes blogCursorBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes blogCursorFadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 /* ── Grid section ── */

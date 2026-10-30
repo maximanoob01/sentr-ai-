@@ -1,0 +1,668 @@
+/* ================================================================
+   CONTACT PAGE STYLES
+   ================================================================ */
+
+/* ── Hero ── */
+.contact-hero {
+  padding-top: calc(var(--nav-height) + 4rem);
+  padding-bottom: 4rem;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.contact-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.contact-hero__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.contact-hero__title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.contact-hero__desc {
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+  max-width: 520px;
+  line-height: 1.7;
+  margin: 0 auto;
+}
+
+/* ── Main Form Section ── */
+.contact-form-section {
+  padding-top: 2rem;
+  padding-bottom: 7rem;
+  background-color: #ffffff;
+}
+
+.contact-card {
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.contact-card__left {
+  background: #f8fafc;
+  padding: 4rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-card__right {
+  background: #ffffff;
+  padding: 4rem 3.5rem;
+}
+
+.contact-card__heading {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.contact-card__lead {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.contact-card__info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.contact-info-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.contact-info-item h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.25rem 0;
+}
+
+.contact-info-item p,
+.contact-info-item a {
+  color: #475569;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-decoration: none;
+  margin: 0;
+}
+
+.contact-card__socials {
+  margin-top: 3.5rem;
+}
+
+.contact-card__socials h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.contact-card__social-links {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.contact-card__social-links a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.contact-card__social-links a:hover {
+  transform: translateY(-2px);
+  background: #1d4ed8;
+}
+
+.contact-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.contact-form .form-group {
+  margin-bottom: 1.25rem;
+}
+
+.contact-form .form-group--last {
+  margin-bottom: 2rem;
+}
+
+.contact-form .form-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form .form-input,
+.contact-form .form-textarea {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  color: #0f172a;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.contact-form .form-input:focus,
+.contact-form .form-textarea:focus {
+  background: #ffffff;
+  border-color: #2563eb;
+  outline: none;
+}
+
+.contact-form__btn {
+  width: 100%;
+  border-radius: 100px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 1rem;
+  background-color: #1d4ed8;
+  color: #ffffff;
+  border: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  box-shadow: 0 4px 14px 0 rgba(29, 78, 216, 0.39);
+}
+
+.contact-form__btn:hover {
+  background-color: #1e40af;
+  transform: translateY(-2px);
+}
+
+/* ── SiliconIndia Feature Section ── */
+.contact-feature-section {
+  background: #374151;
+  border-top: 1px solid var(--border-default);
+  padding: 5rem 0;
+}
+
+.contact-feature__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 4rem;
+  align-items: center;
+}
+
+.contact-feature__text {
+  order: 2;
+}
+
+.contact-feature__visual {
+  order: 1;
+}
+
+.contact-feature__title {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.contact-feature__subtitle {
+  font-size: 1.25rem;
+  color: #3b82f6;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.contact-feature__desc {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.contact-feature__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: 1px solid #2563eb;
+  padding: 0.85rem 2.25rem;
+  border-radius: 9999px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.contact-feature__btn:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+.contact-feature__img-wrap {
+  position: relative;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+}
+
+.contact-feature__img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── Latest Insights Section ── */
+.contact-insights-section {
+  background: #ffffff;
+  border-top: 1px solid var(--border-default);
+  padding: 5rem 0 6rem;
+}
+
+.contact-insights__header {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.contact-insights__title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.contact-insights__nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.contact-insights__nav-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #0f172a;
+  transition: all 0.2s;
+}
+
+.contact-insights__nav-btn:hover {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+.contact-insights__carousel {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  padding-bottom: 2rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.contact-insights__carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.contact-insight-card {
+  flex: 0 0 min(100%, 350px);
+  scroll-snap-align: start;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-insight-card__tag {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #3b82f6;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.contact-insight-card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.contact-insight-card__desc {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  flex-grow: 1;
+  margin-bottom: 2rem;
+}
+
+.contact-insight-card__footer {
+  align-self: flex-start;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1.25rem;
+  width: 100%;
+}
+
+.contact-insight-card__footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #0f172a;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact-insight-card__footer a:hover {
+  color: #3b82f6;
+}
+
+/* ================================================================
+   MOBILE RESPONSIVENESS OVERRIDES (<= 768px)
+   ================================================================ */
+@media (max-width: 768px) {
+  /* Hero */
+  .contact-hero {
+    padding-top: calc(var(--nav-height) + 2rem);
+    padding-bottom: 2.25rem;
+  }
+
+  .contact-hero__title {
+    font-size: 1.75rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .contact-hero__desc {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    padding: 0 0.5rem;
+  }
+
+  /* Main Contact Card */
+  .contact-form-section {
+    padding-top: 1rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .contact-card {
+    grid-template-columns: 1fr !important;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  }
+
+  .contact-card__left {
+    padding: 1.75rem 1.25rem !important;
+  }
+
+  .contact-card__right {
+    padding: 1.75rem 1.25rem !important;
+  }
+
+  .contact-card__heading {
+    font-size: 1.35rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-card__lead {
+    font-size: 0.84rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-card__info-list {
+    gap: 1.15rem;
+  }
+
+  .contact-info-item {
+    gap: 0.75rem;
+  }
+
+  .contact-info-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .contact-info-icon svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .contact-info-item h4 {
+    font-size: 0.88rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .contact-info-item p,
+  .contact-info-item a {
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  .contact-card__socials {
+    margin-top: 1.75rem;
+  }
+
+  .contact-card__socials h4 {
+    font-size: 0.82rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .contact-card__social-links a {
+    width: 32px;
+    height: 32px;
+  }
+
+  .contact-card__social-links a svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  /* Form Fields */
+  .contact-form__row {
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .contact-form .form-group {
+    margin-bottom: 0.85rem;
+  }
+
+  .contact-form .form-group--last {
+    margin-bottom: 1.25rem;
+  }
+
+  .contact-form .form-label {
+    font-size: 0.72rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .contact-form .form-input,
+  .contact-form .form-textarea {
+    padding: 0.65rem 0.85rem;
+    font-size: 0.86rem;
+    border-radius: 10px;
+  }
+
+  .contact-form__btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.92rem;
+  }
+
+  /* SiliconIndia Feature */
+  .contact-feature-section {
+    padding: 3rem 0;
+  }
+
+  .contact-feature__grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem;
+  }
+
+  .contact-feature__title {
+    font-size: 1.35rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .contact-feature__title img {
+    height: 1em !important;
+  }
+
+  .contact-feature__subtitle {
+    font-size: 0.98rem;
+    margin-bottom: 1rem;
+    line-height: 1.35;
+  }
+
+  .contact-feature__desc {
+    font-size: 0.85rem;
+    line-height: 1.55;
+    margin-bottom: 1rem;
+  }
+
+  .contact-feature__btn {
+    padding: 0.65rem 1.5rem;
+    font-size: 0.88rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .contact-feature__img-wrap {
+    border-radius: 16px;
+  }
+
+  /* Latest Insights */
+  .contact-insights-section {
+    padding: 2.75rem 0 3.5rem;
+  }
+
+  .contact-insights__header {
+    margin-bottom: 1.75rem;
+  }
+
+  .contact-insights__title {
+    font-size: 1.45rem;
+  }
+
+  .contact-insights__nav-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .contact-insights__nav-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .contact-insights__carousel {
+    gap: 1.15rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .contact-insight-card {
+    flex: 0 0 270px;
+    padding: 1.35rem 1.15rem;
+    border-radius: 14px;
+  }
+
+  .contact-insight-card__tag {
+    font-size: 0.72rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-insight-card__title {
+    font-size: 1.02rem;
+    line-height: 1.35;
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-insight-card__desc {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+  }
+
+  .contact-insight-card__footer {
+    padding-top: 0.85rem;
+  }
+
+  .contact-insight-card__footer a {
+    font-size: 0.85rem;
+  }
+}
+

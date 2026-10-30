@@ -232,12 +232,14 @@
   letter-spacing: -0.03em;
   line-height: 1.1;
   margin: 0;
+  animation: careerSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
 }
 
 .career-hero__subtitle {
   font-size: 1.05rem;
   color: #cbd5e1;
   margin: 0;
+  animation: careerSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
 }
 
 .career-hero__cta {
@@ -246,6 +248,28 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 0.5rem;
+  animation: careerSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+}
+
+@keyframes careerSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .career-hero__title,
+  .career-hero__subtitle,
+  .career-hero__cta {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 /* ── Intro Band ────────────────────────────────────────────── */
