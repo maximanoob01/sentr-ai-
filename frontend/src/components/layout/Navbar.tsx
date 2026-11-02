@@ -34,7 +34,7 @@ const navItems: NavItem[] = [
       {
         title: 'CORE OFFERINGS',
         items: [
-          { label: 'Intelligent Monitoring', href: '/solutions/intelligent-monitoring', description: 'AI-powered industrial visibility' },
+          { label: 'Intelligent Monitoring', href: '/products/aindri', description: 'AI-powered industrial visibility' },
           { label: 'AI Solutions', href: '/solutions/ai', description: 'Machine learning & computer vision' }
         ]
       },
@@ -42,7 +42,7 @@ const navItems: NavItem[] = [
         title: 'INFRASTRUCTURE',
         items: [
           { label: 'IoT & Industrial Tech', href: '/solutions/iot', description: 'Sensors, OPC & device connectivity' },
-          { label: 'Cloud Infrastructure', href: '/solutions/cloud-infrastructure#services', description: 'Scalable cloud environments' }
+          { label: 'Cloud Infrastructure', href: '/cloud-solutions#services', description: 'Scalable cloud environments' }
         ]
       },
       {

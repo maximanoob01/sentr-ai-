@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { BrowserRouter, Routes, Route, useLocation, Link, Navigate } from 'react-router-dom';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
@@ -12,6 +12,7 @@ import { CareerPage } from './pages/CareerPage';
 import { BlogPage } from './pages/BlogPage';
 import { CloudSolutionsPage } from './pages/CloudSolutionsPage';
 import { AISolutionsPage } from './pages/AISolutionsPage';
+import { IoTSolutionsPage } from './pages/IoTSolutionsPage';
 import { useScrollAnimation } from './hooks/useScrollAnimation';
 import { AdminApp } from './admin/AdminApp';
 import heroImg from './assets/contact us/hero.png';
@@ -54,10 +55,38 @@ const NotFound: React.FC = () => (
   </main>
 );
 
+const FULL_CONTACT_SUBTITLE = "Whether you have a question about Aindri, need enterprise IT support or want to explore how we can work together — we're here.";
+
 const ContactPage: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const scrollLeft = () => { if (scrollRef.current) scrollRef.current.scrollBy({ left: -300, behavior: 'smooth' }); };
   const scrollRight = () => { if (scrollRef.current) scrollRef.current.scrollBy({ left: 300, behavior: 'smooth' }); };
+
+  const [displayedSubtitle, setDisplayedSubtitle] = useState('');
+  const [isTypingDone, setIsTypingDone] = useState(false);
+
+  useEffect(() => {
+    let currentIndex = 0;
+    let timeoutId: number;
+
+    const typeNextChar = () => {
+      if (currentIndex < FULL_CONTACT_SUBTITLE.length) {
+        currentIndex++;
+        setDisplayedSubtitle(FULL_CONTACT_SUBTITLE.slice(0, currentIndex));
+        const char = FULL_CONTACT_SUBTITLE[currentIndex - 1];
+        const delay = char === '.' ? 180 : char === ',' || char === '—' || char === '-' ? 90 : 16;
+        timeoutId = window.setTimeout(typeNextChar, delay);
+      } else {
+        setIsTypingDone(true);
+      }
+    };
+
+    timeoutId = window.setTimeout(typeNextChar, 350);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
+  }, []);
 
   return (
     <main className="contact-page">
@@ -72,7 +101,11 @@ const ContactPage: React.FC = () => {
             Contact Sentr AI
           </h1>
           <p className="contact-hero__desc">
-            Whether you have a question about Aindri, need enterprise IT support or want to explore how we can work together — we're here.
+            {displayedSubtitle}
+            <span
+              className={`contact-typing-cursor ${isTypingDone ? 'contact-typing-cursor--done' : ''}`}
+              aria-hidden="true"
+            />
           </p>
         </div>
       </section>
@@ -329,6 +362,11 @@ const IndriRedirect: React.FC = () => {
   return <Navigate to={`/products/aindri${location.hash || ''}`} replace />;
 };
 
+const CloudInfrastructureRedirect: React.FC = () => {
+  const location = useLocation();
+  return <Navigate to={`/cloud-solutions${location.hash || ''}`} replace />;
+};
+
 // Inner app that has access to router context for hooks
 const AppInner: React.FC = () => {
   const location = useLocation();
@@ -352,7 +390,10 @@ const AppInner: React.FC = () => {
         <Route path="/company/contact" element={<ContactPage />} />
         <Route path="/contact" element={<Navigate to="/company/contact" replace />} />
         <Route path="/solutions" element={<PlaceholderPage title="Solutions" />} />
+        <Route path="/solutions/intelligent-monitoring" element={<Navigate to="/products/aindri" replace />} />
+        <Route path="/solutions/cloud-infrastructure" element={<CloudInfrastructureRedirect />} />
         <Route path="/solutions/ai" element={<AISolutionsPage />} />
+        <Route path="/solutions/iot" element={<IoTSolutionsPage />} />
         <Route path="/solutions/:slug" element={<PlaceholderPage title="Solution Detail" />} />
         <Route path="/products" element={<PlaceholderPage title="Products" />} />
         <Route path="/products/roadmap" element={<PlaceholderPage title="Product Roadmap" />} />

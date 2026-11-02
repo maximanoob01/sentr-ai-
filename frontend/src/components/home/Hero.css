@@ -288,6 +288,36 @@
     width: 100%;
     justify-content: center;
   }
+
+  .hero__trust-badge {
+    margin-top: 1.5rem;
+    padding: 0.35rem 0.85rem 0.35rem 0.4rem;
+    gap: 0.75rem;
+    max-width: 100%;
+  }
+
+  .hero__trust-avatar {
+    width: 36px;
+    height: 36px;
+    border-width: 2px;
+  }
+
+  .hero__trust-avatar:nth-child(2),
+  .hero__trust-avatar:nth-child(3) {
+    margin-left: -9px;
+  }
+
+  .hero__trust-text {
+    font-size: 0.8rem;
+  }
+
+  .hero__trust-count {
+    font-size: 0.92rem;
+  }
+
+  .hero__trust-sub {
+    font-size: 0.74rem;
+  }
 }
 
 /* ---- CTA Buttons ---- */
@@ -347,4 +377,96 @@
   background: rgba(15, 23, 42, 0.07);
   border-color: rgba(15, 23, 42, 0.6);
   transform: translateY(-2px);
+}
+
+/* ---- Social Proof Avatar Badge ---- */
+.hero__trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.95rem;
+  margin-top: 2rem;
+  padding: 0.45rem 1.15rem 0.45rem 0.55rem;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 9999px;
+  box-shadow: 0 4px 18px -2px rgba(15, 23, 42, 0.06);
+  position: relative;
+  z-index: 5;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  cursor: default;
+}
+
+.hero__trust-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -2px rgba(15, 23, 42, 0.1);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.hero__trust-avatars {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.hero__trust-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2.5px solid #ffffff;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  position: relative;
+  transition: transform 0.2s ease, z-index 0.2s ease;
+  background-color: #e2e8f0;
+}
+
+.hero__trust-avatar:nth-child(1) {
+  z-index: 3;
+}
+
+.hero__trust-avatar:nth-child(2) {
+  margin-left: -11px;
+  z-index: 2;
+}
+
+.hero__trust-avatar:nth-child(3) {
+  margin-left: -11px;
+  z-index: 1;
+}
+
+.hero__trust-avatar:hover {
+  transform: scale(1.15);
+  z-index: 10 !important;
+}
+
+.hero__trust-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.hero__trust-text {
+  font-size: 0.88rem;
+  line-height: 1.35;
+  color: #475569;
+  font-weight: 500;
+  display: block;
+}
+
+.hero__trust-count {
+  color: #e06443; /* Coral terracotta matching the reference */
+  font-weight: 800;
+  font-size: 1.02rem;
+  letter-spacing: -0.01em;
+}
+
+.hero__trust-sub {
+  font-size: 0.82rem;
+  line-height: 1.35;
+  color: #64748b;
+  font-weight: 500;
+  display: block;
 }

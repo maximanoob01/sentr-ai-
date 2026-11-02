@@ -18,6 +18,8 @@ import ind2 from '../assets/cloud solutions/2.png';
 import ind3 from '../assets/cloud solutions/3.png';
 import ind4 from '../assets/cloud solutions/4.png';
 import buildingBg from '../assets/cloud solutions/building.png';
+import oracleImg from '../assets/alliance logo/oracle.png';
+import googleCloudImg from '../assets/alliance logo/googlecloud.png';
 
 const FULL_CLOUD_SUBTITLE =
   'Modernize infrastructure, migrate workloads, strengthen cloud security, and build scalable solutions with Microsoft and Azure technologies.';
@@ -172,13 +174,76 @@ const platforms = [
     badgeImg: cloudLogo,
     title: 'Other Cloud Environments',
     desc: 'Technology environments may include multiple cloud platforms, private infrastructure or hybrid architectures. Sentr AI can help organizations design an approach around their specific requirements.',
+    midImg: [oracleImg, googleCloudImg],
     caps: ['Hybrid cloud', 'Multi-cloud', 'Private infrastructure', 'Cloud integration', 'Workload planning', 'Infrastructure management'],
     cta: 'Discuss Your Requirements',
     href: '/company/contact',
   },
 ];
 
-// securityCards & whyPoints removed
+const cloudDeliveryModels = [
+  {
+    num: '01',
+    title: 'Private Cloud',
+    desc: 'Get the control and security of your own cloud environment. We help you decide which applications to move, when to move them and how to manage everything easily.',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2a7 7 0 0 0-6.9 6A5 5 0 0 0 2 13a5 5 0 0 0 5 5h1" />
+        <rect width="10" height="7" x="11" y="14" rx="1.5" />
+        <path d="M14 14v-2a2 2 0 1 1 4 0v2" />
+      </svg>
+    ),
+  },
+  {
+    num: '02',
+    title: 'Managed Hosting',
+    desc: 'Already have servers and systems? We manage them for you, with clear monitoring, faster issue fixing and strong security. We also help you move toward a modern setup over time.',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect width="20" height="8" x="2" y="2" rx="2" ry="2" />
+        <rect width="20" height="8" x="2" y="14" rx="2" ry="2" />
+        <line x1="6" x2="6.01" y1="6" y2="6" />
+        <line x1="6" x2="6.01" y1="18" y2="18" />
+      </svg>
+    ),
+  },
+  {
+    num: '03',
+    title: 'Public Cloud',
+    desc: 'We help you plan, move and manage your workloads on major cloud platforms. From first advice to daily operations, one team looks after it.',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
+      </svg>
+    ),
+  },
+  {
+    num: '04',
+    title: 'Cloud Platforms and Automation',
+    desc: 'Deploy applications faster using containers and automation. We set up your platform so it runs smoothly with less manual work.',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z" />
+        <path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65" />
+        <path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65" />
+      </svg>
+    ),
+  },
+  {
+    num: '05',
+    title: 'Network Services',
+    desc: 'A strong network keeps your business connected. We design, upgrade and support networks that are reliable, fast and secure.',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="16" y="16" width="6" height="6" rx="1" />
+        <rect x="2" y="16" width="6" height="6" rx="1" />
+        <rect x="9" y="2" width="6" height="6" rx="1" />
+        <path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3" />
+        <path d="M12 12V8" />
+      </svg>
+    ),
+  },
+];
 
 const industries = [
   { img: ind1, title: 'Manufacturing', desc: 'Support modern manufacturing environments with scalable infrastructure, connected systems and intelligent technology.' },
@@ -218,16 +283,98 @@ const faqs = [
   },
 ];
 
-/* Ecosystem node positions (% from center) */
+/* Ecosystem node positions & icons */
 const ecoNodes = [
-  { label: 'Enterprise IT', top: '10%', left: '50%' },
-  { label: 'Cybersecurity', top: '30%', left: '88%' },
-  { label: 'Microsoft Azure', top: '65%', left: '88%' },
-  { label: 'Applications', top: '90%', left: '50%' },
-  { label: 'AWS', top: '65%', left: '12%' },
-  { label: 'Digital Workplace', top: '30%', left: '12%' },
-  { label: 'Data', top: '10%', left: '75%' },
-  { label: 'AI & Monitoring', top: '10%', left: '25%' },
+  {
+    label: 'Cybersecurity',
+    top: '12%',
+    left: '50%',
+    icon: (
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        <path d="m9 12 2 2 4-4"/>
+      </svg>
+    ),
+  },
+  {
+    label: 'Data Protection',
+    top: '24%',
+    left: '77%',
+    icon: (
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <ellipse cx="12" cy="5" rx="9" ry="3"/>
+        <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+      </svg>
+    ),
+  },
+  {
+    label: 'Microsoft Azure',
+    top: '50%',
+    left: '86%',
+    icon: (
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Hybrid Infrastructure',
+    top: '76%',
+    left: '77%',
+    icon: (
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <rect width="20" height="8" x="2" y="2" rx="2" ry="2"/>
+        <rect width="20" height="8" x="2" y="14" rx="2" ry="2"/>
+        <line x1="6" x2="6.01" y1="6" y2="6"/>
+        <line x1="6" x2="6.01" y1="18" y2="18"/>
+      </svg>
+    ),
+  },
+  {
+    label: 'Zero Trust Access',
+    top: '88%',
+    left: '50%',
+    icon: (
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+      </svg>
+    ),
+  },
+  {
+    label: 'AWS Cloud',
+    top: '76%',
+    left: '23%',
+    icon: (
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/>
+        <path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/>
+      </svg>
+    ),
+  },
+  {
+    label: 'Identity & IAM',
+    top: '50%',
+    left: '14%',
+    icon: (
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+        <circle cx="9" cy="7" r="4"/>
+        <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+      </svg>
+    ),
+  },
+  {
+    label: 'AI Threat Telemetry',
+    top: '24%',
+    left: '23%',
+    icon: (
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+      </svg>
+    ),
+  },
 ];
 
 export const CloudSolutionsPage: React.FC = () => {
@@ -272,17 +419,22 @@ export const CloudSolutionsPage: React.FC = () => {
 
   useEffect(() => {
     if (location.hash) {
-      // Small timeout to ensure DOM is ready and page transitioned
-      setTimeout(() => {
+      const scrollToHash = () => {
         const element = document.querySelector(location.hash);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
         }
-      }, 100);
+      };
+      const t1 = setTimeout(scrollToHash, 80);
+      const t2 = setTimeout(scrollToHash, 250);
+      return () => {
+        clearTimeout(t1);
+        clearTimeout(t2);
+      };
     } else {
       window.scrollTo(0, 0);
     }
-  }, [location]);
+  }, [location.pathname, location.hash]);
 
   // Auto-scroll the services carousel every 5 seconds
   useEffect(() => {
@@ -300,11 +452,11 @@ export const CloudSolutionsPage: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Alternate Azure card images every 3 seconds
+  // Alternate platform card images every 2 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveAzureImg((prev) => prev + 1);
-    }, 3000);
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
 
@@ -432,21 +584,21 @@ export const CloudSolutionsPage: React.FC = () => {
                 <h3 className="cs-platform-card__title">{p.title}</h3>
                 <p className="cs-platform-card__desc">{p.desc}</p>
                 {p.midImg && Array.isArray(p.midImg) ? (
-                  <div style={{ position: 'relative', width: '85%', margin: '0 auto 1.5rem' }}>
+                  <div style={{ position: 'relative', width: '85%', height: '130px', margin: '0 auto 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     {p.midImg.map((imgSrc, idx) => (
                       <img 
                         key={idx}
                         src={imgSrc} 
                         alt="" 
                         style={{ 
-                          position: idx === 0 ? 'relative' : 'absolute', 
-                          top: idx === 0 ? 'auto' : 0, 
-                          left: idx === 0 ? 'auto' : 0,
+                          position: 'absolute', 
+                          top: 0, 
+                          left: 0, 
                           width: '100%', 
-                          height: idx === 0 ? 'auto' : '100%', 
+                          height: '100%', 
                           borderRadius: '8px', 
                           objectFit: 'contain', 
-                          transition: 'opacity 0.5s ease', 
+                          transition: 'opacity 0.6s ease-in-out', 
                           opacity: (activeAzureImg % p.midImg.length) === idx ? 1 : 0 
                         }} 
                       />
@@ -469,8 +621,8 @@ export const CloudSolutionsPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ── INTRODUCTION ── */}
-      <section className="cs-intro" aria-labelledby="intro-heading" style={{ position: 'relative', background: 'transparent' }}>
+      {/* ── CLOUD DELIVERY MODELS & SERVICES ── */}
+      <section className="cs-delivery" aria-label="Cloud Delivery Models" style={{ position: 'relative', background: 'transparent' }}>
         {/* Photo background */}
         <div
           style={{
@@ -488,47 +640,37 @@ export const CloudSolutionsPage: React.FC = () => {
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'linear-gradient(135deg, rgba(6,12,26,0.85) 0%, rgba(10,22,40,0.95) 100%)',
+            background: 'linear-gradient(135deg, rgba(6,12,26,0.88) 0%, rgba(10,22,40,0.96) 100%)',
             zIndex: 1,
           }}
           aria-hidden="true"
         />
         <div className="cs-container" style={{ position: 'relative', zIndex: 2 }}>
-          <div className="cs-intro__grid">
-            <div className="fade-in-up">
-              <div className="cs-eyebrow" style={{ color: '#00c4a1' }}>
-                Our Approach
-              </div>
-              <h2 id="intro-heading" className="cs-intro__heading">
-                Cloud Should Make Your Business Simpler, Not More Complicated.
-              </h2>
-              <div className="cs-intro__body">
-                <p>Sentr AI helps organizations understand their existing technology environment, choose the right cloud approach, implement the required infrastructure and continuously improve their cloud operations.</p>
-              </div>
-            </div>
-
-            {/* Journey flow */}
-            <div className="cs-flow" aria-label="Cloud journey steps">
-              {[
-                { title: 'Existing Environment', desc: 'Current infrastructure, applications & data' },
-                { title: 'Assessment', desc: 'Understand workloads, risks & requirements' },
-                { title: 'Cloud Strategy', desc: 'Architecture, platform & migration planning' },
-                { title: 'Migration / Modernization', desc: 'Structured move to cloud environment' },
-                { title: 'Secure Cloud Environment', desc: 'Security built in at every layer' },
-                { title: 'Managed & Optimized Cloud', desc: 'Ongoing monitoring, support & improvement' },
-              ].map((step, i, arr) => (
-                <div key={step.title} className="cs-flow__step fade-in-up" style={{ transitionDelay: `${0.15 + i * 0.1}s` }}>
-                  <div className="cs-flow__step-left">
-                    <div className="cs-flow__num">{String(i + 1).padStart(2, '0')}</div>
-                    {i < arr.length - 1 && <div className="cs-flow__line" />}
+          <div className="cs-delivery-grid">
+            {cloudDeliveryModels.map((item, i) => (
+              <article
+                key={item.title}
+                className={`cs-delivery-card cs-delivery-card--color-${i + 1} fade-in-up`}
+                style={{ transitionDelay: `${0.1 + i * 0.08}s` }}
+              >
+                <div className="cs-delivery-card__top">
+                  <div className="cs-delivery-card__icon" aria-hidden="true">
+                    {item.icon}
                   </div>
-                  <div className="cs-flow__content">
-                    <div className="cs-flow__title">{step.title}</div>
-                    <div className="cs-flow__desc">{step.desc}</div>
-                  </div>
+                  <span className="cs-delivery-card__num">{item.num}</span>
                 </div>
-              ))}
-            </div>
+                <h3 className="cs-delivery-card__title">{item.title}</h3>
+                <p className="cs-delivery-card__desc">{item.desc}</p>
+                <Link
+                  to="/company/contact"
+                  className="cs-delivery-card__link"
+                  aria-label={`Know more about ${item.title}`}
+                >
+                  <span className="cs-delivery-card__link-text">Know More</span>
+                  <IconArrow />
+                </Link>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -538,12 +680,12 @@ export const CloudSolutionsPage: React.FC = () => {
         <div className="cs-services__dots" aria-hidden="true" />
         <div className="cs-container" style={{ position: 'relative', zIndex: 1 }}>
           <div className="cs-services__header-wrapper">
-            <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto' }}>
-              <div className="cs-eyebrow fade-in-up" style={{ color: '#2563eb', justifyContent: 'center' }}>Cloud Services</div>
-              <h2 id="services-heading" className="cs-section-heading fade-in-up">
+            <div className="cs-services__header-text">
+              <div className="cs-eyebrow fade-in-up" style={{ color: '#2563eb', justifyContent: 'flex-start' }}>Cloud Services</div>
+              <h2 id="services-heading" className="cs-section-heading fade-in-up" style={{ textAlign: 'left' }}>
                 Everything You Need to Build and Manage Your Cloud
               </h2>
-              <p className="cs-section-sub fade-in-up" style={{ margin: '0 auto' }}>
+              <p className="cs-section-sub fade-in-up" style={{ textAlign: 'left', margin: '0', maxWidth: '680px' }}>
                 From your first cloud migration to ongoing optimization, our services cover the complete cloud journey.
               </p>
             </div>
@@ -583,38 +725,127 @@ export const CloudSolutionsPage: React.FC = () => {
       <section className="cs-security" aria-labelledby="security-heading">
         <div className="cs-container" style={{ position: 'relative', zIndex: 1 }}>
           <div className="cs-security__grid">
-            <div>
-              <div className="cs-eyebrow fade-in-up">Cloud Security</div>
+            <div className="cs-security__left">
               <h2 id="security-heading" className="cs-security__heading fade-in-up">
-                Security Built Into Your Cloud Environment
+                Security Built Into Your <span className="cs-security__heading-accent">Cloud Environment</span>
               </h2>
-              <p className="cs-security__sub fade-in-up">
-                Cloud infrastructure needs protection at every layer. Sentr AI combines cloud capabilities with its broader cybersecurity expertise to help organizations strengthen their digital environments.
-              </p>
 
-              <div style={{ marginTop: '2rem' }}>
-                <Link to="/solutions/cybersecurity" className="cs-btn-outline" style={{ display: 'inline-flex' }}>
-                  Explore Cybersecurity <IconArrow />
+              {/* Security Pillars */}
+              <div className="cs-security__pillars fade-in-up">
+                <div className="cs-sec-pillar">
+                  <div className="cs-sec-pillar__icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                      <path d="m9 12 2 2 4-4"/>
+                    </svg>
+                  </div>
+                  <div className="cs-sec-pillar__body">
+                    <h4 className="cs-sec-pillar__title">Zero Trust Security</h4>
+                    <p className="cs-sec-pillar__desc">Every user is verified. Everyone gets only the access they need.</p>
+                  </div>
+                </div>
+
+                <div className="cs-sec-pillar">
+                  <div className="cs-sec-pillar__icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                    </svg>
+                  </div>
+                  <div className="cs-sec-pillar__body">
+                    <h4 className="cs-sec-pillar__title">Round-the-Clock Threat Watch</h4>
+                    <p className="cs-sec-pillar__desc">Live monitoring that spots risks and stops them fast.</p>
+                  </div>
+                </div>
+
+                <div className="cs-sec-pillar">
+                  <div className="cs-sec-pillar__icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    </svg>
+                  </div>
+                  <div className="cs-sec-pillar__body">
+                    <h4 className="cs-sec-pillar__title">Complete Security and Compliance</h4>
+                    <p className="cs-sec-pillar__desc">Your data stays encrypted and your systems stay in line with the rules, across Azure, AWS and private clouds.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="cs-security__actions fade-in-up">
+                <Link to="/solutions/cybersecurity" className="cs-security__btn-primary">
+                  Explore Cybersecurity
                 </Link>
               </div>
             </div>
 
-            {/* Ecosystem */}
-            <div className="cs-ecosystem fade-in-up" style={{ transitionDelay: '0.15s' }} aria-label="Cloud ecosystem diagram" role="img">
-              <div className="cs-eco__ring cs-eco__ring-1" aria-hidden="true" />
-              <div className="cs-eco__ring cs-eco__ring-2" aria-hidden="true" />
-              <div className="cs-eco__center">CLOUD<br />SENTR AI</div>
-              <div className="cs-eco__orbit">
-                {ecoNodes.map((node) => (
-                  <div
-                    key={node.label}
-                    className="cs-eco__node"
-                    aria-hidden="true"
-                    style={{ top: node.top, left: node.left }}
-                  >
-                    {node.label}
+            {/* Ecosystem Diagram */}
+            <div className="cs-ecosystem-wrapper fade-in-up" style={{ transitionDelay: '0.15s' }}>
+              <div className="cs-ecosystem" aria-label="Cloud security ecosystem" role="img">
+                {/* Ambient Glow */}
+                <div className="cs-eco__glow-backdrop" aria-hidden="true" />
+
+                {/* Radar Sweep Scanner */}
+                <div className="cs-eco__radar-sweep" aria-hidden="true" />
+
+                {/* Sonar Pulse Waves */}
+                <div className="cs-eco__sonar-pulse cs-eco__sonar-1" aria-hidden="true" />
+                <div className="cs-eco__sonar-pulse cs-eco__sonar-2" aria-hidden="true" />
+                <div className="cs-eco__sonar-pulse cs-eco__sonar-3" aria-hidden="true" />
+
+                {/* Concentric Rings */}
+                <div className="cs-eco__ring cs-eco__ring-inner" aria-hidden="true" />
+                <div className="cs-eco__ring cs-eco__ring-mid" aria-hidden="true" />
+                <div className="cs-eco__ring cs-eco__ring-outer" aria-hidden="true" />
+
+                {/* Connecting Rays SVG */}
+                <svg className="cs-eco__rays-svg" viewBox="0 0 500 500" aria-hidden="true">
+                  {ecoNodes.map((node, idx) => {
+                    const nx = parseFloat(node.left) * 5;
+                    const ny = parseFloat(node.top) * 5;
+                    return (
+                      <line
+                        key={`ray-${idx}`}
+                        x1="250"
+                        y1="250"
+                        x2={nx}
+                        y2={ny}
+                        stroke="rgba(56, 189, 248, 0.22)"
+                        strokeWidth="1.2"
+                        strokeDasharray="4 4"
+                      />
+                    );
+                  })}
+                </svg>
+
+                {/* Center Core */}
+                <div className="cs-eco__center">
+                  <div className="cs-eco__center-shield-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                      <path d="m9 12 2 2 4-4"/>
+                    </svg>
                   </div>
-                ))}
+                  <span className="cs-eco__center-title">SENTR AI</span>
+                  <span className="cs-eco__center-tag">CLOUD DEFENSE</span>
+                  <span className="cs-eco__center-status">
+                    <span className="cs-eco__center-status-dot" />
+                    ACTIVE
+                  </span>
+                </div>
+
+                {/* Orbit Nodes */}
+                <div className="cs-eco__nodes-layer">
+                  {ecoNodes.map((node) => (
+                    <div
+                      key={node.label}
+                      className="cs-eco__node"
+                      style={{ top: node.top, left: node.left }}
+                    >
+                      <span className="cs-eco__node-icon">{node.icon}</span>
+                      <span className="cs-eco__node-text">{node.label}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

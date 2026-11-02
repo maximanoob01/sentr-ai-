@@ -1606,51 +1606,92 @@
   }
 
   .ai-cta-section {
-    padding: 2rem 0;
+    padding: 1.25rem 0;
   }
 
   .ai-cta-dots {
-    width: 130px;
-    height: 140px;
-    opacity: 0.35;
+    width: 100px;
+    height: 110px;
+    opacity: 0.25;
   }
 
   .ai-cta-dots--left {
-    left: -40px;
+    left: -30px;
   }
 
   .ai-cta-dots--right {
-    right: -40px;
+    right: -30px;
   }
 
   .ai-cta-card {
-    padding: 1.75rem 1.15rem;
-    border-radius: 16px;
+    padding: 1.25rem 1rem;
+    border-radius: 14px;
+    max-width: 96%;
   }
 
   .ai-cta-card__title {
-    font-size: 1.35rem;
-    margin-bottom: 0.45rem;
+    font-size: 1.15rem;
+    margin-bottom: 0.35rem;
+    line-height: 1.2;
   }
 
   .ai-cta-card__lead {
-    font-size: 0.88rem;
-    margin-bottom: 0.35rem;
+    font-size: 0.82rem;
+    margin-bottom: 0.25rem;
+    line-height: 1.4;
   }
 
   .ai-cta-card__desc {
-    font-size: 0.8rem;
-    line-height: 1.45;
-    margin-bottom: 0.45rem;
+    font-size: 0.74rem;
+    line-height: 1.4;
+    margin-bottom: 0.35rem;
+    max-width: 96%;
   }
 
   .ai-cta-card__closing {
-    font-size: 0.85rem;
-    margin-bottom: 1rem;
+    font-size: 0.78rem;
+    margin-bottom: 0.85rem;
+    line-height: 1.35;
   }
 
   .ai-cta-card .ai-btn-primary {
-    padding: 0.5rem 1.25rem;
-    font-size: 0.8rem;
+    padding: 0.42rem 1.15rem;
+    font-size: 0.78rem;
+    border-radius: 8px;
+  }
+
+  .ai-cta-card .ai-btn-primary svg {
+    width: 13px;
+    height: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ai-cta-card {
+    padding: 1.1rem 0.85rem;
+    border-radius: 12px;
+  }
+
+  .ai-cta-card__title {
+    font-size: 1.05rem;
+  }
+
+  .ai-cta-card__lead {
+    font-size: 0.78rem;
+  }
+
+  .ai-cta-card__desc {
+    font-size: 0.7rem;
+    line-height: 1.35;
+  }
+
+  .ai-cta-card__closing {
+    font-size: 0.74rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .ai-cta-card .ai-btn-primary {
+    padding: 0.38rem 1rem;
+    font-size: 0.75rem;
   }
 }

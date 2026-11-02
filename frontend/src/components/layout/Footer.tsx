@@ -23,11 +23,11 @@ const FOOTER_SECTIONS: FooterSection[] = [
     id: 'solutions',
     title: 'Solutions',
     links: [
-      { label: 'Intelligent Monitoring', to: '/solutions/intelligent-monitoring' },
+      { label: 'Intelligent Monitoring', to: '/products/aindri' },
       { label: 'AI Solutions', to: '/solutions/ai' },
       { label: 'IoT & Industrial Tech', to: '/solutions/iot' },
       { label: 'Cybersecurity', to: '/solutions/cybersecurity' },
-      { label: 'Cloud Infrastructure', to: '/solutions/cloud-infrastructure' },
+      { label: 'Cloud Infrastructure', to: '/cloud-solutions#services' },
       { label: 'Enterprise IT Services', to: '/solutions/enterprise-it' },
     ],
   },

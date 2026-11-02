@@ -44,6 +44,35 @@
   max-width: 520px;
   line-height: 1.7;
   margin: 0 auto;
+  min-height: 3.4em;
+}
+
+/* Typing Cursor */
+.contact-typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background-color: #2563eb;
+  margin-left: 3px;
+  vertical-align: -0.15em;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.6);
+  animation: contactCursorBlink 0.8s infinite;
+}
+
+.contact-typing-cursor--done {
+  animation: contactCursorFadeOut 1.5s forwards 2.5s;
+}
+
+@keyframes contactCursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes contactCursorFadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 /* ── Main Form Section ── */
@@ -451,6 +480,7 @@
     font-size: 0.88rem;
     line-height: 1.55;
     padding: 0 0.5rem;
+    min-height: 3.2em;
   }
 
   /* Main Contact Card */

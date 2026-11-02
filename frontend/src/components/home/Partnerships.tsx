@@ -25,7 +25,7 @@ const partners = [
   { id: 8, logo: logo9, name: 'Partner 8' },
   { id: 9, logo: logo10, name: 'Partner 9' },
   { id: 10, logo: logo11, name: 'Partner 10' },
-  { id: 11, logo: logo12, name: 'Partner 11', isZoomed: true },
+  { id: 11, logo: logo12, name: 'Partner 11' },
   { id: 12, logo: logo13, name: 'Partner 12' },
 ];
 
@@ -44,12 +44,12 @@ export const Partnerships: React.FC = () => {
           {partners.map(partner => (
             <div 
               key={partner.id} 
-              className={`partnerships__card ${partner.isZoomed ? 'partnerships__card--zoomed' : ''}`}
+              className="partnerships__card"
             >
               <img 
                 src={partner.logo} 
                 alt={partner.name} 
-                className={`partnerships__logo ${partner.isZoomed ? 'partnerships__logo--zoomed' : ''}`} 
+                className="partnerships__logo" 
               />
             </div>
           ))}
@@ -57,12 +57,12 @@ export const Partnerships: React.FC = () => {
           {partners.map(partner => (
             <div 
               key={`dup-${partner.id}`} 
-              className={`partnerships__card partnerships__card--dup ${partner.isZoomed ? 'partnerships__card--zoomed' : ''}`}
+              className="partnerships__card partnerships__card--dup"
             >
               <img 
                 src={partner.logo} 
                 alt={partner.name} 
-                className={`partnerships__logo ${partner.isZoomed ? 'partnerships__logo--zoomed' : ''}`} 
+                className="partnerships__logo" 
               />
             </div>
           ))}

@@ -221,6 +221,9 @@ export const CareerPage: React.FC = () => {
             <p className="career-why__desc">
               At Sentr AI, you won't just be working on isolated tasks. You'll have the opportunity to contribute to solutions designed to solve real operational and technology challenges for businesses.
             </p>
+            <div className="career-why__swipe-hint" aria-hidden="true">
+              Swipe to explore &rarr;
+            </div>
           </div>
           {/* Cards grid */}
           <div className="career-why__grid">
