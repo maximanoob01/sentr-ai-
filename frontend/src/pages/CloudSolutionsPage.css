@@ -7,6 +7,8 @@
   min-height: 100vh;
   background: var(--bg-base);
   font-family: var(--font-sans);
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .cs-container {
@@ -84,14 +86,15 @@
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
+  grid-template-columns: 1fr;
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
   align-items: center;
 }
 
-
 .cs-hero__headline {
-  font-size: clamp(1.85rem, 3.8vw, 3.25rem);
+  font-size: clamp(2rem, 3.8vw, 3.25rem);
   font-weight: 800;
   color: #ffffff;
   line-height: 1.15;
@@ -100,14 +103,8 @@
 }
 
 .cs-hero__headline-main {
-  display: block;
-  white-space: nowrap;
-}
-
-@media (max-width: 640px) {
-  .cs-hero__headline-main {
-    white-space: normal;
-  }
+  display: inline-block;
+  white-space: normal;
 }
 
 .cs-hero__headline-accent {
@@ -124,11 +121,12 @@
 }
 
 .cs-hero__sub {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.65);
-  line-height: 1.75;
-  max-width: 500px;
-  margin-bottom: 2.5rem;
+  font-size: 1.125rem;
+  color: #94a3b8;
+  line-height: 1.7;
+  max-width: 720px;
+  margin: 0 auto 2rem;
+  min-height: 3.4em;
 }
 
 /* Typing Cursor */
@@ -162,6 +160,7 @@
 .cs-hero__actions {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
 }
@@ -2172,7 +2171,7 @@
    RESPONSIVE
    ================================================================ */
 @media (max-width: 1024px) {
-  .cs-hero__inner { grid-template-columns: 1fr; gap: 3rem; }
+  .cs-hero__inner { grid-template-columns: 1fr; gap: 2.5rem; }
   .cs-hero__visual { display: none; }
   .cs-delivery { padding: 3.5rem 0 3rem; }
   .cs-delivery-grid {
@@ -2188,7 +2187,9 @@
   .cs-delivery-card:nth-child(5) {
     grid-column: span 2;
   }
-  .cs-services__grid { grid-template-columns: repeat(2, 1fr); }
+  .cs-service-card {
+    flex: 0 0 calc(50% - 0.75rem);
+  }
   .cs-journey__steps { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
   .cs-journey__steps::before { display: none; }
   .cs-platforms__grid { grid-template-columns: 1fr; }
@@ -2200,37 +2201,670 @@
 }
 
 @media (max-width: 768px) {
-  .cs-delivery { padding: 2.75rem 0 2.25rem; }
+  .cs-container {
+    padding: 0 1.25rem;
+  }
+
+  /* Hero Section */
+  .cs-hero {
+    min-height: auto;
+    padding-top: calc(var(--nav-height) + 2.5rem);
+    padding-bottom: 2.75rem;
+  }
+  .cs-hero__headline {
+    font-size: 1.65rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .cs-hero__headline-main {
+    white-space: normal;
+  }
+  .cs-hero__sub {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin: 0 auto 1.75rem;
+    min-height: 3.6em;
+    max-width: 95%;
+  }
+  .cs-hero__actions {
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+  .cs-btn-primary,
+  .cs-btn-white,
+  .cs-btn-outline {
+    padding: 0.75rem 1.6rem;
+    font-size: 0.86rem;
+  }
+
+  /* Capabilities Strip */
+  .cs-strip {
+    padding: 0.85rem 0;
+  }
+  .cs-strip__item {
+    padding: 0.4rem 1.25rem;
+    font-size: 0.72rem;
+  }
+
+  /* Section Headings & Eyebrows */
+  .cs-section-heading {
+    font-size: 1.55rem;
+    line-height: 1.2;
+    margin-bottom: 0.65rem;
+  }
+  .cs-section-sub {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  .cs-eyebrow {
+    font-size: 0.64rem;
+    margin-bottom: 0.85rem;
+  }
+
+  /* Platforms Section */
+  .cs-platforms {
+    padding: 3.5rem 0 4rem;
+  }
+  .cs-platforms__grid {
+    gap: 1.25rem;
+  }
+  .cs-platform-card {
+    padding: 1.75rem 1.35rem;
+    border-radius: 18px;
+  }
+  .cs-platform-card__title {
+    font-size: 1.2rem;
+  }
+  .cs-platform-card__desc {
+    font-size: 0.84rem;
+    line-height: 1.6;
+  }
+
+  /* Cloud Delivery Models */
+  .cs-delivery {
+    padding: 3rem 0 2.5rem;
+  }
   .cs-delivery-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
   .cs-delivery-card:nth-child(n) {
     grid-column: span 1;
-    padding: 1.75rem 1.35rem;
+    padding: 1.5rem 1.25rem;
+    min-height: auto;
+    border-radius: 18px;
   }
   .cs-delivery-card__title {
     font-size: 1.15rem;
   }
   .cs-delivery-card__desc {
-    font-size: 0.88rem;
+    font-size: 0.86rem;
     line-height: 1.55;
   }
-  .cs-hero { min-height: auto; padding-top: calc(var(--nav-height) + 3.25rem); padding-bottom: 3rem; }
-  .cs-hero__headline { font-size: 2rem; }
-  .cs-services__grid { grid-template-columns: 1fr; }
-  .cs-journey__steps { grid-template-columns: 1fr; }
-  .cs-industries__grid { grid-template-columns: 1fr; }
-  .cs-industry-card { flex-direction: column; text-align: center; padding: 1rem; }
-  .cs-industry-card__img-wrap { width: 100%; height: 250px; }
-  .cs-hero__actions { flex-direction: column; align-items: flex-start; }
-  .cs-container { padding: 0 1.25rem; }
-  .cs-strip__item { padding: 0.5rem 1.25rem; }
-  .cs-arch { display: none; }
-  .cs-faq__container { padding: 2rem 1.5rem; border-radius: 16px; }
-  .cs-faq__heading { margin-bottom: 2rem; }
-  .cs-faq__contact-block { margin-top: 1rem; }
+  .cs-delivery-card__top {
+    margin-bottom: 1.1rem;
+  }
+  .cs-delivery-card__icon {
+    width: 44px;
+    height: 44px;
+  }
+  .cs-delivery-card__link {
+    margin-top: 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  /* Services Carousel */
+  .cs-services {
+    padding: 3.5rem 0;
+  }
+  .cs-services__header-wrapper {
+    margin-bottom: 1.75rem;
+    gap: 1rem;
+  }
+  .cs-service-card {
+    flex: 0 0 82%;
+    padding: 1.4rem;
+    border-radius: 14px;
+  }
+  .cs-service-card__title {
+    font-size: 0.92rem;
+  }
+  .cs-service-card__desc {
+    font-size: 0.8rem;
+  }
+  .cs-service-card__cap {
+    font-size: 0.72rem;
+  }
+
+  /* Cloud Security */
+  .cs-security {
+    padding: 3.5rem 0;
+  }
+  .cs-security__heading {
+    font-size: 1.55rem;
+    line-height: 1.22;
+  }
+  .cs-sec-pillar {
+    gap: 0.85rem;
+  }
+  .cs-sec-pillar__title {
+    font-size: 0.98rem;
+  }
+  .cs-sec-pillar__desc {
+    font-size: 0.85rem;
+    line-height: 1.55;
+  }
+
+  /* Cloud Journey */
+  .cs-journey {
+    padding: 3.5rem 0 2rem;
+  }
+  .cs-journey__heading {
+    font-size: 1.55rem;
+    margin-bottom: 2rem;
+  }
+  .cs-journey__steps {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .cs-journey__moving-arrow,
+  .cs-journey__step::before {
+    display: none !important;
+  }
+  .cs-journey__icon-wrap {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 0.85rem;
+  }
+  .cs-journey__title {
+    font-size: 0.82rem;
+    margin-bottom: 0.5rem;
+  }
+  .cs-journey__desc {
+    font-size: 0.8rem;
+    line-height: 1.55;
+  }
+
+  /* Why Sentr AI */
+  .cs-why {
+    padding: 3.5rem 0;
+  }
+  .cs-why__layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .cs-why__header .cs-section-heading {
+    font-size: 1.55rem;
+  }
+  .cs-why__body {
+    padding-left: 1.25rem;
+    border-left-width: 2px;
+  }
+  .cs-why__text {
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+
+  /* Cloud Needs */
+  .cs-needs {
+    padding: 3.5rem 0;
+  }
+  .cs-needs__grid {
+    grid-template-columns: 1fr;
+    margin-top: 1.75rem;
+    gap: 1rem;
+  }
+  .cs-need-card {
+    padding: 1.5rem 1.25rem;
+  }
+  .cs-need-card__service {
+    font-size: 1.1rem;
+  }
+  .cs-need-card__desc {
+    font-size: 0.82rem;
+  }
+
+  /* Industries */
+  .cs-industries {
+    padding: 3.5rem 0 2rem;
+  }
+  .cs-industries__grid {
+    grid-template-columns: 1fr;
+    margin-top: 2rem;
+    gap: 1.25rem;
+  }
+  .cs-industry-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.25rem;
+    border-radius: 18px;
+    gap: 1.25rem;
+  }
+  .cs-industry-card__img-wrap {
+    width: 100%;
+    height: 200px;
+    border-radius: 14px;
+  }
+  .cs-industry-card__title {
+    font-size: 1.15rem;
+  }
+  .cs-industry-card__desc {
+    font-size: 0.85rem;
+    line-height: 1.55;
+  }
+
+  /* FAQ */
+  .cs-faq {
+    padding: 2.5rem 0 4rem;
+  }
+  .cs-faq__container {
+    padding: 2rem 1.5rem;
+    border-radius: 18px;
+    gap: 2.25rem;
+  }
+  .cs-faq__heading {
+    font-size: 1.55rem;
+    margin-bottom: 1.75rem;
+  }
+  .cs-faq-item__text {
+    font-size: 0.88rem;
+  }
+  .cs-faq-item__a p {
+    font-size: 0.82rem;
+  }
+  .cs-faq__contact-block {
+    margin-top: 1rem;
+  }
+
+  /* Final CTA */
+  .cs-cta {
+    padding: 4.5rem 0;
+  }
+  .cs-cta__heading {
+    font-size: 1.6rem;
+  }
+  .cs-cta__sub {
+    font-size: 0.88rem;
+    margin-bottom: 2rem;
+  }
+  .cs-arch {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {
+  .cs-container {
+    padding: 0 1rem;
+  }
+
+  /* Hero Section */
+  .cs-hero {
+    padding-top: calc(var(--nav-height) + 1.85rem);
+    padding-bottom: 2.25rem;
+  }
+  .cs-hero__headline {
+    font-size: 1.35rem;
+    line-height: 1.22;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.015em;
+  }
+  .cs-hero__sub {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    margin: 0 auto 1.5rem;
+    min-height: 4em;
+    max-width: 100%;
+  }
+  .cs-hero__actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.65rem;
+    width: 100%;
+  }
+  .cs-hero__actions .cs-btn-primary,
+  .cs-hero__actions .cs-btn-white,
+  .cs-hero__actions .cs-btn-outline {
+    width: 100%;
+    max-width: 280px;
+    padding: 0.65rem 1.25rem;
+    font-size: 0.82rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Capabilities Strip */
+  .cs-strip {
+    padding: 0.75rem 0;
+  }
+  .cs-strip__item {
+    padding: 0.35rem 1rem;
+    font-size: 0.68rem;
+  }
+
+  /* Section Headings */
+  .cs-section-heading {
+    font-size: 1.3rem;
+    line-height: 1.22;
+    margin-bottom: 0.5rem;
+  }
+  .cs-section-sub {
+    font-size: 0.8rem;
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
+  }
+  .cs-eyebrow {
+    font-size: 0.58rem;
+    letter-spacing: 0.14em;
+    margin-bottom: 0.65rem;
+  }
+
+  /* Platforms Section */
+  .cs-platforms {
+    padding: 2.75rem 0 3.25rem;
+  }
+  .cs-platform-card {
+    padding: 1.35rem 1rem;
+    border-radius: 16px;
+  }
+  .cs-platform-card__title {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+  }
+  .cs-platform-card__desc {
+    font-size: 0.78rem;
+    line-height: 1.55;
+    margin-bottom: 1.15rem;
+  }
+  .cs-platform-card__caps {
+    gap: 0.3rem;
+    margin-bottom: 1.35rem;
+  }
+  .cs-platform-card__cap-tag {
+    font-size: 0.65rem;
+    padding: 0.2em 0.55em;
+  }
+  .cs-platform-card .cs-btn-primary {
+    font-size: 0.8rem;
+    padding: 0.6rem 1.25rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Cloud Delivery Models */
+  .cs-delivery {
+    padding: 2.5rem 0 2rem;
+  }
+  .cs-delivery-card:nth-child(n) {
+    padding: 1.25rem 1rem;
+    border-radius: 16px;
+  }
+  .cs-delivery-card__title {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+  }
+  .cs-delivery-card__desc {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+  .cs-delivery-card__top {
+    margin-bottom: 0.85rem;
+  }
+  .cs-delivery-card__icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+  .cs-delivery-card__num {
+    font-size: 0.82rem;
+  }
+  .cs-delivery-card__link {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+  }
+
+  /* Services Carousel */
+  .cs-services {
+    padding: 2.75rem 0;
+  }
+  .cs-services__header-wrapper {
+    margin-bottom: 1.35rem;
+  }
+  .cs-service-card {
+    flex: 0 0 90%;
+    padding: 1.25rem 1rem;
+    border-radius: 14px;
+  }
+  .cs-service-card__icon {
+    width: 38px;
+    height: 38px;
+    margin-bottom: 1rem;
+  }
+  .cs-service-card__title {
+    font-size: 0.88rem;
+    margin-bottom: 0.45rem;
+  }
+  .cs-service-card__desc {
+    font-size: 0.78rem;
+    line-height: 1.55;
+    margin-bottom: 0.85rem;
+  }
+  .cs-service-card__cap {
+    font-size: 0.7rem;
+  }
+  .cs-service-card__cta {
+    font-size: 0.74rem;
+  }
+  .cs-carousel-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  /* Cloud Security */
+  .cs-security {
+    padding: 2.75rem 0;
+  }
+  .cs-security__heading {
+    font-size: 1.3rem;
+    line-height: 1.22;
+    margin-bottom: 1rem;
+  }
+  .cs-security__pillars {
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  .cs-sec-pillar {
+    gap: 0.75rem;
+  }
+  .cs-sec-pillar__title {
+    font-size: 0.88rem;
+    margin-bottom: 0.25rem;
+  }
+  .cs-sec-pillar__desc {
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+  .cs-security__btn-primary {
+    font-size: 0.82rem;
+    padding: 0.65rem 1.35rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Cloud Journey */
+  .cs-journey {
+    padding: 2.5rem 0 1.25rem;
+  }
+  .cs-journey__heading {
+    font-size: 1.3rem;
+    line-height: 1.22;
+    margin-bottom: 1.5rem;
+  }
+  .cs-journey__steps {
+    gap: 1.25rem;
+  }
+  .cs-journey__num {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+  .cs-journey__icon-wrap {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0.65rem;
+  }
+  .cs-journey__title {
+    font-size: 0.76rem;
+    margin-bottom: 0.35rem;
+  }
+  .cs-journey__desc {
+    font-size: 0.76rem;
+    line-height: 1.5;
+  }
+
+  /* Why Sentr AI */
+  .cs-why {
+    padding: 2.75rem 0;
+  }
+  .cs-why__header .cs-section-heading {
+    font-size: 1.3rem;
+  }
+  .cs-why__body {
+    padding-left: 1rem;
+    border-left-width: 2px;
+  }
+  .cs-why__text {
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+
+  /* Cloud Needs */
+  .cs-needs {
+    padding: 2.75rem 0;
+  }
+  .cs-needs__grid {
+    margin-top: 1.35rem;
+    gap: 0.85rem;
+  }
+  .cs-need-card {
+    padding: 1.25rem 1rem;
+    border-radius: 14px;
+  }
+  .cs-need-card__need {
+    font-size: 0.6rem;
+    margin-bottom: 0.35rem;
+  }
+  .cs-need-card__service {
+    font-size: 1.02rem;
+    margin-bottom: 0.45rem;
+  }
+  .cs-need-card__desc {
+    font-size: 0.78rem;
+    line-height: 1.55;
+  }
+
+  /* Industries */
+  .cs-industries {
+    padding: 2.75rem 0 1.5rem;
+  }
+  .cs-industries__grid {
+    margin-top: 1.5rem;
+    gap: 1rem;
+  }
+  .cs-industry-card {
+    padding: 1rem;
+    border-radius: 14px;
+    gap: 1rem;
+  }
+  .cs-industry-card__img-wrap {
+    height: 160px;
+    border-radius: 12px;
+  }
+  .cs-industry-card__title {
+    font-size: 1.02rem;
+    margin-bottom: 0.35rem;
+  }
+  .cs-industry-card__desc {
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+
+  /* FAQ */
+  .cs-faq {
+    padding: 1.75rem 0 3rem;
+  }
+  .cs-faq__container {
+    padding: 1.35rem 1rem;
+    border-radius: 14px;
+    gap: 1.75rem;
+  }
+  .cs-faq__heading {
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  .cs-faq-item__q {
+    padding: 0.85rem 1rem;
+  }
+  .cs-faq-item__text {
+    font-size: 0.82rem;
+  }
+  .cs-faq-item__a {
+    padding: 0 1rem;
+  }
+  .cs-faq-item.open .cs-faq-item__a {
+    padding: 0 1rem 1rem 1rem;
+  }
+  .cs-faq-item__a p {
+    font-size: 0.78rem;
+    line-height: 1.55;
+  }
+  .cs-faq__contact-block h3 {
+    font-size: 0.92rem;
+    margin-bottom: 0.35rem;
+  }
+  .cs-faq__contact-block p {
+    font-size: 0.78rem;
+    margin-bottom: 1rem;
+  }
+  .cs-faq__contact-btn {
+    font-size: 0.82rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  /* Final CTA */
+  .cs-cta {
+    padding: 3.5rem 0;
+  }
+  .cs-cta__heading {
+    font-size: 1.25rem;
+    line-height: 1.22;
+  }
+  .cs-cta__sub {
+    font-size: 0.8rem;
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
+  }
+  .cs-cta__actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.65rem;
+    margin-bottom: 1.75rem;
+  }
+  .cs-cta__actions .cs-btn-primary,
+  .cs-cta__actions .cs-btn-white,
+  .cs-cta__actions .cs-btn-outline {
+    width: 100%;
+    max-width: 280px;
+    padding: 0.65rem 1.25rem;
+    font-size: 0.82rem;
+    justify-content: center;
+    text-align: center;
+  }
+  .cs-cta__contact {
+    gap: 1rem;
+  }
+  .cs-cta__contact a {
+    font-size: 0.78rem;
+  }
 }

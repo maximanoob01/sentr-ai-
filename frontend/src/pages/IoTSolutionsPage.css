@@ -991,23 +991,62 @@
     margin-bottom: 0.65rem;
   }
 
+  .iot-cta-section {
+    padding: 1.75rem 0 2.25rem;
+  }
+
   .iot-cta-card {
-    padding: 1.25rem 1rem;
+    padding: 1.1rem 0.95rem;
     border-radius: 14px;
   }
 
+  .iot-cta-card__badge {
+    font-size: 0.6rem;
+    padding: 0.16rem 0.55rem;
+    margin-bottom: 0.35rem;
+  }
+
   .iot-cta-card__heading {
-    font-size: 1.28rem;
+    font-size: 1.12rem;
+    margin-bottom: 0.35rem;
+    line-height: 1.25;
   }
 
   .iot-cta-card__text {
+    font-size: 0.78rem;
+    line-height: 1.45;
+    margin-bottom: 0.75rem;
+  }
+
+  .iot-cta-card .iot-btn {
+    padding: 0.42rem 1.05rem;
+    font-size: 0.76rem;
+  }
+
+  .iot-cta-links {
+    padding-top: 1rem;
+  }
+
+  .iot-cta-links__header {
+    margin-bottom: 0.4rem;
+  }
+
+  .iot-cta-links__label {
+    font-size: 0.58rem;
+    margin-bottom: 0.08rem;
+  }
+
+  .iot-cta-links__title {
     font-size: 0.84rem;
-    margin-bottom: 0.95rem;
+  }
+
+  .iot-cta-pills {
+    gap: 0.35rem;
   }
 
   .iot-cta-pill {
-    padding: 0.28rem 0.65rem;
-    font-size: 0.72rem;
+    padding: 0.22rem 0.58rem;
+    font-size: 0.68rem;
   }
 }
 
@@ -1024,6 +1063,18 @@
 
   .iot-hero__subtitle {
     font-size: 0.82rem;
+  }
+
+  .iot-cta-card {
+    padding: 1rem 0.85rem;
+  }
+
+  .iot-cta-card__heading {
+    font-size: 1.05rem;
+  }
+
+  .iot-cta-card__text {
+    font-size: 0.75rem;
   }
 }
 

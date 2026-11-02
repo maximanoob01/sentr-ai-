@@ -499,7 +499,7 @@ export const CloudSolutionsPage: React.FC = () => {
         <div className="cs-hero__glow-2" aria-hidden="true" />
 
         <div className="cs-container">
-          <div className="cs-hero__inner" style={{ gridTemplateColumns: '1fr', maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
+          <div className="cs-hero__inner">
             {/* Content */}
             <div className="cs-hero__content">
               <h1 className="cs-hero__headline fade-in-up" style={{ transitionDelay: '0.1s' }}>
@@ -507,15 +507,7 @@ export const CloudSolutionsPage: React.FC = () => {
               </h1>
               <p
                 className="cs-hero__sub fade-in-up"
-                style={{
-                  transitionDelay: '0.15s',
-                  color: '#94a3b8',
-                  fontSize: '1.125rem',
-                  maxWidth: '720px',
-                  margin: '0 auto 2rem',
-                  lineHeight: '1.7',
-                  minHeight: '3.4em',
-                }}
+                style={{ transitionDelay: '0.15s' }}
                 aria-label={FULL_CLOUD_SUBTITLE}
               >
                 {displayedSubtitle}
@@ -525,7 +517,7 @@ export const CloudSolutionsPage: React.FC = () => {
                 />
               </p>
 
-              <div className="cs-hero__actions fade-in-up" style={{ transitionDelay: '0.2s', justifyContent: 'center' }}>
+              <div className="cs-hero__actions fade-in-up" style={{ transitionDelay: '0.2s' }}>
                 <Link to="/products/aindri" className="cs-btn-primary">
                   Explore Aindri
                 </Link>
