@@ -1,0 +1,1688 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Dancing+Script:wght@600;700&display=swap');
+
+/* ================================================================
+   ENTERPRISE IT SERVICES PAGE STYLES
+   ================================================================ */
+
+.eit-page {
+  background-color: #070b14;
+  color: #f8fafc;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+}
+
+.eit-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 3;
+}
+
+/* ================================================================
+   1. HERO SECTION
+   ================================================================ */
+.eit-hero {
+  position: relative;
+  padding-top: calc(var(--nav-height, 70px) + 1.25rem);
+  padding-bottom: 3.5rem;
+  overflow: hidden;
+  background-color: #070b14;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 410px;
+}
+
+/* Background image using space.png - dimmed neutrally without blue screen */
+.eit-hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  opacity: 0.55;
+  filter: brightness(0.8);
+}
+
+/* Neutral dark overlay - purely black, zero blue tint */
+.eit-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.48) 0%,
+    rgba(0, 0, 0, 0.68) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.eit-hero__inner {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.eit-hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* Headline */
+.eit-hero__title {
+  font-size: clamp(1.75rem, 3.2vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.22;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  margin-bottom: 1.15rem;
+  text-align: center;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
+}
+
+/* Subtitle & Typewriter Effect */
+.eit-hero__subtitle {
+  font-size: clamp(0.95rem, 1.2vw, 1.12rem);
+  line-height: 1.65;
+  color: #f8fafc;
+  max-width: 780px;
+  min-height: 4.4rem;
+  margin: 0 auto;
+  text-align: center;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+}
+
+.eit-typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background-color: #ffffff;
+  margin-left: 3px;
+  vertical-align: -0.15em;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  animation: eitCursorBlink 0.8s infinite;
+}
+
+.eit-typing-cursor--done {
+  animation: eitCursorFadeOut 1.5s forwards 2.5s;
+}
+
+@keyframes eitCursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes eitCursorFadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Actions & Button */
+.eit-hero__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.eit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  font-family: var(--font-sans, inherit);
+  font-size: 0.96rem;
+  font-weight: 600;
+  padding: 0.9rem 2.25rem;
+  border-radius: 9999px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.eit-btn--primary {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  color: #ffffff;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  box-shadow: 0 4px 18px rgba(2, 132, 199, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.eit-btn--primary:hover {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(2, 132, 199, 0.45), 0 0 20px rgba(56, 189, 248, 0.35);
+  color: #ffffff;
+}
+
+.eit-btn--primary svg {
+  transition: transform 0.2s ease;
+}
+
+.eit-btn--primary:hover svg {
+  transform: translateX(4px);
+}
+
+/* ================================================================
+   2. OVERVIEW SECTION
+   ================================================================ */
+.eit-overview {
+  background-color: #f8fafc;
+  color: #0f172a;
+  padding: 5.5rem 0 5rem;
+  position: relative;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.eit-overview__grid {
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+/* Left Content */
+.eit-overview__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.eit-overview__label {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0284c7;
+  margin-bottom: 0.75rem;
+}
+
+.eit-overview__title {
+  font-size: clamp(1.65rem, 2.5vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  color: #0f172a;
+  margin: 0 0 1rem 0;
+}
+
+.eit-overview__lead {
+  font-size: 1.08rem;
+  line-height: 1.65;
+  color: #1e293b;
+  font-weight: 500;
+  margin: 0 0 1.15rem 0;
+}
+
+.eit-overview__desc {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #475569;
+  margin: 0 0 1.5rem 0;
+}
+
+.eit-overview__focus {
+  padding-left: 1.15rem;
+  border-left: 3px solid #0284c7;
+  margin-top: 0.25rem;
+}
+
+.eit-overview__focus-text {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #0f172a;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Right Image */
+.eit-overview__image-wrap {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 20px 45px -12px rgba(15, 23, 42, 0.12), 0 4px 16px rgba(15, 23, 42, 0.04);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  aspect-ratio: 4 / 3.4;
+  display: flex;
+}
+
+.eit-overview__image-wrap:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 55px -12px rgba(15, 23, 42, 0.18);
+}
+
+.eit-overview__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.eit-overview__image-wrap:hover .eit-overview__image {
+  transform: scale(1.03);
+}
+
+/* ================================================================
+   3. OUR ENTERPRISE IT SERVICES SECTION
+   ================================================================ */
+.eit-services {
+  padding: 5.5rem 0 5.5rem;
+  background-color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Dotted pattern in gradient style on the right side */
+.eit-services-dots {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 460px;
+  height: 280px;
+  z-index: 1;
+  pointer-events: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.eit-services-dots__svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Header - Left Aligned with Right Quick Links */
+.eit-services__header {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3rem;
+  align-items: flex-end;
+  margin-bottom: 3.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.eit-services__header-left {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.eit-services__label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0284c7;
+  margin-bottom: 0.65rem;
+}
+
+.eit-services__title {
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  margin: 0 0 0.75rem 0;
+}
+
+.eit-services__sub {
+  font-size: clamp(0.88rem, 1.05vw, 0.98rem);
+  line-height: 1.6;
+  color: #475569;
+  margin: 0;
+}
+
+/* Right Quick Links Pills */
+.eit-services__header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.eit-services__quick-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  width: 100%;
+}
+
+.eit-services__quick-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.eit-services__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.eit-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #1e293b;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03);
+}
+
+.eit-pill:hover {
+  background: #0284c7;
+  color: #ffffff;
+  border-color: #0284c7;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+}
+
+.eit-pill--cta {
+  background: rgba(2, 132, 199, 0.08);
+  border-color: rgba(2, 132, 199, 0.35);
+  color: #0284c7;
+  gap: 0.35rem;
+}
+
+.eit-pill--cta:hover {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+.eit-pill--cta svg {
+  transition: transform 0.2s ease;
+}
+
+.eit-pill--cta:hover svg {
+  transform: translateX(2px);
+}
+
+/* 4-Column Card Grid */
+.eit-services__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+/* Individual Service Card */
+.eit-service-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.02);
+}
+
+.eit-service-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(2, 132, 199, 0.35);
+  box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.12), 0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+/* Card Image Wrap */
+.eit-service-card__image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: #f1f5f9;
+}
+
+.eit-service-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.eit-service-card:hover .eit-service-card__image {
+  transform: scale(1.06);
+}
+
+/* Number badge over image */
+.eit-service-card__num {
+  position: absolute;
+  top: 0.9rem;
+  left: 0.9rem;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  color: #38bdf8;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  letter-spacing: 0.04em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+}
+
+/* Card Body */
+.eit-service-card__body {
+  padding: 1.5rem 1.4rem 1.65rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.eit-service-card__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  margin: 0 0 0.75rem 0;
+}
+
+.eit-service-card__desc {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #475569;
+  margin: 0 0 1.25rem 0;
+  flex-grow: 1;
+}
+
+.eit-service-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #0284c7;
+  text-decoration: none;
+  margin-top: auto;
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.eit-service-card__link svg {
+  transition: transform 0.2s ease;
+}
+
+.eit-service-card__link:hover {
+  color: #0369a1;
+  gap: 0.65rem;
+}
+
+.eit-service-card__link:hover svg {
+  transform: translateX(3px);
+}
+
+/* ================================================================
+   4. DIGITAL WORKPLACE SOLUTIONS SECTION (COMPACT WITH HERO.PNG BG)
+   ================================================================ */
+.eit-workplace {
+  padding: 3.25rem 0 3.5rem;
+  background-color: #0b1120;
+  border-top: 1px solid #1e293b;
+  border-bottom: 1px solid #1e293b;
+  position: relative;
+  overflow: hidden;
+}
+
+.eit-workplace__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.36;
+  filter: brightness(0.72) contrast(1.1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.eit-workplace__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(11, 17, 32, 0.90) 0%,
+    rgba(15, 23, 42, 0.82) 50%,
+    rgba(11, 17, 32, 0.92) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+.eit-workplace .eit-container {
+  position: relative;
+  z-index: 3;
+}
+
+.eit-workplace__header {
+  max-width: 820px;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.eit-workplace__label {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #38bdf8;
+  margin-bottom: 0.45rem;
+}
+
+.eit-workplace__title {
+  font-size: clamp(1.45rem, 2.3vw, 1.95rem);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  margin: 0 0 0.65rem 0;
+}
+
+.eit-workplace__desc {
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  margin: 0 0 0.65rem 0;
+}
+
+.eit-workplace__lead-in {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  margin: 0;
+}
+
+/* 3 Cards Grid - Compact */
+.eit-workplace__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+.eit-workplace-card {
+  background: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 1.35rem 1.4rem 1.45rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+  position: relative;
+}
+
+.eit-workplace-card:hover {
+  transform: translateY(-4px);
+  background: rgba(22, 33, 58, 0.85);
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4), 0 0 20px rgba(56, 189, 248, 0.12);
+}
+
+.eit-workplace-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.eit-workplace-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
+}
+
+.eit-workplace-card:hover .eit-workplace-card__icon {
+  transform: scale(1.08);
+}
+
+.eit-workplace-card__icon--people {
+  background: rgba(2, 132, 199, 0.2);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.eit-workplace-card__icon--processes {
+  background: rgba(22, 163, 74, 0.2);
+  color: #4ade80;
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+.eit-workplace-card__icon--tech {
+  background: rgba(124, 58, 237, 0.2);
+  color: #c084fc;
+  border: 1px solid rgba(192, 132, 252, 0.3);
+}
+
+.eit-workplace-card__num {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #38bdf8;
+  opacity: 0.8;
+  letter-spacing: 0.05em;
+}
+
+.eit-workplace-card__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.45rem 0;
+  line-height: 1.3;
+}
+
+.eit-workplace-card__text {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* ================================================================
+   5. IT ASSET LIFECYCLE & SUSTAINABILITY SECTION
+   ================================================================ */
+.eit-lifecycle {
+  padding: 5rem 0 5.25rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  position: relative;
+}
+
+.eit-lifecycle__grid {
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+/* Left Content */
+.eit-lifecycle__content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.eit-lifecycle__label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0284c7;
+  margin-bottom: 0.65rem;
+}
+
+.eit-lifecycle__title {
+  font-size: clamp(1.65rem, 2.5vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  color: #0f172a;
+  margin: 0 0 0.85rem 0;
+}
+
+.eit-lifecycle__desc {
+  font-size: 1.05rem;
+  line-height: 1.68;
+  color: #475569;
+  margin: 0 0 1.5rem 0;
+}
+
+/* Services Block */
+.eit-lifecycle__body {
+  display: flex;
+  flex-direction: column;
+}
+
+.eit-lifecycle__subtitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.01em;
+}
+
+.eit-lifecycle__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.eit-lifecycle__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.eit-lifecycle__item-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #e0f2fe;
+  color: #0284c7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.eit-lifecycle__item-text {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #334155;
+  font-weight: 500;
+}
+
+/* Right Visual with Overlaid Cursive Writing */
+.eit-lifecycle__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.eit-lifecycle__image-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 20px 48px -12px rgba(15, 23, 42, 0.14), 0 2px 6px rgba(15, 23, 42, 0.04);
+  border: 1px solid #e2e8f0;
+  background-color: #0b1120;
+}
+
+.eit-lifecycle__image {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center 32%;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.eit-lifecycle__image-wrap:hover .eit-lifecycle__image {
+  transform: scale(1.04);
+}
+
+/* Scrim across bottom of image */
+.eit-lifecycle__image-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0) 25%,
+    rgba(15, 23, 42, 0.45) 55%,
+    rgba(11, 17, 32, 0.88) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Cursive Text Floating Card over the Image */
+.eit-lifecycle__cursive-card {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  right: 1.25rem;
+  z-index: 2;
+  background: rgba(15, 23, 42, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 16px;
+  padding: 1.15rem 1.4rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.eit-lifecycle__image-wrap:hover .eit-lifecycle__cursive-card {
+  transform: translateY(-2px);
+  background: rgba(15, 23, 42, 0.88);
+  border-color: rgba(56, 189, 248, 0.45);
+}
+
+.eit-lifecycle__cursive-text {
+  font-family: 'Caveat', 'Dancing Script', 'Segoe Script', 'Brush Script MT', cursive;
+  font-size: clamp(1.22rem, 1.45vw, 1.45rem);
+  line-height: 1.4;
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* ================================================================
+   6. OUR APPROACH SECTION
+   ================================================================ */
+.eit-approach {
+  padding: 5.5rem 0 5.25rem;
+  background-color: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dotted pattern in gradient style on the right side */
+.eit-approach-dots {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 440px;
+  height: 300px;
+  z-index: 1;
+  pointer-events: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.eit-approach-dots__svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.eit-approach .eit-container {
+  position: relative;
+  z-index: 2;
+}
+
+.eit-approach__header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2.5rem;
+  align-items: flex-end;
+  margin-bottom: 3.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.eit-approach__header-left {
+  max-width: 780px;
+  text-align: left;
+}
+
+.eit-approach__header-right {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  padding-bottom: 0.25rem;
+}
+
+.eit-approach__cta {
+  padding: 0.85rem 2rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  box-shadow: 0 4px 18px rgba(2, 132, 199, 0.35);
+  white-space: nowrap;
+}
+
+.eit-approach__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.45);
+}
+
+.eit-approach__label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0284c7;
+  margin-bottom: 0.65rem;
+}
+
+.eit-approach__title {
+  font-size: clamp(1.65rem, 2.5vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  color: #0f172a;
+  margin: 0 0 0.85rem 0;
+}
+
+.eit-approach__title-accent {
+  color: #0284c7;
+}
+
+.eit-approach__desc {
+  font-size: 1.05rem;
+  line-height: 1.68;
+  color: #475569;
+  margin: 0;
+}
+
+/* 4 Steps Grid */
+.eit-approach__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.eit-approach-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-top: 3.5px solid #0284c7;
+  border-radius: 18px;
+  padding: 2rem 1.65rem 2rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+}
+
+.eit-approach-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(2, 132, 199, 0.35);
+  border-top-color: #0284c7;
+  box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.1), 0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+.eit-approach-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.eit-approach-card__num {
+  font-family: var(--font-mono, monospace);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0284c7;
+  letter-spacing: -0.02em;
+}
+
+.eit-approach-card__icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: rgba(2, 132, 199, 0.08);
+  color: #0284c7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+}
+
+.eit-approach-card:hover .eit-approach-card__icon {
+  transform: scale(1.08);
+  background: #0284c7;
+  color: #ffffff;
+}
+
+.eit-approach-card__title {
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.35;
+  margin: 0 0 0.75rem 0;
+  letter-spacing: -0.015em;
+}
+
+.eit-approach-card__desc {
+  font-size: 0.92rem;
+  line-height: 1.62;
+  color: #475569;
+  margin: 0;
+}
+
+/* ================================================================
+   RESPONSIVE DESIGN (TABLET & MOBILE)
+   ================================================================ */
+@media (max-width: 1100px) {
+  .eit-services__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .eit-approach__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .eit-overview__grid {
+    grid-template-columns: 1fr;
+    gap: 2.75rem;
+  }
+
+  .eit-overview__image-wrap {
+    max-width: 580px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .eit-services__header {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .eit-services-dots {
+    width: 280px;
+    height: 180px;
+    opacity: 0.55;
+  }
+
+  .eit-approach-dots {
+    width: 280px;
+    height: 180px;
+    opacity: 0.55;
+  }
+
+  .eit-workplace__grid {
+    grid-template-columns: 1fr;
+    gap: 1.35rem;
+  }
+
+  .eit-lifecycle__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .eit-lifecycle__visual {
+    max-width: 580px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .eit-approach__header {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    align-items: flex-start;
+    margin-bottom: 2.75rem;
+  }
+
+  .eit-approach__header-right {
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .eit-container {
+    padding: 0 1.25rem;
+  }
+
+  /* 1. Hero */
+  .eit-hero {
+    padding-top: calc(var(--nav-height, 64px) + 1rem);
+    padding-bottom: 2.5rem;
+    min-height: auto;
+  }
+
+  .eit-hero__title {
+    font-size: clamp(1.45rem, 5vw, 1.95rem);
+    line-height: 1.24;
+    margin-bottom: 0.85rem;
+  }
+
+  .eit-hero__subtitle {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+    min-height: 5rem;
+  }
+
+  /* 2. Overview */
+  .eit-overview {
+    padding: 3.5rem 0;
+  }
+
+  .eit-overview__title {
+    font-size: clamp(1.35rem, 5vw, 1.75rem);
+    margin-bottom: 0.85rem;
+  }
+
+  .eit-overview__lead {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-bottom: 0.85rem;
+  }
+
+  .eit-overview__desc {
+    font-size: 0.9rem;
+    line-height: 1.62;
+    margin-bottom: 1.15rem;
+  }
+
+  .eit-overview__focus {
+    padding-left: 0.9rem;
+    border-left-width: 2.5px;
+  }
+
+  .eit-overview__focus-text {
+    font-size: 0.9rem;
+    line-height: 1.58;
+  }
+
+  .eit-overview__image-wrap {
+    aspect-ratio: 16 / 11;
+    border-radius: 18px;
+  }
+
+  /* 3. Services */
+  .eit-services {
+    padding: 3.5rem 0 3.25rem;
+  }
+
+  .eit-services__header {
+    margin-bottom: 1.75rem;
+    gap: 1.25rem;
+  }
+
+  .eit-services__title {
+    font-size: clamp(1.3rem, 4.5vw, 1.6rem);
+  }
+
+  .eit-services__sub {
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .eit-services__quick-links {
+    gap: 0.5rem;
+  }
+
+  .eit-services__pills {
+    gap: 0.4rem;
+  }
+
+  .eit-pill {
+    font-size: 0.74rem;
+    padding: 0.32rem 0.75rem;
+  }
+
+  .eit-service-card {
+    border-radius: 16px;
+  }
+
+  .eit-service-card__body {
+    padding: 1.25rem 1.15rem 1.35rem;
+  }
+
+  .eit-service-card__title {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .eit-service-card__desc {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    margin-bottom: 1rem;
+  }
+
+  /* 4. Workplace */
+  .eit-workplace {
+    padding: 3.25rem 0;
+  }
+
+  .eit-workplace__header {
+    margin-bottom: 1.75rem;
+  }
+
+  .eit-workplace__title {
+    font-size: clamp(1.35rem, 4.8vw, 1.7rem);
+    margin-bottom: 0.65rem;
+  }
+
+  .eit-workplace__desc {
+    font-size: 0.9rem;
+    line-height: 1.58;
+    margin-bottom: 0.5rem;
+  }
+
+  .eit-workplace__lead-in {
+    font-size: 0.88rem;
+  }
+
+  .eit-workplace-card {
+    padding: 1.25rem 1.2rem;
+    border-radius: 14px;
+  }
+
+  .eit-workplace-card__top {
+    margin-bottom: 0.85rem;
+  }
+
+  .eit-workplace-card__icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .eit-workplace-card__title {
+    font-size: 1.1rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .eit-workplace-card__text {
+    font-size: 0.86rem;
+    line-height: 1.52;
+  }
+
+  /* 5. Lifecycle */
+  .eit-lifecycle {
+    padding: 3.5rem 0;
+  }
+
+  .eit-lifecycle__header {
+    margin-bottom: 1.25rem;
+  }
+
+  .eit-lifecycle__title {
+    font-size: clamp(1.35rem, 4.8vw, 1.75rem);
+    margin-bottom: 0.65rem;
+  }
+
+  .eit-lifecycle__desc {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+
+  .eit-lifecycle__subtitle {
+    font-size: 1rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .eit-lifecycle__list {
+    gap: 0.65rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .eit-lifecycle__item {
+    gap: 0.65rem;
+  }
+
+  .eit-lifecycle__item-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .eit-lifecycle__item-icon svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .eit-lifecycle__item-text {
+    font-size: 0.88rem;
+    line-height: 1.52;
+  }
+
+  .eit-lifecycle__image-wrap {
+    border-radius: 16px;
+    min-height: 270px;
+  }
+
+  .eit-lifecycle__image {
+    aspect-ratio: 16 / 11;
+    min-height: 270px;
+    max-height: 340px;
+  }
+
+  .eit-lifecycle__cursive-card {
+    bottom: 0.85rem;
+    left: 0.85rem;
+    right: 0.85rem;
+    padding: 0.85rem 1rem;
+    border-radius: 14px;
+  }
+
+  .eit-lifecycle__cursive-text {
+    font-size: 1.15rem;
+    line-height: 1.35;
+  }
+
+  /* 6. Approach */
+  .eit-approach {
+    padding: 3.5rem 0;
+  }
+
+  .eit-approach__header {
+    margin-bottom: 2rem;
+    gap: 1.25rem;
+  }
+
+  .eit-approach__cta {
+    width: 100%;
+    max-width: 240px;
+    justify-content: center;
+  }
+
+  .eit-approach__title {
+    font-size: clamp(1.35rem, 4.8vw, 1.75rem);
+    margin-bottom: 0.65rem;
+  }
+
+  .eit-approach__desc {
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .eit-approach-card {
+    padding: 1.5rem 1.35rem;
+    border-radius: 16px;
+  }
+
+  .eit-approach-card__top {
+    margin-bottom: 1.15rem;
+  }
+
+  .eit-approach-card__num {
+    font-size: 1.2rem;
+  }
+
+  .eit-approach-card__icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .eit-approach-card__icon svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .eit-approach-card__title {
+    font-size: 1.08rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .eit-approach-card__desc {
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+}
+
+@media (max-width: 640px) {
+  .eit-services__grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .eit-approach__grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .eit-container {
+    padding: 0 1rem;
+  }
+
+  /* 1. Hero */
+  .eit-hero {
+    padding-top: calc(var(--nav-height, 60px) + 0.85rem);
+    padding-bottom: 2rem;
+    min-height: auto;
+  }
+
+  .eit-hero__title {
+    font-size: clamp(1.35rem, 6vw, 1.65rem);
+    line-height: 1.22;
+    margin-bottom: 0.75rem;
+  }
+
+  .eit-hero__subtitle {
+    font-size: 0.86rem;
+    line-height: 1.55;
+    padding: 0;
+    min-height: 5.6rem;
+  }
+
+  /* 2. Overview */
+  .eit-overview {
+    padding: 2.75rem 0;
+  }
+
+  .eit-overview__title {
+    font-size: 1.35rem;
+  }
+
+  .eit-overview__lead {
+    font-size: 0.92rem;
+  }
+
+  .eit-overview__desc {
+    font-size: 0.86rem;
+    margin-bottom: 1rem;
+  }
+
+  .eit-overview__focus-text {
+    font-size: 0.86rem;
+  }
+
+  .eit-overview__image-wrap {
+    aspect-ratio: 16 / 11;
+    border-radius: 14px;
+  }
+
+  /* 3. Services */
+  .eit-services {
+    padding: 2.75rem 0;
+  }
+
+  .eit-services-dots {
+    display: none;
+  }
+
+  .eit-services__title {
+    font-size: 1.3rem;
+  }
+
+  .eit-services__sub {
+    font-size: 0.85rem;
+  }
+
+  .eit-pill {
+    font-size: 0.72rem;
+    padding: 0.3rem 0.65rem;
+  }
+
+  .eit-service-card {
+    border-radius: 14px;
+  }
+
+  .eit-service-card__body {
+    padding: 1.15rem 1rem;
+  }
+
+  .eit-service-card__title {
+    font-size: 1rem;
+  }
+
+  .eit-service-card__desc {
+    font-size: 0.85rem;
+  }
+
+  /* 4. Workplace */
+  .eit-workplace {
+    padding: 2.5rem 0;
+  }
+
+  .eit-workplace__title {
+    font-size: 1.3rem;
+  }
+
+  .eit-workplace__desc {
+    font-size: 0.86rem;
+  }
+
+  .eit-workplace-card {
+    padding: 1.15rem 1rem;
+    border-radius: 12px;
+  }
+
+  .eit-workplace-card__title {
+    font-size: 1.05rem;
+  }
+
+  .eit-workplace-card__text {
+    font-size: 0.84rem;
+  }
+
+  /* 5. Lifecycle */
+  .eit-lifecycle {
+    padding: 2.5rem 0;
+  }
+
+  .eit-lifecycle__title {
+    font-size: 1.3rem;
+  }
+
+  .eit-lifecycle__desc {
+    font-size: 0.86rem;
+    margin-bottom: 1rem;
+  }
+
+  .eit-lifecycle__subtitle {
+    font-size: 0.96rem;
+  }
+
+  .eit-lifecycle__item-text {
+    font-size: 0.85rem;
+  }
+
+  .eit-lifecycle__image-wrap {
+    min-height: 240px;
+    border-radius: 14px;
+  }
+
+  .eit-lifecycle__image {
+    aspect-ratio: 16 / 12;
+    min-height: 240px;
+    max-height: 260px;
+  }
+
+  .eit-lifecycle__cursive-card {
+    bottom: 0.55rem;
+    left: 0.55rem;
+    right: 0.55rem;
+    padding: 0.65rem 0.75rem;
+    border-radius: 10px;
+  }
+
+  .eit-lifecycle__cursive-text {
+    font-size: 0.98rem;
+    line-height: 1.28;
+  }
+
+  /* 6. Approach */
+  .eit-approach {
+    padding: 2.5rem 0;
+  }
+
+  .eit-approach-dots {
+    display: none;
+  }
+
+  .eit-approach__cta {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .eit-approach__title {
+    font-size: 1.3rem;
+  }
+
+  .eit-approach__desc {
+    font-size: 0.86rem;
+  }
+
+  .eit-approach-card {
+    padding: 1.25rem 1.15rem;
+    border-radius: 14px;
+  }
+
+  .eit-approach-card__title {
+    font-size: 1.02rem;
+  }
+
+  .eit-approach-card__desc {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .eit-container {
+    padding: 0 0.85rem;
+  }
+
+  .eit-hero__title {
+    font-size: 1.25rem;
+  }
+
+  .eit-hero__subtitle {
+    font-size: 0.82rem;
+    min-height: 6rem;
+  }
+
+  .eit-overview__title,
+  .eit-services__title,
+  .eit-workplace__title,
+  .eit-lifecycle__title,
+  .eit-approach__title {
+    font-size: 1.22rem;
+  }
+
+  .eit-lifecycle__cursive-text {
+    font-size: 0.92rem;
+  }
+}
+

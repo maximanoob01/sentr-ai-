@@ -382,8 +382,8 @@
    CLOUD DELIVERY MODELS (5 CARDS)
    ================================================================ */
 .cs-delivery {
-  padding: 4.5rem 0 4.25rem;
-  background: var(--bg-base);
+  padding: 5rem 0 4.5rem;
+  background: #ffffff;
 }
 
 .cs-delivery-grid {
@@ -394,7 +394,7 @@
 }
 
 .cs-delivery-card {
-  border-radius: 20px;
+  border-radius: 24px;
   padding: 2.25rem 2rem;
   display: flex;
   flex-direction: column;
@@ -402,19 +402,6 @@
   overflow: hidden;
   transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.28s ease;
   min-height: 310px;
-}
-
-.cs-delivery-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 48%;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 100%);
-  pointer-events: none;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
 }
 
 /* First 3 cards span 2 cols each = 6 cols (Row 1) */
@@ -430,155 +417,161 @@
   grid-column: span 3;
 }
 
-/* ---- Card 1: Light Blue / Sky Azure ---- */
+/* ---- Card 1: Off-White (Top-Left style) ---- */
 .cs-delivery-card--color-1 {
-  background: linear-gradient(140deg, #38bdf8 0%, #0ea5e9 50%, #0284c7 100%);
-  border: 1px solid rgba(224, 242, 254, 0.45);
-  box-shadow: 0 12px 30px -6px rgba(14, 165, 233, 0.45), 0 4px 12px rgba(0, 0, 0, 0.22);
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.02);
 }
 .cs-delivery-card--color-1:hover {
+  background: #f1f5f9;
   transform: translateY(-5px);
-  border-color: rgba(255, 255, 255, 0.75);
-  box-shadow: 0 22px 42px -6px rgba(14, 165, 233, 0.65), 0 0 25px rgba(56, 189, 248, 0.5);
+  border-color: rgba(2, 132, 199, 0.35);
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.08);
 }
 .cs-delivery-card--color-1 .cs-delivery-card__icon {
-  background: rgba(255, 255, 255, 0.25);
-  border: 1.5px solid rgba(255, 255, 255, 0.5);
-  color: #ffffff;
+  background: #e0f2fe;
+  color: #0284c7;
 }
 .cs-delivery-card--color-1 .cs-delivery-card__num {
-  color: rgba(255, 255, 255, 0.9);
+  color: #94a3b8;
+}
+.cs-delivery-card--color-1 .cs-delivery-card__title {
+  color: #0f172a;
 }
 .cs-delivery-card--color-1 .cs-delivery-card__desc {
-  color: rgba(255, 255, 255, 0.95);
+  color: #475569;
 }
 .cs-delivery-card--color-1 .cs-delivery-card__link {
-  color: #ffffff;
+  color: #0284c7;
 }
 .cs-delivery-card--color-1 .cs-delivery-card__link-text::after {
-  background-color: #ffffff;
+  background-color: #0284c7;
 }
 
-/* ---- Card 2: Blaze Orange (#FF5B04) ---- */
+/* ---- Card 2: Dark Midnight Navy (Top-Right style) ---- */
 .cs-delivery-card--color-2 {
-  background: linear-gradient(140deg, #ff6c1c 0%, #ff5b04 60%, #e04a00 100%);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  box-shadow: 0 12px 30px -6px rgba(255, 91, 4, 0.45), 0 4px 12px rgba(0, 0, 0, 0.25);
+  background: #0c1527;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px -4px rgba(12, 21, 39, 0.35);
 }
 .cs-delivery-card--color-2:hover {
   transform: translateY(-5px);
-  border-color: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 22px 42px -6px rgba(255, 91, 4, 0.65), 0 0 25px rgba(255, 122, 51, 0.45);
+  border-color: rgba(134, 239, 172, 0.35);
+  box-shadow: 0 20px 45px -6px rgba(12, 21, 39, 0.55);
 }
 .cs-delivery-card--color-2 .cs-delivery-card__icon {
-  background: rgba(255, 255, 255, 0.22);
-  border: 1.5px solid rgba(255, 255, 255, 0.45);
-  color: #ffffff;
+  background: #dcfce7;
+  color: #16a34a;
 }
 .cs-delivery-card--color-2 .cs-delivery-card__num {
-  color: rgba(255, 255, 255, 0.88);
+  color: #86efac;
 }
-.cs-delivery-card--color-2 .cs-delivery-card__desc {
-  color: rgba(255, 255, 255, 0.95);
-}
-.cs-delivery-card--color-2 .cs-delivery-card__link {
+.cs-delivery-card--color-2 .cs-delivery-card__title {
   color: #ffffff;
 }
+.cs-delivery-card--color-2 .cs-delivery-card__desc {
+  color: #94a3b8;
+}
+.cs-delivery-card--color-2 .cs-delivery-card__link {
+  color: #86efac;
+}
 .cs-delivery-card--color-2 .cs-delivery-card__link-text::after {
-  background-color: #ffffff;
+  background-color: #86efac;
 }
 
-/* ---- Card 3: Wild Sand (#E4EEF0) ---- */
+/* ---- Card 3: Deep Cobalt Blue (Bottom-Left style) ---- */
 .cs-delivery-card--color-3 {
-  background: linear-gradient(140deg, #f0f6f8 0%, #e4eef0 60%, #d4e3e6 100%);
-  border: 1px solid rgba(2, 132, 199, 0.25);
-  box-shadow: 0 12px 30px -6px rgba(0, 0, 0, 0.28), 0 4px 12px rgba(228, 238, 240, 0.15);
-}
-.cs-delivery-card--color-3::before {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0) 100%);
+  background: #0052b4;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 10px 30px -4px rgba(0, 82, 180, 0.35);
 }
 .cs-delivery-card--color-3:hover {
   transform: translateY(-5px);
-  border-color: rgba(2, 132, 199, 0.5);
-  box-shadow: 0 22px 42px -6px rgba(0, 0, 0, 0.4), 0 0 25px rgba(228, 238, 240, 0.4);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 20px 45px -6px rgba(0, 82, 180, 0.55);
 }
 .cs-delivery-card--color-3 .cs-delivery-card__icon {
-  background: rgba(2, 132, 199, 0.12);
-  border: 1.5px solid rgba(2, 132, 199, 0.25);
-  color: #0284c7;
+  background: #e0f2fe;
+  color: #0052b4;
 }
 .cs-delivery-card--color-3 .cs-delivery-card__num {
-  color: #ff5b04;
+  color: #bae6fd;
 }
 .cs-delivery-card--color-3 .cs-delivery-card__title {
-  color: #16232a;
+  color: #ffffff;
 }
 .cs-delivery-card--color-3 .cs-delivery-card__desc {
-  color: #263a45;
+  color: rgba(255, 255, 255, 0.9);
 }
 .cs-delivery-card--color-3 .cs-delivery-card__link {
-  color: #ff5b04;
+  color: #ffffff;
 }
 .cs-delivery-card--color-3 .cs-delivery-card__link-text::after {
-  background-color: #ff5b04;
+  background-color: #ffffff;
 }
 
-/* ---- Card 4: Mirage (#16232A) ---- */
+/* ---- Card 4: Off-White (Bottom-Right style) ---- */
 .cs-delivery-card--color-4 {
-  background: linear-gradient(140deg, #243844 0%, #16232a 65%, #0f191f 100%);
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  box-shadow: 0 12px 30px -6px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(22, 35, 42, 0.35);
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.02);
 }
 .cs-delivery-card--color-4:hover {
+  background: #f1f5f9;
   transform: translateY(-5px);
-  border-color: rgba(255, 91, 4, 0.6);
-  box-shadow: 0 22px 42px -6px rgba(0, 0, 0, 0.65), 0 0 25px rgba(255, 91, 4, 0.25);
+  border-color: rgba(2, 132, 199, 0.35);
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.08);
 }
 .cs-delivery-card--color-4 .cs-delivery-card__icon {
-  background: rgba(255, 91, 4, 0.16);
-  border: 1.5px solid rgba(255, 91, 4, 0.4);
-  color: #ff5b04;
+  background: #e0f2fe;
+  color: #0284c7;
 }
 .cs-delivery-card--color-4 .cs-delivery-card__num {
-  color: #ff5b04;
+  color: #94a3b8;
+}
+.cs-delivery-card--color-4 .cs-delivery-card__title {
+  color: #0f172a;
 }
 .cs-delivery-card--color-4 .cs-delivery-card__desc {
-  color: rgba(228, 238, 240, 0.9);
+  color: #475569;
 }
 .cs-delivery-card--color-4 .cs-delivery-card__link {
-  color: #ff5b04;
+  color: #0284c7;
 }
 .cs-delivery-card--color-4 .cs-delivery-card__link-text::after {
-  background-color: #ff5b04;
+  background-color: #0284c7;
 }
 
-/* ---- Card 5: Light Blue / Cerulean Cyan ---- */
+/* ---- Card 5: Dark Midnight Navy (Matching Card 2) ---- */
 .cs-delivery-card--color-5 {
-  background: linear-gradient(140deg, #60a5fa 0%, #38bdf8 50%, #0284c7 100%);
-  border: 1px solid rgba(224, 242, 254, 0.45);
-  box-shadow: 0 12px 30px -6px rgba(56, 189, 248, 0.45), 0 4px 12px rgba(0, 0, 0, 0.22);
+  background: #0c1527;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px -4px rgba(12, 21, 39, 0.35);
 }
 .cs-delivery-card--color-5:hover {
   transform: translateY(-5px);
-  border-color: rgba(255, 255, 255, 0.75);
-  box-shadow: 0 22px 42px -6px rgba(56, 189, 248, 0.65), 0 0 25px rgba(56, 189, 248, 0.5);
+  border-color: rgba(134, 239, 172, 0.35);
+  box-shadow: 0 20px 45px -6px rgba(12, 21, 39, 0.55);
 }
 .cs-delivery-card--color-5 .cs-delivery-card__icon {
-  background: rgba(255, 255, 255, 0.25);
-  border: 1.5px solid rgba(255, 255, 255, 0.5);
-  color: #ffffff;
+  background: #dcfce7;
+  color: #16a34a;
 }
 .cs-delivery-card--color-5 .cs-delivery-card__num {
-  color: #ff5b04;
+  color: #86efac;
 }
-.cs-delivery-card--color-5 .cs-delivery-card__desc {
-  color: rgba(255, 255, 255, 0.95);
-}
-.cs-delivery-card--color-5 .cs-delivery-card__link {
+.cs-delivery-card--color-5 .cs-delivery-card__title {
   color: #ffffff;
 }
+.cs-delivery-card--color-5 .cs-delivery-card__desc {
+  color: #94a3b8;
+}
+.cs-delivery-card--color-5 .cs-delivery-card__link {
+  color: #86efac;
+}
 .cs-delivery-card--color-5 .cs-delivery-card__link-text::after {
-  background-color: #ffffff;
+  background-color: #86efac;
 }
 
 .cs-delivery-card__top {
@@ -589,37 +582,36 @@
 }
 
 .cs-delivery-card__icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  transition: transform 0.25s ease;
+}
+
+.cs-delivery-card:hover .cs-delivery-card__icon {
+  transform: scale(1.08);
 }
 
 .cs-delivery-card__num {
   font-family: var(--font-mono, monospace);
   font-size: 0.95rem;
-  font-weight: 800;
-  color: rgba(255, 255, 255, 0.85);
-  letter-spacing: 0.1em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
 }
 
 .cs-delivery-card__title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #ffffff;
+  font-size: 1.28rem;
+  font-weight: 800;
   margin: 0 0 0.85rem 0;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.02em;
   line-height: 1.3;
 }
 
 .cs-delivery-card__desc {
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.93);
+  font-size: 0.92rem;
   line-height: 1.65;
   margin: 0;
   flex-grow: 1;
@@ -631,8 +623,7 @@
   align-items: center;
   gap: 0.55rem;
   margin-top: 1.75rem;
-  color: #ffffff;
-  font-size: 0.96rem;
+  font-size: 0.92rem;
   font-weight: 700;
   text-decoration: none;
   cursor: pointer;
@@ -653,7 +644,6 @@
   bottom: -2px;
   width: 0%;
   height: 2px;
-  background-color: #ffffff;
   transition: width 0.25s ease;
 }
 
@@ -2231,12 +2221,14 @@
     flex-direction: row;
     justify-content: center;
     gap: 0.75rem;
+    flex-wrap: nowrap;
   }
   .cs-btn-primary,
   .cs-btn-white,
   .cs-btn-outline {
-    padding: 0.75rem 1.6rem;
+    padding: 0.75rem 1.4rem;
     font-size: 0.86rem;
+    white-space: nowrap;
   }
 
   /* Capabilities Strip */
@@ -2519,20 +2511,24 @@
     max-width: 100%;
   }
   .cs-hero__actions {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 0.65rem;
+    justify-content: center;
+    gap: 0.5rem;
     width: 100%;
+    flex-wrap: nowrap;
   }
   .cs-hero__actions .cs-btn-primary,
   .cs-hero__actions .cs-btn-white,
   .cs-hero__actions .cs-btn-outline {
-    width: 100%;
-    max-width: 280px;
-    padding: 0.65rem 1.25rem;
-    font-size: 0.82rem;
+    width: auto;
+    flex: 1 1 auto;
+    max-width: 185px;
+    padding: 0.6rem 0.75rem;
+    font-size: clamp(0.72rem, 3.2vw, 0.8rem);
     justify-content: center;
     text-align: center;
+    white-space: nowrap;
   }
 
   /* Capabilities Strip */
@@ -2615,7 +2611,7 @@
   .cs-delivery-card__icon {
     width: 40px;
     height: 40px;
-    border-radius: 10px;
+    border-radius: 50%;
   }
   .cs-delivery-card__num {
     font-size: 0.82rem;

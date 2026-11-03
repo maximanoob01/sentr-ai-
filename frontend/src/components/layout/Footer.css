@@ -224,14 +224,14 @@ a.footer-contact-item:hover svg {
   position: relative;
   display: inline-block;
   color: #ffffff;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  text-decoration: none;
   cursor: pointer;
   transition: color 0.2s ease;
 }
 
 .footer-credit__link:hover {
   color: #93c5fd;
+  text-decoration: none;
 }
 
 .footer-credit__link strong {

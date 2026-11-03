@@ -13,6 +13,8 @@ import { BlogPage } from './pages/BlogPage';
 import { CloudSolutionsPage } from './pages/CloudSolutionsPage';
 import { AISolutionsPage } from './pages/AISolutionsPage';
 import { IoTSolutionsPage } from './pages/IoTSolutionsPage';
+import { EnterpriseITPage } from './pages/EnterpriseITPage';
+import { CybersecurityPage } from './pages/CybersecurityPage';
 import { useScrollAnimation } from './hooks/useScrollAnimation';
 import { AdminApp } from './admin/AdminApp';
 import heroImg from './assets/contact us/hero.png';
@@ -394,6 +396,8 @@ const AppInner: React.FC = () => {
         <Route path="/solutions/cloud-infrastructure" element={<CloudInfrastructureRedirect />} />
         <Route path="/solutions/ai" element={<AISolutionsPage />} />
         <Route path="/solutions/iot" element={<IoTSolutionsPage />} />
+        <Route path="/solutions/enterprise-it" element={<EnterpriseITPage />} />
+        <Route path="/solutions/cybersecurity" element={<CybersecurityPage />} />
         <Route path="/solutions/:slug" element={<PlaceholderPage title="Solution Detail" />} />
         <Route path="/products" element={<PlaceholderPage title="Products" />} />
         <Route path="/products/roadmap" element={<PlaceholderPage title="Product Roadmap" />} />

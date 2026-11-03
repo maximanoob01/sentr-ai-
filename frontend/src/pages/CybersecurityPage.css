@@ -1,0 +1,1932 @@
+/* ================================================================
+   CYBERSECURITY SOLUTIONS PAGE STYLES
+   Neutral dark, high-contrast, zero blue tint / zero blue screen
+   ================================================================ */
+
+.cyber-page {
+  background-color: #07090e;
+  color: #f8fafc;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.cyber-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 3;
+}
+
+/* ================================================================
+   1. HERO SECTION (NEUTRAL DIM ATMOSPHERE - NO BLUE SCREEN)
+   ================================================================ */
+.cyber-hero {
+  position: relative;
+  padding-top: calc(var(--nav-height, 70px) + 3.25rem);
+  padding-bottom: 5rem;
+  overflow: hidden;
+  background-color: #07090e;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  min-height: 520px;
+}
+
+/* Background Image (back.png) in gentle dimness */
+.cyber-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.55;
+  filter: brightness(0.82) contrast(1.05);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Subtle bottom edge blend into next section (no black screen obscuring the image) */
+.cyber-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(7, 9, 14, 0.25) 0%,
+    transparent 45%,
+    rgba(7, 9, 14, 0.85) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+.cyber-hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* Headline */
+.cyber-hero__title {
+  font-size: clamp(2rem, 3.6vw, 3.1rem);
+  font-weight: 800;
+  line-height: 1.22;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+  text-align: center;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.95), 0 4px 40px rgba(0, 0, 0, 0.9);
+}
+
+.cyber-hero__title-accent {
+  background: linear-gradient(180deg, #ffffff 40%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subtitle & Typewriter Effect */
+.cyber-hero__subtitle {
+  font-size: clamp(0.95rem, 1.25vw, 1.15rem);
+  line-height: 1.65;
+  color: #f1f5f9;
+  max-width: 780px;
+  min-height: 4.8rem;
+  margin: 0 auto 2rem;
+  text-align: center;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95), 0 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+.cyber-typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background-color: #ffffff;
+  margin-left: 3px;
+  vertical-align: -0.15em;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  animation: cyberCursorBlink 0.8s infinite;
+}
+
+.cyber-typing-cursor--done {
+  animation: cyberCursorFadeOut 1.5s forwards 2.5s;
+}
+
+@keyframes cyberCursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes cyberCursorFadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Action Buttons */
+.cyber-hero__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.cyber-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.65rem 1.6rem;
+  border-radius: 9999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.cyber-btn--primary {
+  background: #ffffff;
+  color: #07090e;
+  border: 1px solid #ffffff;
+  box-shadow: 0 4px 18px rgba(255, 255, 255, 0.15);
+}
+
+.cyber-btn--primary:hover {
+  transform: translateY(-2px);
+  background: #f1f5f9;
+  box-shadow: 0 6px 24px rgba(255, 255, 255, 0.25);
+  color: #07090e;
+}
+
+/* ================================================================
+   2. ENTERPRISE THREAT PROTECTION SECTION
+   ================================================================ */
+.cyber-threat {
+  position: relative;
+  padding: 5.5rem 0;
+  background: #090c13;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  overflow: hidden;
+}
+
+/* Dim Neutral Background Image (hh.png) - No blue screen */
+.cyber-threat__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.16;
+  filter: grayscale(100%) brightness(0.5) contrast(1.1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Dim Neutral Dark Overlay */
+.cyber-threat__overlay {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse at center, rgba(9, 12, 19, 0.35) 0%, rgba(9, 12, 19, 0.88) 75%, #090c13 100%),
+    linear-gradient(180deg, rgba(9, 12, 19, 0.65) 0%, rgba(9, 12, 19, 0.9) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.cyber-threat .cyber-container {
+  position: relative;
+  z-index: 3;
+}
+
+.cyber-threat__grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 3.5rem;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+}
+
+/* Left Column */
+.cyber-threat__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.cyber-threat__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #10b981;
+  margin-bottom: 0.85rem;
+}
+
+.cyber-threat__eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.8);
+}
+
+.cyber-threat__title {
+  font-size: clamp(1.85rem, 2.7vw, 2.45rem);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  margin: 0 0 1.25rem 0;
+}
+
+.cyber-threat__lead {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #e2e8f0;
+  margin: 0 0 1.25rem 0;
+}
+
+/* Threat Risk Callout */
+.cyber-threat__callout {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  background: rgba(239, 68, 68, 0.05);
+  border: 1px solid rgba(239, 68, 68, 0.22);
+  border-left: 3px solid #ef4444;
+  margin-bottom: 1.25rem;
+}
+
+.cyber-threat__callout-icon {
+  color: #ef4444;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.cyber-threat__callout-text {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #fecaca;
+  margin: 0;
+  font-weight: 500;
+}
+
+.cyber-threat__desc {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* Right Column (Visual + Gradient Dotted Pattern) */
+.cyber-threat__visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cyber-threat__dots {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 520px;
+  height: 440px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cyber-threat__dots-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.cyber-threat__image-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #0c101b;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 24px 50px -12px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(16, 185, 129, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cyber-threat__image-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.85), 0 0 25px rgba(16, 185, 129, 0.12);
+}
+
+.cyber-threat__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* ================================================================
+   3. OUR CYBERSECURITY SERVICES SECTION (WHITE BACKGROUND)
+   ================================================================ */
+.cyber-services {
+  background-color: #ffffff;
+  color: #0f172a;
+  padding: 5.5rem 0 6rem;
+  position: relative;
+  z-index: 5;
+}
+
+.cyber-services__header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 3rem;
+}
+
+.cyber-services__label {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0284c7;
+  margin-bottom: 0.75rem;
+}
+
+.cyber-services__title {
+  font-size: clamp(1.6rem, 2.3vw, 2.15rem);
+  font-weight: 800;
+  line-height: 1.26;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  margin: 0 0 0.75rem 0;
+}
+
+.cyber-services__sub {
+  font-size: clamp(0.86rem, 1.05vw, 0.96rem);
+  line-height: 1.6;
+  color: #475569;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* Services Cards List */
+.cyber-services__list {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.cyber-service-card {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.25rem;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 2.75rem 2.5rem;
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.06);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.cyber-service-card:hover {
+  box-shadow: 0 18px 45px -12px rgba(15, 23, 42, 0.12);
+  border-color: #cbd5e1;
+}
+
+.cyber-service-card--reversed {
+  grid-template-columns: 0.85fr 1.15fr;
+}
+
+.cyber-service-card--reversed .cyber-service-card__content {
+  order: 2;
+}
+
+.cyber-service-card--reversed .cyber-service-card__visual {
+  order: 1;
+}
+
+/* Card Content */
+.cyber-service-card__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.cyber-service-card__top {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.4rem;
+}
+
+.cyber-service-card__num {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #0284c7;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  padding: 0.2rem 0.65rem;
+  border-radius: 6px;
+  letter-spacing: 0.05em;
+}
+
+.cyber-service-card__title {
+  font-size: clamp(1.4rem, 2.2vw, 1.75rem);
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.cyber-service-card__tagline {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #2563eb;
+  line-height: 1.4;
+  margin: 0 0 0.85rem 0;
+}
+
+.cyber-service-card__desc {
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: #475569;
+  margin: 0 0 1.25rem 0;
+}
+
+/* Capabilities List (Borderless & Transparent) */
+.cyber-service-card__capabilities {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin-bottom: 1.4rem;
+}
+
+.cyber-service-card__cap-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0f172a;
+  margin: 0 0 0.85rem 0;
+}
+
+.cyber-service-card__cap-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem 1.25rem;
+}
+
+.cyber-service-card__cap-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: 0.86rem;
+  color: #334155;
+  line-height: 1.45;
+}
+
+.cyber-service-card__cap-icon {
+  color: #059669;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* SOC Note Box */
+.cyber-service-card__note {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+  padding: 0.85rem 1.15rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
+}
+
+.cyber-service-card__note-icon {
+  color: #16a34a;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.cyber-service-card__note-text {
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: #166534;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* CTA Button */
+.cyber-service-card__actions {
+  display: flex;
+  align-items: center;
+}
+
+.cyber-service-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 0.65rem 1.45rem;
+  border-radius: 9999px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12);
+}
+
+.cyber-service-btn:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.25);
+  color: #ffffff;
+}
+
+/* Image Side */
+.cyber-service-card__visual {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.cyber-service-card__image-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 12px 30px -8px rgba(15, 23, 42, 0.08);
+  background: #f8fafc;
+}
+
+.cyber-service-card__image {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.cyber-service-card:hover .cyber-service-card__image {
+  transform: scale(1.02);
+}
+
+.cyber-service-card__badge-pill {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.cyber-service-card__badge-sep {
+  opacity: 0.5;
+}
+
+/* ================================================================
+   4. INDUSTRY-SPECIFIC SECURITY (OPEN LAYOUT - COMPACT & NO CARDS)
+   ================================================================ */
+.cyber-industry {
+  background-color: #f8fafc;
+  color: #0f172a;
+  padding: 3.25rem 0 3.5rem;
+  border-top: 1px solid #e2e8f0;
+  position: relative;
+  z-index: 5;
+}
+
+.cyber-industry__header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 2.25rem;
+}
+
+.cyber-industry__label {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0284c7;
+  margin-bottom: 0.45rem;
+}
+
+.cyber-industry__title {
+  font-size: clamp(1.45rem, 2.1vw, 1.95rem);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  margin: 0 0 0.55rem 0;
+}
+
+.cyber-industry__sub {
+  font-size: clamp(0.84rem, 1vw, 0.92rem);
+  line-height: 1.55;
+  color: #475569;
+  margin: 0;
+}
+
+/* 5 Columns Open Layout - Compact */
+.cyber-industry__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  position: relative;
+}
+
+.cyber-industry-item {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.cyber-industry-item__icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cyber-industry-item__icon-wrap svg {
+  width: 19px;
+  height: 19px;
+}
+
+.cyber-industry-item:hover .cyber-industry-item__icon-wrap {
+  transform: translateY(-2px);
+  background: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.22);
+}
+
+.cyber-industry-item__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.35;
+  margin: 0 0 0.35rem 0;
+  letter-spacing: -0.015em;
+}
+
+.cyber-industry-item__desc {
+  font-size: 0.82rem;
+  line-height: 1.52;
+  color: #475569;
+  margin: 0;
+}
+
+/* ================================================================
+   5. WHY CHOOSE SENTR AI (BENTO GRID - REFERENCE DESIGN)
+   ================================================================ */
+.cyber-why {
+  background-color: #ffffff;
+  color: #0f172a;
+  padding: 4.5rem 0 5.5rem;
+  border-top: 1px solid #edf2f7;
+  position: relative;
+  z-index: 5;
+}
+
+.cyber-why__header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 3.25rem;
+}
+
+.cyber-why__label {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0284c7;
+  margin-bottom: 0.5rem;
+}
+
+.cyber-why__title {
+  font-size: clamp(1.75rem, 2.6vw, 2.35rem);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  color: #0f172a;
+  margin: 0 0 0.85rem 0;
+}
+
+.cyber-why__sub {
+  font-size: clamp(0.92rem, 1.1vw, 1.02rem);
+  line-height: 1.6;
+  color: #475569;
+  margin: 0 0 0.5rem 0;
+}
+
+.cyber-why__sub-lead {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #0284c7;
+  margin: 0;
+}
+
+/* Bento Grid Root Layout */
+.cyber-bento {
+  display: grid;
+  grid-template-columns: 310px 1fr;
+  gap: 1.35rem;
+  align-items: stretch;
+}
+
+@media (min-width: 1200px) {
+  .cyber-bento {
+    grid-template-columns: 330px 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* Base Bento Card */
+.cyber-bento-card {
+  position: relative;
+  border-radius: 22px;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.cyber-bento-card:hover {
+  transform: translateY(-3px);
+}
+
+/* 1. Left Tall Card (Integrated Security) */
+.cyber-bento-card--tall {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.05);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+}
+
+.cyber-bento-card--tall:hover {
+  box-shadow: 0 16px 40px -12px rgba(15, 23, 42, 0.1);
+  border-color: #cbd5e1;
+}
+
+.cyber-bento-card__visual {
+  position: relative;
+  width: 100%;
+  height: 310px;
+  background: radial-gradient(circle at 50% 30%, #ffedd5 0%, #fee2e2 60%, #ffffff 100%);
+  overflow: hidden;
+}
+
+.cyber-bento-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.cyber-bento-card--tall:hover .cyber-bento-card__img {
+  transform: scale(1.03);
+}
+
+.cyber-bento-card__img-fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.85) 80%, #ffffff 100%);
+  pointer-events: none;
+}
+
+.cyber-bento-card__body {
+  padding: 1.65rem 1.65rem 1.85rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.cyber-bento-card__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #0284c7;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  padding: 0.22rem 0.65rem;
+  border-radius: 9999px;
+  width: fit-content;
+  margin-bottom: 0.75rem;
+}
+
+.cyber-bento-card__tag-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #0284c7;
+}
+
+.cyber-bento-card__title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 0.55rem 0;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+}
+
+.cyber-bento-card__desc {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #475569;
+  margin: 0;
+}
+
+/* Right Bento Group */
+.cyber-bento-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+  height: 100%;
+}
+
+@media (min-width: 1200px) {
+  .cyber-bento-group {
+    gap: 1.5rem;
+  }
+}
+
+.cyber-bento-row {
+  display: grid;
+  gap: 1.35rem;
+}
+
+@media (min-width: 1200px) {
+  .cyber-bento-row {
+    gap: 1.5rem;
+  }
+}
+
+.cyber-bento-row--top {
+  grid-template-columns: 0.9fr 1.5fr;
+  flex: 1;
+}
+
+.cyber-bento-row--bottom {
+  grid-template-columns: 1.5fr 0.9fr;
+  flex: 1;
+}
+
+/* 2. Soft Blue Stat Card (Proactive Threat Protection) */
+.cyber-bento-card--stat-blue {
+  background: linear-gradient(145deg, #dbeafe 0%, #bfdbfe 100%);
+  border: 1px solid rgba(191, 219, 254, 0.7);
+  box-shadow: 0 8px 25px -8px rgba(37, 99, 235, 0.15);
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber-bento-card--stat-blue:hover {
+  box-shadow: 0 14px 35px -8px rgba(37, 99, 235, 0.25);
+  border-color: #93c5fd;
+}
+
+.cyber-bento-card__big-num {
+  font-size: clamp(3.2rem, 4.4vw, 4.6rem);
+  font-weight: 800;
+  line-height: 0.95;
+  color: #ffffff;
+  text-shadow: 0 4px 18px rgba(29, 78, 216, 0.28);
+  letter-spacing: -0.04em;
+  margin-bottom: 1.15rem;
+}
+
+.cyber-bento-card--stat-blue .cyber-bento-card__title {
+  color: #1e3a8a;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.45rem;
+}
+
+.cyber-bento-card--stat-blue .cyber-bento-card__desc {
+  color: #1e40af;
+  font-size: 0.84rem;
+  line-height: 1.55;
+  opacity: 0.92;
+}
+
+/* 3. Wide Card with 3D Shield Badge (Improved Visibility) */
+.cyber-bento-card--shield-wide {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.05);
+  padding: 1.85rem;
+  display: grid;
+  grid-template-columns: 165px 1fr;
+  gap: 1.75rem;
+  align-items: center;
+}
+
+.cyber-bento-card--shield-wide:hover {
+  box-shadow: 0 16px 40px -12px rgba(15, 23, 42, 0.1);
+  border-color: #cbd5e1;
+}
+
+.cyber-bento-card__shield-badge {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.45rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-image: radial-gradient(rgba(148, 163, 184, 0.25) 1px, transparent 1px);
+  background-size: 11px 11px;
+}
+
+.cyber-bento-shield-icon {
+  margin-bottom: 0.65rem;
+  filter: drop-shadow(0 6px 14px rgba(2, 132, 199, 0.35));
+}
+
+.cyber-bento-card__shield-stat {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.15;
+  margin-bottom: 0.2rem;
+  letter-spacing: -0.02em;
+}
+
+.cyber-bento-card__shield-caption {
+  font-size: 0.72rem;
+  color: #64748b;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.cyber-bento-card__shield-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cyber-bento-card__shield-content .cyber-bento-card__title {
+  font-size: 1.25rem;
+  margin-bottom: 0.45rem;
+}
+
+.cyber-bento-card__shield-content .cyber-bento-card__desc {
+  font-size: 0.86rem;
+  margin-bottom: 0.95rem;
+}
+
+.cyber-bento-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #0f172a;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  width: fit-content;
+}
+
+.cyber-bento-card__link:hover {
+  color: #2563eb;
+  transform: translateX(3px);
+}
+
+/* 4. Wide Card with Mesh Gradient & 2 Pills (Business Continuity) */
+.cyber-bento-card--mesh {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.05);
+  padding: 1.85rem 1.85rem 1.65rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber-bento-card--mesh:hover {
+  box-shadow: 0 16px 40px -12px rgba(15, 23, 42, 0.1);
+  border-color: #cbd5e1;
+}
+
+.cyber-bento-card__mesh-content .cyber-bento-card__title {
+  font-size: 1.25rem;
+  margin-bottom: 0.45rem;
+}
+
+.cyber-bento-card__mesh-content .cyber-bento-card__desc {
+  font-size: 0.86rem;
+  margin-bottom: 1.4rem;
+  max-width: 95%;
+}
+
+.cyber-bento-card__mesh-visual {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 1.2rem;
+  border: 1px solid rgba(226, 232, 240, 0.6);
+}
+
+.cyber-bento-mesh-glow {
+  position: absolute;
+  inset: -15px;
+  background: radial-gradient(circle at 18% 85%, rgba(56, 189, 248, 0.45), transparent 45%),
+              radial-gradient(circle at 82% 25%, rgba(192, 132, 252, 0.45), transparent 45%),
+              radial-gradient(circle at 50% 65%, rgba(52, 211, 153, 0.35), transparent 45%),
+              linear-gradient(135deg, #f0fdfa 0%, #eff6ff 100%);
+  filter: blur(14px);
+}
+
+.cyber-bento-pills {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+}
+
+.cyber-bento-pill {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 0.65rem 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+}
+
+.cyber-bento-pill__icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #0f172a;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cyber-bento-pill__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.28;
+}
+
+.cyber-bento-pill__text strong {
+  font-size: 0.78rem;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.cyber-bento-pill__text span {
+  font-size: 0.7rem;
+  color: #64748b;
+}
+
+/* 5. Mint/Teal Stat with Floating 3D Pink Badge (Scalable Solutions) */
+.cyber-bento-card--mint {
+  background: linear-gradient(145deg, #f0fdfa 0%, #ecfeff 100%);
+  border: 1px solid rgba(167, 243, 208, 0.6);
+  box-shadow: 0 8px 25px -8px rgba(16, 185, 129, 0.12);
+  border-radius: 22px;
+  padding: 1.85rem 1.65rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.cyber-bento-card--mint:hover {
+  box-shadow: 0 14px 35px -8px rgba(16, 185, 129, 0.2);
+  border-color: #6ee7b7;
+}
+
+.cyber-bento-card__pulse-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f472b6 0%, #db2777 100%);
+  box-shadow: 0 6px 18px rgba(219, 39, 119, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.85rem;
+}
+
+.cyber-bento-card__mint-stat {
+  font-size: clamp(2.8rem, 3.8vw, 3.8rem);
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin-bottom: 0.65rem;
+}
+
+.cyber-bento-card--mint .cyber-bento-card__title {
+  font-size: 1.15rem;
+  margin-bottom: 0.35rem;
+}
+
+.cyber-bento-card--mint .cyber-bento-card__desc {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #334155;
+}
+
+/* ================================================================
+   RESPONSIVE DESIGN (MOBILE & TABLET)
+   ================================================================ */
+@media (max-width: 992px) {
+  .cyber-hero {
+    padding-top: calc(var(--nav-height, 70px) + 2.5rem);
+    padding-bottom: 4rem;
+    min-height: 480px;
+  }
+
+  .cyber-hero__title {
+    font-size: 2.2rem;
+  }
+
+  .cyber-hero__subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.75rem;
+  }
+
+  /* Threat Section on 992px */
+  .cyber-threat {
+    padding: 4rem 0;
+  }
+
+  .cyber-threat__grid {
+    grid-template-columns: 1fr;
+    gap: 2.75rem;
+  }
+
+  .cyber-threat__visual {
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .cyber-threat__dots {
+    width: 440px;
+    height: 380px;
+    top: -20px;
+    right: -20px;
+  }
+
+  /* Services Section on 992px */
+  .cyber-services {
+    padding: 4.25rem 0 4.5rem;
+  }
+
+  .cyber-services__header {
+    margin-bottom: 2.75rem;
+  }
+
+  .cyber-service-card,
+  .cyber-service-card--reversed {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+    padding: 2.25rem 2rem;
+  }
+
+  .cyber-service-card--reversed .cyber-service-card__content {
+    order: 1;
+  }
+
+  .cyber-service-card--reversed .cyber-service-card__visual {
+    order: 2;
+  }
+
+  .cyber-service-card__visual {
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .cyber-service-card__image {
+    height: 320px;
+  }
+
+  /* Industry Section on 992px */
+  .cyber-industry {
+    padding: 2.75rem 0 3rem;
+  }
+
+  .cyber-industry__header {
+    margin-bottom: 2rem;
+  }
+
+  .cyber-industry__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem 1.25rem;
+  }
+
+  /* Bento Section on 992px */
+  .cyber-why {
+    padding: 3.75rem 0 4rem;
+  }
+
+  .cyber-why__header {
+    margin-bottom: 2.5rem;
+  }
+
+  .cyber-bento {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .cyber-bento-card--tall {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+  }
+
+  .cyber-bento-card--tall .cyber-bento-card__visual {
+    height: 100%;
+    min-height: 240px;
+  }
+
+  .cyber-bento-card--tall .cyber-bento-card__img-fade {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.85) 80%, #ffffff 100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .cyber-container {
+    padding: 0 1.15rem;
+  }
+
+  .cyber-hero {
+    padding-top: calc(var(--nav-height, 70px) + 2rem);
+    padding-bottom: 3.5rem;
+    min-height: 440px;
+  }
+
+  .cyber-hero__title {
+    font-size: 1.85rem;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+  }
+
+  .cyber-hero__subtitle {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    min-height: 5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cyber-btn {
+    padding: 0.58rem 1.35rem;
+    font-size: 0.84rem;
+  }
+
+  /* Threat Section on 768px */
+  .cyber-threat {
+    padding: 3.25rem 0;
+  }
+
+  .cyber-threat__title {
+    font-size: 1.65rem;
+    margin-bottom: 1rem;
+  }
+
+  .cyber-threat__lead {
+    font-size: 0.94rem;
+    margin-bottom: 1rem;
+  }
+
+  .cyber-threat__callout {
+    padding: 0.85rem 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .cyber-threat__callout-text {
+    font-size: 0.86rem;
+  }
+
+  .cyber-threat__desc {
+    font-size: 0.88rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .cyber-threat__dots {
+    width: 360px;
+    height: 300px;
+    top: -15px;
+    right: -15px;
+  }
+
+  /* Services Section on 768px */
+  .cyber-services {
+    padding: 3.5rem 0 3.75rem;
+  }
+
+  .cyber-services__header {
+    margin-bottom: 2rem;
+  }
+
+  .cyber-services__title {
+    font-size: 1.5rem;
+  }
+
+  .cyber-services__sub {
+    font-size: 0.85rem;
+  }
+
+  .cyber-service-card,
+  .cyber-service-card--reversed {
+    padding: 1.75rem 1.35rem;
+    border-radius: 16px;
+    gap: 1.75rem;
+  }
+
+  .cyber-service-card__cap-grid {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+  }
+
+  .cyber-service-card__image {
+    height: 260px;
+  }
+
+  .cyber-service-btn {
+    padding: 0.58rem 1.3rem;
+    font-size: 0.84rem;
+  }
+
+  /* Industry Section on 768px */
+  .cyber-industry {
+    padding: 2.5rem 0 2.75rem;
+  }
+
+  .cyber-industry__header {
+    margin-bottom: 1.75rem;
+  }
+
+  .cyber-industry__title {
+    font-size: 1.45rem;
+  }
+
+  .cyber-industry__sub {
+    font-size: 0.84rem;
+  }
+
+  .cyber-industry__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 1.25rem;
+  }
+
+  .cyber-industry-item__title {
+    font-size: 0.98rem;
+  }
+
+  .cyber-industry-item__desc {
+    font-size: 0.8rem;
+  }
+
+  /* Bento Section on 768px */
+  .cyber-why {
+    padding: 3.25rem 0 3.5rem;
+  }
+
+  .cyber-why__header {
+    margin-bottom: 2rem;
+  }
+
+  .cyber-why__title {
+    font-size: 1.65rem;
+  }
+
+  .cyber-bento-card--tall {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cyber-bento-card--tall .cyber-bento-card__visual {
+    height: 220px;
+  }
+
+  .cyber-bento-card--tall .cyber-bento-card__img-fade {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.85) 80%, #ffffff 100%);
+  }
+
+  .cyber-bento-row--top,
+  .cyber-bento-row--bottom {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+
+  .cyber-bento-card--shield-wide {
+    grid-template-columns: 140px 1fr;
+    gap: 1.25rem;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .cyber-container {
+    padding: 0 0.9rem;
+  }
+
+  .cyber-hero {
+    padding-top: calc(var(--nav-height, 70px) + 1.5rem);
+    padding-bottom: 3rem;
+    min-height: 400px;
+  }
+
+  .cyber-hero__title {
+    font-size: 1.55rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .cyber-hero__subtitle {
+    font-size: 0.84rem;
+    line-height: 1.5;
+    min-height: 5.6rem;
+    margin-bottom: 1.35rem;
+  }
+
+  .cyber-btn {
+    padding: 0.52rem 1.2rem;
+    font-size: 0.8rem;
+  }
+
+  /* Threat Section on 640px */
+  .cyber-threat {
+    padding: 2.5rem 0;
+  }
+
+  .cyber-threat__title {
+    font-size: 1.38rem;
+    line-height: 1.25;
+    margin-bottom: 0.85rem;
+  }
+
+  .cyber-threat__lead {
+    font-size: 0.86rem;
+    line-height: 1.5;
+    margin-bottom: 0.85rem;
+  }
+
+  .cyber-threat__callout {
+    padding: 0.75rem 0.85rem;
+    border-radius: 10px;
+    gap: 0.75rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .cyber-threat__callout-icon svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .cyber-threat__callout-text {
+    font-size: 0.8rem;
+    line-height: 1.45;
+  }
+
+  .cyber-threat__desc {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+
+  .cyber-threat__image-card {
+    border-radius: 14px;
+  }
+
+  .cyber-threat__dots {
+    display: none;
+  }
+
+  /* Services Section on 640px */
+  .cyber-services {
+    padding: 2.75rem 0 3rem;
+  }
+
+  .cyber-services__header {
+    margin-bottom: 1.5rem;
+  }
+
+  .cyber-services__title {
+    font-size: 1.35rem;
+  }
+
+  .cyber-services__sub {
+    font-size: 0.82rem;
+  }
+
+  .cyber-service-card,
+  .cyber-service-card--reversed {
+    padding: 1.35rem 1.1rem;
+    border-radius: 14px;
+    gap: 1.5rem;
+  }
+
+  .cyber-service-card__title {
+    font-size: 1.35rem;
+  }
+
+  .cyber-service-card__tagline {
+    font-size: 0.94rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .cyber-service-card__desc {
+    font-size: 0.86rem;
+    line-height: 1.55;
+    margin-bottom: 1rem;
+  }
+
+  .cyber-service-card__capabilities {
+    padding: 0;
+    margin-bottom: 1.15rem;
+  }
+
+  .cyber-service-card__cap-item {
+    font-size: 0.82rem;
+  }
+
+  .cyber-service-card__note {
+    padding: 0.75rem 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .cyber-service-card__note-text {
+    font-size: 0.78rem;
+  }
+
+  .cyber-service-btn {
+    padding: 0.52rem 1.15rem;
+    font-size: 0.8rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cyber-service-card__image {
+    height: 220px;
+  }
+
+  /* Industry Section on 640px (Clean Open List - Compact & No Cards) */
+  .cyber-industry {
+    padding: 2.25rem 0 2.5rem;
+  }
+
+  .cyber-industry__header {
+    margin-bottom: 1.35rem;
+  }
+
+  .cyber-industry__title {
+    font-size: 1.35rem;
+  }
+
+  .cyber-industry__sub {
+    font-size: 0.8rem;
+  }
+
+  .cyber-industry__grid {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+
+  .cyber-industry-item {
+    display: grid;
+    grid-template-columns: 38px 1fr;
+    column-gap: 0.85rem;
+    align-items: flex-start;
+    padding-bottom: 0.9rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .cyber-industry-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .cyber-industry-item__icon-wrap {
+    width: 38px;
+    height: 38px;
+    border-radius: 9px;
+    margin-bottom: 0;
+    grid-row: 1 / 3;
+  }
+
+  .cyber-industry-item__icon-wrap svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .cyber-industry-item__title {
+    grid-column: 2;
+    margin-bottom: 0.2rem;
+    font-size: 0.94rem;
+  }
+
+  .cyber-industry-item__desc {
+    grid-column: 2;
+    font-size: 0.78rem;
+    line-height: 1.45;
+  }
+
+  /* Bento Section on 640px */
+  .cyber-why {
+    padding: 2.75rem 0 3rem;
+  }
+
+  .cyber-why__header {
+    margin-bottom: 1.75rem;
+  }
+
+  .cyber-why__title {
+    font-size: 1.45rem;
+  }
+
+  .cyber-why__sub {
+    font-size: 0.86rem;
+  }
+
+  .cyber-bento-card--shield-wide {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+    padding: 1.35rem;
+  }
+
+  .cyber-bento-card__shield-badge {
+    padding: 1.15rem 1rem;
+  }
+
+  .cyber-bento-card--mesh {
+    padding: 1.35rem;
+  }
+
+  .cyber-bento-pills {
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .cyber-bento-pill {
+    width: 100%;
+  }
+
+  .cyber-bento-card--stat-blue,
+  .cyber-bento-card--mint {
+    padding: 1.5rem 1.35rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cyber-container {
+    padding: 0 0.75rem;
+  }
+
+  .cyber-hero {
+    padding-top: calc(var(--nav-height, 70px) + 1.25rem);
+    padding-bottom: 2.75rem;
+    min-height: 380px;
+  }
+
+  .cyber-hero__title {
+    font-size: 1.35rem;
+    line-height: 1.28;
+    margin-bottom: 0.75rem;
+  }
+
+  .cyber-hero__subtitle {
+    font-size: 0.78rem;
+    line-height: 1.48;
+    min-height: 6.2rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .cyber-btn {
+    padding: 0.48rem 1.1rem;
+    font-size: 0.76rem;
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+
+  /* Threat Section on 480px */
+  .cyber-threat {
+    padding: 2rem 0;
+  }
+
+  .cyber-threat__title {
+    font-size: 1.25rem;
+  }
+
+  .cyber-threat__lead {
+    font-size: 0.82rem;
+  }
+
+  .cyber-threat__callout-text {
+    font-size: 0.76rem;
+  }
+
+  .cyber-threat__desc {
+    font-size: 0.76rem;
+  }
+
+  /* Services Section on 480px */
+  .cyber-services {
+    padding: 2.25rem 0 2.5rem;
+  }
+
+  .cyber-services__title {
+    font-size: 1.22rem;
+  }
+
+  .cyber-services__sub {
+    font-size: 0.78rem;
+  }
+
+  .cyber-service-card,
+  .cyber-service-card--reversed {
+    padding: 1.15rem 0.9rem;
+    border-radius: 12px;
+  }
+
+  .cyber-service-card__title {
+    font-size: 1.2rem;
+  }
+
+  .cyber-service-card__tagline {
+    font-size: 0.86rem;
+  }
+
+  .cyber-service-card__desc {
+    font-size: 0.8rem;
+  }
+
+  .cyber-service-card__image {
+    height: 190px;
+  }
+
+  .cyber-service-card__badge-pill {
+    bottom: 0.65rem;
+    left: 0.65rem;
+    font-size: 0.68rem;
+    padding: 0.25rem 0.65rem;
+  }
+
+  /* Industry Section on 480px */
+  .cyber-industry {
+    padding: 1.85rem 0 2.1rem;
+  }
+
+  .cyber-industry__title {
+    font-size: 1.22rem;
+  }
+
+  .cyber-industry-item__title {
+    font-size: 0.9rem;
+  }
+
+  .cyber-industry-item__desc {
+    font-size: 0.76rem;
+  }
+
+  /* Bento Section on 480px */
+  .cyber-why {
+    padding: 2.25rem 0 2.5rem;
+  }
+
+  .cyber-why__title {
+    font-size: 1.28rem;
+  }
+
+  .cyber-bento-card__body {
+    padding: 1.25rem;
+  }
+
+  .cyber-bento-card__big-num {
+    font-size: 2.85rem;
+  }
+
+  .cyber-bento-card__mint-stat {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .cyber-container {
+    padding: 0 0.5rem;
+  }
+
+  .cyber-hero__title {
+    font-size: 1.22rem;
+  }
+
+  .cyber-hero__subtitle {
+    font-size: 0.74rem;
+  }
+
+  .cyber-threat__title {
+    font-size: 1.15rem;
+  }
+
+  .cyber-threat__lead {
+    font-size: 0.78rem;
+  }
+
+  /* Services Section on 360px */
+  .cyber-services__title {
+    font-size: 1.15rem;
+  }
+
+  .cyber-services__sub {
+    font-size: 0.74rem;
+  }
+
+  .cyber-service-card__title {
+    font-size: 1.1rem;
+  }
+
+  .cyber-service-card__image {
+    height: 165px;
+  }
+
+  /* Industry Section on 360px */
+  .cyber-industry__title {
+    font-size: 1.15rem;
+  }
+
+  .cyber-industry-item__title {
+    font-size: 0.86rem;
+  }
+
+  .cyber-industry-item__desc {
+    font-size: 0.74rem;
+  }
+
+  /* Bento Section on 360px */
+  .cyber-why__title {
+    font-size: 1.18rem;
+  }
+}
+

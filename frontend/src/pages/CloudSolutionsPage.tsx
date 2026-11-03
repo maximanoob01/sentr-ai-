@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom';
 import './CloudSolutionsPage.css';
 import herooBg from '../assets/heroo.png';
 import msLogo from '../assets/alliance logo/2.png';
-import aavBg from '../assets/cloud solutions/aav.png';
 import amazonLogo from '../assets/cloud solutions/amazon.png';
 import cloudLogo from '../assets/cloud solutions/cloud.png';
 import hhBg from '../assets/cloud solutions/hh.png';
@@ -614,30 +613,8 @@ export const CloudSolutionsPage: React.FC = () => {
       </section>
 
       {/* ── CLOUD DELIVERY MODELS & SERVICES ── */}
-      <section className="cs-delivery" aria-label="Cloud Delivery Models" style={{ position: 'relative', background: 'transparent' }}>
-        {/* Photo background */}
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            backgroundImage: `url(${aavBg})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            zIndex: 0,
-          }}
-          aria-hidden="true"
-        />
-        {/* Dark overlay */}
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'linear-gradient(135deg, rgba(6,12,26,0.88) 0%, rgba(10,22,40,0.96) 100%)',
-            zIndex: 1,
-          }}
-          aria-hidden="true"
-        />
-        <div className="cs-container" style={{ position: 'relative', zIndex: 2 }}>
+      <section className="cs-delivery" aria-label="Cloud Delivery Models">
+        <div className="cs-container">
           <div className="cs-delivery-grid">
             {cloudDeliveryModels.map((item, i) => (
               <article
