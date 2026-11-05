@@ -588,6 +588,12 @@ export const CloudSolutionsPage: React.FC = () => {
 
       {/* ── CLOUD DELIVERY MODELS & SERVICES ── */}
       <section className="cs-delivery" aria-label="Cloud Delivery Models">
+        <div
+          className="cs-delivery__bg"
+          style={{ backgroundImage: `url(${buildingBg})` }}
+          aria-hidden="true"
+        />
+        <div className="cs-delivery__overlay" aria-hidden="true" />
         <div className="cs-container">
           <div className="cs-delivery-grid">
             {cloudDeliveryModels.map((item, i) => (
