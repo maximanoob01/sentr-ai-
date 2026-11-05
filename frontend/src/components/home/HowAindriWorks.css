@@ -1,11 +1,12 @@
 /* ============================================
-   How It Works (Split Layout Redesign)
+   How It Works (Split Layout - Compact)
    ============================================ */
 
 .how-works {
   background-color: #F4F6F8; /* Fallback color */
   position: relative;
   overflow: hidden;
+  padding: 4.5rem 0;
 }
 
 .how-works__overlay {
@@ -21,7 +22,7 @@
 .how-works__split {
   display: grid;
   grid-template-columns: 1fr 1.3fr;
-  gap: 3rem; /* Reduced from 6rem */
+  gap: 3.25rem;
   align-items: center;
 }
 
@@ -30,31 +31,31 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-right: 1rem; /* Reduced */
+  padding-right: 1.25rem;
 }
 
 .how-works__decorator-bar {
   width: 32px;
-  height: 6px;
+  height: 5px;
   background-color: #ffffff;
   border-radius: 4px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .how-works__title {
-  font-size: clamp(2rem, 3.5vw, 2.75rem); /* Reduced */
+  font-size: clamp(1.85rem, 3.2vw, 2.5rem);
   font-weight: 800;
   color: #ffffff;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-  margin-bottom: 1rem; /* Reduced */
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  margin-bottom: 1rem;
 }
 
 .how-works__desc {
-  font-size: 1rem; /* Reduced from 1.125rem */
+  font-size: 0.95rem;
   color: #E2E8F0;
-  line-height: 1.6;
-  margin-bottom: 2rem; /* Reduced from 3rem */
+  line-height: 1.58;
+  margin-bottom: 1.75rem;
   max-width: 95%;
 }
 
@@ -62,113 +63,132 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 28px; /* Reduced */
+  padding: 10px 26px;
   background-color: #ffffff;
   color: #0F172A;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   border-radius: 50px;
   text-decoration: none;
   transition: all var(--transition-base);
-  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.12);
 }
 
 .how-works__btn:hover {
   background-color: #F8FAFC;
   transform: translateY(-2px);
-  box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 12px 25px rgba(255, 255, 255, 0.2);
 }
 
 /* ---- Right Grid Column ---- */
 .how-works__grid-col {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem; /* Reduced from 1.5rem */
+  gap: 1.15rem;
 }
 
-.how-works__card {
+/* Base Card Style (White Cards: Top-Left & Bottom-Right) */
+.how-works .how-works__card {
   background-color: #ffffff;
-  border-radius: 16px; /* Reduced from 24px */
-  padding: 1.5rem; /* Reduced from 2.5rem 2rem */
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  border-radius: 20px;
+  padding: 1.85rem 1.65rem;
+  min-height: 215px;
+  border: none;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  transition: transform var(--transition-base);
+  justify-content: flex-start;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
-.how-works__card:hover {
-  transform: translateY(-4px);
+.how-works .how-works__card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1);
 }
 
-.how-works__card-icon-wrapper {
-  width: 40px; /* Reduced from 48px */
-  height: 40px;
+.how-works .how-works__card-icon-wrapper {
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   background-color: #E0F2FE;
   color: #0284C7;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem; /* Reduced from 1.5rem */
+  margin-bottom: 1.1rem;
+  flex-shrink: 0;
 }
 
-.how-works__card-icon-wrapper svg {
-  width: 18px; /* Slightly smaller icon */
-  height: 18px;
+.how-works .how-works__card-icon-wrapper svg {
+  width: 20px;
+  height: 20px;
 }
 
-.how-works__card-title {
-  font-size: 1.1rem; /* Reduced from 1.25rem */
-  font-weight: 700;
+.how-works .how-works__card-title {
+  font-size: 1.15rem;
+  font-weight: 800;
   color: #0F172A;
-  margin-bottom: 0.5rem; /* Reduced */
-  line-height: 1.25;
+  margin-bottom: 0.55rem;
+  line-height: 1.28;
+  letter-spacing: -0.015em;
 }
 
-.how-works__card-desc {
-  font-size: 0.85rem; /* Reduced from 0.95rem */
+.how-works .how-works__card-desc {
+  font-size: 0.86rem;
   color: #64748B;
-  line-height: 1.5;
+  line-height: 1.52;
   margin: 0;
 }
 
-/* ---- Dark Card Override (Top Right) ---- */
-.how-works__card--dark {
-  background-color: #0F172A;
-  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+/* ---- Dark Card Override (Top Right - Bring All the Information Together) ---- */
+.how-works .how-works__card--dark,
+.how-works .how-works__card.how-works__card--dark {
+  background-color: #0C1322 !important;
+  box-shadow: 0 16px 38px rgba(12, 19, 34, 0.2);
 }
 
-.how-works__card--dark .how-works__card-icon-wrapper {
-  background-color: #D9F99D; /* Bright lime green like the reference */
-  color: #166534;
+.how-works .how-works__card--dark:hover {
+  background-color: #0C1322 !important;
+  box-shadow: 0 20px 42px rgba(12, 19, 34, 0.28);
 }
 
-.how-works__card--dark .how-works__card-title {
-  color: #ffffff;
+.how-works .how-works__card--dark .how-works__card-icon-wrapper {
+  background-color: #D9F99D !important;
+  color: #15803D !important;
 }
 
-.how-works__card--dark .how-works__card-desc {
-  color: #94A3B8;
+.how-works .how-works__card--dark .how-works__card-title {
+  color: #ffffff !important;
 }
 
-/* ---- Dark Blue Card Override (Bottom Left) ---- */
-.how-works__card--blue {
-  background-color: #004D99; /* Deep blue */
-  box-shadow: 0 20px 40px rgba(0, 77, 153, 0.2);
+.how-works .how-works__card--dark .how-works__card-desc {
+  color: #94A3B8 !important;
 }
 
-.how-works__card--blue .how-works__card-icon-wrapper {
-  background-color: #E0F2FE; /* Keep light blue icon */
-  color: #0284C7;
+/* ---- Deep Blue Card Override (Bottom Left - AI Understands What's Happening) ---- */
+.how-works .how-works__card--blue,
+.how-works .how-works__card.how-works__card--blue {
+  background-color: #004D99 !important;
+  box-shadow: 0 16px 38px rgba(0, 77, 153, 0.24);
 }
 
-.how-works__card--blue .how-works__card-title {
-  color: #ffffff;
+.how-works .how-works__card--blue:hover {
+  background-color: #004D99 !important;
+  box-shadow: 0 20px 42px rgba(0, 77, 153, 0.32);
 }
 
-.how-works__card--blue .how-works__card-desc {
-  color: #BAE6FD; /* Light blue-gray text */
+.how-works .how-works__card--blue .how-works__card-icon-wrapper {
+  background-color: #E0F2FE !important;
+  color: #004D99 !important;
+}
+
+.how-works .how-works__card--blue .how-works__card-title {
+  color: #ffffff !important;
+}
+
+.how-works .how-works__card--blue .how-works__card-desc {
+  color: #BAE6FD !important;
 }
 
 /* ---- Responsive ---- */

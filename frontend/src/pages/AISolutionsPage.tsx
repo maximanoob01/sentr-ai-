@@ -613,8 +613,8 @@ export const AISolutionsPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Card 4: Tall Lime Green Accent Card (Col 2, Rows 3-4) */}
-            <div className="bento-card bento-card--lime">
+            {/* Card 4: Tall Blue Accent Card (Col 2, Rows 3-4) */}
+            <div className="bento-card bento-card--blue">
               <div>
                 <div className="bento-card__num">01</div>
                 <h3 className="bento-card__title">
@@ -747,7 +747,7 @@ export const AISolutionsPage: React.FC = () => {
                 </div>
 
                 {/* Slide 2: 01 AI Agents & Workflow Automation */}
-                <div className="bento-card bento-card--lime bento-slide">
+                <div className="bento-card bento-card--blue bento-slide">
                   <div>
                     <div className="bento-card__num">01</div>
                     <h3 className="bento-card__title">

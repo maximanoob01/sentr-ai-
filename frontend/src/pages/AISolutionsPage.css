@@ -833,41 +833,49 @@
   color: #000000;
 }
 
-/* 4. Tall Lime Green Card (Col 2, Rows 3-4) */
+/* 4. Tall Blue Accent Card (Col 2, Rows 3-4) */
+.bento-card--blue,
 .bento-card--lime {
   grid-column: 2 / 3;
   grid-row: 3 / 5;
-  background: #c6f135;
-  color: #090d16;
+  background: #2563eb;
+  color: #ffffff;
   padding: 1.65rem 1.4rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border: none;
   box-shadow: none;
+  transition: transform 0.25s ease, background-color 0.2s ease, box-shadow 0.25s ease;
 }
 
+.bento-card--blue:hover,
 .bento-card--lime:hover {
-  box-shadow: none;
+  background: #1d4ed8;
+  box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.25);
 }
 
+.bento-card--blue .bento-card__num,
 .bento-card--lime .bento-card__num {
   font-size: 2.5rem;
-  color: #090d16;
+  font-weight: 800;
+  color: #ffffff;
 }
 
+.bento-card--blue .bento-card__title,
 .bento-card--lime .bento-card__title {
   font-size: 1.12rem;
   font-weight: 800;
-  color: #090d16;
+  color: #ffffff;
   line-height: 1.25;
   margin-bottom: 0.45rem;
 }
 
+.bento-card--blue .bento-card__sub,
 .bento-card--lime .bento-card__sub {
   font-size: 0.82rem;
   line-height: 1.45;
-  color: #1e293b;
+  color: rgba(255, 255, 255, 0.88);
   font-weight: 500;
 }
 
@@ -1183,7 +1191,8 @@
     grid-row: auto;
   }
 
-  .bento-card--lime {
+  .bento-card--lime,
+  .bento-card--blue {
     grid-column: 1 / 2;
     grid-row: auto;
   }

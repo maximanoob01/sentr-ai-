@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import './CybersecurityPage.css';
 import hhBg from '../assets/cloud solutions/hh.png';
 import secuImg from '../assets/solution/secu.png';
-import backBg from '../assets/solution/back.png';
+import newBg from '../assets/solution/newbg.png';
+import buildingImg from '../assets/solution/building.png';
 import srv1 from '../assets/solution/enterprise/1.png';
 import srv2 from '../assets/solution/enterprise/2.png';
 import srv3 from '../assets/solution/enterprise/3.png';
@@ -178,10 +179,10 @@ export const CybersecurityPage: React.FC = () => {
     <main className="cyber-page">
       {/* ── 1. HERO SECTION ── */}
       <section className="cyber-hero" aria-label="Cybersecurity Solutions Hero">
-        {/* Background Image: back.png */}
+        {/* Background Image: newbg.png */}
         <div
           className="cyber-hero__bg"
-          style={{ backgroundImage: `url(${backBg})` }}
+          style={{ backgroundImage: `url(${newBg})` }}
           aria-hidden="true"
         />
 
@@ -208,27 +209,6 @@ export const CybersecurityPage: React.FC = () => {
                 aria-hidden="true"
               />
             </p>
-
-            {/* Hero CTAs */}
-            <div className="cyber-hero__actions fade-in-up" style={{ transitionDelay: '0.2s' }}>
-              <Link to="/company/contact" className="cyber-btn cyber-btn--primary">
-                <span>Contact Security Team</span>
-                <svg
-                  width="15"
-                  height="15"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M5 12h14" />
-                  <path d="m12 5 7 7-7 7" />
-                </svg>
-              </Link>
-            </div>
           </div>
         </div>
       </section>
@@ -436,8 +416,16 @@ export const CybersecurityPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ── 4. INDUSTRY-SPECIFIC SECURITY (OPEN MINIMALIST LAYOUT - NO CARDS) ── */}
+      {/* ── 4. INDUSTRY-SPECIFIC SECURITY ── */}
       <section className="cyber-industry" aria-labelledby="industry-heading">
+        {/* Dim Neutral Background Image (building.png) */}
+        <div
+          className="cyber-industry__bg"
+          style={{ backgroundImage: `url(${buildingImg})` }}
+          aria-hidden="true"
+        />
+        <div className="cyber-industry__overlay" aria-hidden="true" />
+
         <div className="cyber-container">
           <div className="cyber-industry__header fade-in-up">
             <span className="cyber-industry__label">Industry-Specific Security</span>

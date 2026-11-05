@@ -74,7 +74,7 @@ export const HowAindriWorks: React.FC = () => {
   }, []);
 
   return (
-    <section className="how-works section-y" ref={sectionRef} id="how-it-works" style={{ backgroundImage: `url(${workBg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+    <section className="how-works" ref={sectionRef} id="how-it-works" style={{ backgroundImage: `url(${workBg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
       <div className="how-works__overlay"></div>
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         <div className="how-works__split">
@@ -97,13 +97,19 @@ export const HowAindriWorks: React.FC = () => {
           {/* Right Column: 2x2 Grid */}
           <div className="how-works__grid-col">
             {steps.map((step, index) => {
-              const isDark = index === 1; // Highlight the top-right card
-              const isBlue = index === 2; // AI card
+              const isDark = index === 1; // Top-Right: Dark Navy card
+              const isBlue = index === 2; // Bottom-Left: Deep Blue card
+              const cardBgStyle = isDark 
+                ? { backgroundColor: '#0C1322' } 
+                : isBlue 
+                ? { backgroundColor: '#004D99' } 
+                : { backgroundColor: '#ffffff' };
+
               return (
                 <div 
                   key={index} 
                   className={`how-works__card fade-in-up ${isDark ? 'how-works__card--dark' : ''} ${isBlue ? 'how-works__card--blue' : ''}`}
-                  style={{ transitionDelay: `${index * 0.1}s` }}
+                  style={{ ...cardBgStyle, transitionDelay: `${index * 0.1}s` }}
                 >
                   <div className="how-works__card-icon-wrapper">
                     {step.icon}

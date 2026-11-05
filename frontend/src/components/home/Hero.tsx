@@ -129,43 +129,40 @@ export const Hero: React.FC = () => {
           </div>
 
           <div className="hero__cta-row">
-            <Link to="/products/aindri" className="hero__btn-primary">
-              Explore Aindri
-            </Link>
-            <Link to="/solutions" className="hero__btn-outline">
+            <Link to="/solutions" className="hero__btn-primary">
               Explore Our Solutions
             </Link>
-          </div>
 
-          {/* Social Proof Avatar Trust Badge */}
-          <div className="hero__trust-badge fade-in-up" style={{ transitionDelay: '0.2s' }}>
-            <div className="hero__trust-avatars">
-              <img
-                src={person1}
-                alt="Rahul Mehta"
-                title="Rahul Mehta · Head of Operations"
-                className="hero__trust-avatar"
-              />
-              <img
-                src={person2}
-                alt="Ankit Sharma"
-                title="Ankit Sharma · IT Director"
-                className="hero__trust-avatar"
-              />
-              <img
-                src={person4}
-                alt="Priya Nair"
-                title="Priya Nair · Digital Transformation Lead"
-                className="hero__trust-avatar"
-              />
-            </div>
-            <div className="hero__trust-content">
-              <span className="hero__trust-text">
-                Trusted by <strong className="hero__trust-count">100+</strong> manufacturers
-              </span>
-              <span className="hero__trust-sub">
-                &amp; businesses across industries
-              </span>
+            {/* Social Proof Avatar Trust Badge moved to right of buttons */}
+            <div className="hero__trust-badge fade-in-up" style={{ transitionDelay: '0.2s' }}>
+              <div className="hero__trust-avatars">
+                <img
+                  src={person1}
+                  alt="Rahul Mehta"
+                  title="Rahul Mehta · Head of Operations"
+                  className="hero__trust-avatar"
+                />
+                <img
+                  src={person2}
+                  alt="Ankit Sharma"
+                  title="Ankit Sharma · IT Director"
+                  className="hero__trust-avatar"
+                />
+                <img
+                  src={person4}
+                  alt="Priya Nair"
+                  title="Priya Nair · Digital Transformation Lead"
+                  className="hero__trust-avatar"
+                />
+              </div>
+              <div className="hero__trust-content">
+                <span className="hero__trust-text">
+                  Trusted by <strong className="hero__trust-count">100+</strong> manufacturers
+                </span>
+                <span className="hero__trust-sub">
+                  &amp; businesses across industries
+                </span>
+              </div>
             </div>
           </div>
         </div>

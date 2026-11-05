@@ -75,14 +75,40 @@ import acImg from '../assets/aindri/ac.png';
 import adImg from '../assets/aindri/ad.png';
 import aeImg from '../assets/aindri/ae.png';
 import warehouseImg from '../assets/aindri/warehouse.png';
-import workImg from '../assets/work.png';
+import cctvHardwareImg from '../assets/cctv.png';
+import iotFactoryImg from '../assets/solution/iot.png';
 
 const howWorksSteps = [
-  { num: '01', title: 'Connect', desc: 'Aindri works with your existing camera infrastructure, reducing the need for a complete hardware overhaul.' },
-  { num: '02', title: 'Understand', desc: 'Computer vision models analyze live feeds to identify relevant people, objects, and activities.' },
-  { num: '03', title: 'Detect', desc: 'Aindri identifies activity that differs from expected operational patterns, such as unusual product movement or potential tampering.' },
-  { num: '04', title: 'Alert', desc: 'Relevant events generate alerts with snapshot evidence so your team can quickly understand what happened.' },
-  { num: '05', title: 'Act', desc: 'Depending on the severity, your team can review and intervene. High-priority events can support process-hold workflows.' }
+  {
+    num: '01',
+    tag: 'Infrastructure',
+    title: 'Connect',
+    desc: 'Aindri works with your existing camera infrastructure, reducing the need for a complete hardware overhaul.',
+  },
+  {
+    num: '02',
+    tag: 'Analysis',
+    title: 'Understand',
+    desc: 'Computer vision models analyze live feeds to identify relevant people, objects, and activities.',
+  },
+  {
+    num: '03',
+    tag: 'Detection',
+    title: 'Detect',
+    desc: 'Aindri identifies activity that differs from expected operational patterns, such as unusual product movement or potential tampering.',
+  },
+  {
+    num: '04',
+    tag: 'Verification',
+    title: 'Alert',
+    desc: 'Relevant events generate alerts with snapshot evidence so your team can quickly understand what happened.',
+  },
+  {
+    num: '05',
+    tag: 'Intervention',
+    title: 'Act',
+    desc: 'Depending on the severity, your team can review and intervene. High-priority events can support process-hold workflows.',
+  },
 ];
 
 
@@ -152,32 +178,47 @@ export const AindriPage: React.FC = () => {
 
       {/* ======== 1. PRODUCT HERO ======== */}
       <section className="indri-hero" ref={heroRef} aria-labelledby="indri-hero-heading">
-        <div className="indri-hero__bg" aria-hidden="true">
-          <div style={{ position: 'absolute', inset: 0, backgroundImage: `url(${heroImg})`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 1 }} />
-        </div>
+        <div className="indri-hero__bg" aria-hidden="true" />
         <div className="container indri-hero__inner">
+          {/* Left: Content */}
           <div className="indri-hero__content">
-            
             <h1 id="indri-hero-heading" className="indri-hero__heading-main fade-in-up" style={{ transitionDelay: '0.1s' }}>
-              TURN YOUR CAMERAS INTO<br />REAL-TIME INTELLIGENCE
+              Turn your cameras into<br />real-time intelligence
             </h1>
             
             <p className="indri-hero__sub-text fade-in-up" style={{ transitionDelay: '0.2s' }}>
               Aindri transforms existing security cameras into an intelligent monitoring layer that detects anomalies, understands activity, and helps teams respond in real time.
             </p>
             
-            <div className="indri-hero__cta-group fade-in-up" style={{ transitionDelay: '0.3s' }}>
+            <div className="indri-hero__cta-group fade-in-up" style={{ transitionDelay: '0.25s' }}>
               <button type="button" onClick={() => setIsDemoModalOpen(true)} className="indri-btn-white">
                 Request a Demo
               </button>
-              <button className="indri-btn-play">
+              <button
+                type="button"
+                className="indri-btn-play"
+                onClick={() => {
+                  const target = document.querySelector('.indri-issues');
+                  target?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
                 <div className="indri-play-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
                 </div>
                 See How It Works
               </button>
             </div>
-            
+          </div>
+
+          {/* Right: Reduced Hero Image with White Background */}
+          <div className="indri-hero__visual fade-in-up" style={{ transitionDelay: '0.2s' }}>
+            <div className="indri-hero__image-card">
+              <img
+                src={heroImg}
+                alt="Aindri AI Smart Camera & Video Intelligence"
+                className="indri-hero__image"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -263,7 +304,7 @@ export const AindriPage: React.FC = () => {
         </div>
       </div>
 
-      {/* ======== 2. AINDRI NODE GRAPH ======== */}
+      {/* ======== 2. AINDRI AT THE CENTER OF YOUR OPERATIONS ======== */}
       <AindriNodeGraph />
 
       {/* ======== 2.5 FROM SURVEILLANCE TO INTELLIGENCE ======== */}
@@ -345,89 +386,205 @@ export const AindriPage: React.FC = () => {
 
       {/* ======== 3. HOW AINDRI WORKS ======== */}
       <section id="technology" className="how-aindri-works section-y">
-        <div className="container">
-          <div className="how-aindri-works__interactive fade-in-up" style={{ transitionDelay: '0.2s' }}>
-            <div className="how-aindri-works__header fade-in-up">
-              <h2 className="how-aindri-works__heading">How Aindri Works</h2>
-              <p className="how-aindri-works__sub">See &rarr; Understand &rarr; Alert &rarr; Act</p>
-            </div>
-            
-            <div style={{ display: 'flex', flexWrap: 'nowrap', gap: '1.5rem', marginTop: '3rem', overflowX: 'auto', paddingBottom: '1rem' }}>
-              {howWorksSteps.map((step, i) => (
-                <div key={step.num} className="feature-card fade-in-up" style={{ transitionDelay: `${i * 0.1}s`, textAlign: 'left', display: 'flex', flexDirection: 'column', flex: '1', minWidth: '240px' }}>
-                  <span style={{ color: 'var(--accent)', fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.1em', display: 'block', marginBottom: '0.5rem' }}>STEP {step.num}</span>
-                  <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#0f172a', marginBottom: '1rem' }}>{step.title}</h3>
-                  <p style={{ color: '#64748b', fontSize: '0.9rem', lineHeight: 1.6, margin: 0 }}>{step.desc}</p>
+        <div className="container relative z-10">
+          <div className="how-aindri-works__header fade-in-up">
+            <h2 className="how-aindri-works__heading">How Aindri Works</h2>
+          </div>
+
+          {/* 5-Step Pipeline Grid */}
+          <div className="aindri-pipeline__grid fade-in-up" style={{ transitionDelay: '0.2s' }}>
+            {howWorksSteps.map((step, i) => (
+              <div key={step.num} className="aindri-pipeline__card" style={{ transitionDelay: `${i * 0.08}s` }}>
+                <div className="aindri-pipeline__card-top">
+                  <span className="aindri-pipeline__card-num">STEP {step.num}</span>
                 </div>
-              ))}
-            </div>
+
+                <h3 className="aindri-pipeline__card-title">{step.title}</h3>
+                <p className="aindri-pipeline__card-desc">{step.desc}</p>
+
+                <div className="aindri-pipeline__card-footer">
+                  <span className="aindri-pipeline__card-tag">{step.tag}</span>
+                  <span className="aindri-pipeline__card-step-indicator">{i + 1}/5</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ======== 3.5 WHY AINDRI ======== */}
-      <section id="why-aindri" className="why-aindri section-y">
+            {/* ======== 3.5 WHY AINDRI (COLLAGE) ======== */}
+      <section id="why-aindri" className="why-aindri">
         <div className="container">
           <div className="why-aindri__header fade-in-up">
             <h2 className="why-aindri__heading">Why Aindri?</h2>
             <p className="why-aindri__sub">Because Recording an Incident Isn't the Same as Preventing It</p>
           </div>
           
-          <div className="why-aindri__marquee-wrapper fade-in-up" style={{ transitionDelay: '0.2s' }}>
-            <div className="why-aindri__marquee">
-              {[
-                { title: 'Move From Investigation to Intervention', desc: 'Identify important events while they are happening instead of relying entirely on post-incident footage review.', icon: <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/> },
-                { title: 'Reduce Manual Monitoring', desc: 'Give security and operations teams intelligent alerts instead of requiring continuous manual monitoring of every camera feed.', icon: <><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><path d="M11 8v4l3 3"/></> },
-                { title: 'Use What You Already Have', desc: 'Leverage existing camera infrastructure rather than requiring a complete surveillance hardware replacement.', icon: <><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></> },
-                { title: 'Protect Against Operational Loss', desc: 'Detect potential tampering, substitution, misloading, and other discrepancies earlier.', icon: <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/> },
-                { title: 'One Platform, Multiple Use Cases', desc: 'The platform can extend across operational monitoring, warehouse activity, inventory, attendance, dispatch, and access-related workflows.', icon: <><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></> }
-              ].map((card, i) => (
-                <div key={i} className="why-aindri-card">
-                  <div className="why-aindri-card__icon">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                      {card.icon}
-                    </svg>
+          <div className="why-aindri__collage">
+            {/* Top Row: Large Featured Card (7 cols) + Tall Card (5 cols) */}
+            <div className="why-collage-row why-collage-row--top">
+              {/* Card 1: Move From Investigation to Intervention */}
+              <div className="why-collage-card why-collage-card--featured fade-in-up">
+                <div className="why-collage-card__body">
+                  <div className="why-collage-card__tag">
+                    <span className="why-collage-card__tag-dot"></span>
+                    Real-Time Action
                   </div>
-                  <h3 className="why-aindri-card__title">{card.title}</h3>
-                  <p className="why-aindri-card__desc">{card.desc}</p>
-                </div>
-              ))}
-              {[
-                { title: 'Move From Investigation to Intervention', desc: 'Identify important events while they are happening instead of relying entirely on post-incident footage review.', icon: <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/> },
-                { title: 'Reduce Manual Monitoring', desc: 'Give security and operations teams intelligent alerts instead of requiring continuous manual monitoring of every camera feed.', icon: <><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><path d="M11 8v4l3 3"/></> },
-                { title: 'Use What You Already Have', desc: 'Leverage existing camera infrastructure rather than requiring a complete surveillance hardware replacement.', icon: <><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></> },
-                { title: 'Protect Against Operational Loss', desc: 'Detect potential tampering, substitution, misloading, and other discrepancies earlier.', icon: <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/> },
-                { title: 'One Platform, Multiple Use Cases', desc: 'The platform can extend across operational monitoring, warehouse activity, inventory, attendance, dispatch, and access-related workflows.', icon: <><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></> }
-              ].map((card, i) => (
-                <div key={`dup-${i}`} className="why-aindri-card">
-                  <div className="why-aindri-card__icon">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                      {card.icon}
+                  <h3 className="why-collage-card__title">
+                    Move From Investigation to Intervention
+                  </h3>
+                  <p className="why-collage-card__desc">
+                    Identify important events while they are happening instead of relying entirely on post-incident footage review.
+                  </p>
+                  <div className="why-collage-card__highlight">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
                     </svg>
+                    <span>Instant event detection & operational response</span>
                   </div>
-                  <h3 className="why-aindri-card__title">{card.title}</h3>
-                  <p className="why-aindri-card__desc">{card.desc}</p>
                 </div>
-              ))}
+                <div className="why-collage-card__image-container">
+                  <img
+                    src={img5}
+                    alt="Move From Investigation to Intervention"
+                    className="why-collage-card__img"
+                  />
+                  <div className="why-collage-card__floating-badge">
+                    <span className="live-indicator"></span>
+                    Live Anomaly Detection
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 2: Reduce Manual Monitoring */}
+              <div className="why-collage-card why-collage-card--tall fade-in-up" style={{ transitionDelay: '0.1s' }}>
+                <div className="why-collage-card__image-container">
+                  <img
+                    src={adImg}
+                    alt="Reduce Manual Monitoring"
+                    className="why-collage-card__img"
+                  />
+                  <div className="why-collage-card__floating-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                      <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                    </svg>
+                    Continuous AI Guard
+                  </div>
+                </div>
+                <div className="why-collage-card__body">
+                  <div className="why-collage-card__tag">
+                    <span className="why-collage-card__tag-dot"></span>
+                    Autonomous Alerts
+                  </div>
+                  <h3 className="why-collage-card__title">
+                    Reduce Manual Monitoring
+                  </h3>
+                  <p className="why-collage-card__desc">
+                    Give security and operations teams intelligent alerts instead of requiring continuous manual monitoring of every camera feed.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Row: 3 Equal Collage Cards (4 cols each) */}
+            <div className="why-collage-row why-collage-row--bottom">
+              {/* Card 3: Use What You Already Have */}
+              <div className="why-collage-card why-collage-card--standard fade-in-up" style={{ transitionDelay: '0.15s' }}>
+                <div className="why-collage-card__image-container">
+                  <img
+                    src={cctvHardwareImg}
+                    alt="Use What You Already Have"
+                    className="why-collage-card__img"
+                  />
+                  <div className="why-collage-card__floating-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                      <circle cx="12" cy="13" r="4"/>
+                    </svg>
+                    Existing CCTV Cameras
+                  </div>
+                </div>
+                <div className="why-collage-card__body">
+                  <div className="why-collage-card__tag">
+                    <span className="why-collage-card__tag-dot"></span>
+                    Zero Rip-and-Replace
+                  </div>
+                  <h3 className="why-collage-card__title">
+                    Use What You Already Have
+                  </h3>
+                  <p className="why-collage-card__desc">
+                    Leverage existing camera infrastructure rather than requiring a complete surveillance hardware replacement.
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 4: Protect Against Operational Loss */}
+              <div className="why-collage-card why-collage-card--standard fade-in-up" style={{ transitionDelay: '0.2s' }}>
+                <div className="why-collage-card__image-container">
+                  <img
+                    src={acImg}
+                    alt="Protect Against Operational Loss"
+                    className="why-collage-card__img"
+                  />
+                  <div className="why-collage-card__floating-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                    Loss Prevention
+                  </div>
+                </div>
+                <div className="why-collage-card__body">
+                  <div className="why-collage-card__tag">
+                    <span className="why-collage-card__tag-dot"></span>
+                    Tampering & Discrepancy
+                  </div>
+                  <h3 className="why-collage-card__title">
+                    Protect Against Operational Loss
+                  </h3>
+                  <p className="why-collage-card__desc">
+                    Detect potential tampering, substitution, misloading, and other discrepancies earlier.
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 5: One Platform, Multiple Use Cases */}
+              <div className="why-collage-card why-collage-card--standard fade-in-up" style={{ transitionDelay: '0.25s' }}>
+                <div className="why-collage-card__image-container">
+                  <img
+                    src={iotFactoryImg}
+                    alt="One Platform, Multiple Use Cases"
+                    className="why-collage-card__img"
+                  />
+                  <div className="why-collage-card__floating-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                      <polyline points="2 17 12 22 22 17"/>
+                      <polyline points="2 12 12 17 22 12"/>
+                    </svg>
+                    Multi-Facility Scale
+                  </div>
+                </div>
+                <div className="why-collage-card__body">
+                  <div className="why-collage-card__tag">
+                    <span className="why-collage-card__tag-dot"></span>
+                    Unified Platform
+                  </div>
+                  <h3 className="why-collage-card__title">
+                    One Platform, Multiple Use Cases
+                  </h3>
+                  <p className="why-collage-card__desc">
+                    The platform can extend across operational monitoring, warehouse activity, inventory, attendance, dispatch, and access-related workflows.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ======== 3.75 WITH AINDRI STRIP ======== */}
-      <div className="aindri-strip">
-        <div className="container">
-          <div className="aindri-strip__inner fade-in-up">
-            <span className="aindri-strip__label">With Aindri</span>
-            <h3 className="aindri-strip__text">
-              Watch <span className="aindri-strip__arrow">&rarr;</span> Understand <span className="aindri-strip__arrow">&rarr;</span> Detect <span className="aindri-strip__arrow">&rarr;</span> Alert <span className="aindri-strip__arrow">&rarr;</span> Act
-            </h3>
-          </div>
-        </div>
-      </div>
-
       {/* ======== 4. WHO IS AINDRI FOR ======== */}
-      <section id="usecases" className="who-aindri-for section-y">
+      <section id="usecases" className="who-aindri-for">
         <div className="container">
           <div className="who-aindri-for__header fade-in-up">
             <h2 className="who-aindri-for__heading">Who Is Aindri For?</h2>
@@ -518,84 +675,90 @@ export const AindriPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ======== 6.5 SEE WHY IT HAPPENED ======== */}
-      <section className="see-why section-y">
-        <div className="container">
-          <div className="see-why__header fade-in-up">
-            <span className="section-label">Evidence & Action</span>
-            <h2 className="see-why__heading">Don't Just Get an Alert. See Why It Happened.</h2>
-            <p className="see-why__sub">
-              When Aindri identifies a relevant anomaly, the system can retain snapshot evidence associated with the flagged event. This gives teams context around the alert without requiring them to search through hours of footage.
-            </p>
-          </div>
+      {/* ======== 6.5 MAKE CAMERAS WORK SMARTER - WAVE PROCESS ======== */}
+      <section className="smarter-cameras section-y">
+        <div className="smarter-cameras__bg-shape" aria-hidden="true" />
 
-          <div className="see-why__layout fade-in-up" style={{ transitionDelay: '0.2s' }}>
-            <div className="see-why__left-col">
-
-
-              <div className="see-why__center-image fade-in-up">
-                <img src={aeImg} alt="Evidence and anomaly capture visual" />
-              </div>
-            </div>
-
-            <div className="see-why__scroll-area">
-              <div className="see-why__marquee">
-                {[
-                  { step: 'Detect', text: 'An unusual event is identified.' },
-                  { step: 'Capture', text: 'Relevant visual evidence is associated with the event.' },
-                  { step: 'Alert', text: 'The responsible team receives a notification.' },
-                  { step: 'Review', text: 'The team evaluates the situation.' },
-                  { step: 'Respond', text: 'Appropriate action can be taken.' }
-                ].map((s, i) => (
-                  <div key={i} className="see-why__step-card">
-                    <span className="see-why__step-badge">Step 0{i + 1}</span>
-                    <h4 className="see-why__step-title">{s.step}</h4>
-                    <p className="see-why__step-desc">{s.text}</p>
-                  </div>
-                ))}
-                {[
-                  { step: 'Detect', text: 'An unusual event is identified.' },
-                  { step: 'Capture', text: 'Relevant visual evidence is associated with the event.' },
-                  { step: 'Alert', text: 'The responsible team receives a notification.' },
-                  { step: 'Review', text: 'The team evaluates the situation.' },
-                  { step: 'Respond', text: 'Appropriate action can be taken.' }
-                ].map((s, i) => (
-                  <div key={`dup-${i}`} className="see-why__step-card">
-                    <span className="see-why__step-badge">Step 0{i + 1}</span>
-                    <h4 className="see-why__step-title">{s.step}</h4>
-                    <p className="see-why__step-desc">{s.text}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* ======== 6.75 MAKE THEM WORK SMARTER ======== */}
-      <section className="indri-smart section-y">
-        <div className="container">
-          <div className="indri-smart__card fade-in-up" style={{ backgroundImage: `url(${workImg})` }}>
-            <div className="indri-smart__overlay"></div>
-            <div className="indri-smart__content">
-              <h2 className="indri-smart__heading">
+        <div className="container relative z-10">
+          {/* Compact Split Header */}
+          <div className="smarter-cameras__header-wrap fade-in-up">
+            <div className="smarter-cameras__intro-left">
+              <span className="smarter-cameras__eyebrow">CONTINUOUS EVIDENCE & ACTION</span>
+              <h2 className="smarter-cameras__heading">
                 Your Cameras Are Already Watching.<br />
-                <span className="text-gradient">Make Them Work Smarter.</span>
+                <span className="smarter-cameras__heading-highlight">Make Them Work Smarter.</span>
               </h2>
-              <p className="indri-smart__desc">
+            </div>
+            <div className="smarter-cameras__intro-right">
+              <p className="smarter-cameras__sub">
                 Turn your existing camera infrastructure into an intelligent, real-time layer for detecting anomalies, understanding activity, and responding to critical events.
               </p>
-              
-              <div className="indri-smart__challenge">
-                <span className="indri-smart__challenge-badge">Have a specific operational challenge?</span>
-                <p>Aindri can be adapted to your business requirements and use cases.</p>
-              </div>
-              
-              <div className="indri-smart__actions">
-                <button type="button" onClick={() => setIsDemoModalOpen(true)} className="indri-btn-white">
+              <div className="smarter-cameras__actions">
+                <button
+                  type="button"
+                  onClick={() => setIsDemoModalOpen(true)}
+                  className="smarter-cameras__btn"
+                >
                   Request a Demo
                 </button>
-                <Link to="/company/contact" className="indri-btn-outline">Explore a Custom Solution &rarr;</Link>
+                <Link to="/company/contact" className="smarter-cameras__btn-link">
+                  Explore a Custom Solution &rarr;
+                </Link>
               </div>
+            </div>
+          </div>
+
+          {/* Curving Wavy Process Timeline in Blue */}
+          <div className="smarter-cameras__timeline fade-in-up" style={{ transitionDelay: '0.2s' }}>
+            {/* SVG Curving Ribbon Wave */}
+            <div className="smarter-cameras__wave-wrap" aria-hidden="true">
+              <svg className="smarter-cameras__wave-svg" viewBox="0 0 1200 100" fill="none" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="waveBlueGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#0284c7" />
+                    <stop offset="50%" stopColor="#2563eb" />
+                    <stop offset="100%" stopColor="#38bdf8" />
+                  </linearGradient>
+                  <filter id="waveGlow" x="-10%" y="-10%" width="120%" height="140%">
+                    <feDropShadow dx="0" dy="4" stdDeviation="4" floodColor="#2563eb" floodOpacity="0.25" />
+                  </filter>
+                </defs>
+                <path
+                  d="M 0 68 C 45 68, 75 68, 110 68 C 190 68, 275 22, 355 22 C 435 22, 520 68, 600 68 C 680 68, 765 22, 845 22 C 925 22, 1010 52, 1090 52 C 1135 52, 1170 54, 1200 54"
+                  stroke="url(#waveBlueGrad)"
+                  strokeWidth="3.5"
+                  strokeLinecap="round"
+                  filter="url(#waveGlow)"
+                />
+              </svg>
+            </div>
+
+            {/* 5 Step Columns Riding the Curve */}
+            <div className="smarter-cameras__steps-grid">
+              {[
+                { step: 'Detect', text: 'An unusual event is identified.' },
+                { step: 'Capture', text: 'Relevant visual evidence is associated with the event.' },
+                { step: 'Alert', text: 'The responsible team receives a notification.' },
+                { step: 'Review', text: 'The team evaluates the situation.' },
+                { step: 'Respond', text: 'Appropriate action can be taken.' },
+              ].map((s, i) => (
+                <div key={s.step} className={`smarter-cameras__step-col smarter-cameras__step-col--${i + 1}`}>
+                  {/* Floating White Circular Node with Center Dot */}
+                  <div className="smarter-cameras__node">
+                    <span className="smarter-cameras__node-dot" />
+                  </div>
+
+                  {/* Step Card with Watermark */}
+                  <div className="smarter-cameras__step-content">
+                    <div className="smarter-cameras__watermark">{i + 1}</div>
+                    <div className="smarter-cameras__step-body">
+                      <span className="smarter-cameras__step-tag">Step 0{i + 1}</span>
+                      <h4 className="smarter-cameras__step-title">{s.step}</h4>
+                      <p className="smarter-cameras__step-desc">{s.text}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -624,9 +787,9 @@ export const AindriPage: React.FC = () => {
                   </div>
                   <h3 className="indri-faq__cta-title">Still have a question?</h3>
                   <p className="indri-faq__cta-desc">
-                    Don't worry we're here for cons Don't worry we're free for consultation.
+                    Don't worry we're free for consultation.
                   </p>
-                  <a href="mailto:info@sentrai.in" className="indri-faq__btn">Contact Us</a>
+                  <Link to="/company/contact" className="indri-faq__btn">Contact Us</Link>
                 </div>
               </div>
 
