@@ -157,7 +157,7 @@ export const AindriPage: React.FC = () => {
       <nav className="indri-custom-nav">
         <div className="container indri-custom-nav__inner">
           <Link to="/" className="indri-custom-nav__logo">
-            <img src={aindriiImg} alt="Aindri by Sentr AI" style={{ height: '48px' }} />
+            <img src={aindriiImg} alt="Aindri by Sentr AI" className="indri-custom-nav__logo-img" />
           </Link>
           <ul className="indri-custom-nav__links">
             <li><Link to="/">Home</Link></li>

@@ -251,18 +251,65 @@
 
 @media (max-width: 640px) {
   .aindri-hero {
-    padding: 3rem 0;
+    padding: 2.75rem 0 2.25rem 0;
+  }
+  .aindri-hero__logo-wrapper {
+    margin-bottom: 1.15rem;
+  }
+  .aindri-hero__logo {
+    height: 40px;
+  }
+  .aindri-hero__label {
+    font-size: 0.68rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.14em;
   }
   .aindri-hero__title {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
+    line-height: 1.25;
+    margin-bottom: 0.85rem;
   }
   .aindri-hero__description {
-    font-size: 0.95rem;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 1.35rem;
+  }
+  .aindri-hero__actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    width: 100%;
+    align-items: center;
+  }
+  .aindri-hero__btn {
+    padding: 0.7rem 1.15rem;
+    font-size: 0.86rem;
+  }
+  .aindri-hero__play-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .aindri-hero__grid {
+    gap: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .aindri-hero {
+    padding: 2.25rem 0 2rem 0;
+  }
+  .aindri-hero__logo {
+    height: 34px;
+  }
+  .aindri-hero__title {
+    font-size: 1.3rem;
+  }
+  .aindri-hero__description {
+    font-size: 0.82rem;
   }
   .aindri-hero__actions {
     flex-direction: column;
     width: 100%;
-    align-items: stretch;
   }
   .aindri-hero__btn {
     width: 100%;
