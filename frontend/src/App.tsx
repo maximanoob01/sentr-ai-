@@ -15,6 +15,7 @@ import { AISolutionsPage } from './pages/AISolutionsPage';
 import { IoTSolutionsPage } from './pages/IoTSolutionsPage';
 import { EnterpriseITPage } from './pages/EnterpriseITPage';
 import { CybersecurityPage } from './pages/CybersecurityPage';
+import { SolutionsPage } from './pages/SolutionsPage';
 import { useScrollAnimation } from './hooks/useScrollAnimation';
 import { AdminApp } from './admin/AdminApp';
 import heroImg from './assets/contact us/hero.png';
@@ -391,7 +392,7 @@ const AppInner: React.FC = () => {
         <Route path="/products/aindri" element={<AindriPage />} />
         <Route path="/company/contact" element={<ContactPage />} />
         <Route path="/contact" element={<Navigate to="/company/contact" replace />} />
-        <Route path="/solutions" element={<PlaceholderPage title="Solutions" />} />
+        <Route path="/solutions" element={<SolutionsPage />} />
         <Route path="/solutions/intelligent-monitoring" element={<Navigate to="/products/aindri" replace />} />
         <Route path="/solutions/cloud-infrastructure" element={<CloudInfrastructureRedirect />} />
         <Route path="/solutions/ai" element={<AISolutionsPage />} />
