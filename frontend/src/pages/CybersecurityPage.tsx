@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './CybersecurityPage.css';
-import hhBg from '../assets/cloud solutions/hh.png';
 import secuImg from '../assets/solution/secu.png';
-import newBg from '../assets/solution/newbg.png';
 import buildingImg from '../assets/solution/building.png';
 import srv1 from '../assets/solution/enterprise/1.png';
 import srv2 from '../assets/solution/enterprise/2.png';
 import srv3 from '../assets/solution/enterprise/3.png';
 import srv4 from '../assets/solution/enterprise/4.png';
+import handshakeImg from '../assets/career/handshake.png';
+import serverImg from '../assets/cloud solutions/server.png';
+import whyUs1Img from '../assets/why us/1.png';
 
 const FULL_HERO_SUBTITLE =
   'Enterprise-grade cybersecurity solutions to protect your users, applications, infrastructure and critical business data. Sentr AI helps organisations identify threats, strengthen security and maintain control across complex digital environments.';
@@ -144,9 +145,127 @@ const industrySecurity = [
   },
 ];
 
+interface ExpertCyberService {
+  num: string;
+  title: string;
+  desc: string;
+  theme: 'vapt' | 'redteam' | 'soc' | 'compliance' | 'advisory';
+  image: string;
+  icon: React.ReactNode;
+}
+
+const expertCyberServices: ExpertCyberService[] = [
+  {
+    num: '01',
+    title: 'Vulnerability Assessment & Penetration Testing (VAPT)',
+    desc: 'Identify and mitigate vulnerabilities before they become threats with our expert VAPT services.',
+    theme: 'vapt',
+    image: whyUs1Img,
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10" />
+        <line x1="22" y1="12" x2="18" y2="12" />
+        <line x1="6" y1="12" x2="2" y2="12" />
+        <line x1="12" y1="6" x2="12" y2="2" />
+        <line x1="12" y1="22" x2="12" y2="18" />
+      </svg>
+    ),
+  },
+  {
+    num: '02',
+    title: 'Red Teaming',
+    desc: 'Simulate real-world attacks to test your defenses with our advanced Red Teaming strategies.',
+    theme: 'redteam',
+    image: secuImg,
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        <path d="M9 12l2 2 4-4" />
+      </svg>
+    ),
+  },
+  {
+    num: '03',
+    title: 'Security Operations Center (SOC)',
+    desc: 'Monitor, detect, and respond to threats in real time with our 24/7 SOC services.',
+    theme: 'soc',
+    image: serverImg,
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+      </svg>
+    ),
+  },
+  {
+    num: '04',
+    title: 'Managed Compliance',
+    desc: 'Ensure adherence to global security standards with our Managed Compliance solutions.',
+    theme: 'compliance',
+    image: srv1,
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+      </svg>
+    ),
+  },
+  {
+    num: '05',
+    title: 'Consulting & Advisory',
+    desc: 'Receive expert guidance to strengthen your cybersecurity posture and align with industry best practices.',
+    theme: 'advisory',
+    image: handshakeImg,
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+      </svg>
+    ),
+  },
+];
+
 export const CybersecurityPage: React.FC = () => {
   const [displayedSubtitle, setDisplayedSubtitle] = useState('');
   const [isTypingDone, setIsTypingDone] = useState(false);
+  const servicesScrollRef = useRef<HTMLDivElement>(null);
+  const [activeServiceIndex, setActiveServiceIndex] = useState(0);
+
+  const handleServicesScroll = () => {
+    if (servicesScrollRef.current) {
+      const { scrollLeft, clientWidth } = servicesScrollRef.current;
+      if (clientWidth > 0) {
+        const newIndex = Math.round(scrollLeft / clientWidth);
+        const clamped = Math.max(0, Math.min(cybersecurityServices.length - 1, newIndex));
+        if (clamped !== activeServiceIndex) {
+          setActiveServiceIndex(clamped);
+        }
+      }
+    }
+  };
+
+  const scrollToServiceIndex = (index: number) => {
+    if (servicesScrollRef.current) {
+      const cards = servicesScrollRef.current.querySelectorAll<HTMLElement>('.cyber-service-card');
+      if (cards[index]) {
+        cards[index].scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'start',
+        });
+        setActiveServiceIndex(index);
+      }
+    }
+  };
+
+  const scrollService = (dir: 'left' | 'right') => {
+    const nextIdx =
+      dir === 'left'
+        ? Math.max(0, activeServiceIndex - 1)
+        : Math.min(cybersecurityServices.length - 1, activeServiceIndex + 1);
+    scrollToServiceIndex(nextIdx);
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -179,14 +298,14 @@ export const CybersecurityPage: React.FC = () => {
     <main className="cyber-page">
       {/* ── 1. HERO SECTION ── */}
       <section className="cyber-hero" aria-label="Cybersecurity Solutions Hero">
-        {/* Background Image: newbg.png */}
+        {/* Background Image: building.png */}
         <div
           className="cyber-hero__bg"
-          style={{ backgroundImage: `url(${newBg})` }}
+          style={{ backgroundImage: `url(${buildingImg})` }}
           aria-hidden="true"
         />
 
-        {/* Neutral Dark Overlay */}
+        {/* Pure Neutral Dark Dim Overlay (No Blue Screen) */}
         <div className="cyber-hero__overlay" aria-hidden="true" />
 
         <div className="cyber-container">
@@ -215,16 +334,6 @@ export const CybersecurityPage: React.FC = () => {
 
       {/* ── 2. ENTERPRISE THREAT PROTECTION SECTION ── */}
       <section className="cyber-threat" aria-labelledby="threat-heading">
-        {/* Background Image: hh.png */}
-        <div
-          className="cyber-threat__bg"
-          style={{ backgroundImage: `url(${hhBg})` }}
-          aria-hidden="true"
-        />
-
-        {/* Dim Neutral Dark Overlay (No blue screen) */}
-        <div className="cyber-threat__overlay" aria-hidden="true" />
-
         <div className="cyber-container">
           <div className="cyber-threat__grid">
             {/* Left Column: Threat Protection Narrative */}
@@ -315,11 +424,12 @@ export const CybersecurityPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ── 3. OUR CYBERSECURITY SERVICES SECTION (WHITE BACKGROUND) ── */}
+      {/* ── 3. OUR CYBERSECURITY SERVICES SECTION (WHITE BACKGROUND - HORIZONTAL CAROUSEL) ── */}
       <section className="cyber-services" aria-labelledby="services-heading">
         <div className="cyber-container">
           {/* Section Header */}
           <div className="cyber-services__header fade-in-up">
+            <span className="cyber-services__label">Comprehensive Protection</span>
             <h2 id="services-heading" className="cyber-services__title">
               Complete Protection Across Your Digital Environment
             </h2>
@@ -328,90 +438,277 @@ export const CybersecurityPage: React.FC = () => {
             </p>
           </div>
 
-          {/* Services List / Cards */}
-          <div className="cyber-services__list">
-            {cybersecurityServices.map((service, index) => (
-              <article
-                key={service.id}
-                id={service.id}
-                className={`cyber-service-card fade-in-up ${index % 2 === 1 ? 'cyber-service-card--reversed' : ''}`}
-                style={{ transitionDelay: `${0.1 * (index + 1)}s` }}
+          {/* Interactive Navigation Control Bar */}
+          <div className="cyber-services__nav-bar fade-in-up">
+            {/* Quick-Jump Tabs */}
+            <div className="cyber-services__tabs" role="tablist" aria-label="Cybersecurity Services">
+              {cybersecurityServices.map((service, idx) => (
+                <button
+                  key={service.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={activeServiceIndex === idx}
+                  className={`cyber-services__tab ${activeServiceIndex === idx ? 'cyber-services__tab--active' : ''}`}
+                  onClick={() => scrollToServiceIndex(idx)}
+                >
+                  <span className="cyber-services__tab-num">{service.num}</span>
+                  <span className="cyber-services__tab-title">{service.title}</span>
+                </button>
+              ))}
+            </div>
+
+            {/* Left / Right Arrow Controls + Counter */}
+            <div className="cyber-services__controls">
+              <button
+                type="button"
+                className="cyber-services__arrow-btn"
+                onClick={() => scrollService('left')}
+                disabled={activeServiceIndex === 0}
+                aria-label="Previous cybersecurity service"
               >
-                {/* Content Side */}
-                <div className="cyber-service-card__content">
-                  <div className="cyber-service-card__top">
-                    <span className="cyber-service-card__num">{service.num}</span>
-                    <h3 className="cyber-service-card__title">{service.title}</h3>
-                  </div>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              <div className="cyber-services__counter" aria-live="polite">
+                <span className="cyber-services__counter-current">0{activeServiceIndex + 1}</span>
+                <span className="cyber-services__counter-sep">/</span>
+                <span className="cyber-services__counter-total">0{cybersecurityServices.length}</span>
+              </div>
+              <button
+                type="button"
+                className="cyber-services__arrow-btn"
+                onClick={() => scrollService('right')}
+                disabled={activeServiceIndex === cybersecurityServices.length - 1}
+                aria-label="Next cybersecurity service"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </button>
+            </div>
+          </div>
 
-                  <h4 className="cyber-service-card__tagline">{service.tagline}</h4>
-                  <p className="cyber-service-card__desc">{service.desc}</p>
+          {/* Horizontal Slider Track Wrapper */}
+          <div className="cyber-services__slider-wrap fade-in-up">
+            {/* Floating Left/Right Arrows (Desktop) */}
+            <button
+              type="button"
+              className="cyber-services__float-arrow cyber-services__float-arrow--prev"
+              onClick={() => scrollService('left')}
+              disabled={activeServiceIndex === 0}
+              aria-label="Previous card"
+            >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
 
-                  {/* Capabilities Box */}
-                  <div className="cyber-service-card__capabilities">
-                    <h5 className="cyber-service-card__cap-title">Key capabilities:</h5>
-                    <ul className="cyber-service-card__cap-grid">
-                      {service.capabilities.map((cap, capIdx) => (
-                        <li key={capIdx} className="cyber-service-card__cap-item">
-                          <svg
-                            className="cyber-service-card__cap-icon"
-                            width="16"
-                            height="16"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            aria-hidden="true"
-                          >
-                            <polyline points="20 6 9 17 4 12" />
+            <div
+              className="cyber-services__track"
+              ref={servicesScrollRef}
+              onScroll={handleServicesScroll}
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'ArrowLeft') scrollService('left');
+                if (e.key === 'ArrowRight') scrollService('right');
+              }}
+              aria-label="Horizontal list of cybersecurity services. Use left and right arrow keys or navigation buttons to move."
+            >
+              {cybersecurityServices.map((service) => (
+                <article
+                  key={service.id}
+                  id={service.id}
+                  className="cyber-service-card"
+                >
+                  {/* Content Side */}
+                  <div className="cyber-service-card__content">
+                    <div className="cyber-service-card__top">
+                      <span className="cyber-service-card__num">{service.num}</span>
+                      <h3 className="cyber-service-card__title">{service.title}</h3>
+                    </div>
+
+                    <h4 className="cyber-service-card__tagline">{service.tagline}</h4>
+                    <p className="cyber-service-card__desc">{service.desc}</p>
+
+                    {/* Capabilities Box */}
+                    <div className="cyber-service-card__capabilities">
+                      <h5 className="cyber-service-card__cap-title">Key capabilities:</h5>
+                      <ul className="cyber-service-card__cap-grid">
+                        {service.capabilities.map((cap, capIdx) => (
+                          <li key={capIdx} className="cyber-service-card__cap-item">
+                            <svg
+                              className="cyber-service-card__cap-icon"
+                              width="16"
+                              height="16"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              aria-hidden="true"
+                            >
+                              <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span>{cap}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Optional Note (SOC 24/7) */}
+                    {service.note && (
+                      <div className="cyber-service-card__note">
+                        <div className="cyber-service-card__note-icon" aria-hidden="true">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            <circle cx="12" cy="11" r="2" />
                           </svg>
-                          <span>{cap}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Optional Note (SOC 24/7) */}
-                  {service.note && (
-                    <div className="cyber-service-card__note">
-                      <div className="cyber-service-card__note-icon" aria-hidden="true">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                          <circle cx="12" cy="11" r="2" />
-                        </svg>
+                        </div>
+                        <p className="cyber-service-card__note-text">{service.note}</p>
                       </div>
-                      <p className="cyber-service-card__note-text">{service.note}</p>
-                    </div>
-                  )}
+                    )}
 
-                  {/* CTA Link */}
-                  <div className="cyber-service-card__actions">
-                    <Link to={service.ctaLink} className="cyber-service-btn">
-                      <span>{service.ctaText}</span>
-                    </Link>
-                  </div>
-                </div>
-
-                {/* Image Side */}
-                <div className="cyber-service-card__visual">
-                  <div className="cyber-service-card__image-wrap">
-                    <img
-                      src={service.image}
-                      alt={service.alt}
-                      className="cyber-service-card__image"
-                      loading="lazy"
-                    />
-                    <div className="cyber-service-card__badge-pill">
-                      <span>{service.num}</span>
-                      <span className="cyber-service-card__badge-sep">/</span>
-                      <span>{service.title}</span>
+                    {/* CTA Link */}
+                    <div className="cyber-service-card__actions">
+                      <Link to={service.ctaLink} className="cyber-service-btn">
+                        <span>{service.ctaText}</span>
+                      </Link>
                     </div>
                   </div>
-                </div>
-              </article>
+
+                  {/* Image Side */}
+                  <div className="cyber-service-card__visual">
+                    <div className="cyber-service-card__image-wrap">
+                      <img
+                        src={service.image}
+                        alt={service.alt}
+                        className="cyber-service-card__image"
+                        loading="lazy"
+                      />
+                      <div className="cyber-service-card__badge-pill">
+                        <span>{service.num}</span>
+                        <span className="cyber-service-card__badge-sep">/</span>
+                        <span>{service.title}</span>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <button
+              type="button"
+              className="cyber-services__float-arrow cyber-services__float-arrow--next"
+              onClick={() => scrollService('right')}
+              disabled={activeServiceIndex === cybersecurityServices.length - 1}
+              aria-label="Next card"
+            >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Pagination Dots at Bottom */}
+          <div className="cyber-services__dots" aria-label="Services carousel pagination">
+            {cybersecurityServices.map((service, idx) => (
+              <button
+                key={service.id}
+                type="button"
+                className={`cyber-services__dot ${activeServiceIndex === idx ? 'cyber-services__dot--active' : ''}`}
+                onClick={() => scrollToServiceIndex(idx)}
+                aria-label={`Go to slide ${idx + 1}: ${service.title}`}
+              >
+                <span className="cyber-services__dot-bar" />
+              </button>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 3.5 OUR EXPERT CYBER SECURITY SERVICES (STAGGERED CHECKERBOARD GRID) ── */}
+      <section className="cyber-expert-section" aria-labelledby="expert-services-heading">
+        <div className="cyber-container">
+          {/* Section Header */}
+          <div className="cyber-expert__header fade-in-up">
+            <h2 id="expert-services-heading" className="cyber-expert__title">
+              Our Expert Cyber Security Services <br />
+              <span className="cyber-expert__title-accent">To Enhance Your Cyber Defences</span>
+            </h2>
+            <div className="cyber-expert__sub-group">
+              <p className="cyber-expert__sub">
+                Let Sentr AI ease the challenge of facing the latest threats alone. Discover our Best Cyber Security Services to reduce the burden and enhance your organisation’s cyber resilience.
+              </p>
+              <p className="cyber-expert__sub-note">
+                Sentr AI stands among the top cybersecurity companies in India, offering end-to-end services designed to fortify your digital ecosystem. Whether you need to protect cloud environments or strengthen internal networks, we provide solutions tailored to your unique challenges.
+              </p>
+            </div>
+          </div>
+
+          {/* 5-Column Checkerboard Grid */}
+          <div className="cyber-expert__grid fade-in-up">
+            {expertCyberServices.map((service, index) => {
+              const isCardOnTop = index % 2 === 0; // 01, 03, 05 have Card on Top; 02, 04 have Photo on Top
+              return (
+                <div
+                  key={service.num}
+                  className={`cyber-expert__col cyber-expert__col--${isCardOnTop ? 'card-top' : 'photo-top'} cyber-expert__col--${service.theme}`}
+                  style={{ transitionDelay: `${0.08 * (index + 1)}s` }}
+                >
+                  {isCardOnTop ? (
+                    <>
+                      {/* Content Card (Top) with pointer down */}
+                      <div className={`cyber-expert-card cyber-expert-card--theme-${service.theme} cyber-expert-card--top`}>
+                        <h3 className="cyber-expert-card__title">{service.title}</h3>
+                        <p className="cyber-expert-card__desc">{service.desc}</p>
+                        <div className="cyber-expert-card__pointer cyber-expert-card__pointer--down" aria-hidden="true" />
+                      </div>
+
+                      {/* Photo Card (Bottom) with number badge */}
+                      <div className="cyber-expert-photo">
+                        <img
+                          src={service.image}
+                          alt={service.title}
+                          className="cyber-expert-photo__img"
+                          loading="lazy"
+                        />
+                        <div className="cyber-expert-photo__overlay" />
+                        <div className="cyber-expert-photo__badge">
+                          <span className="cyber-expert-photo__badge-num">{service.num}</span>
+                          <span className="cyber-expert-photo__badge-icon">{service.icon}</span>
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      {/* Photo Card (Top) with number badge */}
+                      <div className="cyber-expert-photo">
+                        <img
+                          src={service.image}
+                          alt={service.title}
+                          className="cyber-expert-photo__img"
+                          loading="lazy"
+                        />
+                        <div className="cyber-expert-photo__overlay" />
+                        <div className="cyber-expert-photo__badge">
+                          <span className="cyber-expert-photo__badge-num">{service.num}</span>
+                          <span className="cyber-expert-photo__badge-icon">{service.icon}</span>
+                        </div>
+                      </div>
+
+                      {/* Content Card (Bottom) with pointer up */}
+                      <div className={`cyber-expert-card cyber-expert-card--theme-${service.theme} cyber-expert-card--bottom`}>
+                        <div className="cyber-expert-card__pointer cyber-expert-card__pointer--up" aria-hidden="true" />
+                        <h3 className="cyber-expert-card__title">{service.title}</h3>
+                        <p className="cyber-expert-card__desc">{service.desc}</p>
+                      </div>
+                    </>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

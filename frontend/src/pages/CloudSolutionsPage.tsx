@@ -5,7 +5,6 @@ import herooBg from '../assets/heroo.png';
 import msLogo from '../assets/alliance logo/2.png';
 import amazonLogo from '../assets/cloud solutions/amazon.png';
 import cloudLogo from '../assets/cloud solutions/cloud.png';
-import hhBg from '../assets/cloud solutions/hh.png';
 import m365Bg from '../assets/cloud solutions/365.png';
 import azureBg from '../assets/cloud solutions/azure.png';
 import awsBg from '../assets/cloud solutions/aws.png';
@@ -529,39 +528,14 @@ export const CloudSolutionsPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ── CAPABILITY STRIP ── */}
-      <nav className="cs-strip" aria-label="Cloud capabilities">
-        <div className="cs-strip__inner">
-          {/* Double array for seamless loop */}
-          {[...['Cloud Strategy', 'Cloud Migration', 'Cloud Infrastructure', 'Cloud Security', 'Managed Cloud', 'Optimization'], ...['Cloud Strategy', 'Cloud Migration', 'Cloud Infrastructure', 'Cloud Security', 'Managed Cloud', 'Optimization']].map((item, idx) => (
-            <div key={`${item}-${idx}`} className="cs-strip__item">
-              <div className="cs-strip__dot" aria-hidden="true" />
-              {item}
-            </div>
-          ))}
-        </div>
-      </nav>
-
       {/* ── PLATFORMS ── */}
-      <section className="cs-platforms" aria-labelledby="platforms-heading" style={{ position: 'relative', background: '#0f172a' }}>
-        <div 
-          style={{
-            position: 'absolute',
-            inset: 0,
-            backgroundImage: `url(${hhBg})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            opacity: 0.25,
-            zIndex: 0
-          }}
-          aria-hidden="true"
-        />
-        <div className="cs-container" style={{ position: 'relative', zIndex: 1 }}>
-          <div className="cs-eyebrow fade-in-up" style={{ color: '#60a5fa' }}>Cloud Platforms</div>
-          <h2 id="platforms-heading" className="cs-section-heading cs-platforms__heading fade-in-up" style={{ color: '#ffffff' }}>
+      <section className="cs-platforms" aria-labelledby="platforms-heading">
+        <div className="cs-container">
+          <div className="cs-eyebrow fade-in-up">Cloud Platforms</div>
+          <h2 id="platforms-heading" className="cs-section-heading cs-platforms__heading fade-in-up">
             Cloud Solutions Across Leading Platforms
           </h2>
-          <p className="cs-section-sub fade-in-up" style={{ color: '#94a3b8' }}>
+          <p className="cs-section-sub fade-in-up">
             Different businesses have different technology requirements. Sentr AI can help organizations evaluate and work with the cloud platform that best fits their workloads, architecture, security requirements and business objectives.
           </p>
           <div className="cs-platforms__grid">

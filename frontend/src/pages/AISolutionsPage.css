@@ -149,23 +149,26 @@
   color: #ffffff;
   margin-bottom: 0.95rem;
   text-align: center;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
 }
 
 .ai-hero__title-accent {
   display: block;
-  background: linear-gradient(135deg, #60a5fa 0%, #38bdf8 50%, #22d3ee 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff;
+  background: none;
+  -webkit-text-fill-color: #ffffff;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
 }
 
 .ai-hero__subtitle {
   font-size: clamp(0.88rem, 1.05vw, 1rem);
   line-height: 1.65;
-  color: #cbd5e1;
+  color: #ffffff;
   max-width: 620px;
   min-height: 4.4rem;
   margin: 0 auto;
   text-align: center;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
 }
 
 /* Typing Cursor */

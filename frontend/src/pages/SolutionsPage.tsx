@@ -276,12 +276,6 @@ export const SolutionsPage: React.FC = () => {
         <div className="solutions-container">
           <div className="solutions-hero__inner">
             <div className="solutions-hero__content">
-              {/* Eyebrow Pill */}
-              <div className="solutions-eyebrow">
-                <span className="solutions-eyebrow__dot" />
-                <span>Enterprise & Industrial Technology</span>
-              </div>
-
               {/* Headline */}
               <h1 className="solutions-hero__title">
                 Intelligent Technology Solutions That{' '}

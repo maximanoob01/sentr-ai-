@@ -158,24 +158,26 @@
   color: #ffffff;
   margin: 0 0 1.15rem 0;
   text-align: center;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
 }
 
 .iot-hero__title-accent {
-  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 60%, #c084fc 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #ffffff;
+  background: none;
+  -webkit-text-fill-color: #ffffff;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
 }
 
-/* Subtext */
+/* Subtext in pure white */
 .iot-hero__subtitle {
   font-size: clamp(0.95rem, 1.2vw, 1.12rem);
   line-height: 1.68;
-  color: #cbd5e1;
+  color: #ffffff;
   max-width: 740px;
   min-height: 4rem;
   margin: 0 auto 2rem auto;
   text-align: center;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
 }
 
 /* Typing cursor animation */
