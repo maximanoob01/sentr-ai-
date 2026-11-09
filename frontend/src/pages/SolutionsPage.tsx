@@ -12,8 +12,8 @@ import secuImg from '../assets/solution/secu.png';
 import enterpriseImg from '../assets/solution/enterprise/1.png';
 import lenovoImg from '../assets/lenvo.png';
 import ffImg from '../assets/solution/ff.png';
-import serverImg from '../assets/cloud solutions/server.png';
-import cameraImg from '../assets/aindri/camera.png';
+import ggImg from '../assets/solution/gg.png';
+import hhImg from '../assets/solution/hh.png';
 
 const FULL_HERO_SUBTITLE =
   'From real-time industrial computer vision and bespoke artificial intelligence to resilient cloud infrastructure, cybersecurity, and enterprise IT — Sentr AI delivers full-spectrum technology solutions tailored for operational excellence.';
@@ -600,12 +600,11 @@ export const SolutionsPage: React.FC = () => {
               <article className="solutions-hw-card solutions-hw-card--network fade-in-up" style={{ transitionDelay: '0.1s' }}>
                 <div className="solutions-hw-card__visual">
                   <img
-                    src={serverImg}
+                    src={ggImg}
                     alt="Network and Security: Firewalls, Switches, Routers"
                     className="solutions-hw-card__img"
                     loading="lazy"
                   />
-                  <div className="solutions-hw-card__overlay" />
                   <div className="solutions-hw-card__badges">
                     <span className="solutions-hw-pill solutions-hw-pill--security">
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -674,21 +673,12 @@ export const SolutionsPage: React.FC = () => {
               {/* Card 3: Cctv and industrial scanners and Cameras */}
               <article className="solutions-hw-card solutions-hw-card--vision fade-in-up" style={{ transitionDelay: '0.2s' }}>
                 <div className="solutions-hw-card__visual">
-                  <div className="solutions-hw-card__collage-pair">
-                    <img
-                      src={cctvImg}
-                      alt="CCTV Surveillance Camera Stream"
-                      className="solutions-hw-card__img solutions-hw-card__img--split solutions-hw-card__img--split-left"
-                      loading="lazy"
-                    />
-                    <img
-                      src={cameraImg}
-                      alt="Industrial Machine Vision Camera & Optical Scanner"
-                      className="solutions-hw-card__img solutions-hw-card__img--split solutions-hw-card__img--split-right"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="solutions-hw-card__overlay" />
+                  <img
+                    src={hhImg}
+                    alt="CCTV, Industrial Scanners & Machine Vision Cameras"
+                    className="solutions-hw-card__img"
+                    loading="lazy"
+                  />
                   <div className="solutions-hw-card__badges">
                     <span className="solutions-hw-pill solutions-hw-pill--vision">
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
