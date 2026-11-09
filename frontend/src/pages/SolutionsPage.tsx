@@ -578,29 +578,31 @@ export const SolutionsPage: React.FC = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* ================================================================
-              3B. SENTR AI HARDWARE SUPPLY & DEALERSHIP (COLLAGE GRID)
-              ================================================================ */}
-          <div className="solutions-hw-collage fade-in-up">
-            <div
-              className="solutions-hw-collage__bg"
-              style={{ backgroundImage: `url(${backkImg})` }}
-              aria-hidden="true"
-            />
-            <div className="solutions-hw-collage__overlay" aria-hidden="true" />
+      {/* ================================================================
+          3B. SENTR AI HARDWARE SUPPLY & DEALERSHIP (FULL-BLEED SECTION)
+          ================================================================ */}
+      <section className="solutions-hw-supply-section fade-in-up" aria-label="Enterprise Hardware & Equipment Supply by Sentr AI">
+        <div
+          className="solutions-hw-supply-section__bg"
+          style={{ backgroundImage: `url(${backkImg})` }}
+          aria-hidden="true"
+        />
+        <div className="solutions-hw-supply-section__scrim" aria-hidden="true" />
 
-            <div className="solutions-hw-collage__inner">
-              <div className="solutions-hw-collage__header">
-                <h3 className="solutions-hw-collage__heading">
-                  Enterprise Hardware &amp; Equipment Supply by Sentr AI
-                </h3>
-                <p className="solutions-hw-collage__subheading">
-                  Sentr AI deals directly in turnkey hardware infrastructure — supplying, provisioning, and maintaining high-performance computing, resilient network security, and AI-enabled industrial vision cameras.
-                </p>
-              </div>
+        <div className="solutions-container solutions-hw-supply-section__container">
+          <div className="solutions-hw-collage__header">
+            <h3 className="solutions-hw-collage__heading">
+              Enterprise Hardware &amp; Equipment Supply by Sentr AI
+            </h3>
+            <p className="solutions-hw-collage__subheading">
+              Sentr AI deals directly in turnkey hardware infrastructure — supplying, provisioning, and maintaining high-performance computing, resilient network security, and AI-enabled industrial vision cameras.
+            </p>
+          </div>
 
-              <div className="solutions-hw-grid">
+          <div className="solutions-hw-grid">
               {/* Card 1: End Point HW - Laptop desktop server (New and Refurb both) */}
               <article className="solutions-hw-card solutions-hw-card--endpoint fade-in-up">
                 <div className="solutions-hw-card__visual">
@@ -826,8 +828,6 @@ export const SolutionsPage: React.FC = () => {
                 </div>
               </article>
             </div>
-            </div>
-          </div>
         </div>
       </section>
 

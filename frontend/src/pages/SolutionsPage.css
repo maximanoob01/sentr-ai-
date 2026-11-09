@@ -989,46 +989,55 @@
 }
 
 /* ================================================================
-   3B. SENTR AI HARDWARE DEALERSHIP & SUPPLY (COLLAGE GRID)
+   3B. SENTR AI HARDWARE DEALERSHIP & SUPPLY (FULL-WIDTH SECTION)
    ================================================================ */
+.solutions-hw-supply-section,
 .solutions-hw-collage {
   position: relative;
-  margin-top: 3.5rem;
-  padding: 3.5rem 2.25rem;
-  border-radius: 24px;
+  width: 100%;
+  padding: 5.5rem 0 6.5rem 0;
   overflow: hidden;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 16px 45px -8px rgba(15, 23, 42, 0.08);
+  background-color: #0b0f19;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
+.solutions-hw-supply-section__bg,
 .solutions-hw-collage__bg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   z-index: 0;
-  opacity: 0.88;
-  transform: scale(1.02);
+  opacity: 1;
+  transform: scale(1.01);
   transition: transform 0.6s ease;
 }
 
+.solutions-hw-supply-section:hover .solutions-hw-supply-section__bg,
 .solutions-hw-collage:hover .solutions-hw-collage__bg {
-  transform: scale(1.04);
+  transform: scale(1.025);
 }
 
+.solutions-hw-supply-section__scrim,
 .solutions-hw-collage__overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.76) 0%, rgba(248, 250, 252, 0.88) 100%);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  background: linear-gradient(
+    180deg,
+    rgba(11, 15, 25, 0.55) 0%,
+    rgba(11, 15, 25, 0.22) 35%,
+    rgba(11, 15, 25, 0.2) 65%,
+    rgba(11, 15, 25, 0.58) 100%
+  );
   z-index: 1;
   pointer-events: none;
 }
 
+.solutions-hw-supply-section__container,
 .solutions-hw-collage__inner {
   position: relative;
   z-index: 2;
@@ -1036,8 +1045,8 @@
 
 .solutions-hw-collage__header {
   text-align: center;
-  max-width: 800px;
-  margin: 0 auto 2.5rem;
+  max-width: 860px;
+  margin: 0 auto 3rem;
 }
 
 .solutions-hw-collage__badge {
@@ -1065,19 +1074,22 @@
 }
 
 .solutions-hw-collage__heading {
-  font-size: clamp(1.6rem, 2.3vw, 2.15rem);
+  font-size: clamp(1.8rem, 2.7vw, 2.45rem);
   font-weight: 800;
-  color: #0f172a;
+  color: #ffffff;
   line-height: 1.25;
   letter-spacing: -0.02em;
-  margin: 0 0 0.85rem;
+  margin: 0 0 0.95rem;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.85), 0 1px 4px rgba(0, 0, 0, 0.95);
 }
 
 .solutions-hw-collage__subheading {
-  font-size: 0.95rem;
-  line-height: 1.65;
-  color: #475569;
-  margin: 0;
+  font-size: clamp(0.95rem, 1.15vw, 1.08rem);
+  line-height: 1.68;
+  color: #f1f5f9;
+  margin: 0 auto;
+  max-width: 820px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
 }
 
 /* Grid Layout */
@@ -1091,12 +1103,12 @@
 /* Card Container */
 .solutions-hw-card {
   background: #ffffff;
-  border: 1px solid #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.9);
   border-radius: 20px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 6px 24px -4px rgba(15, 23, 42, 0.06);
+  box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.32), 0 4px 14px rgba(0, 0, 0, 0.16);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
   position: relative;
 }
@@ -1372,9 +1384,9 @@
 }
 
 @media (max-width: 768px) {
+  .solutions-hw-supply-section,
   .solutions-hw-collage {
-    margin-top: 2.5rem;
-    padding-top: 2rem;
+    padding: 3.5rem 0 4rem;
   }
   .solutions-hw-grid {
     grid-template-columns: 1fr;
@@ -1647,9 +1659,9 @@
   .solutions-hardware-banner {
     padding: 1.5rem 1.25rem;
   }
+  .solutions-hw-supply-section,
   .solutions-hw-collage {
-    padding: 2rem 1.25rem;
-    border-radius: 18px;
+    padding: 2.5rem 0 3rem;
   }
   .solutions-hardware-banner__title {
     font-size: 1.25rem;
