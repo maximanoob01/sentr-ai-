@@ -203,9 +203,6 @@ export const IoTSolutionsPage: React.FC = () => {
           aria-hidden="true"
         />
         <div className="iot-hero__overlay" aria-hidden="true" />
-        <div className="iot-hero__glow iot-hero__glow--1" aria-hidden="true" />
-        <div className="iot-hero__glow iot-hero__glow--2" aria-hidden="true" />
-        <div className="iot-hero__dots" aria-hidden="true" />
 
         <div className="iot-container">
           <div className="iot-hero__inner">
