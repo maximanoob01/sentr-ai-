@@ -500,10 +500,6 @@ export const SolutionsPage: React.FC = () => {
               ================================================================ */}
           <div className="solutions-hw-collage fade-in-up">
             <div className="solutions-hw-collage__header">
-              <div className="solutions-hw-collage__badge">
-                <span className="solutions-hw-collage__badge-dot" />
-                <span>Hardware Supply &amp; Procurement</span>
-              </div>
               <h3 className="solutions-hw-collage__heading">
                 Enterprise Hardware &amp; Equipment Supply by Sentr AI
               </h3>
