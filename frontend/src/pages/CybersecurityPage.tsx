@@ -310,17 +310,8 @@ export const CybersecurityPage: React.FC = () => {
 
         <div className="cyber-container">
           <div className="cyber-hero__inner">
-            {/* High-Tech Security Eyebrow Badge */}
-            <div className="cyber-hero__badge fade-in-up">
-              <span className="cyber-hero__badge-pulse" aria-hidden="true" />
-              <svg className="cyber-hero__badge-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-              </svg>
-              <span>ZERO TRUST CYBER DEFENSE</span>
-            </div>
-
             {/* Headline with animated fluid cyber gradient */}
-            <h1 className="cyber-hero__title fade-in-up" style={{ transitionDelay: '0.08s' }}>
+            <h1 className="cyber-hero__title fade-in-up">
               <span>Protect Your Business.</span>{' '}
               <span className="cyber-hero__title-accent">Secure Your Digital Future.</span>
             </h1>
