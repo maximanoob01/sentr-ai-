@@ -199,11 +199,52 @@ export const SolutionsPage: React.FC = () => {
   const [deviceIndex, setDeviceIndex] = useState(0);
   const [statPillars, setStatPillars] = useState(0);
   const [statReady, setStatReady] = useState(0);
+  const [popupVisible, setPopupVisible] = useState(false);
+  const [popupCycleKey, setPopupCycleKey] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
+  const popupTimersRef = useRef<number[]>([]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Lenovo Hardware Partnership slide-in popup:
+  // Slides in from right, stays for 5 seconds, vanishes, and happens exactly 2 times
+  useEffect(() => {
+    let showCount = 0;
+
+    const scheduleCycle = (delayMs: number) => {
+      const showTimer = window.setTimeout(() => {
+        showCount += 1;
+        setPopupCycleKey(showCount);
+        setPopupVisible(true);
+
+        const hideTimer = window.setTimeout(() => {
+          setPopupVisible(false);
+          // If first time finished, schedule second appearance after a short pause
+          if (showCount < 2) {
+            scheduleCycle(6000);
+          }
+        }, 5000); // Stays visible for 5 seconds
+
+        popupTimersRef.current.push(hideTimer);
+      }, delayMs);
+
+      popupTimersRef.current.push(showTimer);
+    };
+
+    // First appearance 2 seconds after page load
+    scheduleCycle(2000);
+
+    return () => {
+      popupTimersRef.current.forEach((t) => window.clearTimeout(t));
+      popupTimersRef.current = [];
+    };
+  }, []);
+
+  const handleClosePopup = () => {
+    setPopupVisible(false);
+  };
 
   // Animated counters on hero load
   useEffect(() => {
@@ -877,6 +918,67 @@ export const SolutionsPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* ── LENOVO HARDWARE PARTNERSHIP SLIDE-IN POPUP (SLIDES IN FROM RIGHT, STAYS 5S, 2 TIMES ONLY) ── */}
+      <aside
+        className={`solutions-hw-toast ${popupVisible ? 'solutions-hw-toast--visible' : ''}`}
+        aria-live="polite"
+        aria-label="Hardware Partnership Announcement"
+      >
+        <div className="solutions-hw-toast__top-accent" aria-hidden="true" />
+
+        <div className="solutions-hw-toast__inner">
+          <div className="solutions-hw-toast__header">
+            <div className="solutions-hw-toast__badge">
+              <span className="solutions-hw-toast__badge-dot" aria-hidden="true" />
+              <span>Hardware Partnership</span>
+            </div>
+            <button
+              type="button"
+              className="solutions-hw-toast__close"
+              onClick={handleClosePopup}
+              aria-label="Dismiss notification"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
+          </div>
+
+          <h4 className="solutions-hw-toast__title">
+            Enterprise Hardware Solutions Powered by{' '}
+            <img src={lenovoImg} alt="Lenovo" className="solutions-hw-toast__logo" />
+          </h4>
+
+          <p className="solutions-hw-toast__desc">
+            Deliver robust computing capacity to your factory floors, edge monitoring stations, and corporate offices with enterprise servers, edge nodes, and client hardware supported by Sentr AI.
+          </p>
+
+          <div className="solutions-hw-toast__action">
+            <Link
+              to="/company/contact"
+              className="solutions-hw-toast__btn"
+              onClick={handleClosePopup}
+            >
+              <span>Inquire About Lenovo Hardware</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+
+        {/* 5-second countdown timer bar */}
+        {popupVisible && (
+          <div
+            key={popupCycleKey}
+            className="solutions-hw-toast__timer-bar"
+            aria-hidden="true"
+          />
+        )}
+      </aside>
     </main>
   );
 };

@@ -787,10 +787,12 @@
   align-items: center;
 }
 
-.solutions-hardware-banner__logo {
+.solutions-hardware-banner__logo,
+.solutions-lenovo-logo {
   height: 24px;
   width: auto;
   object-fit: contain;
+  vertical-align: middle;
 }
 
 .solutions-hardware-banner__desc {
@@ -1459,5 +1461,213 @@
   }
   .solution-card__highlight-item {
     font-size: 0.74rem;
+  }
+}
+
+/* ================================================================
+   4. HARDWARE PARTNERSHIP SLIDE-IN POPUP (TOAST)
+   ================================================================ */
+.solutions-hw-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  width: min(420px, calc(100vw - 32px));
+  background: rgba(10, 16, 28, 0.96);
+  border: 1px solid rgba(56, 189, 248, 0.32);
+  border-radius: 18px;
+  box-shadow: 0 24px 60px -8px rgba(0, 0, 0, 0.75), 0 0 35px rgba(56, 189, 248, 0.16);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  overflow: hidden;
+  transform: translateX(calc(100% + 40px));
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s ease;
+}
+
+.solutions-hw-toast--visible {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.solutions-hw-toast__top-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #e11d48 0%, #2563eb 50%, #38bdf8 100%);
+}
+
+.solutions-hw-toast__inner {
+  padding: 1.25rem 1.35rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.solutions-hw-toast__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.solutions-hw-toast__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.28rem 0.75rem;
+  border-radius: 9999px;
+  background: rgba(225, 29, 72, 0.14);
+  border: 1px solid rgba(225, 29, 72, 0.35);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fb7185;
+}
+
+.solutions-hw-toast__badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f43f5e;
+  box-shadow: 0 0 8px #f43f5e;
+  display: inline-block;
+  animation: toastDotPulse 2s ease-in-out infinite;
+}
+
+@keyframes toastDotPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(0.85);
+  }
+}
+
+.solutions-hw-toast__close {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+  line-height: 1;
+}
+
+.solutions-hw-toast__close:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.4);
+  color: #fca5a5;
+  transform: scale(1.08);
+}
+
+.solutions-hw-toast__title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  margin: 0 0 0.55rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.solutions-hw-toast__logo {
+  height: 20px;
+  width: auto;
+  object-fit: contain;
+  vertical-align: middle;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.solutions-hw-toast__desc {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: #94a3b8;
+  margin: 0 0 1rem;
+}
+
+.solutions-hw-toast__action {
+  display: flex;
+}
+
+.solutions-hw-toast__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.65rem 1rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+  transition: all 0.25s ease;
+}
+
+.solutions-hw-toast__btn:hover {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  border-color: #38bdf8;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(37, 99, 235, 0.5), 0 0 16px rgba(56, 189, 248, 0.3);
+  color: #ffffff;
+}
+
+.solutions-hw-toast__timer-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg, #e11d48, #2563eb, #38bdf8);
+  transform-origin: left center;
+  animation: toastTimerShrink 5s linear forwards;
+}
+
+@keyframes toastTimerShrink {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .solutions-hw-toast {
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+    width: auto;
+    border-radius: 14px;
+  }
+  .solutions-hw-toast__inner {
+    padding: 1rem 1.15rem;
+  }
+  .solutions-hw-toast__title {
+    font-size: 0.96rem;
+  }
+  .solutions-hw-toast__desc {
+    font-size: 0.78rem;
   }
 }
