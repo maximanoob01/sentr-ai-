@@ -280,14 +280,14 @@ export const CybersecurityPage: React.FC = () => {
         currentIndex++;
         setDisplayedSubtitle(FULL_HERO_SUBTITLE.slice(0, currentIndex));
         const char = FULL_HERO_SUBTITLE[currentIndex - 1];
-        const delay = char === '.' ? 160 : char === ',' ? 80 : 12;
+        const delay = char === '.' ? 200 : char === ',' ? 100 : 18;
         timeoutId = window.setTimeout(typeNextChar, delay);
       } else {
         setIsTypingDone(true);
       }
     };
 
-    timeoutId = window.setTimeout(typeNextChar, 300);
+    timeoutId = window.setTimeout(typeNextChar, 350);
 
     return () => {
       window.clearTimeout(timeoutId);
@@ -310,11 +310,25 @@ export const CybersecurityPage: React.FC = () => {
 
         <div className="cyber-container">
           <div className="cyber-hero__inner">
-            {/* Headline */}
+            {/* High-Tech Security Eyebrow Badge */}
+            <div className="cyber-hero__badge fade-in-up">
+              <span className="cyber-hero__badge-pulse" aria-hidden="true" />
+              <svg className="cyber-hero__badge-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+              <span>ZERO TRUST CYBER DEFENSE</span>
+            </div>
+
+            {/* Headline with animated fluid cyber gradient */}
             <h1 className="cyber-hero__title fade-in-up" style={{ transitionDelay: '0.08s' }}>
-              Protect Your Business.{' '}
+              <span>Protect Your Business.</span>{' '}
               <span className="cyber-hero__title-accent">Secure Your Digital Future.</span>
             </h1>
+
+            {/* Neon Laser Scanning Divider */}
+            <div className="cyber-hero__beam-divider" aria-hidden="true">
+              <span className="cyber-hero__beam-pulse" />
+            </div>
 
             {/* Subheading with animated typewriter */}
             <p
@@ -322,7 +336,7 @@ export const CybersecurityPage: React.FC = () => {
               style={{ transitionDelay: '0.14s' }}
               aria-label={FULL_HERO_SUBTITLE}
             >
-              <span>{displayedSubtitle}</span>
+              <span className="cyber-hero__subtitle-text">{displayedSubtitle}</span>
               <span
                 className={`cyber-typing-cursor ${isTypingDone ? 'cyber-typing-cursor--done' : ''}`}
                 aria-hidden="true"
