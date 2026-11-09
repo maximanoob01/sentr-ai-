@@ -560,9 +560,6 @@ export const SolutionsPage: React.FC = () => {
           <div className="solutions-hardware-banner fade-in-up">
             <div className="solutions-hardware-banner__inner">
               <div className="solutions-hardware-banner__left">
-                <div className="solutions-hardware-banner__badge">
-                  <span>Hardware Partnership</span>
-                </div>
                 <h3 className="solutions-hardware-banner__title">
                   Enterprise Hardware Solutions Powered by{' '}
                   <span className="solutions-hardware-banner__brand">
@@ -570,7 +567,7 @@ export const SolutionsPage: React.FC = () => {
                   </span>
                 </h3>
                 <p className="solutions-hardware-banner__desc">
-                  Deliver robust computing capacity to your factory floors, edge monitoring stations, and corporate offices with enterprise servers, edge nodes, and client hardware supported by Sentr AI.
+                  Deploy enterprise servers, edge nodes, and workstations to factory floors and corporate operations, fully supported by Sentr AI.
                 </p>
               </div>
               <div className="solutions-hardware-banner__right">
@@ -962,7 +959,7 @@ export const SolutionsPage: React.FC = () => {
           </h4>
 
           <p className="solutions-hw-toast__desc">
-            Deliver robust computing capacity to your factory floors, edge monitoring stations, and corporate offices with enterprise servers, edge nodes, and client hardware supported by Sentr AI.
+            Deploy enterprise servers, edge nodes, and workstations to factory floors and corporate operations, fully supported by Sentr AI.
           </p>
 
           <div className="solutions-hw-toast__action">
