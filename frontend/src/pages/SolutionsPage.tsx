@@ -430,12 +430,22 @@ export const SolutionsPage: React.FC = () => {
         <div className="solutions-container">
           {/* Section Header */}
           <div className="solutions-section-header fade-in-up">
-            <span className="solutions-section-tag">COMPREHENSIVE TECHNOLOGY ECOSYSTEM</span>
+            <span className="solutions-section-tag">
+              <span className="solutions-section-tag-dot" aria-hidden="true" />
+              <span>COMPREHENSIVE TECHNOLOGY ECOSYSTEM</span>
+            </span>
             <h2 className="solutions-section-title">
-              Our Technology Offerings
+              Our <span className="solutions-section-title-gradient">Technology Offerings</span>
             </h2>
+            <div className="solutions-section-title-line" aria-hidden="true">
+              <span className="solutions-section-title-beam" />
+            </div>
             <p className="solutions-section-desc">
-              Explore Sentr AI’s integrated portfolio across artificial intelligence, connected industrial infrastructure, cloud systems, and enterprise cybersecurity.
+              Explore Sentr AI’s integrated portfolio across{' '}
+              <span className="solutions-desc-pill">artificial intelligence</span>,{' '}
+              <span className="solutions-desc-pill">connected industrial infrastructure</span>,{' '}
+              <span className="solutions-desc-pill">cloud systems</span>, and{' '}
+              <span className="solutions-desc-pill">enterprise cybersecurity</span>.
             </p>
 
             {/* Category Filter Tabs */}
