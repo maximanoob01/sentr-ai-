@@ -268,26 +268,84 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 1.75rem;
-  padding: 0.85rem 1.65rem;
-  background: rgba(15, 23, 42, 0.72);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.85rem 1.85rem;
+  background: rgba(15, 23, 42, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 9999px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 25px rgba(56, 189, 248, 0.08);
   margin: 0 auto;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.solutions-hero__stats:hover {
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5), 0 0 30px rgba(56, 189, 248, 0.16);
 }
 
 .solutions-hero__stat-item {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: default;
+  transition: transform 0.25s ease;
 }
 
+.solutions-hero__stat-item:hover {
+  transform: translateY(-2px);
+}
+
+/* Staggered Entrance Animation */
+.solutions-hero__stat-item:nth-of-type(1) { animation: statItemEntrance 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both; }
+.solutions-hero__stat-item:nth-of-type(2) { animation: statItemEntrance 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both; }
+.solutions-hero__stat-item:nth-of-type(3) { animation: statItemEntrance 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both; }
+.solutions-hero__stat-item:nth-of-type(4) { animation: statItemEntrance 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both; }
+
+@keyframes statItemEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Animated Shimmering Gradient on Stat Numbers */
 .solutions-hero__stat-num {
-  font-size: 1.35rem;
+  font-size: 1.4rem;
   font-weight: 800;
-  color: #ffffff;
   line-height: 1.2;
+  letter-spacing: -0.01em;
+  background: linear-gradient(115deg, #ffffff 15%, #38bdf8 50%, #ffffff 85%);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: statNumShimmer 4.5s ease-in-out infinite;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+@keyframes statNumShimmer {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+
+.solutions-hero__stat-item:hover .solutions-hero__stat-num {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.8));
 }
 
 .solutions-hero__stat-label {
@@ -296,12 +354,47 @@
   color: #94a3b8;
   text-transform: uppercase;
   letter-spacing: 0.06em;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.solutions-hero__stat-item:hover .solutions-hero__stat-label {
+  color: #ffffff;
+}
+
+/* Pulsing Telemetry Beacon for 24/7 */
+.solutions-hero__stat-num--live {
+  position: relative;
+}
+
+.solutions-hero__stat-pulse {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: statBeaconPulse 1.8s ease-in-out infinite;
+  margin-right: 0.15rem;
+  flex-shrink: 0;
+}
+
+@keyframes statBeaconPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 8px #10b981;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.7;
+    box-shadow: 0 0 14px rgba(16, 185, 129, 0.95);
+  }
 }
 
 .solutions-hero__stat-divider {
   width: 1px;
   height: 28px;
-  background: rgba(255, 255, 255, 0.15);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.05) 100%);
 }
 
 /* ================================================================

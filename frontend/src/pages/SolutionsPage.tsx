@@ -197,10 +197,35 @@ export const SolutionsPage: React.FC = () => {
   const [isTypingDone, setIsTypingDone] = useState(false);
   const [activeFilter, setActiveFilter] = useState<'ALL' | 'CORE OFFERINGS' | 'INFRASTRUCTURE' | 'SECURITY & IT'>('ALL');
   const [deviceIndex, setDeviceIndex] = useState(0);
+  const [statPillars, setStatPillars] = useState(0);
+  const [statReady, setStatReady] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  // Animated counters on hero load
+  useEffect(() => {
+    let animId: number;
+    const startTime = performance.now();
+    const duration = 1400;
+
+    const updateCounters = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+
+      setStatPillars(Math.round(ease * 6));
+      setStatReady(Math.round(ease * 100));
+
+      if (progress < 1) {
+        animId = requestAnimationFrame(updateCounters);
+      }
+    };
+
+    animId = requestAnimationFrame(updateCounters);
+    return () => cancelAnimationFrame(animId);
   }, []);
 
   // Rotate endpoint hardware devices every 3 seconds
@@ -330,18 +355,21 @@ export const SolutionsPage: React.FC = () => {
               {/* Trust Indicators / Badges */}
               <div className="solutions-hero__stats">
                 <div className="solutions-hero__stat-item">
-                  <span className="solutions-hero__stat-num">6</span>
+                  <span className="solutions-hero__stat-num">{statPillars}</span>
                   <span className="solutions-hero__stat-label">Core Pillars</span>
                 </div>
                 <div className="solutions-hero__stat-divider" />
                 <div className="solutions-hero__stat-item">
-                  <span className="solutions-hero__stat-num">100%</span>
+                  <span className="solutions-hero__stat-num">{statReady}%</span>
                   <span className="solutions-hero__stat-label">Production Ready</span>
                 </div>
                 <div className="solutions-hero__stat-divider" />
                 <div className="solutions-hero__stat-item">
-                  <span className="solutions-hero__stat-num">24/7</span>
-                  <span className="solutions-hero__stat-label">SOC & Monitoring</span>
+                  <span className="solutions-hero__stat-num solutions-hero__stat-num--live">
+                    <span className="solutions-hero__stat-pulse" aria-hidden="true" />
+                    24/7
+                  </span>
+                  <span className="solutions-hero__stat-label">SOC &amp; Monitoring</span>
                 </div>
                 <div className="solutions-hero__stat-divider" />
                 <div className="solutions-hero__stat-item">
