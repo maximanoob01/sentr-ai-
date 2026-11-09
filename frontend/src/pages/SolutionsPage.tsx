@@ -430,10 +430,6 @@ export const SolutionsPage: React.FC = () => {
         <div className="solutions-container">
           {/* Section Header */}
           <div className="solutions-section-header fade-in-up">
-            <span className="solutions-section-tag">
-              <span className="solutions-section-tag-dot" aria-hidden="true" />
-              <span>COMPREHENSIVE TECHNOLOGY ECOSYSTEM</span>
-            </span>
             <h2 className="solutions-section-title">
               Our <span className="solutions-section-title-gradient">Technology Offerings</span>
             </h2>
