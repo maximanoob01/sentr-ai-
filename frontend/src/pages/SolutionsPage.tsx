@@ -14,6 +14,7 @@ import lenovoImg from '../assets/lenvo.png';
 import ffImg from '../assets/solution/ff.png';
 import ggImg from '../assets/solution/gg.png';
 import hhImg from '../assets/solution/hh.png';
+import backkImg from '../assets/solution/backk.png';
 
 const FULL_HERO_SUBTITLE =
   'From real-time industrial computer vision and bespoke artificial intelligence to resilient cloud infrastructure, cybersecurity, and enterprise IT — Sentr AI delivers full-spectrum technology solutions tailored for operational excellence.';
@@ -582,16 +583,24 @@ export const SolutionsPage: React.FC = () => {
               3B. SENTR AI HARDWARE SUPPLY & DEALERSHIP (COLLAGE GRID)
               ================================================================ */}
           <div className="solutions-hw-collage fade-in-up">
-            <div className="solutions-hw-collage__header">
-              <h3 className="solutions-hw-collage__heading">
-                Enterprise Hardware &amp; Equipment Supply by Sentr AI
-              </h3>
-              <p className="solutions-hw-collage__subheading">
-                Sentr AI deals directly in turnkey hardware infrastructure — supplying, provisioning, and maintaining high-performance computing, resilient network security, and AI-enabled industrial vision cameras.
-              </p>
-            </div>
+            <div
+              className="solutions-hw-collage__bg"
+              style={{ backgroundImage: `url(${backkImg})` }}
+              aria-hidden="true"
+            />
+            <div className="solutions-hw-collage__overlay" aria-hidden="true" />
 
-            <div className="solutions-hw-grid">
+            <div className="solutions-hw-collage__inner">
+              <div className="solutions-hw-collage__header">
+                <h3 className="solutions-hw-collage__heading">
+                  Enterprise Hardware &amp; Equipment Supply by Sentr AI
+                </h3>
+                <p className="solutions-hw-collage__subheading">
+                  Sentr AI deals directly in turnkey hardware infrastructure — supplying, provisioning, and maintaining high-performance computing, resilient network security, and AI-enabled industrial vision cameras.
+                </p>
+              </div>
+
+              <div className="solutions-hw-grid">
               {/* Card 1: End Point HW - Laptop desktop server (New and Refurb both) */}
               <article className="solutions-hw-card solutions-hw-card--endpoint fade-in-up">
                 <div className="solutions-hw-card__visual">
@@ -816,6 +825,7 @@ export const SolutionsPage: React.FC = () => {
                   </div>
                 </div>
               </article>
+            </div>
             </div>
           </div>
         </div>
