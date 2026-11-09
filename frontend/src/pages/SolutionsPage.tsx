@@ -18,6 +18,8 @@ import cameraImg from '../assets/aindri/camera.png';
 const FULL_HERO_SUBTITLE =
   'From real-time industrial computer vision and bespoke artificial intelligence to resilient cloud infrastructure, cybersecurity, and enterprise IT — Sentr AI delivers full-spectrum technology solutions tailored for operational excellence.';
 
+const ENDPOINT_DEVICES = ['Laptops', 'Desktops', 'Servers'];
+
 interface SolutionOffering {
   id: string;
   title: string;
@@ -194,10 +196,19 @@ export const SolutionsPage: React.FC = () => {
   const [displayedSubtitle, setDisplayedSubtitle] = useState('');
   const [isTypingDone, setIsTypingDone] = useState(false);
   const [activeFilter, setActiveFilter] = useState<'ALL' | 'CORE OFFERINGS' | 'INFRASTRUCTURE' | 'SECURITY & IT'>('ALL');
+  const [deviceIndex, setDeviceIndex] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  // Rotate endpoint hardware devices every 3 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setDeviceIndex((prev) => (prev + 1) % ENDPOINT_DEVICES.length);
+    }, 3000);
+    return () => clearInterval(timer);
   }, []);
 
   // Subtitle typing effect
@@ -528,9 +539,10 @@ export const SolutionsPage: React.FC = () => {
                     </span>
                   </div>
                   <div className="solutions-hw-card__visual-chips">
-                    <span className="solutions-hw-chip">Laptops</span>
-                    <span className="solutions-hw-chip">Desktops</span>
-                    <span className="solutions-hw-chip">Servers</span>
+                    <span className="solutions-hw-chip solutions-hw-chip--rotating" key={deviceIndex}>
+                      <span className="solutions-hw-chip-dot" aria-hidden="true" />
+                      <span>{ENDPOINT_DEVICES[deviceIndex]}</span>
+                    </span>
                   </div>
                 </div>
 

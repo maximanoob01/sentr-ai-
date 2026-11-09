@@ -844,6 +844,43 @@
   box-shadow: 0 2px 8px rgba(15, 23, 42, 0.18);
 }
 
+.solutions-hw-card--endpoint .solutions-hw-chip--rotating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.32rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  background: #0f172a;
+  color: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.18);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.22);
+  animation: hwChipSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.solutions-hw-chip-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 8px #38bdf8;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+@keyframes hwChipSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Split Image Collage for Card 3 */
 .solutions-hw-card__collage-pair {
   display: flex;
