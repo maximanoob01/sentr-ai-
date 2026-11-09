@@ -11,6 +11,9 @@ import cloudImg from '../assets/solution/enterprise/3.png';
 import secuImg from '../assets/solution/secu.png';
 import enterpriseImg from '../assets/solution/enterprise/1.png';
 import lenovoImg from '../assets/lenvo.png';
+import workImg from '../assets/work.png';
+import serverImg from '../assets/cloud solutions/server.png';
+import cameraImg from '../assets/aindri/camera.png';
 
 const FULL_HERO_SUBTITLE =
   'From real-time industrial computer vision and bespoke artificial intelligence to resilient cloud infrastructure, cybersecurity, and enterprise IT — Sentr AI delivers full-spectrum technology solutions tailored for operational excellence.';
@@ -489,6 +492,260 @@ export const SolutionsPage: React.FC = () => {
                   </svg>
                 </Link>
               </div>
+            </div>
+          </div>
+
+          {/* ================================================================
+              3B. SENTR AI HARDWARE SUPPLY & DEALERSHIP (COLLAGE GRID)
+              ================================================================ */}
+          <div className="solutions-hw-collage fade-in-up">
+            <div className="solutions-hw-collage__header">
+              <div className="solutions-hw-collage__badge">
+                <span className="solutions-hw-collage__badge-dot" />
+                <span>Hardware Supply &amp; Procurement</span>
+              </div>
+              <h3 className="solutions-hw-collage__heading">
+                Enterprise Hardware &amp; Equipment Supply by Sentr AI
+              </h3>
+              <p className="solutions-hw-collage__subheading">
+                Sentr AI deals directly in turnkey hardware infrastructure — supplying, provisioning, and maintaining high-performance computing, resilient network security, and AI-enabled industrial vision cameras.
+              </p>
+            </div>
+
+            <div className="solutions-hw-grid">
+              {/* Card 1: End Point HW - Laptop desktop server (New and Refurb both) */}
+              <article className="solutions-hw-card solutions-hw-card--endpoint fade-in-up">
+                <div className="solutions-hw-card__visual">
+                  <img
+                    src={workImg}
+                    alt="End Point Hardware - Laptops, Desktops, Servers (New and Refurbished)"
+                    className="solutions-hw-card__img"
+                    loading="lazy"
+                  />
+                  <div className="solutions-hw-card__overlay" />
+                  <div className="solutions-hw-card__badges">
+                    <span className="solutions-hw-pill solutions-hw-pill--refurb">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      New &amp; Refurb Both
+                    </span>
+                  </div>
+                  <div className="solutions-hw-card__visual-chips">
+                    <span className="solutions-hw-chip">Laptops</span>
+                    <span className="solutions-hw-chip">Desktops</span>
+                    <span className="solutions-hw-chip">Servers</span>
+                  </div>
+                </div>
+
+                <div className="solutions-hw-card__content">
+                  <div className="solutions-hw-card__meta">
+                    <span className="solutions-hw-card__category">ENDPOINT COMPUTING</span>
+                    <span className="solutions-hw-card__tier-tag">Dual Sourcing</span>
+                  </div>
+
+                  <h4 className="solutions-hw-card__title">End Point Hardware</h4>
+                  <p className="solutions-hw-card__desc">
+                    Equip your corporate workforce and factory operations with commercial laptops, desktop workstations, and high-density rack/tower servers. Sentr AI deals in both <strong>brand-new factory units</strong> and <strong>certified refurbished systems</strong> with full replacement warranty.
+                  </p>
+
+                  <div className="solutions-hw-card__specs">
+                    <div className="solutions-hw-spec-item">
+                      <svg className="solutions-hw-spec-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      <span>Enterprise &amp; Commercial Laptops</span>
+                    </div>
+                    <div className="solutions-hw-spec-item">
+                      <svg className="solutions-hw-spec-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      <span>High-Performance Desktop PCs &amp; Workstations</span>
+                    </div>
+                    <div className="solutions-hw-spec-item">
+                      <svg className="solutions-hw-spec-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      <span>Enterprise Rackmount &amp; Tower Servers</span>
+                    </div>
+                    <div className="solutions-hw-spec-item">
+                      <svg className="solutions-hw-spec-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      <span><strong>New &amp; Certified Refurbished Both</strong></span>
+                    </div>
+                  </div>
+
+                  <div className="solutions-hw-card__footer">
+                    <Link to="/company/contact" className="solutions-hw-btn">
+                      <span>Inquire Endpoint Hardware</span>
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <polyline points="12 5 19 12 12 19" />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </article>
+
+              {/* Card 2: N/w and security: Firewall, Switches Routers */}
+              <article className="solutions-hw-card solutions-hw-card--network fade-in-up" style={{ transitionDelay: '0.1s' }}>
+                <div className="solutions-hw-card__visual">
+                  <img
+                    src={serverImg}
+                    alt="Network and Security: Firewalls, Switches, Routers"
+                    className="solutions-hw-card__img"
+                    loading="lazy"
+                  />
+                  <div className="solutions-hw-card__overlay" />
+                  <div className="solutions-hw-card__badges">
+                    <span className="solutions-hw-pill solutions-hw-pill--security">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                      </svg>
+                      Zero-Trust Ready
+                    </span>
+                  </div>
+                  <div className="solutions-hw-card__visual-chips">
+                    <span className="solutions-hw-chip">Firewalls</span>
+                    <span className="solutions-hw-chip">Switches</span>
+                    <span className="solutions-hw-chip">Routers</span>
+                  </div>
+                </div>
+
+                <div className="solutions-hw-card__content">
+                  <div className="solutions-hw-card__meta">
+                    <span className="solutions-hw-card__category">NETWORK &amp; SECURITY</span>
+                    <span className="solutions-hw-card__tier-tag">Perimeter Defense</span>
+                  </div>
+
+                  <h4 className="solutions-hw-card__title">N/w &amp; Security</h4>
+                  <p className="solutions-hw-card__desc">
+                    Establish resilient, high-speed connectivity and robust perimeter threat protection. We supply, configure, and maintain next-generation firewalls, managed PoE switches, and enterprise routers for industrial plants and offices.
+                  </p>
+
+                  <div className="solutions-hw-card__specs">
+                    <div className="solutions-hw-spec-item">
+                      <svg className="solutions-hw-spec-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      <span>Next-Generation Firewalls (NGFW &amp; UTM)</span>
+                    </div>
+                    <div className="solutions-hw-spec-item">
+                      <svg className="solutions-hw-spec-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      <span>Managed L2 / L3 PoE+ Gigabit &amp; 10G Switches</span>
+                    </div>
+                    <div className="solutions-hw-spec-item">
+                      <svg className="solutions-hw-spec-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      <span>Core Edge &amp; Branch Enterprise Routers</span>
+                    </div>
+                    <div className="solutions-hw-spec-item">
+                      <svg className="solutions-hw-spec-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      <span>Industrial DIN-Rail &amp; Rackmount Gear</span>
+                    </div>
+                  </div>
+
+                  <div className="solutions-hw-card__footer">
+                    <Link to="/company/contact" className="solutions-hw-btn">
+                      <span>Inquire N/w &amp; Security</span>
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <polyline points="12 5 19 12 12 19" />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </article>
+
+              {/* Card 3: Cctv and industrial scanners and Cameras */}
+              <article className="solutions-hw-card solutions-hw-card--vision fade-in-up" style={{ transitionDelay: '0.2s' }}>
+                <div className="solutions-hw-card__visual">
+                  <div className="solutions-hw-card__collage-pair">
+                    <img
+                      src={cctvImg}
+                      alt="CCTV Surveillance Camera Stream"
+                      className="solutions-hw-card__img solutions-hw-card__img--split solutions-hw-card__img--split-left"
+                      loading="lazy"
+                    />
+                    <img
+                      src={cameraImg}
+                      alt="Industrial Machine Vision Camera & Optical Scanner"
+                      className="solutions-hw-card__img solutions-hw-card__img--split solutions-hw-card__img--split-right"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="solutions-hw-card__overlay" />
+                  <div className="solutions-hw-card__badges">
+                    <span className="solutions-hw-pill solutions-hw-pill--vision">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                        <circle cx="12" cy="12" r="10" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                      AI Vision Ready
+                    </span>
+                  </div>
+                  <div className="solutions-hw-card__visual-chips">
+                    <span className="solutions-hw-chip">CCTV</span>
+                    <span className="solutions-hw-chip">Industrial Scanners</span>
+                    <span className="solutions-hw-chip">Cameras</span>
+                  </div>
+                </div>
+
+                <div className="solutions-hw-card__content">
+                  <div className="solutions-hw-card__meta">
+                    <span className="solutions-hw-card__category">VISION &amp; SCANNING</span>
+                    <span className="solutions-hw-card__tier-tag">Optical Hardware</span>
+                  </div>
+
+                  <h4 className="solutions-hw-card__title">CCTV, Industrial Scanners &amp; Cameras</h4>
+                  <p className="solutions-hw-card__desc">
+                    Deploy high-accuracy optical equipment across production floors and warehouses. Sentr AI supplies industrial 1D/2D barcode scanners, commercial CCTV security cameras, and machine vision sensors engineered for real-time AI processing.
+                  </p>
+
+                  <div className="solutions-hw-card__specs">
+                    <div className="solutions-hw-spec-item">
+                      <svg className="solutions-hw-spec-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      <span>Commercial &amp; Industrial CCTV Cameras</span>
+                    </div>
+                    <div className="solutions-hw-spec-item">
+                      <svg className="solutions-hw-spec-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      <span>Industrial 1D / 2D Barcode &amp; DPM Scanners</span>
+                    </div>
+                    <div className="solutions-hw-spec-item">
+                      <svg className="solutions-hw-spec-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      <span>High-Speed Machine Vision Cameras</span>
+                    </div>
+                    <div className="solutions-hw-spec-item">
+                      <svg className="solutions-hw-spec-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      <span>Ruggedized IP67 Industrial Sensor Housings</span>
+                    </div>
+                  </div>
+
+                  <div className="solutions-hw-card__footer">
+                    <Link to="/company/contact" className="solutions-hw-btn">
+                      <span>Inquire CCTV &amp; Scanners</span>
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <polyline points="12 5 19 12 12 19" />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </article>
             </div>
           </div>
         </div>
