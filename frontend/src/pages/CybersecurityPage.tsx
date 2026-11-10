@@ -17,7 +17,6 @@ const FULL_HERO_SUBTITLE =
 const cybersecurityServices = [
   {
     id: 'workspace-security',
-    num: '01',
     title: 'Workspace Security',
     tagline: 'Protect Your People, Applications and Business Data',
     desc: 'Your employees are at the center of your digital workplace. However, email threats, malicious links, compromised accounts and accidental data sharing can expose sensitive business information. Sentr AI Workspace Security helps protect employees and the applications they use every day.',
@@ -38,7 +37,6 @@ const cybersecurityServices = [
   },
   {
     id: 'cloud-security',
-    num: '02',
     title: 'Cloud Security',
     tagline: 'Secure Your Cloud Infrastructure and Critical Data',
     desc: 'Cloud environments provide flexibility and scalability, but they also introduce security challenges. Misconfigurations, compromised credentials and sophisticated cyberattacks can expose critical business systems. Sentr AI helps organisations strengthen their cloud security through continuous monitoring, security assessments and proactive protection across cloud and hybrid environments. Our solutions support Microsoft Azure, Microsoft 365, AWS and multi-cloud environments.',
@@ -60,7 +58,6 @@ const cybersecurityServices = [
   },
   {
     id: 'identity-access-management',
-    num: '03',
     title: 'Identity & Access Management',
     tagline: 'Make Sure the Right People Have the Right Access',
     desc: 'Every user, device and application accessing your business systems represents a potential security risk. Weak passwords, excessive permissions and compromised credentials can give attackers access to sensitive information. Sentr AI helps organisations control, monitor and secure access across their digital environments. Our Identity & Access Management (IAM) solutions strengthen authentication, reduce unnecessary privileges and support secure access across cloud and on-premises systems.',
@@ -456,7 +453,6 @@ export const CybersecurityPage: React.FC = () => {
                   className={`cyber-services__tab ${activeServiceIndex === idx ? 'cyber-services__tab--active' : ''}`}
                   onClick={() => scrollToServiceIndex(idx)}
                 >
-                  <span className="cyber-services__tab-num">{service.num}</span>
                   <span className="cyber-services__tab-title">{service.title}</span>
                 </button>
               ))}
@@ -529,7 +525,6 @@ export const CybersecurityPage: React.FC = () => {
                   {/* Content Side */}
                   <div className="cyber-service-card__content">
                     <div className="cyber-service-card__top">
-                      <span className="cyber-service-card__num">{service.num}</span>
                       <h3 className="cyber-service-card__title">{service.title}</h3>
                     </div>
 
@@ -593,8 +588,6 @@ export const CybersecurityPage: React.FC = () => {
                         loading="lazy"
                       />
                       <div className="cyber-service-card__badge-pill">
-                        <span>{service.num}</span>
-                        <span className="cyber-service-card__badge-sep">/</span>
                         <span>{service.title}</span>
                       </div>
                     </div>
