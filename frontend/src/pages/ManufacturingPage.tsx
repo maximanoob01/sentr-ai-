@@ -8,92 +8,127 @@ const FULL_HERO_SUBTITLE =
 
 interface ModuleCard {
   id: string;
+  number: string;
   title: string;
-  tagline: string;
   desc: string;
-  features: string[];
-  stat: string;
-  statLabel: string;
+  tag: string;
   icon: React.ReactNode;
 }
 
 const factoryModules: ModuleCard[] = [
   {
-    id: 'machine-monitoring',
-    title: 'Machine & Line Monitoring',
-    tagline: 'Track real-time machine status, cycle times, and OEE.',
-    desc: 'Connect directly to PLCs, sensors, and controllers to monitor operating states, cycle times, and output rates without manual operator logging.',
-    features: [
-      'Live machine status (Running, Idle, Fault)',
-      'Automated OEE & availability calculations',
-      'Cycle time tracking and micro-stoppage logs',
-      'OPC-UA, Modbus, MQTT and legacy protocol support',
-    ],
-    stat: '99.8%',
-    statLabel: 'Data Capture Rate',
+    id: 'inventory',
+    number: '01',
+    title: 'Inventory',
+    desc: 'See stock levels live. Avoid overstock and shortages.',
+    tag: 'Real-Time Stock',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="2" width="20" height="8" rx="2" />
-        <rect x="2" y="14" width="20" height="8" rx="2" />
-        <line x1="6" y1="6" x2="6.01" y2="6" />
-        <line x1="6" y1="18" x2="6.01" y2="18" />
+        <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
       </svg>
     ),
   },
   {
-    id: 'problem-detection',
-    title: 'Early Problem Detection',
-    tagline: 'Spot line bottlenecks before they cause downtime.',
-    desc: 'Intelligent threshold alerts notify supervisors and maintenance engineers instantly when parameters drift, preventing costly batch rejections.',
-    features: [
-      'Instant SMS/Email/WhatsApp alerts for machine alarms',
-      'Automated root-cause categorization',
-      'Downtime reason logging and Pareto tracking',
-      'Historical incident replay and audit trails',
-    ],
-    stat: '<30s',
-    statLabel: 'Alert Dispatch Time',
+    id: 'production-management',
+    number: '02',
+    title: 'Production Management',
+    desc: 'Track output, machine use and downtime. Cut manual work.',
+    tag: 'Shop-Floor Telemetry',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
-        <line x1="12" y1="9" x2="12" y2="13" />
-        <line x1="12" y1="17" x2="12.01" y2="17" />
+        <polygon points="12 2 2 7 12 12 22 7 12 2" />
+        <polyline points="2 17 12 22 22 17" />
+        <polyline points="2 12 12 17 22 12" />
+      </svg>
+    ),
+  },
+  {
+    id: 'planning-scheduling',
+    number: '03',
+    title: 'Planning and Scheduling',
+    desc: 'Plan work orders from live data and keep timelines on track.',
+    tag: 'Live Work Orders',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+        <line x1="16" y1="2" x2="16" y2="6" />
+        <line x1="8" y1="2" x2="8" y2="6" />
+        <line x1="3" y1="10" x2="21" y2="10" />
+      </svg>
+    ),
+  },
+  {
+    id: 'order-management',
+    number: '04',
+    title: 'Order Management',
+    desc: 'Follow each order from creation to delivery.',
+    tag: 'End-to-End Tracking',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <path d="M16 10a4 4 0 0 1-8 0" />
       </svg>
     ),
   },
   {
     id: 'quality-inspection',
-    title: 'Automated Quality Inspection',
-    tagline: 'Computer vision and sensory checks at full line speed.',
-    desc: 'Verify labels, packaging integrity, fill levels, and surface defects automatically on the conveyor belt to safeguard product standards.',
-    features: [
-      'AI vision camera integration for defect rejection',
-      'Automated 1D/2D barcode and lot code verification',
-      'Tolerance and dimensional inspection',
-      'Immediate pneumatic reject mechanism triggers',
-    ],
-    stat: '99.5%',
-    statLabel: 'Inspection Accuracy',
+    number: '05',
+    title: 'Quality and Inspection',
+    desc: 'Digitize checks for incoming material, in-process work and final products.',
+    tag: 'Digitized Checks',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-        <circle cx="12" cy="12" r="3" />
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        <path d="m9 12 2 2 4-4" />
       </svg>
     ),
   },
   {
-    id: 'operator-workflows',
-    title: 'Operator & Shift Workflows',
-    tagline: 'Keep teams aligned across every shift handoff.',
-    desc: 'Empower shop-floor operators with intuitive tablet interfaces to log setup changes, scrap counts, and handover notes in seconds.',
-    features: [
-      'Digital shift handover sheets and logs',
-      'Operator scrap, rework, and waste attribution',
-      'Standard Operating Procedure (SOP) digital displays',
-      'Role-based permissions for line workers and plant managers',
-    ],
-    stat: '4.5x',
-    statLabel: 'Faster Shift Handover',
+    id: 'tool-management',
+    number: '06',
+    title: 'Tool Management',
+    desc: 'Track tool use and maintenance, so tools last longer and are replaced on time.',
+    tag: 'Tool Lifecycle',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+      </svg>
+    ),
+  },
+  {
+    id: 'purchase',
+    number: '07',
+    title: 'Purchase',
+    desc: 'Automate purchase steps and vendor handling.',
+    tag: 'Vendor Automation',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="9" cy="21" r="1" />
+        <circle cx="20" cy="21" r="1" />
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+      </svg>
+    ),
+  },
+  {
+    id: 'maintenance',
+    number: '08',
+    title: 'Maintenance',
+    desc: 'Study downtime patterns, plan maintenance and reduce breakdowns.',
+    tag: 'Breakdown Prevention',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+      </svg>
+    ),
+  },
+  {
+    id: 'subcontracting',
+    number: '09',
+    title: 'Subcontracting',
+    desc: 'Follow outsourced work step by step.',
+    tag: 'Outsourced Tracking',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -104,42 +139,17 @@ const factoryModules: ModuleCard[] = [
     ),
   },
   {
-    id: 'predictive-maintenance',
-    title: 'Predictive Machine Health',
-    tagline: 'Anticipate motor, bearing, and thermal failures.',
-    desc: 'Manufapp continuously tracks temperature, vibration, and energy draw anomalies to guide predictive servicing before equipment breakdown.',
-    features: [
-      'Vibration and bearing wear trend analysis',
-      'Current draw and electrical signature telemetry',
-      'Mean Time Between Failures (MTBF) tracking',
-      'Automated maintenance work-order generation',
-    ],
-    stat: '-42%',
-    statLabel: 'Unplanned Downtime',
+    id: 'live-dashboards',
+    number: '10',
+    title: 'Live dashboards',
+    desc: 'See key numbers like OEE, downtime and defect rates in one simple view.',
+    tag: 'Unified Metrics',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-      </svg>
-    ),
-  },
-  {
-    id: 'erp-mes-sync',
-    title: 'ERP & MES Live Integration',
-    tagline: 'One single source of truth from line to ledger.',
-    desc: 'Eliminate manual paperwork. Manufapp feeds live production output, batch quantities, and material consumptions directly into your enterprise ERP.',
-    features: [
-      'Bidirectional SAP, Microsoft Dynamics & Oracle connectors',
-      'Real-time inventory and BOM consumption sync',
-      'Automated job order progress and reconciliation',
-      'Secure on-premises edge gateway or cloud deployment',
-    ],
-    stat: '100%',
-    statLabel: 'Paperless Reporting',
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <polygon points="12 2 2 7 12 12 22 7 12 2" />
-        <polyline points="2 17 12 22 22 17" />
-        <polyline points="2 12 12 17 22 12" />
+        <rect x="3" y="3" width="7" height="9" />
+        <rect x="14" y="3" width="7" height="5" />
+        <rect x="14" y="12" width="7" height="9" />
+        <rect x="3" y="16" width="7" height="5" />
       </svg>
     ),
   },
@@ -499,7 +509,53 @@ export const ManufacturingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ── 3. METRICS BANNER ── */}
+      {/* ── 3. OUR MODULES SECTION ── */}
+      <section id="modules" className="mfg-modules-section" aria-label="Our Modules">
+        {/* Right side background grid pattern */}
+        <div className="mfg-modules-dots" aria-hidden="true" />
+
+        <div className="mfg-container">
+          <div className="mfg-section-header">
+            <span className="mfg-section-header__badge">COMPREHENSIVE FACTORY SUITE</span>
+            <h2 className="mfg-section-header__title">
+              Our modules
+            </h2>
+            <p className="mfg-section-header__desc">
+              Manufapp covers production, quality, inventory, and operations in one unified system. Everything you need to eliminate blind spots and run production with confidence.
+            </p>
+          </div>
+
+          <div className="mfg-modules-grid">
+            {factoryModules.map((mod) => (
+              <article key={mod.id} className="mfg-module-card">
+                <div className="mfg-module-card__top">
+                  <div className="mfg-module-card__icon-row">
+                    <div className="mfg-module-card__icon" aria-hidden="true">
+                      {mod.icon}
+                    </div>
+                    <span className="mfg-module-card__num">{mod.number}</span>
+                  </div>
+                  <h3 className="mfg-module-card__title">{mod.title}</h3>
+                  <p className="mfg-module-card__desc">{mod.desc}</p>
+                </div>
+
+                <div className="mfg-module-card__footer">
+                  <span className="mfg-module-card__tag">{mod.tag}</span>
+                  <Link to="/company/contact" className="mfg-module-card__btn" aria-label={`Explore ${mod.title}`}>
+                    <span>Explore</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M5 12h14" />
+                      <path d="m12 5 7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 4. METRICS BANNER ── */}
       <section className="mfg-stats-strip" aria-label="Key Manufacturing Outcomes">
         <div className="mfg-container">
           <div className="mfg-stats-grid">
@@ -519,62 +575,6 @@ export const ManufacturingPage: React.FC = () => {
               <span className="mfg-stat-box__val">100%</span>
               <span className="mfg-stat-box__lbl">Real-Time Line Visibility</span>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 3. EXPLORE MODULES SECTION ── */}
-      <section id="modules" className="mfg-modules-section" aria-label="Manufapp Modules">
-        {/* Right side background grid pattern */}
-        <div className="mfg-modules-dots" aria-hidden="true" />
-
-        <div className="mfg-container">
-          <div className="mfg-section-header">
-            <span className="mfg-section-header__badge">MANUFAPP PLATFORM MODULES</span>
-            <h2 className="mfg-section-header__title">
-              Built to Solve Real Production Challenges
-            </h2>
-            <p className="mfg-section-header__desc">
-              Every factory operates differently. Manufapp integrates modular intelligence tools that plug directly into your current machinery, control loops, and team operations.
-            </p>
-          </div>
-
-          <div className="mfg-modules-grid">
-            {factoryModules.map((mod) => (
-              <article key={mod.id} className="mfg-module-card">
-                <div className="mfg-module-card__top">
-                  <div className="mfg-module-card__icon" aria-hidden="true">
-                    {mod.icon}
-                  </div>
-                  <h3 className="mfg-module-card__title">{mod.title}</h3>
-                  <p className="mfg-module-card__tagline">{mod.tagline}</p>
-                  <p className="mfg-module-card__desc">{mod.desc}</p>
-
-                  <div className="mfg-module-card__features-box">
-                    <span className="mfg-module-card__features-title">Capabilities:</span>
-                    <ul className="mfg-module-card__features-list">
-                      {mod.features.map((feat, idx) => (
-                        <li key={idx}>{feat}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="mfg-module-card__footer">
-                  <div className="mfg-module-card__stat">
-                    <span className="mfg-module-card__stat-val">{mod.stat}</span>
-                    <span className="mfg-module-card__stat-lbl">{mod.statLabel}</span>
-                  </div>
-                  <Link to="/company/contact" className="mfg-module-card__btn">
-                    Request Demo
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      <path d="M5 12h14" />
-                      <path d="m12 5 7 7-7 7" />
-                    </svg>
-                  </Link>
-                </div>
-              </article>
-            ))}
           </div>
         </div>
       </section>
