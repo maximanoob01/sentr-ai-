@@ -16,6 +16,7 @@ import { IoTSolutionsPage } from './pages/IoTSolutionsPage';
 import { EnterpriseITPage } from './pages/EnterpriseITPage';
 import { CybersecurityPage } from './pages/CybersecurityPage';
 import { SolutionsPage } from './pages/SolutionsPage';
+import { ManufacturingPage } from './pages/ManufacturingPage';
 import { useScrollAnimation } from './hooks/useScrollAnimation';
 import { AdminApp } from './admin/AdminApp';
 import heroImg from './assets/contact us/hero.png';
@@ -403,6 +404,7 @@ const AppInner: React.FC = () => {
         <Route path="/products" element={<PlaceholderPage title="Products" />} />
         <Route path="/products/roadmap" element={<PlaceholderPage title="Product Roadmap" />} />
         <Route path="/industries" element={<PlaceholderPage title="Industries" />} />
+        <Route path="/industries/manufacturing" element={<ManufacturingPage />} />
         <Route path="/industries/:slug" element={<PlaceholderPage title="Industry Detail" />} />
         <Route path="/cloud-solutions" element={<CloudSolutionsPage />} />
         <Route path="/resources" element={<PlaceholderPage title="Resources" />} />
