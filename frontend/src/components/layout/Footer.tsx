@@ -16,7 +16,7 @@ const FOOTER_SECTIONS: FooterSection[] = [
     links: [
       { label: 'Aindri IMS', to: '/products/aindri' },
       { label: 'Roadmap', to: '/products/roadmap' },
-      { label: 'Cloud Solutions', to: '/cloud-solutions' },
+      { label: 'Cloud Services', to: '/cloud-solutions' },
     ],
   },
   {
