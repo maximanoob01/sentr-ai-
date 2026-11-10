@@ -92,6 +92,15 @@ a.footer-contact-item:hover svg {
   color: #ffffff;
 }
 
+.footer-contact-item--location {
+  align-items: flex-start;
+  line-height: 1.45;
+}
+
+.footer-contact-item--location svg {
+  margin-top: 0.2rem;
+}
+
 .footer-main__social a {
   color: #ffffff;
   transition: all var(--transition-fast);
