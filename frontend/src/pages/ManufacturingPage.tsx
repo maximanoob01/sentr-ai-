@@ -331,7 +331,175 @@ export const ManufacturingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ── 2. METRICS BANNER ── */}
+      {/* ── 2. WHAT IS AN MES? SECTION ── */}
+      <section className="mfg-mes-overview" aria-label="What is an MES">
+        <div className="mfg-container">
+          <div className="mfg-mes-overview__grid">
+            {/* LEFT SIDE: Text Content */}
+            <div className="mfg-mes-overview__left">
+              <div className="mfg-mes-overview__eyebrow-wrap">
+                <span className="mfg-mes-overview__eyebrow">THE REAL-TIME EXECUTION LAYER</span>
+              </div>
+              <h2 className="mfg-mes-overview__title">
+                What is an MES?
+              </h2>
+              <p className="mfg-mes-overview__lead">
+                A Manufacturing Execution System (MES) is the layer between your machines and your business software. It tracks what is being made, how well it is going and what is stopping it, all in real time.
+              </p>
+              <p className="mfg-mes-overview__desc">
+                Manufapp covers production, quality, inventory and machines in one system. It works for a single plant or for many.
+              </p>
+
+              {/* 4 Pillars Highlighted from the text */}
+              <div className="mfg-mes-pillars">
+                <div className="mfg-mes-pillar-item">
+                  <div className="mfg-mes-pillar-item__icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                      <polyline points="2 17 12 22 22 17" />
+                      <polyline points="2 12 12 17 22 12" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="mfg-mes-pillar-item__name">Production</h4>
+                    <p className="mfg-mes-pillar-item__sub">Output, cycle times &amp; OEE</p>
+                  </div>
+                </div>
+
+                <div className="mfg-mes-pillar-item">
+                  <div className="mfg-mes-pillar-item__icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                      <path d="m9 12 2 2 4-4" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="mfg-mes-pillar-item__name">Quality</h4>
+                    <p className="mfg-mes-pillar-item__sub">Defects, scrap &amp; inspection</p>
+                  </div>
+                </div>
+
+                <div className="mfg-mes-pillar-item">
+                  <div className="mfg-mes-pillar-item__icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="mfg-mes-pillar-item__name">Inventory</h4>
+                    <p className="mfg-mes-pillar-item__sub">WIP, batch lots &amp; raw materials</p>
+                  </div>
+                </div>
+
+                <div className="mfg-mes-pillar-item">
+                  <div className="mfg-mes-pillar-item__icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="3" />
+                      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="mfg-mes-pillar-item__name">Machines</h4>
+                    <p className="mfg-mes-pillar-item__sub">Telemetry, uptime &amp; health</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Plant Scalability Badge */}
+              <div className="mfg-mes-scale-badge">
+                <span className="mfg-mes-scale-badge__pulse" />
+                <span>Scalable across a <strong>single plant</strong> or <strong>multi-site global enterprise</strong></span>
+              </div>
+            </div>
+
+            {/* RIGHT SIDE: The 3-Tier Layer Architecture Visual */}
+            <div className="mfg-mes-overview__right">
+              <div className="mfg-mes-diagram">
+                {/* Top Tier: Business Software */}
+                <div className="mfg-diagram-tier mfg-diagram-tier--business">
+                  <div className="mfg-diagram-tier__header">
+                    <span className="mfg-diagram-tier__tag">TOP LAYER</span>
+                    <h4 className="mfg-diagram-tier__title">Business Software &amp; ERP</h4>
+                  </div>
+                  <div className="mfg-diagram-tier__chips">
+                    <span className="mfg-diagram-chip">SAP</span>
+                    <span className="mfg-diagram-chip">Microsoft Dynamics</span>
+                    <span className="mfg-diagram-chip">Oracle</span>
+                    <span className="mfg-diagram-chip">Custom ERP</span>
+                  </div>
+                </div>
+
+                {/* Connector Flow 1 */}
+                <div className="mfg-diagram-flow">
+                  <div className="mfg-diagram-flow__line" />
+                  <div className="mfg-diagram-flow__label">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="7 10 12 15 17 10"/><polyline points="17 14 12 9 7 14"/></svg>
+                    <span>Bidirectional Production &amp; Order Sync</span>
+                  </div>
+                </div>
+
+                {/* Middle Tier: MANUFAPP MES (Highlighted) */}
+                <div className="mfg-diagram-tier mfg-diagram-tier--mes">
+                  <div className="mfg-diagram-tier__badge-row">
+                    <span className="mfg-diagram-mes-badge">
+                      <span className="mfg-hero__badge-pulse" aria-hidden="true" />
+                      THE REAL-TIME LAYER
+                    </span>
+                    <span className="mfg-diagram-speed-pill">&lt;12ms latency</span>
+                  </div>
+                  <h4 className="mfg-diagram-mes-title">Manufapp MES System</h4>
+                  <p className="mfg-diagram-mes-subtitle">Tracks what is being made, how well it is going &amp; what is stopping it</p>
+
+                  <div className="mfg-diagram-mes-grid">
+                    <div className="mfg-diagram-mes-cell">
+                      <span className="mfg-diagram-mes-cell__label">Production</span>
+                      <span className="mfg-diagram-mes-cell__status">Live Count</span>
+                    </div>
+                    <div className="mfg-diagram-mes-cell">
+                      <span className="mfg-diagram-mes-cell__label">Quality</span>
+                      <span className="mfg-diagram-mes-cell__status">Zero Defect</span>
+                    </div>
+                    <div className="mfg-diagram-mes-cell">
+                      <span className="mfg-diagram-mes-cell__label">Inventory</span>
+                      <span className="mfg-diagram-mes-cell__status">WIP Sync</span>
+                    </div>
+                    <div className="mfg-diagram-mes-cell">
+                      <span className="mfg-diagram-mes-cell__label">Machines</span>
+                      <span className="mfg-diagram-mes-cell__status">99.8% Uptime</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Connector Flow 2 */}
+                <div className="mfg-diagram-flow">
+                  <div className="mfg-diagram-flow__line" />
+                  <div className="mfg-diagram-flow__label">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="7 10 12 15 17 10"/><polyline points="17 14 12 9 7 14"/></svg>
+                    <span>Continuous Shop-Floor Sensor Telemetry</span>
+                  </div>
+                </div>
+
+                {/* Bottom Tier: Shop Floor & Machines */}
+                <div className="mfg-diagram-tier mfg-diagram-tier--floor">
+                  <div className="mfg-diagram-tier__header">
+                    <span className="mfg-diagram-tier__tag">FOUNDATION LAYER</span>
+                    <h4 className="mfg-diagram-tier__title">Shop-Floor Machines &amp; Teams</h4>
+                  </div>
+                  <div className="mfg-diagram-tier__chips">
+                    <span className="mfg-diagram-chip">PLCs &amp; CNCs</span>
+                    <span className="mfg-diagram-chip">IoT Sensors</span>
+                    <span className="mfg-diagram-chip">Vision Cameras</span>
+                    <span className="mfg-diagram-chip">Operator Tablets</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 3. METRICS BANNER ── */}
       <section className="mfg-stats-strip" aria-label="Key Manufacturing Outcomes">
         <div className="mfg-container">
           <div className="mfg-stats-grid">
