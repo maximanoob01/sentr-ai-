@@ -61,6 +61,7 @@ const navItems: NavItem[] = [
       href: '/solutions'
     }
   },
+  { label: 'Cloud Solutions', href: '/cloud-solutions' },
   {
     label: 'Products',
     href: '/products',
@@ -108,7 +109,6 @@ const navItems: NavItem[] = [
       href: '/industries'
     }
   },
-  { label: 'Cloud Solutions', href: '/cloud-solutions' },
   {
     label: 'About Us',
     href: '/company/about',
