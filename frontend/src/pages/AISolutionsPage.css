@@ -327,60 +327,40 @@
   align-items: stretch;
 }
 
+/* ================================================================
+   SENTR AI UNIFIED BLUE & DARK GREY CARD SYSTEM
+   Enterprise-grade high-contrast theme matching Sentr AI brand
+   ================================================================ */
+
 .ai-sol-card {
   border-radius: 24px;
-  border: 1px solid #e2e8f0;
+  background: linear-gradient(155deg, #0b1120 0%, #0f172a 45%, #131d35 100%);
+  border: 1px solid rgba(56, 189, 248, 0.22);
   padding: 2.15rem 1.85rem 1.85rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(15, 23, 42, 0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-sol-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(56, 189, 248, 0.45) 50%, transparent 100%);
+  pointer-events: none;
 }
 
 .ai-sol-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
-}
-
-/* ================================================================
-   ENTERPRISE LIGHT BLUE & LIGHT GREY CARD SYSTEM (NON-AI LOOK)
-   ================================================================ */
-
-/* ── Light Blue Enterprise Cards (Cards 1, 3, 5) ── */
-.ai-sol-card--blue,
-.ai-sol-card--coral,
-.ai-sol-card--emerald,
-.ai-sol-card--amber {
-  background: linear-gradient(150deg, #ffffff 0%, #f0f7ff 50%, #e0f2fe 100%);
-  border: 1px solid #bae6fd;
-  box-shadow: 0 10px 25px -8px rgba(2, 132, 199, 0.14), 0 4px 12px rgba(15, 23, 42, 0.05);
-}
-
-.ai-sol-card--blue:hover,
-.ai-sol-card--coral:hover,
-.ai-sol-card--emerald:hover,
-.ai-sol-card--amber:hover {
-  border-color: #38bdf8;
-  box-shadow: 0 20px 38px -10px rgba(2, 132, 199, 0.22), 0 0 20px rgba(56, 189, 248, 0.16);
-}
-
-/* ── Light Grey Enterprise Cards (Cards 2, 4, 6) ── */
-.ai-sol-card--grey,
-.ai-sol-card--violet,
-.ai-sol-card--cyan,
-.ai-sol-card--rose {
-  background: linear-gradient(150deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 10px 25px -8px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(15, 23, 42, 0.04);
-}
-
-.ai-sol-card--grey:hover,
-.ai-sol-card--violet:hover,
-.ai-sol-card--cyan:hover,
-.ai-sol-card--rose:hover {
-  border-color: #cbd5e1;
-  box-shadow: 0 20px 38px -10px rgba(15, 23, 42, 0.14), 0 0 16px rgba(148, 163, 184, 0.15);
+  border-color: rgba(56, 189, 248, 0.55);
+  box-shadow: 0 20px 42px -10px rgba(0, 0, 0, 0.55), 0 0 24px rgba(56, 189, 248, 0.2);
 }
 
 .ai-sol-card__top {
@@ -388,63 +368,49 @@
   flex-direction: column;
 }
 
-/* ── Enterprise Icon Box (Clean Corporate Badges) ── */
+/* ── Unified Enterprise Icon Box ── */
 .ai-sol-card__icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.25rem;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: rgba(14, 165, 233, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #38bdf8;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .ai-sol-card:hover .ai-sol-card__icon {
   transform: translateY(-2px);
-}
-
-.ai-sol-card__icon--blue,
-.ai-sol-card__icon--coral,
-.ai-sol-card__icon--emerald,
-.ai-sol-card__icon--amber {
-  background: #e0f2fe;
-  border: 1px solid #7dd3fc;
-  color: #0284c7;
-  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.12);
-}
-
-.ai-sol-card__icon--grey,
-.ai-sol-card__icon--violet,
-.ai-sol-card__icon--cyan,
-.ai-sol-card__icon--rose {
-  background: #f1f5f9;
-  border: 1px solid #cbd5e1;
-  color: #334155;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+  border-color: #38bdf8;
+  box-shadow: 0 6px 18px rgba(56, 189, 248, 0.35);
 }
 
 .ai-sol-card__title {
-  font-size: 1.25rem;
+  font-size: 1.28rem;
   font-weight: 800;
-  color: #0f172a;
+  color: #ffffff;
   line-height: 1.3;
-  margin: 0 0 0.45rem 0;
+  margin: 0 0 0.5rem 0;
   letter-spacing: -0.015em;
 }
 
 .ai-sol-card__tagline {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #0f172a;
+  color: #38bdf8;
   line-height: 1.45;
-  margin: 0 0 0.65rem 0;
+  margin: 0 0 0.75rem 0;
 }
 
 .ai-sol-card__desc {
-  font-size: 0.86rem;
+  font-size: 0.88rem;
   line-height: 1.6;
-  color: #475569;
+  color: #94a3b8;
   margin: 0 0 1.25rem 0;
 }
 
@@ -456,28 +422,14 @@
   display: contents;
 }
 
-/* ── What We Offer Box ── */
+/* ── What We Offer Container ── */
 .ai-sol-card__offer {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 0.95rem 1.15rem;
+  background: rgba(15, 23, 42, 0.75);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1rem 1.15rem;
   margin-bottom: 0.5rem;
-}
-
-.ai-sol-card--blue .ai-sol-card__offer,
-.ai-sol-card--coral .ai-sol-card__offer,
-.ai-sol-card--emerald .ai-sol-card__offer,
-.ai-sol-card--amber .ai-sol-card__offer {
-  border: 1px solid #bae6fd;
-  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.05);
-}
-
-.ai-sol-card--grey .ai-sol-card__offer,
-.ai-sol-card--violet .ai-sol-card__offer,
-.ai-sol-card--cyan .ai-sol-card__offer,
-.ai-sol-card--rose .ai-sol-card__offer {
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.25);
 }
 
 .ai-sol-card__offer-title {
@@ -485,22 +437,9 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: #38bdf8;
   margin-bottom: 0.65rem;
   display: block;
-}
-
-.ai-sol-card--blue .ai-sol-card__offer-title,
-.ai-sol-card--coral .ai-sol-card__offer-title,
-.ai-sol-card--emerald .ai-sol-card__offer-title,
-.ai-sol-card--amber .ai-sol-card__offer-title {
-  color: #0284c7;
-}
-
-.ai-sol-card--grey .ai-sol-card__offer-title,
-.ai-sol-card--violet .ai-sol-card__offer-title,
-.ai-sol-card--cyan .ai-sol-card__offer-title,
-.ai-sol-card--rose .ai-sol-card__offer-title {
-  color: #475569;
 }
 
 /* ── Bullet Points ── */
@@ -516,7 +455,7 @@
 .ai-sol-card__list li {
   font-size: 0.86rem;
   line-height: 1.45;
-  color: #1e293b;
+  color: #cbd5e1;
   position: relative;
   padding-left: 1.15rem;
 }
@@ -529,45 +468,19 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-}
-
-.ai-sol-card--blue .ai-sol-card__list li::before,
-.ai-sol-card--coral .ai-sol-card__list li::before,
-.ai-sol-card--emerald .ai-sol-card__list li::before,
-.ai-sol-card--amber .ai-sol-card__list li::before {
-  background-color: #0284c7;
-}
-
-.ai-sol-card--grey .ai-sol-card__list li::before,
-.ai-sol-card--violet .ai-sol-card__list li::before,
-.ai-sol-card--cyan .ai-sol-card__list li::before,
-.ai-sol-card--rose .ai-sol-card__list li::before {
-  background-color: #475569;
+  background-color: #38bdf8;
+  box-shadow: 0 0 6px rgba(56, 189, 248, 0.6);
 }
 
 /* ── Stats Footer ── */
 .ai-sol-card__footer {
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 1.15rem;
   margin-top: 1.5rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
   text-align: center;
-}
-
-.ai-sol-card--blue .ai-sol-card__footer,
-.ai-sol-card--coral .ai-sol-card__footer,
-.ai-sol-card--emerald .ai-sol-card__footer,
-.ai-sol-card--amber .ai-sol-card__footer {
-  border-top-color: #bae6fd;
-}
-
-.ai-sol-card--grey .ai-sol-card__footer,
-.ai-sol-card--violet .ai-sol-card__footer,
-.ai-sol-card--cyan .ai-sol-card__footer,
-.ai-sol-card--rose .ai-sol-card__footer {
-  border-top-color: #e2e8f0;
 }
 
 .ai-sol-card__stat {
@@ -577,30 +490,17 @@
 }
 
 .ai-sol-card__stat-val {
-  font-size: 1.12rem;
+  font-size: 1.15rem;
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.2;
-}
-
-.ai-sol-card--blue .ai-sol-card__stat-val,
-.ai-sol-card--coral .ai-sol-card__stat-val,
-.ai-sol-card--emerald .ai-sol-card__stat-val,
-.ai-sol-card--amber .ai-sol-card__stat-val {
-  color: #0284c7;
-}
-
-.ai-sol-card--grey .ai-sol-card__stat-val,
-.ai-sol-card--violet .ai-sol-card__stat-val,
-.ai-sol-card--cyan .ai-sol-card__stat-val,
-.ai-sol-card--rose .ai-sol-card__stat-val {
-  color: #0f172a;
+  color: #38bdf8;
 }
 
 .ai-sol-card__stat-lbl {
   font-size: 0.68rem;
   font-weight: 600;
-  color: #64748b;
+  color: #94a3b8;
   margin-top: 0.25rem;
   line-height: 1.25;
 }
@@ -1313,20 +1213,7 @@
     margin-top: 0.2rem;
     box-shadow: none;
     text-decoration: none;
-  }
-
-  .ai-sol-card--blue .ai-sol-card__toggle,
-  .ai-sol-card--coral .ai-sol-card__toggle,
-  .ai-sol-card--emerald .ai-sol-card__toggle,
-  .ai-sol-card--amber .ai-sol-card__toggle {
-    color: #0284c7;
-  }
-
-  .ai-sol-card--grey .ai-sol-card__toggle,
-  .ai-sol-card--violet .ai-sol-card__toggle,
-  .ai-sol-card--cyan .ai-sol-card__toggle,
-  .ai-sol-card--rose .ai-sol-card__toggle {
-    color: #334155;
+    color: #38bdf8;
   }
 
   .ai-sol-card__toggle:hover {
