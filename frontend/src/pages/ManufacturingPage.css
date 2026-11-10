@@ -26,17 +26,18 @@
    ================================================================ */
 .mfg-hero {
   position: relative;
-  padding-top: calc(var(--nav-height, 70px) + 2rem);
-  padding-bottom: 4rem;
+  padding-top: calc(var(--nav-height, 70px) + 3.5rem);
+  padding-bottom: 5.5rem;
   overflow: hidden;
   background-color: #070b14;
   border-bottom: 1px solid rgba(56, 189, 248, 0.15);
   display: flex;
   align-items: center;
-  min-height: 580px;
+  justify-content: center;
+  min-height: 540px;
 }
 
-/* Cinematic dimmed background using aav.png */
+/* Full Hero Background image using aav.png */
 .mfg-hero__bg {
   position: absolute;
   inset: 0;
@@ -46,16 +47,17 @@
   background-position: center;
   background-repeat: no-repeat;
   z-index: 0;
-  opacity: 0.28;
-  filter: brightness(0.65) contrast(1.15);
+  opacity: 1;
+  filter: brightness(0.68) contrast(1.1);
+  pointer-events: none;
 }
 
-/* Dark gradient scrim */
+/* Neutral Dark Gradient Scrim to ensure crisp typography contrast */
 .mfg-hero__overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 75% 40%, rgba(14, 165, 233, 0.12) 0%, transparent 60%),
-              linear-gradient(180deg, rgba(7, 11, 20, 0.88) 0%, rgba(7, 11, 20, 0.98) 100%);
+  background: radial-gradient(circle at 50% 30%, rgba(14, 165, 233, 0.1) 0%, transparent 65%),
+              linear-gradient(180deg, rgba(7, 11, 20, 0.65) 0%, rgba(7, 11, 20, 0.88) 100%);
   z-index: 1;
   pointer-events: none;
 }
@@ -106,10 +108,13 @@
 .mfg-hero__inner {
   position: relative;
   z-index: 3;
-  display: grid;
-  grid-template-columns: 1.15fr 0.95fr;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 3rem;
+  justify-content: center;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
   width: 100%;
 }
 
@@ -117,8 +122,9 @@
 .mfg-hero__content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;
+  text-align: center;
+  width: 100%;
 }
 
 /* Badge */
@@ -128,7 +134,7 @@
   gap: 0.65rem;
   padding: 0.38rem 0.95rem;
   border-radius: 9999px;
-  background: rgba(14, 165, 233, 0.1);
+  background: rgba(14, 165, 233, 0.12);
   border: 1px solid rgba(56, 189, 248, 0.35);
   margin-bottom: 1.25rem;
   backdrop-filter: blur(8px);
@@ -168,13 +174,13 @@
 
 /* Title */
 .mfg-hero__title {
-  font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+  font-size: clamp(2.3rem, 4.4vw, 3.6rem);
   font-weight: 850;
   line-height: 1.15;
   letter-spacing: -0.03em;
   color: #ffffff;
-  margin: 0 0 1.2rem 0;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.75);
+  margin: 0 0 1.25rem 0;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.8);
 }
 
 .mfg-hero__title-accent {
@@ -198,13 +204,13 @@
 
 /* Subtitle */
 .mfg-hero__subtitle {
-  font-size: clamp(1rem, 1.2vw, 1.15rem);
-  line-height: 1.65;
-  color: #cbd5e1;
-  max-width: 620px;
-  min-height: 4rem;
-  margin: 0 0 1.85rem 0;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  font-size: clamp(1.05rem, 1.35vw, 1.2rem);
+  line-height: 1.7;
+  color: #e2e8f0;
+  max-width: 760px;
+  min-height: 3.8rem;
+  margin: 0 auto 2.25rem auto;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.75);
 }
 
 /* Typing Cursor */
@@ -239,9 +245,10 @@
 .mfg-hero__actions {
   display: flex;
   align-items: center;
-  gap: 1.1rem;
+  justify-content: center;
+  gap: 1.25rem;
   flex-wrap: wrap;
-  margin-bottom: 2rem;
+  margin-bottom: 2.25rem;
 }
 
 .mfg-btn-primary {
@@ -298,10 +305,11 @@
 .mfg-hero__highlights {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  justify-content: center;
+  gap: 1.5rem;
   flex-wrap: wrap;
-  padding-top: 0.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .mfg-hero__highlight-item {
@@ -310,123 +318,7 @@
   gap: 0.45rem;
   font-size: 0.82rem;
   font-weight: 500;
-  color: #94a3b8;
-}
-
-/* ================================================================
-   HERO VISUAL SHOWCASE (aav.png Server & Telemetry Frame)
-   ================================================================ */
-.mfg-hero__visual {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.mfg-hero__card-frame {
-  position: relative;
-  width: 100%;
-  border-radius: 22px;
-  overflow: hidden;
-  background: #0b1120;
-  border: 1px solid rgba(56, 189, 248, 0.32);
-  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.8),
-              0 0 30px rgba(14, 165, 233, 0.2);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  aspect-ratio: 16 / 10.5;
-}
-
-.mfg-hero__card-frame:hover {
-  transform: translateY(-4px);
-  border-color: #38bdf8;
-  box-shadow: 0 28px 60px -10px rgba(0, 0, 0, 0.9),
-              0 0 40px rgba(56, 189, 248, 0.32);
-}
-
-.mfg-hero__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.6s ease;
-}
-
-.mfg-hero__card-frame:hover .mfg-hero__img {
-  transform: scale(1.03);
-}
-
-.mfg-hero__card-scrim {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(7, 11, 20, 0.25) 0%, rgba(7, 11, 20, 0.65) 100%);
-  pointer-events: none;
-}
-
-/* Floating Badges over aav.png */
-.mfg-hero__floating-badge {
-  position: absolute;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(11, 17, 32, 0.88);
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  color: #ffffff;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
-  z-index: 2;
-}
-
-.mfg-hero__floating-badge--top {
-  top: 1rem;
-  left: 1rem;
-  padding: 0.35rem 0.85rem;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: #38bdf8;
-}
-
-.mfg-hero__floating-badge--bottom-left {
-  bottom: 1rem;
-  left: 1rem;
-  padding: 0.65rem 1rem;
-  gap: 1rem;
-}
-
-.mfg-floating-stat {
-  display: flex;
-  flex-direction: column;
-}
-
-.mfg-floating-stat__val {
-  font-size: 1.05rem;
-  font-weight: 800;
-  color: #38bdf8;
-  line-height: 1.1;
-}
-
-.mfg-floating-stat__lbl {
-  font-size: 0.62rem;
-  font-weight: 600;
-  color: #94a3b8;
-  margin-top: 0.15rem;
-}
-
-.mfg-floating-divider {
-  width: 1px;
-  height: 24px;
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.mfg-hero__floating-badge--bottom-right {
-  bottom: 1rem;
-  right: 1rem;
-  padding: 0.38rem 0.85rem;
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: #10b981;
+  color: #cbd5e1;
 }
 
 /* ================================================================
@@ -1153,11 +1045,6 @@
    RESPONSIVE BREAKPOINTS
    ================================================================ */
 @media (max-width: 1024px) {
-  .mfg-hero__inner {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-
   .mfg-mes-overview__grid {
     grid-template-columns: 1fr;
     gap: 2.75rem;
@@ -1231,15 +1118,6 @@
   .mfg-btn-primary,
   .mfg-btn-secondary {
     width: 100%;
-  }
-
-  .mfg-hero__floating-badge--bottom-left {
-    padding: 0.45rem 0.75rem;
-    gap: 0.6rem;
-  }
-
-  .mfg-floating-stat__val {
-    font-size: 0.9rem;
   }
 
   .mfg-modules-grid {

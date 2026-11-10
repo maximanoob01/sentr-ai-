@@ -199,14 +199,11 @@ export const ManufacturingPage: React.FC = () => {
     <main className="mfg-page">
       {/* ── 1. HERO SECTION ── */}
       <section className="mfg-hero" aria-label="Smart Manufacturing Hero">
-        {/* Dim background ambient scrim using aavImg */}
+        {/* Full Hero Background image using aav.png */}
         <div
           className="mfg-hero__bg"
           style={{
             backgroundImage: `url(${aavImg})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
           }}
           aria-hidden="true"
         />
@@ -217,7 +214,6 @@ export const ManufacturingPage: React.FC = () => {
 
         <div className="mfg-container">
           <div className="mfg-hero__inner">
-            {/* LEFT: Headline, Subtext & Actions */}
             <div className="mfg-hero__content">
               <div className="mfg-hero__badge">
                 <span className="mfg-hero__badge-pulse" aria-hidden="true" />
@@ -296,44 +292,6 @@ export const ManufacturingPage: React.FC = () => {
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                   <span>Zero Disruption Setup</span>
-                </div>
-              </div>
-            </div>
-
-            {/* RIGHT: High-Tech Visual Container featuring aav.png */}
-            <div className="mfg-hero__visual">
-              <div className="mfg-hero__card-frame">
-                <img
-                  src={aavImg}
-                  alt="Manufapp Real-Time Factory Telemetry Server Rack and Edge Intelligence"
-                  className="mfg-hero__img"
-                />
-                <div className="mfg-hero__card-scrim" aria-hidden="true" />
-
-                {/* Floating Telemetry Badges */}
-                <div className="mfg-hero__floating-badge mfg-hero__floating-badge--top">
-                  <span className="mfg-hero__badge-pulse" aria-hidden="true" />
-                  <span>LIVE FACTORY STREAM</span>
-                </div>
-
-                <div className="mfg-hero__floating-badge mfg-hero__floating-badge--bottom-left">
-                  <div className="mfg-floating-stat">
-                    <span className="mfg-floating-stat__val">99.8%</span>
-                    <span className="mfg-floating-stat__lbl">Live Line Uptime</span>
-                  </div>
-                  <div className="mfg-floating-divider" />
-                  <div className="mfg-floating-stat">
-                    <span className="mfg-floating-stat__val">&lt;12ms</span>
-                    <span className="mfg-floating-stat__lbl">Edge Sync Latency</span>
-                  </div>
-                </div>
-
-                <div className="mfg-hero__floating-badge mfg-hero__floating-badge--bottom-right">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10" />
-                    <polyline points="12 6 12 12 14 14" />
-                  </svg>
-                  <span>Machines Connected: Active</span>
                 </div>
               </div>
             </div>
