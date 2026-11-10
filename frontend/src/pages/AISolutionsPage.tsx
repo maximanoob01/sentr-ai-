@@ -168,9 +168,9 @@ export const AISolutionsPage: React.FC = () => {
 
           <div className="ai-solutions-grid">
             {/* Card 1: AI Computer Vision */}
-            <article className={`ai-sol-card ai-sol-card--coral ${expandedCards[0] ? 'ai-sol-card--expanded' : ''}`}>
+            <article className={`ai-sol-card ai-sol-card--blue ${expandedCards[0] ? 'ai-sol-card--expanded' : ''}`}>
               <div className="ai-sol-card__top">
-                <div className="ai-sol-card__icon ai-sol-card__icon--coral" aria-hidden="true">
+                <div className="ai-sol-card__icon ai-sol-card__icon--blue" aria-hidden="true">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
                     <circle cx="12" cy="13" r="4" />
@@ -230,9 +230,9 @@ export const AISolutionsPage: React.FC = () => {
             </article>
 
             {/* Card 2: Generative AI & AI Chatbots */}
-            <article className={`ai-sol-card ai-sol-card--violet ${expandedCards[1] ? 'ai-sol-card--expanded' : ''}`}>
+            <article className={`ai-sol-card ai-sol-card--grey ${expandedCards[1] ? 'ai-sol-card--expanded' : ''}`}>
               <div className="ai-sol-card__top">
-                <div className="ai-sol-card__icon ai-sol-card__icon--violet" aria-hidden="true">
+                <div className="ai-sol-card__icon ai-sol-card__icon--grey" aria-hidden="true">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
                     <line x1="9" y1="10" x2="15" y2="10" />
@@ -293,9 +293,9 @@ export const AISolutionsPage: React.FC = () => {
             </article>
 
             {/* Card 3: Predictive Analytics & Machine Learning */}
-            <article className={`ai-sol-card ai-sol-card--emerald ${expandedCards[2] ? 'ai-sol-card--expanded' : ''}`}>
+            <article className={`ai-sol-card ai-sol-card--blue ${expandedCards[2] ? 'ai-sol-card--expanded' : ''}`}>
               <div className="ai-sol-card__top">
-                <div className="ai-sol-card__icon ai-sol-card__icon--emerald" aria-hidden="true">
+                <div className="ai-sol-card__icon ai-sol-card__icon--blue" aria-hidden="true">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="18" y1="20" x2="18" y2="10" />
                     <line x1="12" y1="20" x2="12" y2="4" />
@@ -357,9 +357,9 @@ export const AISolutionsPage: React.FC = () => {
             </article>
 
             {/* Card 4: AI Automation & Intelligent Agents */}
-            <article className={`ai-sol-card ai-sol-card--cyan ${expandedCards[3] ? 'ai-sol-card--expanded' : ''}`}>
+            <article className={`ai-sol-card ai-sol-card--grey ${expandedCards[3] ? 'ai-sol-card--expanded' : ''}`}>
               <div className="ai-sol-card__top">
-                <div className="ai-sol-card__icon ai-sol-card__icon--cyan" aria-hidden="true">
+                <div className="ai-sol-card__icon ai-sol-card__icon--grey" aria-hidden="true">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                     <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
                   </svg>
@@ -418,9 +418,9 @@ export const AISolutionsPage: React.FC = () => {
             </article>
 
             {/* Card 5: Intelligent Document Processing */}
-            <article className={`ai-sol-card ai-sol-card--amber ${expandedCards[4] ? 'ai-sol-card--expanded' : ''}`}>
+            <article className={`ai-sol-card ai-sol-card--blue ${expandedCards[4] ? 'ai-sol-card--expanded' : ''}`}>
               <div className="ai-sol-card__top">
-                <div className="ai-sol-card__icon ai-sol-card__icon--amber" aria-hidden="true">
+                <div className="ai-sol-card__icon ai-sol-card__icon--blue" aria-hidden="true">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                     <polyline points="14 2 14 8 20 8" />
@@ -483,9 +483,9 @@ export const AISolutionsPage: React.FC = () => {
             </article>
 
             {/* Card 6: Custom AI Development */}
-            <article className={`ai-sol-card ai-sol-card--rose ${expandedCards[5] ? 'ai-sol-card--expanded' : ''}`}>
+            <article className={`ai-sol-card ai-sol-card--grey ${expandedCards[5] ? 'ai-sol-card--expanded' : ''}`}>
               <div className="ai-sol-card__top">
-                <div className="ai-sol-card__icon ai-sol-card__icon--rose" aria-hidden="true">
+                <div className="ai-sol-card__icon ai-sol-card__icon--grey" aria-hidden="true">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                     <polyline points="16 18 22 12 16 6" />
                     <polyline points="8 6 2 12 8 18" />
