@@ -50,13 +50,13 @@ export const CookiePage: React.FC = () => {
     window.scrollTo(0, 0);
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            setActiveSection(e.target.id);
-          }
-        });
+        const visible = entries.filter((e) => e.isIntersecting);
+        if (visible.length > 0) {
+          visible.sort((a, b) => Math.abs(a.boundingClientRect.top) - Math.abs(b.boundingClientRect.top));
+          setActiveSection(visible[0].target.id);
+        }
       },
-      { rootMargin: "-20% 0px -70% 0px" }
+      { rootMargin: "-15% 0px -65% 0px" }
     );
     tocItems.forEach(({ id }) => {
       const el = document.getElementById(id);
@@ -65,18 +65,25 @@ export const CookiePage: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Smooth scroll active mobile pill into view horizontally
+  // Smoothly scroll ONLY the horizontal mobile pill bar container itself.
+  // NEVER call scrollIntoView on DOM nodes, which hijacks and locks window vertical scrolling!
   useEffect(() => {
-    if (!tocNavRef.current) return;
-    const activeBtn = tocNavRef.current.querySelector<HTMLButtonElement>(
+    const nav = tocNavRef.current;
+    if (!nav) return;
+    // Only adjust horizontal scroll if nav is actually scrollable horizontally (tablet & mobile)
+    if (nav.scrollWidth <= nav.clientWidth) return;
+
+    const activeBtn = nav.querySelector<HTMLButtonElement>(
       `button[data-id="${activeSection}"]`
     );
-    if (activeBtn) {
-      activeBtn.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest",
-        inline: "center",
-      });
+    if (!activeBtn) return;
+
+    const navRect = nav.getBoundingClientRect();
+    const btnRect = activeBtn.getBoundingClientRect();
+    const offset = (btnRect.left - navRect.left) - (navRect.width / 2) + (btnRect.width / 2);
+
+    if (Math.abs(offset) > 10) {
+      nav.scrollBy({ left: offset, behavior: "smooth" });
     }
   }, [activeSection]);
 

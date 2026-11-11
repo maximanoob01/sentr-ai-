@@ -4,7 +4,7 @@
   background: #f8fafc;
   min-height: 100vh;
   position: relative;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* ==========================================================================
@@ -84,7 +84,7 @@
    ========================================================================== */
 .cookie-toc {
   position: sticky;
-  top: 100px;
+  top: calc(var(--nav-height, 70px) + 1.5rem);
   width: 240px;
   flex-shrink: 0;
   background: #ffffff;
@@ -93,6 +93,8 @@
   padding: 1.5rem;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
   box-sizing: border-box;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
   z-index: 10;
 }
 
