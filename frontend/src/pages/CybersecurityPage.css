@@ -1695,22 +1695,26 @@
   }
 
   .cyber-hero {
-    padding-top: calc(var(--nav-height, 70px) + 2rem);
-    padding-bottom: 3.5rem;
-    min-height: 440px;
+    padding-top: calc(var(--nav-height, 70px) + 0.65rem);
+    padding-bottom: 2rem;
+    min-height: auto;
   }
 
   .cyber-hero__title {
-    font-size: 1.85rem;
-    line-height: 1.25;
-    margin-bottom: 1rem;
+    font-size: 1.65rem;
+    line-height: 1.22;
+    margin-bottom: 0.45rem;
+  }
+
+  .cyber-hero__beam-divider {
+    margin: 0.5rem auto 0.75rem auto;
   }
 
   .cyber-hero__subtitle {
-    font-size: 0.92rem;
-    line-height: 1.55;
-    min-height: 2.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    min-height: auto;
+    margin-bottom: 0;
   }
 
   .cyber-btn {
@@ -1867,21 +1871,26 @@
   }
 
   .cyber-hero {
-    padding-top: calc(var(--nav-height, 70px) + 1.5rem);
-    padding-bottom: 3rem;
-    min-height: 400px;
+    padding-top: calc(var(--nav-height, 70px) + 0.5rem);
+    padding-bottom: 1.75rem;
+    min-height: auto;
   }
 
   .cyber-hero__title {
-    font-size: 1.55rem;
-    margin-bottom: 0.85rem;
+    font-size: 1.45rem;
+    line-height: 1.24;
+    margin-bottom: 0.4rem;
+  }
+
+  .cyber-hero__beam-divider {
+    margin: 0.45rem auto 0.65rem auto;
   }
 
   .cyber-hero__subtitle {
-    font-size: 0.84rem;
-    line-height: 1.5;
-    min-height: 2.8rem;
-    margin-bottom: 1.35rem;
+    font-size: 0.82rem;
+    line-height: 1.48;
+    min-height: auto;
+    margin-bottom: 0;
   }
 
   .cyber-btn {
@@ -2127,22 +2136,27 @@
   }
 
   .cyber-hero {
-    padding-top: calc(var(--nav-height, 70px) + 1.25rem);
-    padding-bottom: 2.75rem;
-    min-height: 380px;
+    padding-top: calc(var(--nav-height, 70px) + 0.35rem);
+    padding-bottom: 1.45rem;
+    min-height: auto;
   }
 
   .cyber-hero__title {
-    font-size: 1.35rem;
-    line-height: 1.28;
-    margin-bottom: 0.75rem;
+    font-size: 1.3rem;
+    line-height: 1.25;
+    margin-bottom: 0.35rem;
+  }
+
+  .cyber-hero__beam-divider {
+    width: 90px;
+    margin: 0.35rem auto 0.55rem auto;
   }
 
   .cyber-hero__subtitle {
     font-size: 0.78rem;
-    line-height: 1.48;
-    min-height: 3.2rem;
-    margin-bottom: 1.25rem;
+    line-height: 1.45;
+    min-height: auto;
+    margin-bottom: 0;
   }
 
   .cyber-btn {
@@ -2259,12 +2273,21 @@
     padding: 0 0.5rem;
   }
 
+  .cyber-hero {
+    padding-top: calc(var(--nav-height, 70px) + 0.25rem);
+    padding-bottom: 1.25rem;
+    min-height: auto;
+  }
+
   .cyber-hero__title {
-    font-size: 1.22rem;
+    font-size: 1.18rem;
+    margin-bottom: 0.3rem;
   }
 
   .cyber-hero__subtitle {
     font-size: 0.74rem;
+    min-height: auto;
+    margin-bottom: 0;
   }
 
   .cyber-threat__title {
