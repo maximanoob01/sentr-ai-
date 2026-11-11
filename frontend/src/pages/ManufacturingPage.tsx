@@ -271,7 +271,7 @@ export const ManufacturingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ── ARCHITECTURE SLATE SECTION (WHITE BACKGROUND) ── */}
+      {/* ── ARCHITECTURE SLATE SECTION ── */}
       <section className="mfg-slate-section" aria-label="Manufapp MES System Overview">
         <div className="mfg-container">
           <div className="mfg-slate-wrapper">

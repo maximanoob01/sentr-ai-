@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import heroImg from "../assets/LEGAL/hero.png";
 import "./CookiePage.css";
 

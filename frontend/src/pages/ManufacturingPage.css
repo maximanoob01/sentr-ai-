@@ -227,14 +227,13 @@
 }
 
 /* ================================================================
-   ARCHITECTURE SLATE SECTION (CLEAN WHITE BACKGROUND)
+   ARCHITECTURE SLATE SECTION (SEAMLESS DARK BACKGROUND)
    ================================================================ */
 .mfg-slate-section {
   position: relative;
-  background-color: #ffffff;
-  padding: 4.5rem 0;
-  border-top: 1px solid #e2e8f0;
-  border-bottom: 1px solid #e2e8f0;
+  background: linear-gradient(180deg, #030712 0%, #070b14 100%);
+  padding: 2.25rem 0 2.5rem;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -246,24 +245,25 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 1080px;
+  max-width: 820px;
   margin: 0 auto;
 }
 
 .mfg-slate-img {
   width: 100%;
-  max-width: 1020px;
+  max-width: 760px;
   height: auto;
   display: block;
   object-fit: contain;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(15, 23, 42, 0.04);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  transition: transform 0.3s ease;
 }
 
 .mfg-slate-img:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 36px -6px rgba(15, 23, 42, 0.12), 0 6px 16px rgba(15, 23, 42, 0.06);
+  box-shadow: none;
 }
 
 /* ================================================================
@@ -755,7 +755,15 @@
    ================================================================ */
 @media (max-width: 1024px) {
   .mfg-slate-section {
-    padding: 3.5rem 0;
+    padding: 2rem 0;
+  }
+
+  .mfg-slate-wrapper {
+    max-width: 720px;
+  }
+
+  .mfg-slate-img {
+    max-width: 680px;
   }
 
   .mfg-mes-pillars {
@@ -792,12 +800,17 @@
 
 @media (max-width: 768px) {
   .mfg-slate-section {
-    padding: 2.5rem 0 2.75rem;
+    padding: 1.5rem 0 1.75rem;
+  }
+
+  .mfg-slate-wrapper {
+    max-width: 100%;
   }
 
   .mfg-slate-img {
-    border-radius: 8px;
-    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
+    max-width: 90%;
+    border-radius: 0;
+    box-shadow: none;
   }
 
   .mfg-hero {
@@ -857,11 +870,13 @@
 
 @media (max-width: 480px) {
   .mfg-slate-section {
-    padding: 1.75rem 0 2rem;
+    padding: 1rem 0 1.25rem;
   }
 
   .mfg-slate-img {
-    border-radius: 6px;
+    max-width: 95%;
+    border-radius: 0;
+    box-shadow: none;
   }
 
   .mfg-hero__title {
