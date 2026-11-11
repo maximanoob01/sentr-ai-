@@ -628,6 +628,9 @@ export const CybersecurityPage: React.FC = () => {
 
       {/* ── 3.5 OUR EXPERT CYBER SECURITY SERVICES (STAGGERED CHECKERBOARD GRID) ── */}
       <section className="cyber-expert-section" aria-labelledby="expert-services-heading">
+        {/* Dotted pattern in gradient style on the left side */}
+        <div className="cyber-expert__dots" aria-hidden="true" />
+
         <div className="cyber-container">
           {/* Section Header */}
           <div className="cyber-expert__header fade-in-up">
