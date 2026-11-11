@@ -428,6 +428,9 @@ export const SolutionsPage: React.FC = () => {
           2. CORE OFFERINGS SECTION (3 PILLARS)
           ================================================================ */}
       <section id="offerings" className="solutions-offerings-section" aria-label="Sentr AI Solutions Offerings">
+        {/* Top-Right Dotted Pattern Gradient Decor */}
+        <div className="solutions-offerings-decor" aria-hidden="true" />
+
         <div className="solutions-container">
           {/* Section Header */}
           <div className="solutions-section-header fade-in-up">
