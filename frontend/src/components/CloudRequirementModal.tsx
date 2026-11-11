@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './CloudRequirementModal.css';
 
 // Brand Logos
@@ -19,6 +19,7 @@ export const CloudRequirementModal: React.FC<CloudRequirementModalProps> = ({
   initialPlatform = '',
 }) => {
   const [activeSection, setActiveSection] = useState<number>(1);
+  const modalContainerRef = useRef<HTMLDivElement | null>(null);
 
   const [formData, setFormData] = useState({
     // Section 1: Company & Contact Details
@@ -96,16 +97,82 @@ export const CloudRequirementModal: React.FC<CloudRequirementModalProps> = ({
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const scrollToSection = (sectionNumber: number) => {
-    setActiveSection(sectionNumber);
-    const element = document.getElementById(`cloud-sec-${sectionNumber}`);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const validateStep1 = (): boolean => {
+    if (!formData.company.trim()) {
+      setErrorMessage('Please enter your Company Name.');
+      return false;
+    }
+    if (!formData.contact_person.trim()) {
+      setErrorMessage('Please enter the Contact Person name.');
+      return false;
+    }
+    if (!formData.email.trim() || !formData.email.includes('@')) {
+      setErrorMessage('Please enter a valid Business Email.');
+      return false;
+    }
+    if (!formData.phone.trim()) {
+      setErrorMessage('Please enter your Contact Number.');
+      return false;
+    }
+    setErrorMessage(null);
+    return true;
+  };
+
+  const validateStep2 = (): boolean => {
+    if (!formData.services.trim()) {
+      setErrorMessage('Please select a Required Cloud Service.');
+      return false;
+    }
+    setErrorMessage(null);
+    return true;
+  };
+
+  const isSec1Complete = Boolean(
+    formData.company.trim() &&
+    formData.contact_person.trim() &&
+    formData.email.trim() &&
+    formData.phone.trim()
+  );
+
+  const isSec2Complete = Boolean(formData.services.trim());
+
+  const goToSection = (targetStep: number) => {
+    if (activeSection === 1 && targetStep > 1 && !validateStep1()) return;
+    if (activeSection === 2 && targetStep > 2 && !validateStep2()) return;
+    setErrorMessage(null);
+    setActiveSection(targetStep);
+    if (modalContainerRef.current) {
+      modalContainerRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const handleNext = (targetStep: number) => {
+    if (activeSection === 1 && !validateStep1()) return;
+    if (activeSection === 2 && !validateStep2()) return;
+    setErrorMessage(null);
+    setActiveSection(targetStep);
+    if (modalContainerRef.current) {
+      modalContainerRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const handleBack = (targetStep: number) => {
+    setErrorMessage(null);
+    setActiveSection(targetStep);
+    if (modalContainerRef.current) {
+      modalContainerRef.current.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // If user presses enter on an earlier step, advance to next step
+    if (activeSection < 4) {
+      handleNext(activeSection + 1);
+      return;
+    }
+
     setIsSubmitting(true);
     setErrorMessage(null);
 
@@ -114,10 +181,17 @@ export const CloudRequirementModal: React.FC<CloudRequirementModalProps> = ({
       !formData.company.trim() ||
       !formData.contact_person.trim() ||
       !formData.email.trim() ||
-      !formData.phone.trim() ||
-      !formData.services.trim()
+      !formData.phone.trim()
     ) {
-      setErrorMessage('Please fill in all required fields (Company, Contact Person, Email, Phone, and Required Services).');
+      setActiveSection(1);
+      setErrorMessage('Please complete all required fields in Company & Contact Details.');
+      setIsSubmitting(false);
+      return;
+    }
+
+    if (!formData.services.trim()) {
+      setActiveSection(2);
+      setErrorMessage('Please select a Required Cloud Service.');
       setIsSubmitting(false);
       return;
     }
@@ -155,6 +229,7 @@ export const CloudRequirementModal: React.FC<CloudRequirementModalProps> = ({
   const handleReset = () => {
     setIsSuccess(false);
     setErrorMessage(null);
+    setActiveSection(1);
     setFormData({
       company: '',
       contact_person: '',
@@ -192,7 +267,7 @@ export const CloudRequirementModal: React.FC<CloudRequirementModalProps> = ({
       aria-modal="true"
       aria-labelledby="cloud-modal-title"
     >
-      <div className="cloud-modal-container">
+      <div className="cloud-modal-container" ref={modalContainerRef}>
         {/* Close Button */}
         <button
           type="button"
@@ -268,7 +343,7 @@ export const CloudRequirementModal: React.FC<CloudRequirementModalProps> = ({
                 Cloud Services Requirement Form
               </h2>
               <p className="intro">
-                Tell us about your cloud infrastructure requirements. Our cloud experts will help you identify the right solution for your business.
+                Tell us about your cloud infrastructure requirements. Complete the 4 quick steps below and our cloud experts will prepare a custom proposal.
               </p>
             </div>
 
@@ -276,24 +351,34 @@ export const CloudRequirementModal: React.FC<CloudRequirementModalProps> = ({
             <div className="cloud-modal__sections-nav" role="tablist">
               <button
                 type="button"
-                className={`cloud-modal__nav-pill ${activeSection === 1 ? 'cloud-modal__nav-pill--active' : ''}`}
-                onClick={() => scrollToSection(1)}
+                className={`cloud-modal__nav-pill ${activeSection === 1 ? 'cloud-modal__nav-pill--active' : ''} ${isSec1Complete && activeSection !== 1 ? 'cloud-modal__nav-pill--completed' : ''}`}
+                onClick={() => goToSection(1)}
+                role="tab"
+                aria-selected={activeSection === 1}
               >
-                <span className="cloud-modal__nav-num">1</span>
+                <span className="cloud-modal__nav-num">
+                  {isSec1Complete && activeSection !== 1 ? '✓' : '1'}
+                </span>
                 <span>Company &amp; Contact</span>
               </button>
               <button
                 type="button"
-                className={`cloud-modal__nav-pill ${activeSection === 2 ? 'cloud-modal__nav-pill--active' : ''}`}
-                onClick={() => scrollToSection(2)}
+                className={`cloud-modal__nav-pill ${activeSection === 2 ? 'cloud-modal__nav-pill--active' : ''} ${isSec2Complete && activeSection !== 2 ? 'cloud-modal__nav-pill--completed' : ''}`}
+                onClick={() => goToSection(2)}
+                role="tab"
+                aria-selected={activeSection === 2}
               >
-                <span className="cloud-modal__nav-num">2</span>
+                <span className="cloud-modal__nav-num">
+                  {isSec2Complete && activeSection !== 2 ? '✓' : '2'}
+                </span>
                 <span>Cloud Services</span>
               </button>
               <button
                 type="button"
                 className={`cloud-modal__nav-pill ${activeSection === 3 ? 'cloud-modal__nav-pill--active' : ''}`}
-                onClick={() => scrollToSection(3)}
+                onClick={() => goToSection(3)}
+                role="tab"
+                aria-selected={activeSection === 3}
               >
                 <span className="cloud-modal__nav-num">3</span>
                 <span>Technical Specs</span>
@@ -301,7 +386,9 @@ export const CloudRequirementModal: React.FC<CloudRequirementModalProps> = ({
               <button
                 type="button"
                 className={`cloud-modal__nav-pill ${activeSection === 4 ? 'cloud-modal__nav-pill--active' : ''}`}
-                onClick={() => scrollToSection(4)}
+                onClick={() => goToSection(4)}
+                role="tab"
+                aria-selected={activeSection === 4}
               >
                 <span className="cloud-modal__nav-num">4</span>
                 <span>Security &amp; Project</span>
@@ -321,350 +408,453 @@ export const CloudRequirementModal: React.FC<CloudRequirementModalProps> = ({
 
             <form onSubmit={handleSubmit} noValidate>
               {/* SECTION 1: Company & Contact Details */}
-              <div id="cloud-sec-1" className="cloud-modal__section-block">
-                <h3 className="cloud-modal__sec-heading">
-                  <span className="cloud-modal__sec-num">1</span>
-                  Company &amp; Contact Details
-                </h3>
+              {activeSection === 1 && (
+                <div id="cloud-sec-1" className="cloud-modal__section-block">
+                  <div className="cloud-modal__sec-header">
+                    <span className="cloud-modal__step-badge">Step 1 of 4</span>
+                    <h3 className="cloud-modal__sec-heading">
+                      <span className="cloud-modal__sec-num">1</span>
+                      Company &amp; Contact Details
+                    </h3>
+                  </div>
 
-                <div className="grid">
-                  <div className="field">
-                    <label>
-                      Company Name <span className="required">*</span>
-                    </label>
-                    <input
-                      name="company"
-                      value={formData.company}
-                      onChange={handleChange}
-                      placeholder="e.g. Acme Enterprises Ltd."
-                      required
-                    />
+                  <div className="grid">
+                    <div className="field">
+                      <label>
+                        Company Name <span className="required">*</span>
+                      </label>
+                      <input
+                        name="company"
+                        value={formData.company}
+                        onChange={handleChange}
+                        placeholder="e.g. Acme Enterprises Ltd."
+                        required
+                        autoFocus
+                      />
+                    </div>
+
+                    <div className="field">
+                      <label>
+                        Contact Person <span className="required">*</span>
+                      </label>
+                      <input
+                        name="contact_person"
+                        value={formData.contact_person}
+                        onChange={handleChange}
+                        placeholder="e.g. John Doe"
+                        required
+                      />
+                    </div>
+
+                    <div className="field">
+                      <label>Designation</label>
+                      <input
+                        name="designation"
+                        value={formData.designation}
+                        onChange={handleChange}
+                        placeholder="e.g. CTO / IT Director / Head of Infra"
+                      />
+                    </div>
+
+                    <div className="field">
+                      <label>
+                        Business Email <span className="required">*</span>
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="e.g. j.doe@company.com"
+                        required
+                      />
+                    </div>
+
+                    <div className="field">
+                      <label>
+                        Contact Number <span className="required">*</span>
+                      </label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder="e.g. +91 98765 43210"
+                        required
+                      />
+                    </div>
+
+                    <div className="field">
+                      <label>Industry</label>
+                      <select name="industry" value={formData.industry} onChange={handleChange}>
+                        <option value="">Select Industry</option>
+                        <option>IT &amp; ITES</option>
+                        <option>Healthcare</option>
+                        <option>Manufacturing</option>
+                        <option>Education</option>
+                        <option>Finance &amp; Banking</option>
+                        <option>Retail &amp; E-commerce</option>
+                        <option>Government</option>
+                        <option>Other</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="cloud-modal__step-actions">
+                    <div />
+                    <button
+                      type="button"
+                      className="cloud-modal__btn-next"
+                      onClick={() => handleNext(2)}
+                    >
+                      <span>Next: Cloud Services</span>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <path d="M5 12h14" />
+                        <path d="m12 5 7 7-7 7" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {/* SECTION 2: Cloud Services Requirement */}
+              {activeSection === 2 && (
+                <div id="cloud-sec-2" className="cloud-modal__section-block">
+                  <div className="cloud-modal__sec-header">
+                    <span className="cloud-modal__step-badge">Step 2 of 4</span>
+                    <h3 className="cloud-modal__sec-heading">
+                      <span className="cloud-modal__sec-num">2</span>
+                      Cloud Services Requirement
+                    </h3>
                   </div>
 
                   <div className="field">
                     <label>
-                      Contact Person <span className="required">*</span>
+                      Required Services <span className="required">*</span>
                     </label>
-                    <input
-                      name="contact_person"
-                      value={formData.contact_person}
-                      onChange={handleChange}
-                      placeholder="e.g. John Doe"
-                      required
-                    />
-                  </div>
-
-                  <div className="field">
-                    <label>Designation</label>
-                    <input
-                      name="designation"
-                      value={formData.designation}
-                      onChange={handleChange}
-                      placeholder="e.g. CTO / IT Director / Head of Infra"
-                    />
-                  </div>
-
-                  <div className="field">
-                    <label>
-                      Business Email <span className="required">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="e.g. j.doe@company.com"
-                      required
-                    />
-                  </div>
-
-                  <div className="field">
-                    <label>
-                      Contact Number <span className="required">*</span>
-                    </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="e.g. +91 98765 43210"
-                      required
-                    />
-                  </div>
-
-                  <div className="field">
-                    <label>Industry</label>
-                    <select name="industry" value={formData.industry} onChange={handleChange}>
-                      <option value="">Select Industry</option>
-                      <option>IT &amp; ITES</option>
-                      <option>Healthcare</option>
-                      <option>Manufacturing</option>
-                      <option>Education</option>
-                      <option>Finance &amp; Banking</option>
-                      <option>Retail &amp; E-commerce</option>
-                      <option>Government</option>
+                    <select name="services" value={formData.services} onChange={handleChange} required autoFocus>
+                      <option value="">Select Service</option>
+                      <option>Cloud Infrastructure (IaaS)</option>
+                      <option>Cloud Hosting &amp; Virtual Machines</option>
+                      <option>Cloud Migration</option>
+                      <option>Cloud Storage</option>
+                      <option>Cloud Backup &amp; Disaster Recovery</option>
+                      <option>Cloud Security</option>
+                      <option>Cloud Database</option>
+                      <option>Managed Cloud Services</option>
+                      <option>Microsoft 365</option>
+                      <option>Complete Cloud Solution</option>
                       <option>Other</option>
                     </select>
                   </div>
-                </div>
-              </div>
 
-              {/* SECTION 2: Cloud Services Requirement */}
-              <div id="cloud-sec-2" className="cloud-modal__section-block">
-                <h3 className="cloud-modal__sec-heading">
-                  <span className="cloud-modal__sec-num">2</span>
-                  Cloud Services Requirement
-                </h3>
+                  <div className="grid">
+                    <div className="field">
+                      <label>Preferred Cloud Platform</label>
+                      <select
+                        name="cloud_provider"
+                        value={formData.cloud_provider}
+                        onChange={handleChange}
+                      >
+                        <option value="">Select Platform</option>
+                        <option value="AWS">AWS</option>
+                        <option value="Microsoft Azure">Microsoft Azure</option>
+                        <option value="Google Cloud (GCP)">Google Cloud (GCP)</option>
+                        <option value="Private Cloud">Private Cloud</option>
+                        <option value="Hybrid Cloud">Hybrid Cloud</option>
+                        <option value="Not Sure – Need Consultation">Not Sure – Need Consultation</option>
+                      </select>
+                    </div>
 
-                <div className="field">
-                  <label>
-                    Required Services <span className="required">*</span>
-                  </label>
-                  <select name="services" value={formData.services} onChange={handleChange} required>
-                    <option value="">Select Service</option>
-                    <option>Cloud Infrastructure (IaaS)</option>
-                    <option>Cloud Hosting &amp; Virtual Machines</option>
-                    <option>Cloud Migration</option>
-                    <option>Cloud Storage</option>
-                    <option>Cloud Backup &amp; Disaster Recovery</option>
-                    <option>Cloud Security</option>
-                    <option>Cloud Database</option>
-                    <option>Managed Cloud Services</option>
-                    <option>Microsoft 365</option>
-                    <option>Complete Cloud Solution</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-
-                <div className="grid">
-                  <div className="field">
-                    <label>Preferred Cloud Platform</label>
-                    <select
-                      name="cloud_provider"
-                      value={formData.cloud_provider}
-                      onChange={handleChange}
-                    >
-                      <option value="">Select Platform</option>
-                      <option value="AWS">AWS</option>
-                      <option value="Microsoft Azure">Microsoft Azure</option>
-                      <option value="Google Cloud (GCP)">Google Cloud (GCP)</option>
-                      <option value="Private Cloud">Private Cloud</option>
-                      <option value="Hybrid Cloud">Hybrid Cloud</option>
-                      <option value="Not Sure – Need Consultation">Not Sure – Need Consultation</option>
-                    </select>
+                    <div className="field">
+                      <label>Current Infrastructure</label>
+                      <select
+                        name="infrastructure"
+                        value={formData.infrastructure}
+                        onChange={handleChange}
+                      >
+                        <option value="">Select Setup</option>
+                        <option>On-Premises Servers</option>
+                        <option>VMware / Hyper-V</option>
+                        <option>Already Using Cloud</option>
+                        <option>Hybrid Infrastructure</option>
+                        <option>New Setup</option>
+                      </select>
+                    </div>
                   </div>
 
                   <div className="field">
-                    <label>Current Infrastructure</label>
-                    <select
-                      name="infrastructure"
-                      value={formData.infrastructure}
+                    <label>Business Application / Workload Details</label>
+                    <textarea
+                      name="workload"
+                      value={formData.workload}
                       onChange={handleChange}
+                      placeholder="ERP, SAP, Tally, Website, Database, Email Server, File Server, etc."
+                    />
+                  </div>
+
+                  <div className="cloud-modal__step-actions">
+                    <button
+                      type="button"
+                      className="cloud-modal__btn-back"
+                      onClick={() => handleBack(1)}
                     >
-                      <option value="">Select Setup</option>
-                      <option>On-Premises Servers</option>
-                      <option>VMware / Hyper-V</option>
-                      <option>Already Using Cloud</option>
-                      <option>Hybrid Infrastructure</option>
-                      <option>New Setup</option>
-                    </select>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <path d="M19 12H5" />
+                        <path d="m12 19-7-7 7-7" />
+                      </svg>
+                      <span>Back</span>
+                    </button>
+                    <button
+                      type="button"
+                      className="cloud-modal__btn-next"
+                      onClick={() => handleNext(3)}
+                    >
+                      <span>Next: Technical Specs</span>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <path d="M5 12h14" />
+                        <path d="m12 5 7 7-7 7" />
+                      </svg>
+                    </button>
                   </div>
                 </div>
-
-                <div className="field">
-                  <label>Business Application / Workload Details</label>
-                  <textarea
-                    name="workload"
-                    value={formData.workload}
-                    onChange={handleChange}
-                    placeholder="ERP, SAP, Tally, Website, Database, Email Server, File Server, etc."
-                  />
-                </div>
-              </div>
+              )}
 
               {/* SECTION 3: Technical Requirements */}
-              <div id="cloud-sec-3" className="cloud-modal__section-block">
-                <h3 className="cloud-modal__sec-heading">
-                  <span className="cloud-modal__sec-num">3</span>
-                  Technical Requirements
-                </h3>
+              {activeSection === 3 && (
+                <div id="cloud-sec-3" className="cloud-modal__section-block">
+                  <div className="cloud-modal__sec-header">
+                    <span className="cloud-modal__step-badge">Step 3 of 4</span>
+                    <h3 className="cloud-modal__sec-heading">
+                      <span className="cloud-modal__sec-num">3</span>
+                      Technical Requirements
+                    </h3>
+                  </div>
 
-                <div className="grid">
+                  <div className="grid">
+                    <div className="field">
+                      <label>Number of Users</label>
+                      <input
+                        type="number"
+                        name="users"
+                        min="1"
+                        value={formData.users}
+                        onChange={handleChange}
+                        placeholder="e.g. 50"
+                        autoFocus
+                      />
+                    </div>
+
+                    <div className="field">
+                      <label>Number of Servers / VMs</label>
+                      <input
+                        type="number"
+                        name="servers"
+                        min="0"
+                        value={formData.servers}
+                        onChange={handleChange}
+                        placeholder="e.g. 5"
+                      />
+                    </div>
+
+                    <div className="field">
+                      <label>Operating System</label>
+                      <select name="os" value={formData.os} onChange={handleChange}>
+                        <option value="">Select OS</option>
+                        <option>Windows Server</option>
+                        <option>Linux</option>
+                        <option>Both Windows &amp; Linux</option>
+                        <option>Not Sure</option>
+                      </select>
+                    </div>
+
+                    <div className="field">
+                      <label>Required Storage</label>
+                      <select name="storage" value={formData.storage} onChange={handleChange}>
+                        <option value="">Select Storage</option>
+                        <option>Below 500 GB</option>
+                        <option>500 GB – 1 TB</option>
+                        <option>1 TB – 5 TB</option>
+                        <option>5 TB – 10 TB</option>
+                        <option>10 TB – 50 TB</option>
+                        <option>Above 50 TB</option>
+                        <option>Not Sure</option>
+                      </select>
+                    </div>
+                  </div>
+
                   <div className="field">
-                    <label>Number of Users</label>
-                    <input
-                      type="number"
-                      name="users"
-                      min="1"
-                      value={formData.users}
+                    <label>Migration Requirement</label>
+                    <select name="migration" value={formData.migration} onChange={handleChange}>
+                      <option value="">Select Requirement</option>
+                      <option>On-Premises to Cloud</option>
+                      <option>Cloud to Cloud</option>
+                      <option>New Cloud Deployment</option>
+                      <option>Application / Database Migration</option>
+                      <option>No Migration Required</option>
+                      <option>Not Sure</option>
+                    </select>
+                  </div>
+
+                  <div className="cloud-modal__step-actions">
+                    <button
+                      type="button"
+                      className="cloud-modal__btn-back"
+                      onClick={() => handleBack(2)}
+                    >
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <path d="M19 12H5" />
+                        <path d="m12 19-7-7 7-7" />
+                      </svg>
+                      <span>Back</span>
+                    </button>
+                    <button
+                      type="button"
+                      className="cloud-modal__btn-next"
+                      onClick={() => handleNext(4)}
+                    >
+                      <span>Next: Security &amp; Project</span>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <path d="M5 12h14" />
+                        <path d="m12 5 7 7-7 7" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {/* SECTION 4: Backup, Security & Project Details */}
+              {activeSection === 4 && (
+                <div id="cloud-sec-4" className="cloud-modal__section-block">
+                  <div className="cloud-modal__sec-header">
+                    <span className="cloud-modal__step-badge">Step 4 of 4</span>
+                    <h3 className="cloud-modal__sec-heading">
+                      <span className="cloud-modal__sec-num">4</span>
+                      Backup, Security &amp; Project Details
+                    </h3>
+                  </div>
+
+                  <div className="grid">
+                    <div className="field">
+                      <label>Backup Requirement</label>
+                      <select name="backup" value={formData.backup} onChange={handleChange} autoFocus>
+                        <option value="">Select Requirement</option>
+                        <option>Daily Backup</option>
+                        <option>Weekly Backup</option>
+                        <option>Real-Time Replication</option>
+                        <option>Disaster Recovery</option>
+                        <option>Backup + DR</option>
+                      </select>
+                    </div>
+
+                    <div className="field">
+                      <label>Security Requirement</label>
+                      <select name="security" value={formData.security} onChange={handleChange}>
+                        <option value="">Select Requirement</option>
+                        <option>Firewall &amp; Network Security</option>
+                        <option>Endpoint Protection / EDR</option>
+                        <option>IAM &amp; MFA</option>
+                        <option>Encryption &amp; Compliance</option>
+                        <option>Complete Cloud Security</option>
+                      </select>
+                    </div>
+
+                    <div className="field">
+                      <label>Availability Requirement</label>
+                      <select name="availability" value={formData.availability} onChange={handleChange}>
+                        <option value="">Select Availability</option>
+                        <option>Business Hours</option>
+                        <option>24x7 Support</option>
+                        <option>99.9% Uptime</option>
+                        <option>99.99% Uptime</option>
+                        <option>Not Sure</option>
+                      </select>
+                    </div>
+
+                    <div className="field">
+                      <label>Preferred Data Centre Region</label>
+                      <select name="region" value={formData.region} onChange={handleChange}>
+                        <option value="">Select Region</option>
+                        <option>India – Mumbai</option>
+                        <option>India – Hyderabad</option>
+                        <option>India – Delhi NCR</option>
+                        <option>Outside India</option>
+                        <option>No Preference</option>
+                      </select>
+                    </div>
+
+                    <div className="field">
+                      <label>Expected Project Timeline</label>
+                      <select name="timeline" value={formData.timeline} onChange={handleChange}>
+                        <option value="">Select Timeline</option>
+                        <option>Immediate</option>
+                        <option>Within 15 Days</option>
+                        <option>Within 1 Month</option>
+                        <option>1–3 Months</option>
+                        <option>Future Planning</option>
+                      </select>
+                    </div>
+
+                    <div className="field">
+                      <label>Estimated Budget (INR)</label>
+                      <select name="budget" value={formData.budget} onChange={handleChange}>
+                        <option value="">Select Budget</option>
+                        <option>Below ₹10,000 / Month</option>
+                        <option>₹10,000 – ₹25,000 / Month</option>
+                        <option>₹25,000 – ₹50,000 / Month</option>
+                        <option>₹50,000 – ₹1 Lakh / Month</option>
+                        <option>₹1 Lakh – ₹5 Lakh / Month</option>
+                        <option>Above ₹5 Lakh / Month</option>
+                        <option>Not Decided</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="field">
+                    <label>Additional Requirements / Remarks</label>
+                    <textarea
+                      name="remarks"
+                      value={formData.remarks}
                       onChange={handleChange}
-                      placeholder="e.g. 50"
+                      placeholder="Please describe any additional requirements, special compliance, or software licenses..."
                     />
                   </div>
 
-                  <div className="field">
-                    <label>Number of Servers / VMs</label>
-                    <input
-                      type="number"
-                      name="servers"
-                      min="0"
-                      value={formData.servers}
-                      onChange={handleChange}
-                      placeholder="e.g. 5"
-                    />
+                  <div className="cloud-modal__step-actions">
+                    <button
+                      type="button"
+                      className="cloud-modal__btn-back"
+                      onClick={() => handleBack(3)}
+                    >
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <path d="M19 12H5" />
+                        <path d="m12 19-7-7 7-7" />
+                      </svg>
+                      <span>Back</span>
+                    </button>
+                    <button
+                      type="submit"
+                      className="cloud-modal__submit-btn"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? (
+                        <span className="cloud-modal__submit-loading">
+                          <svg className="cloud-modal__spinner" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                          </svg>
+                          Submitting Requirement...
+                        </span>
+                      ) : (
+                        <span>Submit Cloud Enquiry →</span>
+                      )}
+                    </button>
                   </div>
 
-                  <div className="field">
-                    <label>Operating System</label>
-                    <select name="os" value={formData.os} onChange={handleChange}>
-                      <option value="">Select OS</option>
-                      <option>Windows Server</option>
-                      <option>Linux</option>
-                      <option>Both Windows &amp; Linux</option>
-                      <option>Not Sure</option>
-                    </select>
-                  </div>
-
-                  <div className="field">
-                    <label>Required Storage</label>
-                    <select name="storage" value={formData.storage} onChange={handleChange}>
-                      <option value="">Select Storage</option>
-                      <option>Below 500 GB</option>
-                      <option>500 GB – 1 TB</option>
-                      <option>1 TB – 5 TB</option>
-                      <option>5 TB – 10 TB</option>
-                      <option>10 TB – 50 TB</option>
-                      <option>Above 50 TB</option>
-                      <option>Not Sure</option>
-                    </select>
-                  </div>
+                  <p className="cloud-modal__footer-note">
+                    Our team will contact you to discuss your cloud requirements.
+                  </p>
                 </div>
-
-                <div className="field">
-                  <label>Migration Requirement</label>
-                  <select name="migration" value={formData.migration} onChange={handleChange}>
-                    <option value="">Select Requirement</option>
-                    <option>On-Premises to Cloud</option>
-                    <option>Cloud to Cloud</option>
-                    <option>New Cloud Deployment</option>
-                    <option>Application / Database Migration</option>
-                    <option>No Migration Required</option>
-                    <option>Not Sure</option>
-                  </select>
-                </div>
-              </div>
-
-              {/* SECTION 4: Backup, Security, Availability & Commercial */}
-              <div id="cloud-sec-4" className="cloud-modal__section-block">
-                <h3 className="cloud-modal__sec-heading">
-                  <span className="cloud-modal__sec-num">4</span>
-                  Backup, Security &amp; Project Details
-                </h3>
-
-                <div className="grid">
-                  <div className="field">
-                    <label>Backup Requirement</label>
-                    <select name="backup" value={formData.backup} onChange={handleChange}>
-                      <option value="">Select Requirement</option>
-                      <option>Daily Backup</option>
-                      <option>Weekly Backup</option>
-                      <option>Real-Time Replication</option>
-                      <option>Disaster Recovery</option>
-                      <option>Backup + DR</option>
-                    </select>
-                  </div>
-
-                  <div className="field">
-                    <label>Security Requirement</label>
-                    <select name="security" value={formData.security} onChange={handleChange}>
-                      <option value="">Select Requirement</option>
-                      <option>Firewall &amp; Network Security</option>
-                      <option>Endpoint Protection / EDR</option>
-                      <option>IAM &amp; MFA</option>
-                      <option>Encryption &amp; Compliance</option>
-                      <option>Complete Cloud Security</option>
-                    </select>
-                  </div>
-
-                  <div className="field">
-                    <label>Availability Requirement</label>
-                    <select name="availability" value={formData.availability} onChange={handleChange}>
-                      <option value="">Select Availability</option>
-                      <option>Business Hours</option>
-                      <option>24x7 Support</option>
-                      <option>99.9% Uptime</option>
-                      <option>99.99% Uptime</option>
-                      <option>Not Sure</option>
-                    </select>
-                  </div>
-
-                  <div className="field">
-                    <label>Preferred Data Centre Region</label>
-                    <select name="region" value={formData.region} onChange={handleChange}>
-                      <option value="">Select Region</option>
-                      <option>India – Mumbai</option>
-                      <option>India – Hyderabad</option>
-                      <option>India – Delhi NCR</option>
-                      <option>Outside India</option>
-                      <option>No Preference</option>
-                    </select>
-                  </div>
-
-                  <div className="field">
-                    <label>Expected Project Timeline</label>
-                    <select name="timeline" value={formData.timeline} onChange={handleChange}>
-                      <option value="">Select Timeline</option>
-                      <option>Immediate</option>
-                      <option>Within 15 Days</option>
-                      <option>Within 1 Month</option>
-                      <option>1–3 Months</option>
-                      <option>Future Planning</option>
-                    </select>
-                  </div>
-
-                  <div className="field">
-                    <label>Estimated Budget (INR)</label>
-                    <select name="budget" value={formData.budget} onChange={handleChange}>
-                      <option value="">Select Budget</option>
-                      <option>Below ₹10,000 / Month</option>
-                      <option>₹10,000 – ₹25,000 / Month</option>
-                      <option>₹25,000 – ₹50,000 / Month</option>
-                      <option>₹50,000 – ₹1 Lakh / Month</option>
-                      <option>₹1 Lakh – ₹5 Lakh / Month</option>
-                      <option>Above ₹5 Lakh / Month</option>
-                      <option>Not Decided</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div className="field">
-                  <label>Additional Requirements / Remarks</label>
-                  <textarea
-                    name="remarks"
-                    value={formData.remarks}
-                    onChange={handleChange}
-                    placeholder="Please describe any additional requirements, special compliance, or software licenses..."
-                  />
-                </div>
-              </div>
-
-              {/* Submit CTA */}
-              <button type="submit" className="cloud-modal__submit-btn" disabled={isSubmitting}>
-                {isSubmitting ? (
-                  <span className="cloud-modal__submit-loading">
-                    <svg className="cloud-modal__spinner" viewBox="0 0 24 24">
-                      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-                    </svg>
-                    Submitting Requirement...
-                  </span>
-                ) : (
-                  <span>Submit Cloud Enquiry →</span>
-                )}
-              </button>
-
-              <p className="cloud-modal__footer-note">
-                Our team will contact you to discuss your cloud requirements.
-              </p>
+              )}
             </form>
           </div>
         )}
