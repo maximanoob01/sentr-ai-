@@ -4,8 +4,8 @@ import './CloudRequirementModal.css';
 // Brand Logos
 import sentrLogo from '../assets/logo.png';
 import awsLogo from '../assets/cloud solutions/aws.png';
-import azureLogo from '../assets/cloud solutions/azure.png';
-import gcpLogo from '../assets/alliance logo/googlecloud.png';
+import azureLogo from '../assets/cloud solutions/azure-clean.png';
+import gcpLogo from '../assets/alliance logo/googlecloud-horiz.png';
 
 interface CloudRequirementModalProps {
   isOpen: boolean;
@@ -248,14 +248,14 @@ export const CloudRequirementModal: React.FC<CloudRequirementModalProps> = ({
               <div className="cloud-modal__partners-wrap">
                 <span className="cloud-modal__partners-badge">Cloud Ecosystem</span>
                 <div className="cloud-modal__partners-logos">
-                  <div className="cloud-modal__partner-logo-item" title="Amazon Web Services">
-                    <img src={awsLogo} alt="AWS" className="cloud-modal__partner-img" />
+                  <div className="cloud-modal__partner-logo-item cloud-modal__partner-logo-item--aws" title="Amazon Web Services">
+                    <img src={awsLogo} alt="AWS" className="cloud-modal__partner-img cloud-modal__partner-img--aws" />
                   </div>
-                  <div className="cloud-modal__partner-logo-item" title="Microsoft Azure">
-                    <img src={azureLogo} alt="Microsoft Azure" className="cloud-modal__partner-img" />
+                  <div className="cloud-modal__partner-logo-item cloud-modal__partner-logo-item--azure" title="Microsoft Azure">
+                    <img src={azureLogo} alt="Microsoft Azure" className="cloud-modal__partner-img cloud-modal__partner-img--azure" />
                   </div>
-                  <div className="cloud-modal__partner-logo-item" title="Google Cloud Platform">
-                    <img src={gcpLogo} alt="Google Cloud" className="cloud-modal__partner-img" />
+                  <div className="cloud-modal__partner-logo-item cloud-modal__partner-logo-item--gcp" title="Google Cloud Platform">
+                    <img src={gcpLogo} alt="Google Cloud" className="cloud-modal__partner-img cloud-modal__partner-img--gcp" />
                   </div>
                 </div>
               </div>
