@@ -267,12 +267,13 @@
 }
 
 /* ================================================================
-   2. WHAT IS AN MES? SECTION
+   2. WHAT IS AN MES? SECTION (WHITE THEME)
    ================================================================ */
 .mfg-mes-overview {
-  padding: 4.75rem 0 5rem;
-  background: linear-gradient(180deg, #070b14 0%, #0a1020 50%, #070b14 100%);
-  border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+  padding: 4.5rem 0 5.25rem;
+  background-color: #ffffff;
+  border-top: 1px solid #f1f5f9;
+  border-bottom: 1px solid #e2e8f0;
   position: relative;
   overflow: hidden;
 }
@@ -286,7 +287,7 @@
 .mfg-mes-overview__title {
   font-size: clamp(2.1rem, 3.2vw, 2.85rem);
   font-weight: 850;
-  color: #ffffff;
+  color: #0f172a;
   line-height: 1.2;
   letter-spacing: -0.025em;
   margin: 0 0 1.25rem 0;
@@ -295,8 +296,8 @@
 .mfg-mes-overview__lead {
   font-size: 1.12rem;
   line-height: 1.65;
-  color: #f1f5f9;
-  font-weight: 500;
+  color: #1e293b;
+  font-weight: 550;
   margin: 0 0 1rem 0;
   max-width: 860px;
 }
@@ -304,7 +305,7 @@
 .mfg-mes-overview__desc {
   font-size: 0.98rem;
   line-height: 1.65;
-  color: #94a3b8;
+  color: #64748b;
   margin: 0 0 2.25rem 0;
   max-width: 820px;
 }
@@ -317,46 +318,56 @@
 }
 
 .mfg-mes-pillar-item {
-  background: #0d1527;
-  border: 1px solid rgba(56, 189, 248, 0.2);
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   border-radius: 14px;
   padding: 1.1rem 1.15rem;
   display: flex;
   align-items: flex-start;
   gap: 0.85rem;
-  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
 .mfg-mes-pillar-item:hover {
-  transform: translateY(-2px);
-  border-color: #38bdf8;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35), 0 0 12px rgba(56, 189, 248, 0.15);
+  transform: translateY(-3px);
+  background: #ffffff;
+  border-color: #3b82f6;
+  box-shadow: 0 10px 24px -6px rgba(37, 99, 235, 0.12), 0 4px 10px rgba(15, 23, 42, 0.04);
 }
 
 .mfg-mes-pillar-item__icon {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border-radius: 10px;
-  background: rgba(14, 165, 233, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.32);
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #2563eb;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.mfg-mes-pillar-item:hover .mfg-mes-pillar-item__icon {
+  transform: scale(1.05);
+  background: #dbeafe;
 }
 
 .mfg-mes-pillar-item__name {
-  font-size: 0.94rem;
+  font-size: 1.02rem;
   font-weight: 750;
-  color: #ffffff;
-  margin: 0 0 0.15rem 0;
+  color: #0f172a;
+  margin: 0 0 0.25rem 0;
+  letter-spacing: -0.01em;
 }
 
 .mfg-mes-pillar-item__sub {
-  font-size: 0.76rem;
-  color: #94a3b8;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #64748b;
   margin: 0;
-  line-height: 1.35;
 }
 
 /* ================================================================
@@ -703,11 +714,11 @@
 .mfg-pipeline-step__num-wrap {
   position: relative;
   width: 100%;
-  height: 76px;
+  height: 84px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.65rem;
+  margin-bottom: 1.5rem;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -716,9 +727,9 @@
 }
 
 .mfg-pipeline-step__num-img {
-  height: 70px;
+  height: 78px;
   width: auto;
-  max-width: 130px;
+  max-width: 160px;
   object-fit: contain;
   display: block;
   user-select: none;
