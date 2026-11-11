@@ -207,19 +207,10 @@ export const ManufacturingPage: React.FC = () => {
           }}
           aria-hidden="true"
         />
-        <div className="mfg-hero__overlay" aria-hidden="true" />
-        <div className="mfg-hero__glow mfg-hero__glow--1" aria-hidden="true" />
-        <div className="mfg-hero__glow mfg-hero__glow--2" aria-hidden="true" />
-        <div className="mfg-hero__dots" aria-hidden="true" />
 
         <div className="mfg-container">
           <div className="mfg-hero__inner">
             <div className="mfg-hero__content">
-              <div className="mfg-hero__badge">
-                <span className="mfg-hero__badge-pulse" aria-hidden="true" />
-                <span className="mfg-hero__badge-text">MANUFAPP • SMART MANUFACTURING</span>
-              </div>
-
               <h1 className="mfg-hero__title">
                 See your whole factory,{' '}
                 <span className="mfg-hero__title-accent">
@@ -271,28 +262,6 @@ export const ManufacturingPage: React.FC = () => {
                     <polyline points="6 9 12 15 18 9" />
                   </svg>
                 </a>
-              </div>
-
-              {/* Quick Trust Highlights */}
-              <div className="mfg-hero__highlights">
-                <div className="mfg-hero__highlight-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span>Real-Time Machine Telemetry</span>
-                </div>
-                <div className="mfg-hero__highlight-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span>Instant Problem Alerts</span>
-                </div>
-                <div className="mfg-hero__highlight-item">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span>Zero Disruption Setup</span>
-                </div>
               </div>
             </div>
           </div>
