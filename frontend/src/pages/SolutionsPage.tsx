@@ -17,7 +17,7 @@ import hhImg from '../assets/solution/hh.png';
 import backkImg from '../assets/solution/backk.png';
 
 const FULL_HERO_SUBTITLE =
-  'From real-time industrial computer vision and bespoke artificial intelligence to resilient cloud infrastructure, cybersecurity, and enterprise IT — Sentr AI delivers full-spectrum technology solutions tailored for operational excellence.';
+  'Sentr AI delivers AI vision, cloud, cybersecurity and enterprise IT solutions built for smooth, reliable operations.';
 
 const ENDPOINT_DEVICES = ['Laptops', 'Desktops', 'Servers'];
 
