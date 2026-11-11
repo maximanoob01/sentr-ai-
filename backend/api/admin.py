@@ -2,7 +2,7 @@
 Sentr AI API — Admin Configuration
 """
 from django.contrib import admin
-from .models import DemoRequest, ContactInquiry
+from .models import DemoRequest, ContactInquiry, CloudEnquiry
 from .admin_models import Job, JobApplication
 
 
@@ -34,6 +34,16 @@ class ContactInquiryAdmin(admin.ModelAdmin):
     search_fields = ['full_name', 'email', 'company']
     readonly_fields = ['created_at']
     list_editable = ['is_responded']
+    ordering = ['-created_at']
+
+
+@admin.register(CloudEnquiry)
+class CloudEnquiryAdmin(admin.ModelAdmin):
+    list_display = ['company', 'contact_person', 'email', 'phone', 'cloud_provider', 'services', 'created_at', 'is_contacted']
+    list_filter = ['cloud_provider', 'industry', 'is_contacted', 'created_at']
+    search_fields = ['company', 'contact_person', 'email', 'phone']
+    readonly_fields = ['created_at']
+    list_editable = ['is_contacted']
     ordering = ['-created_at']
 
 

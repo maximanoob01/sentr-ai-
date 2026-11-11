@@ -2,7 +2,7 @@
 Sentr AI API — Serializers
 """
 from rest_framework import serializers
-from .models import DemoRequest, ContactInquiry
+from .models import DemoRequest, ContactInquiry, CloudEnquiry
 
 
 class DemoRequestSerializer(serializers.ModelSerializer):
@@ -50,4 +50,22 @@ class ContactInquirySerializer(serializers.ModelSerializer):
     def validate_email(self, value):
         if not value or '@' not in value:
             raise serializers.ValidationError('Please provide a valid email address.')
+        return value.lower().strip()
+
+
+class CloudEnquirySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CloudEnquiry
+        fields = '__all__'
+        extra_kwargs = {
+            'company': {'required': True},
+            'contact_person': {'required': True},
+            'email': {'required': True},
+            'phone': {'required': True},
+            'services': {'required': True},
+        }
+
+    def validate_email(self, value):
+        if not value or '@' not in value:
+            raise serializers.ValidationError('Please provide a valid business email address.')
         return value.lower().strip()

@@ -407,6 +407,8 @@ const AppInner: React.FC = () => {
         <Route path="/industries/manufacturing" element={<ManufacturingPage />} />
         <Route path="/industries/:slug" element={<PlaceholderPage title="Industry Detail" />} />
         <Route path="/cloud-solutions" element={<CloudSolutionsPage />} />
+        <Route path="/microsoft-azure-solutions" element={<Navigate to="/cloud-solutions?openModal=true&provider=azure" replace />} />
+        <Route path="/aws-cloud-solutions" element={<Navigate to="/cloud-solutions?openModal=true&provider=aws" replace />} />
         <Route path="/resources" element={<PlaceholderPage title="Resources" />} />
         <Route path="/resources/:slug" element={<PlaceholderPage title="Resource" />} />
         <Route path="/company" element={<PlaceholderPage title="Company" />} />

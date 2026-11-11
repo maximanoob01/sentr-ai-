@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './CloudSolutionsPage.css';
+import { CloudRequirementModal } from '../components/CloudRequirementModal';
 import herooBg from '../assets/heroo.png';
 import msLogo from '../assets/alliance logo/2.png';
 import amazonLogo from '../assets/cloud solutions/amazon.png';
@@ -380,8 +381,40 @@ export const CloudSolutionsPage: React.FC = () => {
   const [activeAzureImg, setActiveAzureImg] = useState(0);
   const [displayedSubtitle, setDisplayedSubtitle] = useState('');
   const [isTypingDone, setIsTypingDone] = useState(false);
+  const [isCloudModalOpen, setIsCloudModalOpen] = useState(false);
+  const [selectedPlatform, setSelectedPlatform] = useState<string>('');
   const servicesScrollRef = React.useRef<HTMLDivElement>(null);
   const location = useLocation();
+
+  const handleOpenPlatformModal = (platformTitle: string) => {
+    if (platformTitle.toLowerCase().includes('azure')) {
+      setSelectedPlatform('Microsoft Azure');
+    } else if (platformTitle.toLowerCase().includes('aws')) {
+      setSelectedPlatform('AWS');
+    } else {
+      setSelectedPlatform('Google Cloud (GCP)');
+    }
+    setIsCloudModalOpen(true);
+  };
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    if (
+      params.get('openModal') === 'true' ||
+      location.pathname === '/microsoft-azure-solutions' ||
+      location.pathname === '/aws-cloud-solutions'
+    ) {
+      const providerParam = params.get('provider');
+      if (providerParam === 'azure' || location.pathname === '/microsoft-azure-solutions') {
+        setSelectedPlatform('Microsoft Azure');
+      } else if (providerParam === 'aws' || location.pathname === '/aws-cloud-solutions') {
+        setSelectedPlatform('AWS');
+      } else {
+        setSelectedPlatform('Not Sure – Need Consultation');
+      }
+      setIsCloudModalOpen(true);
+    }
+  }, [location.search, location.pathname]);
 
   // Subtitle typing animation
   useEffect(() => {
@@ -577,9 +610,15 @@ export const CloudSolutionsPage: React.FC = () => {
                     <span key={cap} className="cs-platform-card__cap-tag">{cap}</span>
                   ))}
                 </div>
-                <Link to={p.href} className="cs-btn-primary" style={{ alignSelf: 'flex-start' }}>
+                <button
+                  type="button"
+                  onClick={() => handleOpenPlatformModal(p.title)}
+                  className="cs-btn-primary"
+                  style={{ alignSelf: 'flex-start', border: 'none', cursor: 'pointer' }}
+                  aria-haspopup="dialog"
+                >
                   {p.cta} <IconArrow />
-                </Link>
+                </button>
               </article>
             ))}
           </div>
@@ -969,6 +1008,13 @@ export const CloudSolutionsPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Cloud Requirement Modal */}
+      <CloudRequirementModal
+        isOpen={isCloudModalOpen}
+        onClose={() => setIsCloudModalOpen(false)}
+        initialPlatform={selectedPlatform}
+      />
 
     </main>
   );

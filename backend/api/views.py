@@ -8,8 +8,8 @@ from django.core.mail import send_mail
 from django.conf import settings
 import logging
 
-from .models import DemoRequest, ContactInquiry
-from .serializers import DemoRequestSerializer, ContactInquirySerializer
+from .models import DemoRequest, ContactInquiry, CloudEnquiry
+from .serializers import DemoRequestSerializer, ContactInquirySerializer, CloudEnquirySerializer
 
 logger = logging.getLogger(__name__)
 
@@ -104,6 +104,62 @@ class ContactInquiryView(APIView):
 
         return Response(
             {'message': 'Thank you for contacting us. We will be in touch shortly.'},
+            status=status.HTTP_201_CREATED
+        )
+
+
+class CloudEnquiryView(APIView):
+    """
+    POST /api/cloud-enquiries/ or /api/cloud-enquiries
+    Accept cloud requirement inquiry form submissions.
+    """
+    def post(self, request):
+        serializer = CloudEnquirySerializer(data=request.data)
+        if not serializer.is_valid():
+            return Response(
+                {'error': 'Invalid form data', 'details': serializer.errors},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        enquiry = serializer.save()
+        logger.info(f"New cloud services enquiry from {enquiry.company} ({enquiry.contact_person})")
+
+        try:
+            send_mail(
+                subject=f"[Sentr AI] Cloud Enquiry — {enquiry.company} ({enquiry.cloud_provider or 'Multi-Cloud'})",
+                message=(
+                    f"New Cloud Services Requirement Form submitted:\n\n"
+                    f"Company: {enquiry.company}\n"
+                    f"Contact Person: {enquiry.contact_person}\n"
+                    f"Designation: {enquiry.designation or 'Not provided'}\n"
+                    f"Email: {enquiry.email}\n"
+                    f"Phone: {enquiry.phone}\n"
+                    f"Industry: {enquiry.industry or 'Not provided'}\n\n"
+                    f"Required Services: {enquiry.services}\n"
+                    f"Preferred Cloud Platform: {enquiry.cloud_provider or 'Not provided'}\n"
+                    f"Current Infrastructure: {enquiry.infrastructure or 'Not provided'}\n"
+                    f"Workload Details:\n{enquiry.workload or 'None'}\n\n"
+                    f"Users: {enquiry.users or 'N/A'} | Servers/VMs: {enquiry.servers or 'N/A'}\n"
+                    f"OS: {enquiry.os or 'N/A'} | Storage: {enquiry.storage or 'N/A'}\n"
+                    f"Migration: {enquiry.migration or 'N/A'}\n"
+                    f"Backup: {enquiry.backup or 'N/A'} | Security: {enquiry.security or 'N/A'}\n"
+                    f"Availability: {enquiry.availability or 'N/A'} | Region: {enquiry.region or 'N/A'}\n"
+                    f"Timeline: {enquiry.timeline or 'N/A'} | Budget: {enquiry.budget or 'N/A'}\n\n"
+                    f"Remarks:\n{enquiry.remarks or 'None'}\n\n"
+                    f"Submitted: {enquiry.created_at.strftime('%d %b %Y, %H:%M IST')}\n"
+                ),
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=[settings.NOTIFICATION_EMAIL],
+                fail_silently=True,
+            )
+        except Exception as e:
+            logger.error(f"Failed to send cloud enquiry email notification: {e}")
+
+        return Response(
+            {
+                'message': 'Thank you! Your cloud requirements have been received. Our cloud experts will contact you shortly.',
+                'id': enquiry.id,
+            },
             status=status.HTTP_201_CREATED
         )
 

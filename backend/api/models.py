@@ -72,4 +72,50 @@ class ContactInquiry(models.Model):
 
     def __str__(self):
         return f"{self.full_name} — {self.get_inquiry_type_display()} ({self.created_at.strftime('%d %b %Y')})"
+
+
+class CloudEnquiry(models.Model):
+    """
+    Cloud services requirement enquiry form submission.
+    """
+    company = models.CharField(max_length=255, verbose_name='Company Name')
+    contact_person = models.CharField(max_length=255, verbose_name='Contact Person')
+    designation = models.CharField(max_length=255, blank=True, verbose_name='Designation')
+    email = models.EmailField(verbose_name='Business Email')
+    phone = models.CharField(max_length=50, verbose_name='Contact Number')
+    industry = models.CharField(max_length=100, blank=True, verbose_name='Industry')
+
+    services = models.CharField(max_length=255, verbose_name='Required Services')
+    cloud_provider = models.CharField(max_length=100, blank=True, verbose_name='Preferred Cloud Platform')
+    infrastructure = models.CharField(max_length=100, blank=True, verbose_name='Current Infrastructure')
+    workload = models.TextField(blank=True, verbose_name='Workload Details')
+
+    users = models.CharField(max_length=50, blank=True, verbose_name='Number of Users')
+    servers = models.CharField(max_length=50, blank=True, verbose_name='Number of Servers / VMs')
+    os = models.CharField(max_length=100, blank=True, verbose_name='Operating System')
+    storage = models.CharField(max_length=100, blank=True, verbose_name='Required Storage')
+    migration = models.CharField(max_length=100, blank=True, verbose_name='Migration Requirement')
+
+    backup = models.CharField(max_length=100, blank=True, verbose_name='Backup Requirement')
+    security = models.CharField(max_length=100, blank=True, verbose_name='Security Requirement')
+    availability = models.CharField(max_length=100, blank=True, verbose_name='Availability Requirement')
+    region = models.CharField(max_length=100, blank=True, verbose_name='Preferred Data Centre Region')
+
+    timeline = models.CharField(max_length=100, blank=True, verbose_name='Expected Project Timeline')
+    budget = models.CharField(max_length=100, blank=True, verbose_name='Estimated Budget')
+    remarks = models.TextField(blank=True, verbose_name='Additional Requirements / Remarks')
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    is_contacted = models.BooleanField(default=False, verbose_name='Contacted?')
+    notes = models.TextField(blank=True, verbose_name='Internal Notes')
+
+    class Meta:
+        ordering = ['-created_at']
+        verbose_name = 'Cloud Services Enquiry'
+        verbose_name_plural = 'Cloud Services Enquiries'
+
+    def __str__(self):
+        return f"{self.company} ({self.contact_person}) — {self.cloud_provider or 'Cloud'} ({self.created_at.strftime('%d %b %Y')})"
+
+
 from .admin_models import *
