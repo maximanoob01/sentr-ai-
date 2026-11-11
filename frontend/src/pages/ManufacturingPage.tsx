@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './ManufacturingPage.css';
 import aavImg from '../assets/cloud solutions/aav.png';
+import slateImg from '../assets/manfuapp/slate.png';
 
 const FULL_HERO_SUBTITLE =
   'Manufapp collects data from your machines and teams in real time, so you can fix problems early and run production with confidence.';
@@ -266,6 +267,20 @@ export const ManufacturingPage: React.FC = () => {
                 </a>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── ARCHITECTURE SLATE SECTION (WHITE BACKGROUND) ── */}
+      <section className="mfg-slate-section" aria-label="Manufapp MES System Overview">
+        <div className="mfg-container">
+          <div className="mfg-slate-wrapper">
+            <img
+              src={slateImg}
+              alt="Manufapp Manufacturing Execution System Architecture"
+              className="mfg-slate-img"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>

@@ -227,6 +227,46 @@
 }
 
 /* ================================================================
+   ARCHITECTURE SLATE SECTION (CLEAN WHITE BACKGROUND)
+   ================================================================ */
+.mfg-slate-section {
+  position: relative;
+  background-color: #ffffff;
+  padding: 4.5rem 0;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.mfg-slate-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.mfg-slate-img {
+  width: 100%;
+  max-width: 1020px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(15, 23, 42, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mfg-slate-img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px -6px rgba(15, 23, 42, 0.12), 0 6px 16px rgba(15, 23, 42, 0.06);
+}
+
+/* ================================================================
    2. WHAT IS AN MES? SECTION
    ================================================================ */
 .mfg-mes-overview {
@@ -714,6 +754,10 @@
    RESPONSIVE BREAKPOINTS
    ================================================================ */
 @media (max-width: 1024px) {
+  .mfg-slate-section {
+    padding: 3.5rem 0;
+  }
+
   .mfg-mes-pillars {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -747,6 +791,15 @@
 }
 
 @media (max-width: 768px) {
+  .mfg-slate-section {
+    padding: 2.5rem 0 2.75rem;
+  }
+
+  .mfg-slate-img {
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
+  }
+
   .mfg-hero {
     padding-top: calc(var(--nav-height, 70px) + 1.25rem);
     padding-bottom: 2.75rem;
@@ -803,6 +856,14 @@
 }
 
 @media (max-width: 480px) {
+  .mfg-slate-section {
+    padding: 1.75rem 0 2rem;
+  }
+
+  .mfg-slate-img {
+    border-radius: 6px;
+  }
+
   .mfg-hero__title {
     font-size: 1.32rem;
     line-height: 1.25;
