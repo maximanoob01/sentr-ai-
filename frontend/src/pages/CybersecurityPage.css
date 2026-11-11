@@ -2590,10 +2590,21 @@
 
 @media (max-width: 992px) {
   .cyber-expert-section {
-    padding: 4.5rem 0;
+    padding: 4.25rem 0;
+    overflow: hidden;
   }
   .cyber-expert__header {
     margin-bottom: 2.25rem;
+    padding: 0 0.5rem;
+  }
+  .cyber-expert__title {
+    font-size: 1.55rem;
+  }
+  .cyber-expert__sub {
+    font-size: 0.96rem;
+  }
+  .cyber-expert__sub-note {
+    font-size: 0.85rem;
   }
   /* On tablets and mobile, allow smooth horizontal swiping across all 5 columns with scroll-snap */
   .cyber-expert__grid {
@@ -2601,16 +2612,18 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 1rem;
-    padding: 0.5rem 0.5rem 1.25rem;
+    padding: 0.5rem 1.15rem 1.25rem;
+    margin: 0 -1.15rem;
     -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
   }
   .cyber-expert__col {
-    flex: 0 0 220px;
-    scroll-snap-align: center;
-    gap: 1rem;
+    flex: 0 0 260px;
+    scroll-snap-align: start;
+    gap: 0.85rem;
   }
   .cyber-expert__grid::-webkit-scrollbar {
-    height: 6px;
+    height: 5px;
   }
   .cyber-expert__grid::-webkit-scrollbar-track {
     background: #f1f5f9;
@@ -2621,51 +2634,235 @@
     border-radius: 9999px;
   }
   .cyber-expert-card {
-    height: 215px;
-    padding: 1.15rem 0.9rem;
+    min-height: 195px;
+    height: auto;
+    padding: 1.25rem 1rem;
   }
   .cyber-expert-photo {
-    height: 215px;
+    height: 185px;
+  }
+  .cyber-expert-card__title {
+    font-size: 0.86rem;
+  }
+  .cyber-expert-card__desc {
+    font-size: 0.74rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cyber-expert-section {
+    padding: 3.5rem 0 3.75rem;
+  }
+  .cyber-expert__header {
+    margin-bottom: 1.85rem;
+    padding: 0 0.25rem;
+  }
+  .cyber-expert__title {
+    font-size: 1.38rem;
+    line-height: 1.3;
+  }
+  .cyber-expert__title br {
+    display: none;
+  }
+  .cyber-expert__title-accent {
+    display: block;
+    margin-top: 0.35rem;
+    font-size: 1.18rem;
+  }
+  .cyber-expert__sub-group {
+    gap: 0.75rem;
+  }
+  .cyber-expert__sub {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+  .cyber-expert__sub-note {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+  .cyber-expert__grid {
+    gap: 0.85rem;
+    padding: 0.5rem 1.15rem 1.15rem;
+    margin: 0 -1.15rem;
+  }
+  .cyber-expert__col {
+    flex: 0 0 76vw;
+    max-width: 280px;
+    min-width: 240px;
+    scroll-snap-align: center;
+    gap: 0.75rem;
+  }
+  .cyber-expert-card {
+    min-height: 180px;
+    padding: 1.15rem 0.95rem;
+  }
+  .cyber-expert-photo {
+    height: 170px;
   }
   .cyber-expert-card__title {
     font-size: 0.84rem;
+    margin-bottom: 0.45rem;
   }
   .cyber-expert-card__desc {
-    font-size: 0.72rem;
+    font-size: 0.73rem;
   }
 }
 
 @media (max-width: 640px) {
   .cyber-expert-section {
-    padding: 3.5rem 0;
+    padding: 3rem 0 3.25rem;
   }
   .cyber-expert__header {
-    margin-bottom: 2rem;
+    margin-bottom: 1.65rem;
   }
   .cyber-expert__title {
-    font-size: 1.3rem;
+    font-size: 1.26rem;
+  }
+  .cyber-expert__title-accent {
+    font-size: 1.08rem;
   }
   .cyber-expert__sub {
-    font-size: 0.88rem;
+    font-size: 0.86rem;
+    line-height: 1.52;
   }
   .cyber-expert__sub-note {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
+    line-height: 1.48;
+  }
+  .cyber-expert__grid {
+    gap: 0.75rem;
+    padding: 0.4rem 0.9rem 1rem;
+    margin: 0 -0.9rem;
   }
   .cyber-expert__col {
-    flex: 0 0 200px;
+    flex: 0 0 78vw;
+    max-width: 275px;
+    min-width: 235px;
+    gap: 0.7rem;
   }
   .cyber-expert-card {
-    height: 210px;
-    padding: 1rem 0.85rem;
+    min-height: 170px;
+    padding: 1.05rem 0.9rem;
+    border-radius: 6px;
   }
   .cyber-expert-photo {
-    height: 210px;
+    height: 160px;
+    border-radius: 6px;
+  }
+  .cyber-expert-card__title {
+    font-size: 0.82rem;
+  }
+  .cyber-expert-card__desc {
+    font-size: 0.72rem;
   }
   .cyber-expert-photo__badge-num {
-    font-size: 1.65rem;
+    font-size: 1.6rem;
   }
   .cyber-expert-photo__badge-icon svg {
-    width: 28px;
-    height: 28px;
+    width: 26px;
+    height: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cyber-expert-section {
+    padding: 2.5rem 0 2.75rem;
+  }
+  .cyber-expert__header {
+    margin-bottom: 1.4rem;
+  }
+  .cyber-expert__title {
+    font-size: 1.16rem;
+  }
+  .cyber-expert__title-accent {
+    font-size: 1rem;
+  }
+  .cyber-expert__sub {
+    font-size: 0.82rem;
+    line-height: 1.48;
+  }
+  .cyber-expert__sub-note {
+    font-size: 0.75rem;
+    line-height: 1.45;
+  }
+  .cyber-expert__grid {
+    gap: 0.65rem;
+    padding: 0.35rem 0.75rem 0.85rem;
+    margin: 0 -0.75rem;
+  }
+  .cyber-expert__col {
+    flex: 0 0 82vw;
+    max-width: 265px;
+    min-width: 225px;
+    gap: 0.65rem;
+  }
+  .cyber-expert-card {
+    min-height: 160px;
+    padding: 0.95rem 0.8rem;
+  }
+  .cyber-expert-photo {
+    height: 145px;
+  }
+  .cyber-expert-card__title {
+    font-size: 0.8rem;
+    margin-bottom: 0.35rem;
+  }
+  .cyber-expert-card__desc {
+    font-size: 0.7rem;
+    line-height: 1.42;
+  }
+  .cyber-expert-card__pointer--down {
+    bottom: -9px;
+    border-left-width: 10px;
+    border-right-width: 10px;
+    border-top-width: 10px;
+  }
+  .cyber-expert-card__pointer--up {
+    top: -9px;
+    border-left-width: 10px;
+    border-right-width: 10px;
+    border-bottom-width: 10px;
+  }
+  .cyber-expert-photo__badge-num {
+    font-size: 1.45rem;
+  }
+  .cyber-expert-photo__badge-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 360px) {
+  .cyber-expert-section {
+    padding: 2.25rem 0 2.5rem;
+  }
+  .cyber-expert__title {
+    font-size: 1.08rem;
+  }
+  .cyber-expert__title-accent {
+    font-size: 0.95rem;
+  }
+  .cyber-expert__grid {
+    gap: 0.6rem;
+    padding: 0.35rem 0.5rem 0.75rem;
+    margin: 0 -0.5rem;
+  }
+  .cyber-expert__col {
+    flex: 0 0 86vw;
+    max-width: 250px;
+    min-width: 215px;
+  }
+  .cyber-expert-card {
+    min-height: 155px;
+    padding: 0.85rem 0.75rem;
+  }
+  .cyber-expert-photo {
+    height: 135px;
+  }
+  .cyber-expert-card__title {
+    font-size: 0.78rem;
+  }
+  .cyber-expert-card__desc {
+    font-size: 0.68rem;
   }
 }
