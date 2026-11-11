@@ -1374,12 +1374,10 @@
   .solutions-hw-collage__heading {
     font-size: 1.25rem;
     line-height: 1.25;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
   }
   .solutions-hw-collage__subheading {
-    font-size: 0.82rem;
-    line-height: 1.48;
-    max-width: 580px;
+    display: none;
   }
   .solutions-hw-grid {
     display: flex;
@@ -2138,11 +2136,10 @@
   .solutions-hw-collage__heading {
     font-size: 1.12rem;
     line-height: 1.25;
-    margin-bottom: 0.35rem;
+    margin-bottom: 0;
   }
   .solutions-hw-collage__subheading {
-    font-size: 0.76rem;
-    line-height: 1.42;
+    display: none;
   }
   .solutions-hw-card {
     flex: 0 0 84vw;
@@ -2305,9 +2302,10 @@
   }
   .solutions-hw-collage__heading {
     font-size: 1.02rem;
+    margin-bottom: 0;
   }
   .solutions-hw-collage__subheading {
-    font-size: 0.72rem;
+    display: none;
   }
   .solutions-hw-card {
     flex: 0 0 88vw;
