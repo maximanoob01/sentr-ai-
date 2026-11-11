@@ -506,17 +506,12 @@ export const SolutionsPage: React.FC = () => {
                 {/* Card Content */}
                 <div className="solution-card__body">
                   <div className="solution-card__header">
-                    <div className="solution-card__icon-wrap">
-                      {item.icon}
-                    </div>
-                    <div>
-                      <h3 className="solution-card__title">
-                        <Link to={item.href} className="solution-card__title-link">
-                          {item.title}
-                        </Link>
-                      </h3>
-                      <p className="solution-card__tagline">{item.tagline}</p>
-                    </div>
+                    <h3 className="solution-card__title">
+                      <Link to={item.href} className="solution-card__title-link">
+                        {item.title}
+                      </Link>
+                    </h3>
+                    <p className="solution-card__tagline">{item.tagline}</p>
                   </div>
 
                   <p className="solution-card__desc">{item.description}</p>
@@ -527,9 +522,6 @@ export const SolutionsPage: React.FC = () => {
                     <ul className="solution-card__highlights-list">
                       {item.highlights.map((h, i) => (
                         <li key={i} className="solution-card__highlight-item">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                          </svg>
                           <span>{h}</span>
                         </li>
                       ))}
