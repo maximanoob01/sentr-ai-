@@ -563,6 +563,9 @@ export const CloudSolutionsPage: React.FC = () => {
 
       {/* ── PLATFORMS ── */}
       <section className="cs-platforms" aria-labelledby="platforms-heading">
+        {/* Dotted Pattern Gradient in Right Side */}
+        <div className="cs-platforms__dots" aria-hidden="true" />
+
         <div className="cs-container">
           <div className="cs-eyebrow fade-in-up">Cloud Platforms</div>
           <h2 id="platforms-heading" className="cs-section-heading cs-platforms__heading fade-in-up">

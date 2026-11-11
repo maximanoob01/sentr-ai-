@@ -1094,8 +1094,47 @@
    PLATFORM CARDS
    ================================================================ */
 .cs-platforms {
+  position: relative;
   padding: 3rem 0 7rem;
   background: #ffffff;
+  overflow: hidden;
+}
+
+/* Dotted Pattern in Gradient - Right Side */
+.cs-platforms__dots {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 500px;
+  height: 440px;
+  background-image: 
+    radial-gradient(circle at 100% 0%, rgba(37, 99, 235, 0.12) 0%, rgba(56, 189, 248, 0.05) 45%, transparent 75%),
+    radial-gradient(rgba(37, 99, 235, 0.28) 1.5px, transparent 1.5px);
+  background-size: 100% 100%, 20px 20px;
+  background-repeat: no-repeat, repeat;
+  mask-image: radial-gradient(ellipse at 100% 0%, black 25%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at 100% 0%, black 25%, transparent 75%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Subtle Ambient Glow behind Dots */
+.cs-platforms__dots::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.16) 0%, rgba(37, 99, 235, 0.06) 50%, transparent 70%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.cs-platforms > .cs-container {
+  position: relative;
+  z-index: 1;
 }
 
 .cs-platforms__heading { color: #0f172a; }
@@ -2288,6 +2327,17 @@
   .cs-platforms {
     padding: 3.5rem 0 4rem;
   }
+  .cs-platforms__dots {
+    width: 280px;
+    height: 250px;
+    background-size: 100% 100%, 16px 16px;
+  }
+  .cs-platforms__dots::before {
+    width: 220px;
+    height: 220px;
+    top: -30px;
+    right: -30px;
+  }
   .cs-platforms__grid {
     gap: 1.25rem;
   }
@@ -2588,6 +2638,17 @@
   /* Platforms Section */
   .cs-platforms {
     padding: 2.75rem 0 3.25rem;
+  }
+  .cs-platforms__dots {
+    width: 200px;
+    height: 180px;
+    background-size: 100% 100%, 14px 14px;
+  }
+  .cs-platforms__dots::before {
+    width: 160px;
+    height: 160px;
+    top: -20px;
+    right: -20px;
   }
   .cs-platform-card {
     padding: 1.35rem 1rem;
