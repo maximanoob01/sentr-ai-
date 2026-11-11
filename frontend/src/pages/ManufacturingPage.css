@@ -219,41 +219,17 @@
    2. WHAT IS AN MES? SECTION
    ================================================================ */
 .mfg-mes-overview {
-  padding: 5.5rem 0;
+  padding: 4.75rem 0 5rem;
   background: linear-gradient(180deg, #070b14 0%, #0a1020 50%, #070b14 100%);
   border-bottom: 1px solid rgba(56, 189, 248, 0.15);
   position: relative;
   overflow: hidden;
 }
 
-.mfg-mes-overview__grid {
-  display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  gap: 3.75rem;
-  align-items: center;
-}
-
-/* Left Content */
-.mfg-mes-overview__left {
+.mfg-mes-overview__content {
   display: flex;
   flex-direction: column;
-}
-
-.mfg-mes-overview__eyebrow-wrap {
-  margin-bottom: 0.85rem;
-}
-
-.mfg-mes-overview__eyebrow {
-  display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #38bdf8;
-  padding: 0.3rem 0.85rem;
-  background: rgba(14, 165, 233, 0.1);
-  border: 1px solid rgba(56, 189, 248, 0.28);
-  border-radius: 9999px;
+  max-width: 1040px;
 }
 
 .mfg-mes-overview__title {
@@ -271,28 +247,29 @@
   color: #f1f5f9;
   font-weight: 500;
   margin: 0 0 1rem 0;
+  max-width: 860px;
 }
 
 .mfg-mes-overview__desc {
   font-size: 0.98rem;
   line-height: 1.65;
   color: #94a3b8;
-  margin: 0 0 2rem 0;
+  margin: 0 0 2.25rem 0;
+  max-width: 820px;
 }
 
 /* 4 Pillars */
 .mfg-mes-pillars {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-bottom: 1.85rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.15rem;
 }
 
 .mfg-mes-pillar-item {
   background: #0d1527;
   border: 1px solid rgba(56, 189, 248, 0.2);
   border-radius: 14px;
-  padding: 0.95rem 1rem;
+  padding: 1.1rem 1.15rem;
   display: flex;
   align-items: flex-start;
   gap: 0.85rem;
@@ -329,219 +306,6 @@
   color: #94a3b8;
   margin: 0;
   line-height: 1.35;
-}
-
-/* Scalability Badge */
-.mfg-mes-scale-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
-  background: rgba(15, 23, 42, 0.85);
-  border: 1px solid rgba(56, 189, 248, 0.25);
-  border-radius: 9999px;
-  padding: 0.5rem 1.15rem;
-  font-size: 0.82rem;
-  color: #cbd5e1;
-  width: fit-content;
-}
-
-.mfg-mes-scale-badge strong {
-  color: #38bdf8;
-  font-weight: 700;
-}
-
-.mfg-mes-scale-badge__pulse {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #10b981;
-  box-shadow: 0 0 8px #10b981;
-  display: inline-block;
-  flex-shrink: 0;
-}
-
-/* Right Side: Architecture Diagram */
-.mfg-mes-overview__right {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.mfg-mes-diagram {
-  width: 100%;
-  background: #080d19;
-  border: 1px solid rgba(56, 189, 248, 0.25);
-  border-radius: 22px;
-  padding: 1.65rem 1.75rem;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(14, 165, 233, 0.12);
-  display: flex;
-  flex-direction: column;
-}
-
-.mfg-diagram-tier {
-  border-radius: 14px;
-  padding: 1rem 1.25rem;
-}
-
-.mfg-diagram-tier--business {
-  background: #0d1527;
-  border: 1px solid rgba(255, 255, 255, 0.09);
-}
-
-.mfg-diagram-tier__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0.65rem;
-}
-
-.mfg-diagram-tier__tag {
-  font-size: 0.65rem;
-  font-weight: 750;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #64748b;
-}
-
-.mfg-diagram-tier__title {
-  font-size: 0.88rem;
-  font-weight: 750;
-  color: #ffffff;
-  margin: 0;
-}
-
-.mfg-diagram-tier__chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-}
-
-.mfg-diagram-chip {
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: #cbd5e1;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 0.2rem 0.65rem;
-  border-radius: 6px;
-}
-
-/* Connectors */
-.mfg-diagram-flow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.45rem;
-  padding: 0.45rem 0;
-  color: #38bdf8;
-}
-
-.mfg-diagram-flow__label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.7rem;
-  font-weight: 650;
-  color: #38bdf8;
-  background: rgba(14, 165, 233, 0.1);
-  border: 1px solid rgba(56, 189, 248, 0.22);
-  padding: 0.2rem 0.65rem;
-  border-radius: 9999px;
-}
-
-/* Middle Tier (Manufapp MES - Highlighted) */
-.mfg-diagram-tier--mes {
-  background: linear-gradient(155deg, #0c1a36 0%, #10254c 100%);
-  border: 1.5px solid #38bdf8;
-  box-shadow: 0 10px 28px rgba(2, 132, 199, 0.25), 0 0 16px rgba(56, 189, 248, 0.2);
-  padding: 1.15rem 1.35rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.mfg-diagram-tier--mes::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #38bdf8, transparent);
-}
-
-.mfg-diagram-tier__badge-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0.45rem;
-}
-
-.mfg-diagram-mes-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.68rem;
-  font-weight: 750;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #38bdf8;
-}
-
-.mfg-diagram-speed-pill {
-  font-size: 0.65rem;
-  font-weight: 700;
-  color: #10b981;
-  background: rgba(16, 185, 129, 0.12);
-  border: 1px solid rgba(16, 185, 129, 0.35);
-  padding: 0.15rem 0.55rem;
-  border-radius: 9999px;
-}
-
-.mfg-diagram-mes-title {
-  font-size: 1.15rem;
-  font-weight: 850;
-  color: #ffffff;
-  margin: 0 0 0.2rem 0;
-}
-
-.mfg-diagram-mes-subtitle {
-  font-size: 0.78rem;
-  color: #94a3b8;
-  margin: 0 0 0.85rem 0;
-  line-height: 1.4;
-}
-
-.mfg-diagram-mes-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.45rem;
-}
-
-.mfg-diagram-mes-cell {
-  background: rgba(11, 18, 36, 0.88);
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  border-radius: 8px;
-  padding: 0.5rem 0.35rem;
-  text-align: center;
-}
-
-.mfg-diagram-mes-cell__label {
-  font-size: 0.72rem;
-  font-weight: 750;
-  color: #ffffff;
-  display: block;
-}
-
-.mfg-diagram-mes-cell__status {
-  font-size: 0.62rem;
-  font-weight: 600;
-  color: #38bdf8;
-}
-
-/* Bottom Tier: Shop Floor */
-.mfg-diagram-tier--floor {
-  background: #0d1527;
-  border: 1px solid rgba(255, 255, 255, 0.09);
 }
 
 /* ================================================================
@@ -939,9 +703,8 @@
    RESPONSIVE BREAKPOINTS
    ================================================================ */
 @media (max-width: 1024px) {
-  .mfg-mes-overview__grid {
-    grid-template-columns: 1fr;
-    gap: 2.75rem;
+  .mfg-mes-pillars {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .mfg-hero__content {
@@ -957,7 +720,6 @@
   .mfg-hero__actions {
     justify-content: center;
   }
-
 
   .mfg-modules-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -986,10 +748,6 @@
 
   .mfg-mes-pillars {
     grid-template-columns: 1fr;
-  }
-
-  .mfg-diagram-mes-grid {
-    grid-template-columns: repeat(2, 1fr);
   }
 
   .mfg-hero__title {
