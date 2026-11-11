@@ -1712,18 +1712,43 @@
     height: 13px;
   }
   .solutions-hardware-banner {
-    padding: 1.5rem 1.25rem;
+    padding: 1.35rem 1.15rem;
+    border-radius: 16px;
+    margin-top: 1rem;
+  }
+  .solutions-hardware-banner__inner {
+    gap: 1.15rem;
+  }
+  .solutions-hardware-banner__title {
+    font-size: 1.12rem;
+    gap: 0.5rem;
+    margin-bottom: 0.45rem;
+    line-height: 1.25;
+  }
+  .solutions-hardware-banner__logo,
+  .solutions-lenovo-logo {
+    height: 28px;
+  }
+  .solutions-hardware-banner__desc {
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+  .solutions-hardware-banner__right {
+    width: 100%;
+  }
+  .solutions-hardware-banner__right .solutions-btn {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 0.78rem;
+    gap: 0.45rem;
+  }
+  .solutions-hardware-banner__right .solutions-btn svg {
+    width: 14px;
+    height: 14px;
   }
   .solutions-hw-supply-section,
   .solutions-hw-collage {
     padding: 2.5rem 0 3rem;
-  }
-  .solutions-hardware-banner__title {
-    font-size: 1.25rem;
-  }
-  .solutions-hardware-banner__logo,
-  .solutions-lenovo-logo {
-    height: 36px;
   }
   .solutions-why-section {
     padding: 3.5rem 0;
@@ -1876,6 +1901,41 @@
     padding: 0.42rem 0.8rem;
     font-size: 0.72rem;
   }
+  .solutions-hardware-banner {
+    padding: 1rem 0.9rem;
+    border-radius: 14px;
+    margin-top: 0.85rem;
+  }
+  .solutions-hardware-banner__inner {
+    gap: 0.85rem;
+  }
+  .solutions-hardware-banner__title {
+    font-size: 0.96rem;
+    gap: 0.4rem;
+    margin-bottom: 0.35rem;
+    line-height: 1.25;
+  }
+  .solutions-hardware-banner__logo,
+  .solutions-lenovo-logo {
+    height: 22px;
+  }
+  .solutions-hardware-banner__desc {
+    font-size: 0.74rem;
+    line-height: 1.4;
+  }
+  .solutions-hardware-banner__right {
+    width: 100%;
+  }
+  .solutions-hardware-banner__right .solutions-btn {
+    width: 100%;
+    padding: 0.44rem 0.85rem;
+    font-size: 0.74rem;
+    gap: 0.4rem;
+  }
+  .solutions-hardware-banner__right .solutions-btn svg {
+    width: 13px;
+    height: 13px;
+  }
 }
 
 @media (max-width: 360px) {
@@ -1923,6 +1983,24 @@
   .solution-card__cta-btn {
     padding: 0.38rem 0.7rem;
     font-size: 0.68rem;
+  }
+  .solutions-hardware-banner {
+    padding: 0.85rem 0.75rem;
+    border-radius: 12px;
+  }
+  .solutions-hardware-banner__title {
+    font-size: 0.88rem;
+  }
+  .solutions-hardware-banner__logo,
+  .solutions-lenovo-logo {
+    height: 19px;
+  }
+  .solutions-hardware-banner__desc {
+    font-size: 0.7rem;
+  }
+  .solutions-hardware-banner__right .solutions-btn {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.7rem;
   }
 }
 
@@ -2117,19 +2195,28 @@
 
 @media (max-width: 640px) {
   .solutions-hw-toast {
-    bottom: 16px;
-    right: 16px;
-    left: 16px;
+    bottom: 12px;
+    right: 12px;
+    left: 12px;
     width: auto;
-    border-radius: 14px;
+    border-radius: 12px;
   }
   .solutions-hw-toast__inner {
-    padding: 1rem 1.15rem;
+    padding: 0.85rem 1rem;
   }
   .solutions-hw-toast__title {
-    font-size: 0.96rem;
+    font-size: 0.88rem;
+  }
+  .solutions-hw-toast__logo {
+    height: 18px;
   }
   .solutions-hw-toast__desc {
-    font-size: 0.78rem;
+    font-size: 0.74rem;
+    line-height: 1.35;
+    margin: 0.35rem 0 0.55rem;
+  }
+  .solutions-hw-toast__btn {
+    padding: 0.42rem 0.85rem;
+    font-size: 0.72rem;
   }
 }
