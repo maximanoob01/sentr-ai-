@@ -207,6 +207,8 @@ export const ManufacturingPage: React.FC = () => {
           }}
           aria-hidden="true"
         />
+        {/* Pure neutral dimming overlay (strictly normal dimness, zero blue screen) */}
+        <div className="mfg-hero__overlay" aria-hidden="true" />
 
         <div className="mfg-container">
           <div className="mfg-hero__inner">
