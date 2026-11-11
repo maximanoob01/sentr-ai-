@@ -12,7 +12,7 @@ import serverImg from '../assets/cloud solutions/server.png';
 import whyUs1Img from '../assets/why us/1.png';
 
 const FULL_HERO_SUBTITLE =
-  'Enterprise-grade cybersecurity solutions to protect your users, applications, infrastructure and critical business data. Sentr AI helps organisations identify threats, strengthen security and maintain control across complex digital environments.';
+  'Sentr AI helps you spot threats, strengthen security and protect your business data.';
 
 const cybersecurityServices = [
   {
