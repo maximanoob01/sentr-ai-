@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import heroImg from "../assets/contact us/hero.png";
 import "./PrivacyPage.css";
 

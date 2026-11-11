@@ -1,0 +1,796 @@
+/* Cookie Policy Page Styling */
+
+.cookie-page {
+  background: #f8fafc;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.cookie-hero {
+  position: relative;
+  height: 340px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #020617;
+}
+
+.cookie-hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.cookie-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(2, 6, 23, 0.88) 0%, rgba(15, 23, 42, 0.76) 100%);
+  pointer-events: none;
+}
+
+.cookie-hero__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 5rem 1.5rem 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cookie-hero__title {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 0.85rem;
+}
+
+.cookie-hero__subtitle {
+  color: #cbd5e1;
+  font-size: 1.05rem;
+  margin: 0 0 0.5rem;
+}
+
+.cookie-hero__updated {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Layout Container
+   ========================================================================== */
+.cookie-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 5rem;
+  display: flex;
+  gap: 3.5rem;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Table of Contents (TOC) - Desktop Sticky Sidebar
+   ========================================================================== */
+.cookie-toc {
+  position: sticky;
+  top: 100px;
+  width: 240px;
+  flex-shrink: 0;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  padding: 1.5rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+.cookie-toc__heading {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin: 0 0 1rem;
+}
+
+.cookie-toc__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cookie-toc__link {
+  text-align: left;
+  background: transparent;
+  border: none;
+  border-left: 3px solid transparent;
+  color: #64748b;
+  font-weight: 500;
+  font-size: 0.83rem;
+  line-height: 1.4;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: normal;
+  display: block;
+  width: 100%;
+}
+
+.cookie-toc__link:hover {
+  color: #1e293b;
+  background: #f8fafc;
+}
+
+.cookie-toc__link--active {
+  background: #eff6ff !important;
+  border-left-color: #3b82f6 !important;
+  color: #1d4ed8 !important;
+  font-weight: 700 !important;
+}
+
+/* ==========================================================================
+   Article Content & Section Blocks
+   ========================================================================== */
+.cookie-content {
+  flex: 1;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.cookie-section-block {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2.5rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+  margin-bottom: 1.75rem;
+  scroll-margin-top: 110px;
+  box-sizing: border-box;
+}
+
+.cookie-section-block__title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #f1f5f9;
+  line-height: 1.3;
+}
+
+.cookie-section-block__intro-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 1rem;
+  line-height: 1.25;
+}
+
+.cookie-notice-banner {
+  background: #eff6ff;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  border-left: 4px solid #3b82f6;
+  margin-top: 1.25rem;
+  box-sizing: border-box;
+}
+
+.cookie-notice-banner__text {
+  color: #1d4ed8;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.cookie-notice-banner__link {
+  color: #1d4ed8;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 700;
+}
+
+.cookie-subheading {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 1.5rem 0 0.65rem;
+  line-height: 1.4;
+}
+
+.cookie-prose {
+  color: #475569;
+  line-height: 1.8;
+  margin-bottom: 0.95rem;
+  font-size: 0.95rem;
+}
+
+.cookie-prose--italic {
+  margin-top: 1.25rem;
+  font-style: italic;
+  color: #94a3b8;
+  font-size: 0.875rem;
+}
+
+/* Bullet list */
+.cookie-bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.cookie-bullet-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: #475569;
+  font-size: 0.93rem;
+  line-height: 1.7;
+}
+
+.cookie-bullet-dot {
+  width: 6px;
+  height: 6px;
+  background: #3b82f6;
+  border-radius: 50%;
+  margin-top: 0.55rem;
+  flex-shrink: 0;
+}
+
+/* Why We Use items */
+.cookie-why-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #f1f5f9;
+  align-items: flex-start;
+}
+
+.cookie-why-item:last-of-type {
+  border-bottom: none;
+}
+
+.cookie-why-item__dot {
+  width: 8px;
+  height: 8px;
+  background: #3b82f6;
+  border-radius: 50%;
+  margin-top: 0.45rem;
+  flex-shrink: 0;
+}
+
+.cookie-why-item__title {
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.25rem;
+  font-size: 0.95rem;
+}
+
+.cookie-why-item__desc {
+  color: #64748b;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Cookie Types Grid */
+.cookie-types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cookie-type-card {
+  border-radius: 12px;
+  padding: 1.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+}
+
+.cookie-type-card__header {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.65rem;
+}
+
+.cookie-type-card__badge {
+  width: 28px;
+  height: 28px;
+  color: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.cookie-type-card__title {
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+.cookie-type-card__desc {
+  color: #64748b;
+  font-size: 0.83rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Cookie Duration Grid */
+.cookie-duration-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 0.75rem 0 1.5rem;
+}
+
+.cookie-duration-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.cookie-duration-card__icon {
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem;
+}
+
+.cookie-duration-card__title {
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.cookie-duration-card__desc {
+  color: #64748b;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Browser Pills */
+.cookie-browser-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.cookie-browser-pill {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1d4ed8;
+  border-radius: 999px;
+  padding: 0.4rem 1.1rem;
+  font-size: 0.83rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* Contact Card */
+.cookie-contact-card {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  text-align: center;
+  scroll-margin-top: 110px;
+  margin-top: 2rem;
+  box-sizing: border-box;
+  color: #ffffff;
+}
+
+.cookie-contact-card__title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 0.75rem;
+  line-height: 1.3;
+}
+
+.cookie-contact-card__subtitle {
+  color: #94a3b8;
+  line-height: 1.8;
+  margin: 0 auto 2rem;
+  max-width: 520px;
+  font-size: 0.95rem;
+}
+
+.cookie-contact-card__actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cookie-contact-card__btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #3b82f6;
+  color: #ffffff !important;
+  text-decoration: none;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  min-height: 44px;
+  box-sizing: border-box;
+}
+
+.cookie-contact-card__btn-primary:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.cookie-contact-card__btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: #e2e8f0 !important;
+  text-decoration: none;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.2s ease;
+  min-height: 44px;
+  box-sizing: border-box;
+}
+
+.cookie-contact-card__btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+.cookie-contact-card__links {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.cookie-contact-card__link {
+  color: #94a3b8;
+  font-size: 0.83rem;
+  text-decoration: none;
+  border-bottom: 1px solid #334155;
+  padding-bottom: 2px;
+  transition: color 0.2s ease;
+}
+
+.cookie-contact-card__link:hover {
+  color: #ffffff;
+  border-bottom-color: #64748b;
+}
+
+.cookie-contact-card__address {
+  color: #64748b;
+  font-size: 0.82rem;
+  margin: 1.25rem 0 0;
+  line-height: 1.6;
+}
+
+.cookie-footer-note {
+  color: #94a3b8;
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: 2.5rem;
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+/* Tablet & Mobile Screens (<= 992px) */
+@media (max-width: 992px) {
+  .cookie-container {
+    flex-direction: column;
+    padding: 2.5rem 1.25rem 4rem;
+    gap: 1.75rem;
+  }
+
+  /* Transform TOC into sticky horizontal swipeable pill bar */
+  .cookie-toc {
+    position: sticky;
+    top: calc(var(--nav-height, 70px) + 0.35rem);
+    width: 100%;
+    border-radius: 12px;
+    padding: 0.65rem 0.75rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 25;
+    margin-bottom: 0.5rem;
+  }
+
+  .cookie-toc__heading {
+    display: none;
+  }
+
+  .cookie-toc__nav {
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 0.5rem;
+    padding-bottom: 2px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .cookie-toc__nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cookie-toc__link {
+    white-space: nowrap;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    border-left: none;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    font-size: 0.78rem;
+    flex-shrink: 0;
+  }
+
+  .cookie-toc__link--active {
+    background: #3b82f6 !important;
+    border-color: #3b82f6 !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.35);
+  }
+
+  .cookie-section-block {
+    padding: 2rem 1.75rem;
+    scroll-margin-top: calc(var(--nav-height, 70px) + 4.5rem);
+  }
+
+  .cookie-contact-card {
+    scroll-margin-top: calc(var(--nav-height, 70px) + 4.5rem);
+  }
+}
+
+/* Medium Phones & Small Tablets (<= 768px) */
+@media (max-width: 768px) {
+  .cookie-hero {
+    height: auto;
+    min-height: 250px;
+    padding: calc(var(--nav-height, 70px) + 1.75rem) 1.25rem 2.25rem;
+    box-sizing: border-box;
+  }
+
+  .cookie-hero__content {
+    padding: 0;
+  }
+
+  .cookie-hero__title {
+    font-size: 1.85rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .cookie-hero__subtitle {
+    font-size: 0.95rem;
+  }
+
+  .cookie-hero__updated {
+    font-size: 0.8rem;
+  }
+
+  .cookie-container {
+    padding: 1.75rem 1rem 3.5rem;
+    gap: 1.5rem;
+  }
+
+  .cookie-section-block {
+    padding: 1.6rem 1.25rem;
+    border-radius: 14px;
+    margin-bottom: 1.25rem;
+  }
+
+  .cookie-section-block__title {
+    font-size: 1.18rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.6rem;
+  }
+
+  .cookie-section-block__intro-title {
+    font-size: 1.35rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .cookie-types-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .cookie-duration-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .cookie-duration-card {
+    padding: 1.25rem;
+  }
+
+  .cookie-contact-card {
+    padding: 2.25rem 1.25rem;
+    border-radius: 16px;
+    margin-top: 1.5rem;
+  }
+
+  .cookie-contact-card__title {
+    font-size: 1.45rem;
+  }
+
+  .cookie-contact-card__subtitle {
+    font-size: 0.88rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Small Phones (<= 480px) */
+@media (max-width: 480px) {
+  .cookie-hero {
+    min-height: 220px;
+    padding: calc(var(--nav-height, 70px) + 1.25rem) 1rem 2rem;
+  }
+
+  .cookie-hero__title {
+    font-size: 1.6rem;
+  }
+
+  .cookie-hero__subtitle {
+    font-size: 0.88rem;
+  }
+
+  .cookie-hero__updated {
+    font-size: 0.75rem;
+  }
+
+  .cookie-container {
+    padding: 1.25rem 0.75rem 2.5rem;
+  }
+
+  .cookie-toc {
+    top: calc(var(--nav-height, 70px) + 0.25rem);
+    padding: 0.5rem 0.5rem;
+    border-radius: 10px;
+  }
+
+  .cookie-toc__link {
+    font-size: 0.74rem;
+    padding: 0.38rem 0.75rem;
+  }
+
+  .cookie-section-block {
+    padding: 1.25rem 0.95rem;
+    border-radius: 12px;
+  }
+
+  .cookie-section-block__title {
+    font-size: 1.1rem;
+  }
+
+  .cookie-section-block__intro-title {
+    font-size: 1.22rem;
+  }
+
+  .cookie-prose {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+  }
+
+  .cookie-bullet-item {
+    font-size: 0.88rem;
+  }
+
+  .cookie-why-item {
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+  }
+
+  .cookie-why-item__title {
+    font-size: 0.9rem;
+  }
+
+  .cookie-why-item__desc {
+    font-size: 0.84rem;
+  }
+
+  .cookie-type-card {
+    padding: 1rem;
+  }
+
+  .cookie-browser-pills {
+    gap: 0.5rem;
+  }
+
+  .cookie-browser-pill {
+    font-size: 0.76rem;
+    padding: 0.32rem 0.8rem;
+  }
+
+  .cookie-contact-card {
+    padding: 2rem 1rem;
+    border-radius: 14px;
+  }
+
+  .cookie-contact-card__title {
+    font-size: 1.35rem;
+  }
+
+  .cookie-contact-card__actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .cookie-contact-card__btn-primary,
+  .cookie-contact-card__btn-secondary {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.86rem;
+  }
+
+  .cookie-contact-card__links {
+    gap: 0.85rem;
+  }
+
+  .cookie-contact-card__address {
+    font-size: 0.75rem;
+  }
+}
+
+/* Extra Small Phones (<= 360px) */
+@media (max-width: 360px) {
+  .cookie-hero__title {
+    font-size: 1.4rem;
+  }
+
+  .cookie-section-block__title {
+    font-size: 1.02rem;
+  }
+
+  .cookie-section-block__intro-title {
+    font-size: 1.12rem;
+  }
+
+  .cookie-toc__link {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.65rem;
+  }
+}

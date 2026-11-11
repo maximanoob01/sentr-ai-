@@ -130,8 +130,8 @@
 }
 
 .cloud-modal__partner-logo-item {
-  height: 38px;
-  padding: 4px 12px;
+  height: 42px;
+  padding: 4px 14px;
   background: #f8fafc;
   border: 1px solid #e2e8f0;
   border-radius: 8px;
@@ -148,26 +148,25 @@
 }
 
 .cloud-modal__partner-img {
-  height: 25px;
+  height: 28px;
   width: auto;
-  max-width: 95px;
   object-fit: contain;
   display: block;
 }
 
 .cloud-modal__partner-img--aws {
-  height: 25px;
-  max-width: 52px;
+  height: 28px;
+  max-width: 58px;
 }
 
 .cloud-modal__partner-img--azure {
-  height: 24px;
-  max-width: 86px;
+  height: 28px;
+  max-width: 110px;
 }
 
 .cloud-modal__partner-img--gcp {
-  height: 25px;
-  max-width: 95px;
+  height: 28px;
+  max-width: 140px;
 }
 
 /* Header */
@@ -534,20 +533,20 @@
     gap: 0.5rem;
   }
   .cloud-modal__partner-logo-item {
-    height: 35px;
-    padding: 3px 8px;
+    height: 36px;
+    padding: 3px 10px;
   }
   .cloud-modal__partner-img--aws {
-    height: 22px;
-    max-width: 48px;
+    height: 23px;
+    max-width: 50px;
   }
   .cloud-modal__partner-img--azure {
-    height: 22px;
-    max-width: 78px;
+    height: 23px;
+    max-width: 96px;
   }
   .cloud-modal__partner-img--gcp {
-    height: 22px;
-    max-width: 86px;
+    height: 23px;
+    max-width: 120px;
   }
 }
 
@@ -557,20 +556,20 @@
     padding: 0.25rem 0.5rem;
   }
   .cloud-modal__partner-logo-item {
-    height: 32px;
-    padding: 2px 7px;
+    height: 34px;
+    padding: 2px 8px;
   }
   .cloud-modal__partner-img--aws {
-    height: 20px;
+    height: 21px;
     max-width: 44px;
   }
   .cloud-modal__partner-img--azure {
-    height: 19px;
-    max-width: 70px;
+    height: 21px;
+    max-width: 86px;
   }
   .cloud-modal__partner-img--gcp {
-    height: 19px;
-    max-width: 76px;
+    height: 21px;
+    max-width: 106px;
   }
   .cloud-form {
     padding: 1.5rem 1rem 1.75rem;
