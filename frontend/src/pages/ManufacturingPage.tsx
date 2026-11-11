@@ -4,6 +4,16 @@ import './ManufacturingPage.css';
 import aavImg from '../assets/cloud solutions/aav.png';
 import slateImg from '../assets/manfuapp/slate.png';
 
+// Stylized step numbers matching reference image
+import step01Gray from '../assets/manfuapp/step-01-gray.png';
+import step01Blue from '../assets/manfuapp/step-01-blue.png';
+import step02Gray from '../assets/manfuapp/step-02-gray.png';
+import step02Blue from '../assets/manfuapp/step-02-blue.png';
+import step03Gray from '../assets/manfuapp/step-03-gray.png';
+import step03Blue from '../assets/manfuapp/step-03-blue.png';
+import step04Gray from '../assets/manfuapp/step-04-gray.png';
+import step04Blue from '../assets/manfuapp/step-04-blue.png';
+
 const FULL_HERO_SUBTITLE =
   'Manufapp collects data from your machines and teams in real time, so you can fix problems early and run production with confidence.';
 
@@ -153,6 +163,41 @@ const factoryModules: ModuleCard[] = [
         <rect x="3" y="16" width="7" height="5" />
       </svg>
     ),
+  },
+];
+
+const pipelineSteps = [
+  {
+    num: '01',
+    grayImg: step01Gray,
+    blueImg: step01Blue,
+    isActive: false,
+    title: 'Non-Invasive Data Capture',
+    desc: 'Deploy industrial edge gateways to interface with PLC controllers, energy meters, optical sensors, and vision cameras.',
+  },
+  {
+    num: '02',
+    grayImg: step02Gray,
+    blueImg: step02Blue,
+    isActive: true, // highlighted in vibrant royal blue per reference image
+    title: 'Real-Time Edge Processing',
+    desc: 'Cleanse, normalize, and evaluate telemetry at sub-second speeds on the factory floor with continuous offline failover.',
+  },
+  {
+    num: '03',
+    grayImg: step03Gray,
+    blueImg: step03Blue,
+    isActive: false,
+    title: 'Automated Actions & Alerts',
+    desc: 'Trigger line notifications, pneumatic diverters, and maintenance tickets before minor anomalies turn into shutdown events.',
+  },
+  {
+    num: '04',
+    grayImg: step04Gray,
+    blueImg: step04Blue,
+    isActive: false,
+    title: 'Unified Decision Center',
+    desc: 'View single-pane factory status on TVs, tablets, or mobiles, and automatically feed reconciled metrics into your ERP.',
   },
 ];
 
@@ -442,34 +487,29 @@ export const ManufacturingPage: React.FC = () => {
           </div>
 
           <div className="mfg-pipeline-grid">
-            <div className="mfg-pipeline-step">
-              <div className="mfg-pipeline-step__num">01</div>
-              <h3 className="mfg-pipeline-step__title">Non-Invasive Data Capture</h3>
-              <p className="mfg-pipeline-step__desc">
-                Deploy industrial edge gateways to interface with PLC controllers, energy meters, optical sensors, and vision cameras.
-              </p>
-            </div>
-            <div className="mfg-pipeline-step">
-              <div className="mfg-pipeline-step__num">02</div>
-              <h3 className="mfg-pipeline-step__title">Real-Time Edge Processing</h3>
-              <p className="mfg-pipeline-step__desc">
-                Cleanse, normalize, and evaluate telemetry at sub-second speeds on the factory floor with continuous offline failover.
-              </p>
-            </div>
-            <div className="mfg-pipeline-step">
-              <div className="mfg-pipeline-step__num">03</div>
-              <h3 className="mfg-pipeline-step__title">Automated Actions &amp; Alerts</h3>
-              <p className="mfg-pipeline-step__desc">
-                Trigger line notifications, pneumatic diverters, and maintenance tickets before minor anomalies turn into shutdown events.
-              </p>
-            </div>
-            <div className="mfg-pipeline-step">
-              <div className="mfg-pipeline-step__num">04</div>
-              <h3 className="mfg-pipeline-step__title">Unified Decision Center</h3>
-              <p className="mfg-pipeline-step__desc">
-                View single-pane factory status on TVs, tablets, or mobiles, and automatically feed reconciled metrics into your ERP.
-              </p>
-            </div>
+            {pipelineSteps.map((step) => (
+              <div
+                key={step.num}
+                className={`mfg-pipeline-step ${step.isActive ? 'mfg-pipeline-step--active' : ''}`}
+              >
+                <div className="mfg-pipeline-step__num-wrap">
+                  <img
+                    src={step.grayImg}
+                    alt={step.num}
+                    className="mfg-pipeline-step__num-img mfg-pipeline-step__num-img--gray"
+                    loading="lazy"
+                  />
+                  <img
+                    src={step.blueImg}
+                    alt={step.num}
+                    className="mfg-pipeline-step__num-img mfg-pipeline-step__num-img--blue"
+                    loading="lazy"
+                  />
+                </div>
+                <h3 className="mfg-pipeline-step__title">{step.title}</h3>
+                <p className="mfg-pipeline-step__desc">{step.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

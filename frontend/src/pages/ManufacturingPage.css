@@ -631,56 +631,155 @@
 }
 
 /* ================================================================
-   4. PIPELINE SECTION
+   4. PIPELINE SECTION (SEAMLESS INTEGRATION - REF IMAGE MATCH)
    ================================================================ */
 .mfg-pipeline-section {
-  padding: 5rem 0;
-  background-color: #070b14;
-  border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+  padding: 5.75rem 0 6.25rem;
+  background-color: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  position: relative;
+}
+
+.mfg-pipeline-section .mfg-section-header {
+  max-width: 780px;
+  margin: 0 auto 3.75rem auto;
+}
+
+.mfg-pipeline-section .mfg-section-header__badge {
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+  padding: 0.35rem 0.95rem;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.mfg-pipeline-section .mfg-section-header__title {
+  color: #0f172a;
+  font-size: clamp(2rem, 3.4vw, 2.75rem);
+  font-weight: 850;
+  letter-spacing: -0.025em;
+  line-height: 1.22;
+  margin: 0 0 1rem 0;
+}
+
+.mfg-pipeline-section .mfg-section-header__desc {
+  color: #64748b;
+  font-size: clamp(0.98rem, 1.2vw, 1.1rem);
+  line-height: 1.68;
+  max-width: 660px;
+  margin: 0 auto;
 }
 
 .mfg-pipeline-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  column-gap: 2.25rem;
+  row-gap: 2.5rem;
+  align-items: start;
 }
 
 .mfg-pipeline-step {
-  background: #0d1527;
-  border: 1px solid rgba(56, 189, 248, 0.18);
-  border-radius: 18px;
-  padding: 1.85rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 0.5rem;
+  cursor: pointer;
   position: relative;
-  transition: transform 0.25s ease, border-color 0.25s ease;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .mfg-pipeline-step:hover {
   transform: translateY(-4px);
-  border-color: #38bdf8;
 }
 
-.mfg-pipeline-step__num {
-  font-size: 1.6rem;
-  font-weight: 900;
-  color: #38bdf8;
-  line-height: 1;
-  margin-bottom: 1rem;
-  opacity: 0.9;
+.mfg-pipeline-step__num-wrap {
+  position: relative;
+  width: 100%;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.65rem;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mfg-pipeline-step:hover .mfg-pipeline-step__num-wrap {
+  transform: scale(1.05);
+}
+
+.mfg-pipeline-step__num-img {
+  height: 70px;
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+  transition: opacity 0.28s ease;
+}
+
+.mfg-pipeline-step__num-img--gray {
+  position: relative;
+  z-index: 1;
+  opacity: 1;
+}
+
+.mfg-pipeline-step__num-img--blue {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  opacity: 0;
+}
+
+/* Step 02 is active in royal blue by default, matching reference */
+.mfg-pipeline-step--active .mfg-pipeline-step__num-img--gray {
+  opacity: 0;
+}
+
+.mfg-pipeline-step--active .mfg-pipeline-step__num-img--blue {
+  opacity: 1;
+}
+
+/* Hover crossfade on any step */
+.mfg-pipeline-step:hover .mfg-pipeline-step__num-img--gray {
+  opacity: 0;
+}
+
+.mfg-pipeline-step:hover .mfg-pipeline-step__num-img--blue {
+  opacity: 1;
 }
 
 .mfg-pipeline-step__title {
-  font-size: 1.08rem;
+  font-size: 1.15rem;
   font-weight: 750;
-  color: #ffffff;
-  margin: 0 0 0.55rem 0;
+  color: #111827;
+  letter-spacing: -0.015em;
   line-height: 1.35;
+  margin: 0 0 0.75rem 0;
+  transition: color 0.2s ease;
+}
+
+.mfg-pipeline-step:hover .mfg-pipeline-step__title,
+.mfg-pipeline-step--active .mfg-pipeline-step__title {
+  color: #0f172a;
 }
 
 .mfg-pipeline-step__desc {
-  font-size: 0.86rem;
-  line-height: 1.6;
-  color: #94a3b8;
+  font-size: 0.92rem;
+  line-height: 1.62;
+  color: #64748b;
   margin: 0;
+  max-width: 290px;
 }
 
 /* ================================================================
@@ -860,8 +959,15 @@
     grid-template-columns: 1fr;
   }
 
+  .mfg-pipeline-section {
+    padding: 3.75rem 0 4.25rem;
+  }
+
   .mfg-pipeline-grid {
     grid-template-columns: 1fr;
+    max-width: 380px;
+    margin: 0 auto;
+    row-gap: 2.75rem;
   }
 
   .mfg-stats-grid {
@@ -893,6 +999,23 @@
     font-size: 0.8rem;
     line-height: 1.5;
     min-height: 4.1rem;
+  }
+
+  .mfg-pipeline-step__num-wrap {
+    height: 64px;
+    margin-bottom: 1.25rem;
+  }
+
+  .mfg-pipeline-step__num-img {
+    height: 60px;
+  }
+
+  .mfg-pipeline-step__title {
+    font-size: 1.05rem;
+  }
+
+  .mfg-pipeline-step__desc {
+    font-size: 0.88rem;
   }
 }
 
