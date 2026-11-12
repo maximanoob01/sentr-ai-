@@ -22,7 +22,6 @@ import { AdminApp } from './admin/AdminApp';
 import heroImg from './assets/contact us/hero.png';
 import workImg from './assets/work.png';
 import siliconImg from './assets/alliance logo/silicon.png';
-import oceanImg from './assets/ocean.png';
 import './styles/globals.css';
 import './styles/components.css';
 import './pages/ContactPage.css';
@@ -321,38 +320,6 @@ const ContactPage: React.FC = () => {
                   Read Article <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                 </Link>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="contact-bottom-cta">
-        <div className="container">
-          <div
-            className="fade-in-up contact-bottom-cta__card"
-            style={{
-              backgroundImage: `linear-gradient(135deg, rgba(30,58,138,0.85), rgba(37,99,235,0.7)), url(${oceanImg})`,
-            }}
-          >
-            <div className="contact-bottom-cta__content">
-              <h2 className="contact-bottom-cta__title">
-                Have a Challenge in Mind?
-              </h2>
-              <p className="contact-bottom-cta__desc">
-                Tell us what you need. Let's find the right solution.
-              </p>
-            </div>
-            <div className="contact-bottom-cta__action">
-              <a
-                href="#"
-                className="contact-bottom-cta__btn"
-                onMouseOver={(e) => (e.currentTarget.style.transform = 'translateY(-2px)')}
-                onMouseOut={(e) => (e.currentTarget.style.transform = 'none')}
-              >
-                Contact Sentr AI 
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-              </a>
             </div>
           </div>
         </div>
