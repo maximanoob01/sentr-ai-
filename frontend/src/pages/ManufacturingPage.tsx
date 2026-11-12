@@ -149,21 +149,6 @@ const factoryModules: ModuleCard[] = [
       </svg>
     ),
   },
-  {
-    id: 'live-dashboards',
-    number: '10',
-    title: 'Live dashboards',
-    desc: 'See key numbers like OEE, downtime and defect rates in one simple view.',
-    tag: 'Unified Metrics',
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="3" width="7" height="9" />
-        <rect x="14" y="3" width="7" height="5" />
-        <rect x="14" y="12" width="7" height="9" />
-        <rect x="3" y="16" width="7" height="5" />
-      </svg>
-    ),
-  },
 ];
 
 const pipelineSteps = [
@@ -381,87 +366,89 @@ export const ManufacturingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ── ARCHITECTURE SLATE SECTION ── */}
-      <section className="mfg-slate-section" aria-label="Manufapp MES System Overview">
-        <div className="mfg-container">
-          <div className="mfg-slate-wrapper">
-            <img
-              src={slateImg}
-              alt="Manufapp Manufacturing Execution System Architecture"
-              className="mfg-slate-img"
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* ── 2. WHAT IS AN MES? SECTION ── */}
+      {/* ── 2. WHAT IS AN MES? SECTION (WHITE THEME WITH SIDE-BY-SIDE SLATE ARCHITECTURE IMAGE) ── */}
       <section className="mfg-mes-overview" aria-label="What is an MES">
         <div className="mfg-container">
-          <div className="mfg-mes-overview__content">
-            <h2 className="mfg-mes-overview__title">
-              What is an MES?
-            </h2>
-            <p className="mfg-mes-overview__lead">
-              A Manufacturing Execution System (MES) is the layer between your machines and your business software. It tracks what is being made, how well it is going and what is stopping it, all in real time.
-            </p>
-            <p className="mfg-mes-overview__desc">
-              Manufapp covers production, quality, inventory and machines in one system. It works for a single plant or for many.
-            </p>
+          <div className="mfg-mes-overview__grid">
+            {/* Left Content: Text & 4 Pillars */}
+            <div className="mfg-mes-overview__content">
+              <span className="mfg-mes-overview__badge">MANUFACTURING EXECUTION SYSTEM</span>
+              <h2 className="mfg-mes-overview__title">
+                What is an MES?
+              </h2>
+              <p className="mfg-mes-overview__lead">
+                A Manufacturing Execution System (MES) is the layer between your machines and your business software. It tracks what is being made, how well it is going and what is stopping it, all in real time.
+              </p>
+              <p className="mfg-mes-overview__desc">
+                Manufapp covers production, quality, inventory and machines in one system. It works for a single plant or for many.
+              </p>
 
-            {/* 4 Pillars Highlighted from the text */}
-            <div className="mfg-mes-pillars">
-              <div className="mfg-mes-pillar-item">
-                <div className="mfg-mes-pillar-item__icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                    <polygon points="12 2 2 7 12 12 22 7 12 2" />
-                    <polyline points="2 17 12 22 22 17" />
-                    <polyline points="2 12 12 17 22 12" />
-                  </svg>
+              {/* 4 Pillars Highlighted from the text */}
+              <div className="mfg-mes-pillars">
+                <div className="mfg-mes-pillar-item">
+                  <div className="mfg-mes-pillar-item__icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                      <polyline points="2 17 12 22 22 17" />
+                      <polyline points="2 12 12 17 22 12" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="mfg-mes-pillar-item__name">Production</h4>
+                    <p className="mfg-mes-pillar-item__sub">Output, cycle times &amp; OEE</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="mfg-mes-pillar-item__name">Production</h4>
-                  <p className="mfg-mes-pillar-item__sub">Output, cycle times &amp; OEE</p>
+
+                <div className="mfg-mes-pillar-item">
+                  <div className="mfg-mes-pillar-item__icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                      <path d="m9 12 2 2 4-4" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="mfg-mes-pillar-item__name">Quality</h4>
+                    <p className="mfg-mes-pillar-item__sub">Defects, scrap &amp; inspection</p>
+                  </div>
+                </div>
+
+                <div className="mfg-mes-pillar-item">
+                  <div className="mfg-mes-pillar-item__icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="mfg-mes-pillar-item__name">Inventory</h4>
+                    <p className="mfg-mes-pillar-item__sub">WIP, batch lots &amp; raw materials</p>
+                  </div>
+                </div>
+
+                <div className="mfg-mes-pillar-item">
+                  <div className="mfg-mes-pillar-item__icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="3" />
+                      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="mfg-mes-pillar-item__name">Machines</h4>
+                    <p className="mfg-mes-pillar-item__sub">Telemetry, uptime &amp; health</p>
+                  </div>
                 </div>
               </div>
+            </div>
 
-              <div className="mfg-mes-pillar-item">
-                <div className="mfg-mes-pillar-item__icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                    <path d="m9 12 2 2 4-4" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 className="mfg-mes-pillar-item__name">Quality</h4>
-                  <p className="mfg-mes-pillar-item__sub">Defects, scrap &amp; inspection</p>
-                </div>
-              </div>
-
-              <div className="mfg-mes-pillar-item">
-                <div className="mfg-mes-pillar-item__icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 className="mfg-mes-pillar-item__name">Inventory</h4>
-                  <p className="mfg-mes-pillar-item__sub">WIP, batch lots &amp; raw materials</p>
-                </div>
-              </div>
-
-              <div className="mfg-mes-pillar-item">
-                <div className="mfg-mes-pillar-item__icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="3" />
-                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 className="mfg-mes-pillar-item__name">Machines</h4>
-                  <p className="mfg-mes-pillar-item__sub">Telemetry, uptime &amp; health</p>
-                </div>
+            {/* Right Media: Slate Architecture Image right next to What is an MES */}
+            <div className="mfg-mes-overview__media">
+              <div className="mfg-mes-image-frame">
+                <img
+                  src={slateImg}
+                  alt="Manufapp MES System Overview"
+                  className="mfg-mes-image"
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>
@@ -514,33 +501,152 @@ export const ManufacturingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ── 4. METRICS BANNER ── */}
-      <section ref={statsRef} className="mfg-stats-strip" aria-label="Key Manufacturing Outcomes">
+      {/* ── 4. LIVE DASHBOARDS & OUTCOMES SHOWCASE (REDESIGNED AS PER REFERENCE IMAGE) ── */}
+      <section ref={statsRef} className="mfg-dash-showcase-section" aria-label="Live Dashboards and Factory Outcomes">
         <div className="mfg-container">
-          <div className="mfg-stats-grid">
-            <div className="mfg-stat-box">
-              <span className="mfg-stat-box__val">
-                {hasAnimatedStats ? `${statDowntime}%` : '0%'}
-              </span>
-              <span className="mfg-stat-box__lbl">Reduction in Unplanned Downtime</span>
+          <div className="mfg-dash-showcase-grid">
+            {/* Left Feature Card: Live Dashboards Card matching the reference image dark card */}
+            <div className="mfg-dash-showcase-card">
+              <div className="mfg-dash-showcase-card__header">
+                <span className="mfg-dash-showcase-card__num">10</span>
+                <span className="mfg-dash-showcase-card__badge">Unified Metrics</span>
+              </div>
+
+              <div className="mfg-dash-showcase-card__body">
+                <h3 className="mfg-dash-showcase-card__title">
+                  Live dashboards
+                </h3>
+                <p className="mfg-dash-showcase-card__desc">
+                  See key numbers like OEE, downtime and defect rates in one simple view. Connect real-time shop-floor telemetry directly to decision making.
+                </p>
+                <Link to="/company/contact" className="mfg-dash-showcase-card__btn" aria-label="Explore Live Dashboards">
+                  <span>Explore</span>
+                  <div className="mfg-dash-showcase-card__btn-circle" aria-hidden="true">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M5 12h14" />
+                      <path d="m12 5 7 7-7 7" />
+                    </svg>
+                  </div>
+                </Link>
+              </div>
+
+              {/* Bottom Brand indicator matching reference image style */}
+              <div className="mfg-dash-showcase-card__footer">
+                <div className="mfg-dash-showcase-card__brand-icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="7" cy="12" r="4" />
+                    <circle cx="17" cy="12" r="4" />
+                    <line x1="7" y1="8" x2="17" y2="8" />
+                    <line x1="7" y1="16" x2="17" y2="16" />
+                  </svg>
+                </div>
+                <div className="mfg-dash-showcase-card__brand-info">
+                  <span className="mfg-dash-showcase-card__brand-title">Manufapp Core</span>
+                  <span className="mfg-dash-showcase-card__brand-sub">Real-Time Factory Suite</span>
+                </div>
+              </div>
             </div>
-            <div className="mfg-stat-box">
-              <span className="mfg-stat-box__val">
-                {hasAnimatedStats ? `<${statAlertSpeed}s` : '<0s'}
-              </span>
-              <span className="mfg-stat-box__lbl">Micro-Stoppage Alert Speed</span>
-            </div>
-            <div className="mfg-stat-box">
-              <span className="mfg-stat-box__val">
-                {hasAnimatedStats ? `${statOeeMin}-${statOeeMax}%` : '0-0%'}
-              </span>
-              <span className="mfg-stat-box__lbl">Overall Equipment Effectiveness (OEE) Gain</span>
-            </div>
-            <div className="mfg-stat-box">
-              <span className="mfg-stat-box__val">
-                {hasAnimatedStats ? `${statVisibility}%` : '0%'}
-              </span>
-              <span className="mfg-stat-box__lbl">Real-Time Line Visibility</span>
+
+            {/* Right Stack: 4 Gradient Outcome Pills matching reference image */}
+            <div className="mfg-dash-pills-col">
+              {/* Pill 1: Coral / Orange Gradient */}
+              <div className="mfg-dash-pill mfg-dash-pill--coral">
+                <div className="mfg-dash-pill__icon-wrap" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                </div>
+                <div className="mfg-dash-pill__content">
+                  <div className="mfg-dash-pill__val">
+                    {hasAnimatedStats ? `${statDowntime}%` : '0%'}
+                  </div>
+                  <div className="mfg-dash-pill__lbl">
+                    Reduction in Unplanned Downtime
+                  </div>
+                </div>
+                <div className="mfg-dash-pill__arrow" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7 7 17 7 17 17" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Pill 2: Sky Blue Gradient */}
+              <div className="mfg-dash-pill mfg-dash-pill--sky">
+                <div className="mfg-dash-pill__icon-wrap" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                  </svg>
+                </div>
+                <div className="mfg-dash-pill__content">
+                  <div className="mfg-dash-pill__val">
+                    {hasAnimatedStats ? `<${statAlertSpeed}s` : '<0s'}
+                  </div>
+                  <div className="mfg-dash-pill__lbl">
+                    Micro-Stoppage Alert Speed
+                  </div>
+                </div>
+                <div className="mfg-dash-pill__arrow" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7 7 17 7 17 17" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Pill 3: Purple / Violet Gradient */}
+              <div className="mfg-dash-pill mfg-dash-pill--purple">
+                <div className="mfg-dash-pill__icon-wrap" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 2v4" />
+                    <path d="m4.93 4.93 2.83 2.83" />
+                    <path d="M2 12h4" />
+                    <path d="m4.93 19.07 2.83-2.83" />
+                    <path d="M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0z" />
+                    <path d="m14 10 4-4" />
+                  </svg>
+                </div>
+                <div className="mfg-dash-pill__content">
+                  <div className="mfg-dash-pill__val">
+                    {hasAnimatedStats ? `${statOeeMin}-${statOeeMax}%` : '0-0%'}
+                  </div>
+                  <div className="mfg-dash-pill__lbl">
+                    Overall Equipment Effectiveness (OEE) Gain
+                  </div>
+                </div>
+                <div className="mfg-dash-pill__arrow" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7 7 17 7 17 17" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Pill 4: Indigo / Royal Blue Gradient */}
+              <div className="mfg-dash-pill mfg-dash-pill--indigo">
+                <div className="mfg-dash-pill__icon-wrap" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                </div>
+                <div className="mfg-dash-pill__content">
+                  <div className="mfg-dash-pill__val">
+                    {hasAnimatedStats ? `${statVisibility}%` : '0%'}
+                  </div>
+                  <div className="mfg-dash-pill__lbl">
+                    Real-Time Line Visibility
+                  </div>
+                </div>
+                <div className="mfg-dash-pill__arrow" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7 7 17 7 17 17" />
+                  </svg>
+                </div>
+              </div>
             </div>
           </div>
         </div>

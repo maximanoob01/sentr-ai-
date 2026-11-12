@@ -227,50 +227,10 @@
 }
 
 /* ================================================================
-   ARCHITECTURE SLATE SECTION (SEAMLESS DARK BACKGROUND)
-   ================================================================ */
-.mfg-slate-section {
-  position: relative;
-  background: linear-gradient(180deg, #030712 0%, #070b14 100%);
-  padding: 2.25rem 0 2.5rem;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.mfg-slate-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 820px;
-  margin: 0 auto;
-}
-
-.mfg-slate-img {
-  width: 100%;
-  max-width: 760px;
-  height: auto;
-  display: block;
-  object-fit: contain;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  transition: transform 0.3s ease;
-}
-
-.mfg-slate-img:hover {
-  transform: translateY(-2px);
-  box-shadow: none;
-}
-
-/* ================================================================
-   2. WHAT IS AN MES? SECTION (WHITE THEME)
+   2. WHAT IS AN MES? SECTION (WHITE THEME WITH SIDE-BY-SIDE SLATE)
    ================================================================ */
 .mfg-mes-overview {
-  padding: 4.5rem 0 5.25rem;
+  padding: 5rem 0 5.5rem;
   background-color: #ffffff;
   border-top: 1px solid #f1f5f9;
   border-bottom: 1px solid #e2e8f0;
@@ -278,10 +238,31 @@
   overflow: hidden;
 }
 
+.mfg-mes-overview__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
 .mfg-mes-overview__content {
   display: flex;
   flex-direction: column;
-  max-width: 1040px;
+}
+
+.mfg-mes-overview__badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #2563eb;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
 }
 
 .mfg-mes-overview__title {
@@ -294,34 +275,32 @@
 }
 
 .mfg-mes-overview__lead {
-  font-size: 1.12rem;
+  font-size: 1.08rem;
   line-height: 1.65;
   color: #1e293b;
   font-weight: 550;
-  margin: 0 0 1rem 0;
-  max-width: 860px;
+  margin: 0 0 0.85rem 0;
 }
 
 .mfg-mes-overview__desc {
-  font-size: 0.98rem;
+  font-size: 0.96rem;
   line-height: 1.65;
   color: #64748b;
-  margin: 0 0 2.25rem 0;
-  max-width: 820px;
+  margin: 0 0 1.85rem 0;
 }
 
-/* 4 Pillars */
+/* 4 Pillars in 2x2 Grid adjacent to Slate Image */
 .mfg-mes-pillars {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.15rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 }
 
 .mfg-mes-pillar-item {
   background: #f8fafc;
   border: 1px solid #e2e8f0;
   border-radius: 14px;
-  padding: 1.1rem 1.15rem;
+  padding: 1rem 1.1rem;
   display: flex;
   align-items: flex-start;
   gap: 0.85rem;
@@ -330,15 +309,15 @@
 }
 
 .mfg-mes-pillar-item:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   background: #ffffff;
   border-color: #3b82f6;
   box-shadow: 0 10px 24px -6px rgba(37, 99, 235, 0.12), 0 4px 10px rgba(15, 23, 42, 0.04);
 }
 
 .mfg-mes-pillar-item__icon {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: 10px;
   background: #eff6ff;
   border: 1px solid #bfdbfe;
@@ -356,61 +335,47 @@
 }
 
 .mfg-mes-pillar-item__name {
-  font-size: 1.02rem;
+  font-size: 0.98rem;
   font-weight: 750;
   color: #0f172a;
-  margin: 0 0 0.25rem 0;
+  margin: 0 0 0.2rem 0;
   letter-spacing: -0.01em;
 }
 
 .mfg-mes-pillar-item__sub {
-  font-size: 0.82rem;
-  line-height: 1.45;
+  font-size: 0.8rem;
+  line-height: 1.4;
   color: #64748b;
   margin: 0;
 }
 
-/* ================================================================
-   3. STATS STRIP (COMPACT WITH COUNTING ANIMATION)
-   ================================================================ */
-.mfg-stats-strip {
-  padding: 1.35rem 0 1.5rem;
-  background-color: #0b1120;
-  border-bottom: 1px solid rgba(56, 189, 248, 0.15);
-}
-
-.mfg-stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  text-align: center;
-  align-items: center;
-}
-
-.mfg-stat-box {
+/* Right Media: Slate Architecture Frame */
+.mfg-mes-overview__media {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding: 0.25rem 0.5rem;
+  justify-content: center;
+  width: 100%;
 }
 
-.mfg-stat-box__val {
-  font-size: clamp(1.4rem, 1.85vw, 1.7rem);
-  font-weight: 850;
-  color: #38bdf8;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  margin-bottom: 0.2rem;
-  font-variant-numeric: tabular-nums;
-  display: inline-block;
+.mfg-mes-image-frame {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #0b1120;
+  box-shadow: 0 20px 45px -12px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(15, 23, 42, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.mfg-stat-box__lbl {
-  font-size: 0.76rem;
-  line-height: 1.35;
-  color: #94a3b8;
-  font-weight: 500;
-  max-width: 190px;
+.mfg-mes-image-frame:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.24);
+}
+
+.mfg-mes-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
 
 /* ================================================================
@@ -609,39 +574,269 @@
   transform: translateX(2px);
 }
 
-/* 10th Card: Featured Full-Width Dashboard Card on Desktop */
-@media (min-width: 1025px) {
-  .mfg-module-card:last-child {
-    grid-column: 1 / -1;
-    background: linear-gradient(155deg, #0d1a36 0%, #10254c 100%);
-    border-color: rgba(56, 189, 248, 0.45);
-    padding: 2.25rem 2.5rem;
-  }
+/* ================================================================
+   4. LIVE DASHBOARDS & FACTORY OUTCOMES SHOWCASE (REF IMAGE MATCH)
+   ================================================================ */
+.mfg-dash-showcase-section {
+  padding: 5.25rem 0 5.75rem;
+  background-color: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  position: relative;
+  overflow: hidden;
+}
 
-  .mfg-module-card:last-child .mfg-module-card__top {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 1.5rem;
-    align-items: center;
-  }
+.mfg-dash-showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.08fr;
+  gap: 2.25rem;
+  align-items: stretch;
+}
 
-  .mfg-module-card:last-child .mfg-module-card__icon-row {
-    margin-bottom: 0;
-  }
+/* Left Feature Card: Dark Sleek Container */
+.mfg-dash-showcase-card {
+  background: linear-gradient(155deg, #101726 0%, #090e1a 100%);
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 2.75rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 480px;
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+}
 
-  .mfg-module-card:last-child .mfg-module-card__title {
-    font-size: 1.45rem;
-    margin: 0 0 0.35rem 0;
-  }
+.mfg-dash-showcase-card::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
 
-  .mfg-module-card:last-child .mfg-module-card__desc {
-    margin: 0;
-    font-size: 1.02rem;
-  }
+.mfg-dash-showcase-card__header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
 
-  .mfg-module-card:last-child .mfg-module-card__footer {
-    margin-top: 1.25rem;
-  }
+.mfg-dash-showcase-card__num {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #38bdf8;
+  font-family: var(--font-mono, monospace);
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 0.2rem 0.65rem;
+  border-radius: 6px;
+}
+
+.mfg-dash-showcase-card__badge {
+  font-size: 0.74rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.mfg-dash-showcase-card__body {
+  display: flex;
+  flex-direction: column;
+}
+
+.mfg-dash-showcase-card__title {
+  font-size: clamp(2.2rem, 3.2vw, 2.85rem);
+  font-weight: 850;
+  color: #ffffff;
+  line-height: 1.15;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.025em;
+}
+
+.mfg-dash-showcase-card__desc {
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: #cbd5e1;
+  margin: 0 0 2.25rem 0;
+  max-width: 440px;
+}
+
+.mfg-dash-showcase-card__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: #ffffff;
+  color: #0a0f1d;
+  padding: 0.72rem 1.4rem;
+  border-radius: 9999px;
+  font-size: 0.86rem;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  width: fit-content;
+}
+
+.mfg-dash-showcase-card__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  background: #f8fafc;
+}
+
+.mfg-dash-showcase-card__btn-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #0a0f1d;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.mfg-dash-showcase-card__btn:hover .mfg-dash-showcase-card__btn-circle {
+  transform: translateX(2px);
+}
+
+.mfg-dash-showcase-card__footer {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mfg-dash-showcase-card__brand-icon {
+  color: #38bdf8;
+  display: flex;
+  align-items: center;
+}
+
+.mfg-dash-showcase-card__brand-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.mfg-dash-showcase-card__brand-title {
+  font-size: 0.88rem;
+  font-weight: 750;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.mfg-dash-showcase-card__brand-sub {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  letter-spacing: 0.03em;
+}
+
+/* Right Stack: 4 Gradient Outcome Pills */
+.mfg-dash-pills-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  justify-content: center;
+}
+
+.mfg-dash-pill {
+  border-radius: 20px;
+  padding: 1.15rem 1.65rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  color: #ffffff;
+  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.mfg-dash-pill:hover {
+  transform: translateX(4px);
+  box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.25);
+}
+
+.mfg-dash-pill:hover .mfg-dash-pill__arrow {
+  transform: translate(3px, -3px);
+}
+
+/* Pill 1: Coral / Orange */
+.mfg-dash-pill--coral {
+  background: linear-gradient(115deg, #f97316 0%, #ea580c 100%);
+}
+
+/* Pill 2: Sky / Blue */
+.mfg-dash-pill--sky {
+  background: linear-gradient(115deg, #0284c7 0%, #0369a1 100%);
+}
+
+/* Pill 3: Purple / Violet */
+.mfg-dash-pill--purple {
+  background: linear-gradient(115deg, #a855f7 0%, #7e22ce 100%);
+}
+
+/* Pill 4: Indigo / Royal */
+.mfg-dash-pill--indigo {
+  background: linear-gradient(115deg, #4f46e5 0%, #3730a3 100%);
+}
+
+.mfg-dash-pill__icon-wrap {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #ffffff;
+}
+
+.mfg-dash-pill__icon-wrap svg {
+  width: 28px;
+  height: 28px;
+}
+
+.mfg-dash-pill__content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mfg-dash-pill__val {
+  font-size: clamp(1.65rem, 2.3vw, 2.2rem);
+  font-weight: 850;
+  color: #ffffff;
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.mfg-dash-pill__lbl {
+  font-size: clamp(0.85rem, 1vw, 0.95rem);
+  color: rgba(255, 255, 255, 0.94);
+  font-weight: 550;
+  line-height: 1.35;
+}
+
+.mfg-dash-pill__arrow {
+  margin-left: auto;
+  flex-shrink: 0;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
 }
 
 /* ================================================================
@@ -906,20 +1101,23 @@
     line-height: 1.18;
   }
 
-  .mfg-slate-section {
-    padding: 2rem 0;
+  .mfg-mes-overview__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 
-  .mfg-slate-wrapper {
-    max-width: 720px;
-  }
-
-  .mfg-slate-img {
-    max-width: 680px;
+  .mfg-mes-overview__media {
+    max-width: 620px;
+    margin: 0 auto;
   }
 
   .mfg-mes-pillars {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mfg-dash-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
   .mfg-hero__content {
@@ -943,28 +1141,9 @@
   .mfg-pipeline-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .mfg-stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.15rem 1rem;
-  }
 }
 
 @media (max-width: 768px) {
-  .mfg-slate-section {
-    padding: 1.5rem 0 1.75rem;
-  }
-
-  .mfg-slate-wrapper {
-    max-width: 100%;
-  }
-
-  .mfg-slate-img {
-    max-width: 90%;
-    border-radius: 0;
-    box-shadow: none;
-  }
-
   .mfg-hero {
     padding-top: calc(var(--nav-height, 70px) + 1.25rem);
     padding-bottom: 2.75rem;
@@ -977,6 +1156,49 @@
 
   .mfg-mes-pillars {
     grid-template-columns: 1fr;
+  }
+
+  .mfg-dash-showcase-section {
+    padding: 3.5rem 0 4rem;
+  }
+
+  .mfg-dash-showcase-card {
+    padding: 2rem 1.6rem;
+    min-height: auto;
+    border-radius: 22px;
+  }
+
+  .mfg-dash-showcase-card__title {
+    font-size: 2rem;
+  }
+
+  .mfg-dash-showcase-card__desc {
+    font-size: 0.94rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .mfg-dash-pill {
+    padding: 1rem 1.25rem;
+    border-radius: 16px;
+    gap: 1rem;
+  }
+
+  .mfg-dash-pill__icon-wrap {
+    width: 40px;
+    height: 40px;
+  }
+
+  .mfg-dash-pill__icon-wrap svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .mfg-dash-pill__val {
+    font-size: 1.5rem;
+  }
+
+  .mfg-dash-pill__lbl {
+    font-size: 0.82rem;
   }
 
   .mfg-hero__title {
@@ -1018,25 +1240,6 @@
     row-gap: 2.75rem;
   }
 
-  .mfg-stats-strip {
-    padding: 1.1rem 0 1.25rem;
-  }
-
-  .mfg-stats-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem 0.75rem;
-  }
-
-  .mfg-stat-box__val {
-    font-size: 1.3rem;
-    margin-bottom: 0.15rem;
-  }
-
-  .mfg-stat-box__lbl {
-    font-size: 0.72rem;
-    max-width: 165px;
-  }
-
   .mfg-cta-section {
     padding: 2rem 0 2.5rem;
   }
@@ -1047,37 +1250,42 @@
 }
 
 @media (max-width: 480px) {
-  .mfg-slate-section {
-    padding: 1rem 0 1.25rem;
+  .mfg-dash-showcase-card {
+    padding: 1.65rem 1.25rem;
+    border-radius: 18px;
   }
 
-  .mfg-slate-img {
-    max-width: 95%;
-    border-radius: 0;
-    box-shadow: none;
+  .mfg-dash-showcase-card__title {
+    font-size: 1.65rem;
   }
 
-  .mfg-stats-strip {
-    padding: 0.95rem 0 1.1rem;
+  .mfg-dash-pill {
+    padding: 0.85rem 1rem;
+    border-radius: 14px;
+    gap: 0.75rem;
   }
 
-  .mfg-stats-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.9rem 0.5rem;
+  .mfg-dash-pill__icon-wrap {
+    width: 34px;
+    height: 34px;
   }
 
-  .mfg-stat-box {
-    padding: 0.15rem 0.2rem;
+  .mfg-dash-pill__icon-wrap svg {
+    width: 20px;
+    height: 20px;
   }
 
-  .mfg-stat-box__val {
-    font-size: 1.22rem;
+  .mfg-dash-pill__val {
+    font-size: 1.3rem;
   }
 
-  .mfg-stat-box__lbl {
-    font-size: 0.68rem;
-    line-height: 1.3;
-    max-width: 145px;
+  .mfg-dash-pill__lbl {
+    font-size: 0.74rem;
+  }
+
+  .mfg-dash-pill__arrow svg {
+    width: 18px;
+    height: 18px;
   }
 
   .mfg-hero__title {
