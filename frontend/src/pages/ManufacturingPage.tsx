@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './ManufacturingPage.css';
 import aavImg from '../assets/cloud solutions/aav.png';
@@ -205,9 +205,74 @@ export const ManufacturingPage: React.FC = () => {
   const [displayedSubtitle, setDisplayedSubtitle] = useState('');
   const [isTypingDone, setIsTypingDone] = useState(false);
 
+  // Stats counting animation
+  const statsRef = useRef<HTMLElement>(null);
+  const [hasAnimatedStats, setHasAnimatedStats] = useState(false);
+  const [statDowntime, setStatDowntime] = useState(0);
+  const [statAlertSpeed, setStatAlertSpeed] = useState(0);
+  const [statOeeMin, setStatOeeMin] = useState(0);
+  const [statOeeMax, setStatOeeMax] = useState(0);
+  const [statVisibility, setStatVisibility] = useState(0);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // IntersectionObserver to trigger counting animation on scroll
+  useEffect(() => {
+    if (!('IntersectionObserver' in window)) {
+      setHasAnimatedStats(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setHasAnimatedStats(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  // Smooth counting animation once scrolled into view
+  useEffect(() => {
+    if (!hasAnimatedStats) return;
+
+    let animId: number;
+    const startTime = performance.now();
+    const duration = 1600;
+
+    const updateCounters = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Smooth exponential ease-out
+      const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+
+      setStatDowntime(Math.round(ease * 35));
+      setStatAlertSpeed(Math.round(ease * 30));
+      setStatOeeMin(Math.round(ease * 15));
+      setStatOeeMax(Math.round(ease * 20));
+      setStatVisibility(Math.round(ease * 100));
+
+      if (progress < 1) {
+        animId = requestAnimationFrame(updateCounters);
+      }
+    };
+
+    animId = requestAnimationFrame(updateCounters);
+    return () => cancelAnimationFrame(animId);
+  }, [hasAnimatedStats]);
 
   // Subtitle typing animation
   useEffect(() => {
@@ -450,23 +515,31 @@ export const ManufacturingPage: React.FC = () => {
       </section>
 
       {/* ── 4. METRICS BANNER ── */}
-      <section className="mfg-stats-strip" aria-label="Key Manufacturing Outcomes">
+      <section ref={statsRef} className="mfg-stats-strip" aria-label="Key Manufacturing Outcomes">
         <div className="mfg-container">
           <div className="mfg-stats-grid">
             <div className="mfg-stat-box">
-              <span className="mfg-stat-box__val">35%</span>
+              <span className="mfg-stat-box__val">
+                {hasAnimatedStats ? `${statDowntime}%` : '0%'}
+              </span>
               <span className="mfg-stat-box__lbl">Reduction in Unplanned Downtime</span>
             </div>
             <div className="mfg-stat-box">
-              <span className="mfg-stat-box__val">&lt;30s</span>
+              <span className="mfg-stat-box__val">
+                {hasAnimatedStats ? `<${statAlertSpeed}s` : '<0s'}
+              </span>
               <span className="mfg-stat-box__lbl">Micro-Stoppage Alert Speed</span>
             </div>
             <div className="mfg-stat-box">
-              <span className="mfg-stat-box__val">15-20%</span>
+              <span className="mfg-stat-box__val">
+                {hasAnimatedStats ? `${statOeeMin}-${statOeeMax}%` : '0-0%'}
+              </span>
               <span className="mfg-stat-box__lbl">Overall Equipment Effectiveness (OEE) Gain</span>
             </div>
             <div className="mfg-stat-box">
-              <span className="mfg-stat-box__val">100%</span>
+              <span className="mfg-stat-box__val">
+                {hasAnimatedStats ? `${statVisibility}%` : '0%'}
+              </span>
               <span className="mfg-stat-box__lbl">Real-Time Line Visibility</span>
             </div>
           </div>
