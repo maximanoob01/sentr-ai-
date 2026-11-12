@@ -51,7 +51,7 @@ const factoryModules: ModuleCard[] = [
     number: '02',
     title: 'Production Management',
     desc: 'Track output, machine use and downtime. Cut manual work.',
-    tag: 'Shop-Floor Telemetry',
+    tag: 'Live Telemetry',
     image: iotImg,
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -81,7 +81,7 @@ const factoryModules: ModuleCard[] = [
     number: '04',
     title: 'Order Management',
     desc: 'Follow each order from creation to delivery.',
-    tag: 'End-to-End Tracking',
+    tag: 'Order Tracking',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
@@ -477,7 +477,7 @@ export const ManufacturingPage: React.FC = () => {
           </div>
 
           <div className="mfg-bento-grid">
-            {/* ── LEFT BENTO COLUMN: Category Badge + 2x2 Grid of Modules 01-04 ── */}
+            {/* ── LEFT BENTO COLUMN: Badge + 2x2 Grid (01-04) + Wide Featured Dark Card (05) ── */}
             <div className="mfg-bento-col mfg-bento-col--left">
               <div className="mfg-bento-pill-badge">
                 <span>For Shop Floor &amp; Operations</span>
@@ -521,17 +521,55 @@ export const ManufacturingPage: React.FC = () => {
                   </article>
                 ))}
               </div>
+
+              {/* Module 05: Quality & Inspection (Featured Wide Dark Card spanning the bottom of left column) */}
+              <article className="mfg-bento-dark-card mfg-bento-dark-card--wide">
+                <div className="mfg-bento-dark-card__header">
+                  <div className="mfg-bento-card__stat-wrap">
+                    <span className="mfg-bento-dark-card__num">{factoryModules[4].number}</span>
+                    {factoryModules[4].image && (
+                      <div className="mfg-bento-card__thumb-chip mfg-bento-card__thumb-chip--dark" aria-hidden="true">
+                        <img src={factoryModules[4].image} alt="" className="mfg-bento-card__thumb-img" />
+                      </div>
+                    )}
+                    <span className="mfg-bento-dark-card__pill">AI Inspection &amp; Compliance</span>
+                  </div>
+                  <div className="mfg-bento-dark-card__circle-btn" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="12" y1="5" x2="12" y2="19" />
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                    </svg>
+                  </div>
+                </div>
+
+                <div className="mfg-bento-dark-card__body">
+                  <h3 className="mfg-bento-dark-card__title">{factoryModules[4].title}</h3>
+                  <p className="mfg-bento-dark-card__desc">{factoryModules[4].desc}</p>
+                </div>
+
+                <div className="mfg-bento-dark-card__footer">
+                  <span className="mfg-bento-dark-card__tag">{factoryModules[4].tag}</span>
+                  <Link to="/company/contact" className="mfg-bento-dark-card__explore" aria-label={`Explore ${factoryModules[4].title}`}>
+                    <span>Explore</span>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M5 12h14" />
+                      <path d="m12 5 7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
+              </article>
             </div>
 
-            {/* ── RIGHT BENTO COLUMN: Top Banner with 2.png + Split Bottom Sub-Grid ── */}
+            {/* ── RIGHT BENTO COLUMN: Badge + Top Banner (2.png) + 2x2 Grid (06-09) ── */}
             <div className="mfg-bento-col mfg-bento-col--right">
+              <div className="mfg-bento-pill-badge">
+                <span>For Plant Managers &amp; Leadership</span>
+              </div>
+
               {/* Top Banner with 2.png */}
               <div className="mfg-bento-banner">
                 <img src={img2} alt="Real-time plant operator and supervisor mobile interface" className="mfg-bento-banner__img" />
                 <div className="mfg-bento-banner__overlay">
-                  <div className="mfg-bento-banner__badge">
-                    <span>For Plant Managers &amp; Leadership</span>
-                  </div>
                   <div className="mfg-bento-banner__caption">
                     <h4 className="mfg-bento-banner__title">Live Shop-Floor &amp; Mobile Interface</h4>
                     <p className="mfg-bento-banner__desc">Real-time alerts, operator checklists, and machine health on mobile and tablet displays.</p>
@@ -539,153 +577,117 @@ export const ManufacturingPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Bottom Split Sub-Grid */}
-              <div className="mfg-bento-subgrid">
-                {/* Left Sub-Column: 05 Dark Card + 06 Tool Management */}
-                <div className="mfg-bento-subcol mfg-bento-subcol--left">
-                  {/* Module 05: Quality & Inspection (Featured Dark Card) */}
-                  <article className="mfg-bento-dark-card">
-                    <div className="mfg-bento-dark-card__header">
-                      <div className="mfg-bento-card__stat-wrap">
-                        <span className="mfg-bento-dark-card__num">{factoryModules[4].number}</span>
-                        {factoryModules[4].image && (
-                          <div className="mfg-bento-card__thumb-chip mfg-bento-card__thumb-chip--dark" aria-hidden="true">
-                            <img src={factoryModules[4].image} alt="" className="mfg-bento-card__thumb-img" />
-                          </div>
-                        )}
-                      </div>
-                      <div className="mfg-bento-dark-card__circle-btn" aria-hidden="true">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                          <line x1="12" y1="5" x2="12" y2="19" />
-                          <line x1="5" y1="12" x2="19" y2="12" />
-                        </svg>
-                      </div>
+              {/* 2x2 Grid of Modules 06, 07, 08, 09 */}
+              <div className="mfg-bento-2x2">
+                {/* Module 06: Tool Management */}
+                <article className="mfg-bento-card">
+                  <div className="mfg-bento-card__header">
+                    <span className="mfg-bento-card__num">{factoryModules[5].number}</span>
+                    <div className="mfg-bento-card__circle-btn" aria-hidden="true">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19" />
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                      </svg>
                     </div>
+                  </div>
 
-                    <div className="mfg-bento-dark-card__body">
-                      <h3 className="mfg-bento-dark-card__title">{factoryModules[4].title}</h3>
-                      <p className="mfg-bento-dark-card__desc">{factoryModules[4].desc}</p>
-                    </div>
+                  <div className="mfg-bento-card__body">
+                    <h3 className="mfg-bento-card__title">{factoryModules[5].title}</h3>
+                    <p className="mfg-bento-card__desc">{factoryModules[5].desc}</p>
+                  </div>
 
-                    <div className="mfg-bento-dark-card__footer">
-                      <span className="mfg-bento-dark-card__tag">{factoryModules[4].tag}</span>
-                      <Link to="/company/contact" className="mfg-bento-dark-card__explore" aria-label={`Explore ${factoryModules[4].title}`}>
-                        <span>Explore</span>
-                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                          <path d="M5 12h14" />
-                          <path d="m12 5 7 7-7 7" />
-                        </svg>
-                      </Link>
-                    </div>
-                  </article>
+                  <div className="mfg-bento-card__footer">
+                    <span className="mfg-bento-card__tag">{factoryModules[5].tag}</span>
+                    <Link to="/company/contact" className="mfg-bento-card__explore" aria-label={`Explore ${factoryModules[5].title}`}>
+                      <span>Explore</span>
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <path d="M5 12h14" />
+                        <path d="m12 5 7 7-7 7" />
+                      </svg>
+                    </Link>
+                  </div>
+                </article>
 
-                  {/* Module 06: Tool Management */}
-                  <article className="mfg-bento-card mfg-bento-card--compact">
-                    <div className="mfg-bento-card__header">
-                      <span className="mfg-bento-card__num">{factoryModules[5].number}</span>
-                      <div className="mfg-bento-card__circle-btn" aria-hidden="true">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                          <line x1="12" y1="5" x2="12" y2="19" />
-                          <line x1="5" y1="12" x2="19" y2="12" />
-                        </svg>
-                      </div>
+                {/* Module 07: Purchase (Accent Sentr AI Blue) */}
+                <article className="mfg-bento-accent-card mfg-bento-accent-card--blue">
+                  <div className="mfg-bento-accent-card__top">
+                    <span className="mfg-bento-accent-card__num">{factoryModules[6].number}</span>
+                    <div className="mfg-bento-accent-card__circle" aria-hidden="true">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19" />
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                      </svg>
                     </div>
-
-                    <div className="mfg-bento-card__body">
-                      <h3 className="mfg-bento-card__title">{factoryModules[5].title}</h3>
-                      <p className="mfg-bento-card__desc">{factoryModules[5].desc}</p>
-                    </div>
-
-                    <div className="mfg-bento-card__footer">
-                      <span className="mfg-bento-card__tag">{factoryModules[5].tag}</span>
-                      <Link to="/company/contact" className="mfg-bento-card__explore" aria-label={`Explore ${factoryModules[5].title}`}>
-                        <span>Explore</span>
-                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M5 12h14" />
-                          <path d="m12 5 7 7-7 7" />
-                        </svg>
-                      </Link>
-                    </div>
-                  </article>
-                </div>
-
-                {/* Right Sub-Column: Stack of 3 Accent Cards (07 Purchase, 08 Maintenance, 09 Subcontracting) */}
-                <div className="mfg-bento-subcol mfg-bento-subcol--right">
-                  {/* Module 07: Purchase (Accent Sentr AI Blue) */}
-                  <article className="mfg-bento-accent-card mfg-bento-accent-card--blue">
-                    <div className="mfg-bento-accent-card__top">
-                      <span className="mfg-bento-accent-card__num">{factoryModules[6].number}</span>
-                      <div className="mfg-bento-accent-card__circle" aria-hidden="true">
-                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                          <line x1="12" y1="5" x2="12" y2="19" />
-                          <line x1="5" y1="12" x2="19" y2="12" />
-                        </svg>
-                      </div>
-                    </div>
+                  </div>
+                  <div className="mfg-bento-accent-card__body">
                     <h3 className="mfg-bento-accent-card__title">{factoryModules[6].title}</h3>
                     <p className="mfg-bento-accent-card__desc">{factoryModules[6].desc}</p>
-                    <div className="mfg-bento-accent-card__footer">
-                      <span className="mfg-bento-accent-card__tag">{factoryModules[6].tag}</span>
-                      <Link to="/company/contact" className="mfg-bento-accent-card__link">
-                        <span>Explore</span>
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M5 12h14" />
-                          <path d="m12 5 7 7-7 7" />
-                        </svg>
-                      </Link>
-                    </div>
-                  </article>
+                  </div>
+                  <div className="mfg-bento-accent-card__footer">
+                    <span className="mfg-bento-accent-card__tag">{factoryModules[6].tag}</span>
+                    <Link to="/company/contact" className="mfg-bento-accent-card__link" aria-label={`Explore ${factoryModules[6].title}`}>
+                      <span>Explore</span>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <path d="M5 12h14" />
+                        <path d="m12 5 7 7-7 7" />
+                      </svg>
+                    </Link>
+                  </div>
+                </article>
 
-                  {/* Module 08: Maintenance (Accent Sky/Cyan) */}
-                  <article className="mfg-bento-accent-card mfg-bento-accent-card--cyan">
-                    <div className="mfg-bento-accent-card__top">
-                      <span className="mfg-bento-accent-card__num">{factoryModules[7].number}</span>
-                      <div className="mfg-bento-accent-card__circle" aria-hidden="true">
-                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                          <line x1="12" y1="5" x2="12" y2="19" />
-                          <line x1="5" y1="12" x2="19" y2="12" />
-                        </svg>
-                      </div>
+                {/* Module 08: Maintenance (Accent Sky/Cyan) */}
+                <article className="mfg-bento-accent-card mfg-bento-accent-card--cyan">
+                  <div className="mfg-bento-accent-card__top">
+                    <span className="mfg-bento-accent-card__num">{factoryModules[7].number}</span>
+                    <div className="mfg-bento-accent-card__circle" aria-hidden="true">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19" />
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                      </svg>
                     </div>
+                  </div>
+                  <div className="mfg-bento-accent-card__body">
                     <h3 className="mfg-bento-accent-card__title">{factoryModules[7].title}</h3>
                     <p className="mfg-bento-accent-card__desc">{factoryModules[7].desc}</p>
-                    <div className="mfg-bento-accent-card__footer">
-                      <span className="mfg-bento-accent-card__tag">{factoryModules[7].tag}</span>
-                      <Link to="/company/contact" className="mfg-bento-accent-card__link">
-                        <span>Explore</span>
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M5 12h14" />
-                          <path d="m12 5 7 7-7 7" />
-                        </svg>
-                      </Link>
-                    </div>
-                  </article>
+                  </div>
+                  <div className="mfg-bento-accent-card__footer">
+                    <span className="mfg-bento-accent-card__tag">{factoryModules[7].tag}</span>
+                    <Link to="/company/contact" className="mfg-bento-accent-card__link" aria-label={`Explore ${factoryModules[7].title}`}>
+                      <span>Explore</span>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <path d="M5 12h14" />
+                        <path d="m12 5 7 7-7 7" />
+                      </svg>
+                    </Link>
+                  </div>
+                </article>
 
-                  {/* Module 09: Subcontracting (Accent Indigo) */}
-                  <article className="mfg-bento-accent-card mfg-bento-accent-card--indigo">
-                    <div className="mfg-bento-accent-card__top">
-                      <span className="mfg-bento-accent-card__num">{factoryModules[8].number}</span>
-                      <div className="mfg-bento-accent-card__circle" aria-hidden="true">
-                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                          <line x1="12" y1="5" x2="12" y2="19" />
-                          <line x1="5" y1="12" x2="19" y2="12" />
-                        </svg>
-                      </div>
+                {/* Module 09: Subcontracting (Accent Indigo) */}
+                <article className="mfg-bento-accent-card mfg-bento-accent-card--indigo">
+                  <div className="mfg-bento-accent-card__top">
+                    <span className="mfg-bento-accent-card__num">{factoryModules[8].number}</span>
+                    <div className="mfg-bento-accent-card__circle" aria-hidden="true">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19" />
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                      </svg>
                     </div>
+                  </div>
+                  <div className="mfg-bento-accent-card__body">
                     <h3 className="mfg-bento-accent-card__title">{factoryModules[8].title}</h3>
                     <p className="mfg-bento-accent-card__desc">{factoryModules[8].desc}</p>
-                    <div className="mfg-bento-accent-card__footer">
-                      <span className="mfg-bento-accent-card__tag">{factoryModules[8].tag}</span>
-                      <Link to="/company/contact" className="mfg-bento-accent-card__link">
-                        <span>Explore</span>
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M5 12h14" />
-                          <path d="m12 5 7 7-7 7" />
-                        </svg>
-                      </Link>
-                    </div>
-                  </article>
-                </div>
+                  </div>
+                  <div className="mfg-bento-accent-card__footer">
+                    <span className="mfg-bento-accent-card__tag">{factoryModules[8].tag}</span>
+                    <Link to="/company/contact" className="mfg-bento-accent-card__link" aria-label={`Explore ${factoryModules[8].title}`}>
+                      <span>Explore</span>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <path d="M5 12h14" />
+                        <path d="m12 5 7 7-7 7" />
+                      </svg>
+                    </Link>
+                  </div>
+                </article>
               </div>
             </div>
           </div>
