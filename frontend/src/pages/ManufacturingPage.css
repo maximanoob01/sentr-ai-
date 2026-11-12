@@ -349,7 +349,7 @@
   margin: 0;
 }
 
-/* Right Media: Slate Architecture Frame */
+/* Right Media: Slate Architecture (Pure Transparent, No Background Box) */
 .mfg-mes-overview__media {
   display: flex;
   align-items: center;
@@ -359,23 +359,35 @@
 
 .mfg-mes-image-frame {
   width: 100%;
-  border-radius: 20px;
-  overflow: hidden;
-  background: #0b1120;
-  box-shadow: 0 20px 45px -12px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(15, 23, 42, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
 }
 
 .mfg-mes-image-frame:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.24);
+  transform: none;
+  box-shadow: none;
 }
 
 .mfg-mes-image {
   width: 100%;
+  max-width: 580px;
   height: auto;
   display: block;
   object-fit: contain;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  transition: transform 0.25s ease;
+}
+
+.mfg-mes-image:hover {
+  transform: translateY(-2px);
 }
 
 /* ================================================================
