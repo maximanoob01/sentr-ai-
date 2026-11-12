@@ -467,7 +467,6 @@ export const ManufacturingPage: React.FC = () => {
       <section id="modules" className="mfg-modules-section" aria-label="Our Modules">
         <div className="mfg-container">
           <div className="mfg-modules-header">
-            <span className="mfg-modules-header__badge">COMPREHENSIVE FACTORY SUITE</span>
             <h2 className="mfg-modules-header__title">
               Our modules
             </h2>
