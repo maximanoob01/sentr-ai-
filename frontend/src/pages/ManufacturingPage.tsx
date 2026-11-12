@@ -883,36 +883,6 @@ export const ManufacturingPage: React.FC = () => {
           </div>
         </div>
       </section>
-
-      {/* ── 5. CALL TO ACTION ── */}
-      <section className="mfg-cta-section" aria-label="Book a Free Demo">
-        <div className="mfg-container">
-          <div className="mfg-cta-card">
-            <div className="mfg-cta-card__overlay" aria-hidden="true" />
-            <div className="mfg-cta-card__content">
-              <span className="mfg-cta-card__eyebrow">TAKE THE NEXT STEP</span>
-              <h2 className="mfg-cta-card__title">
-                Ready to See Your Whole Factory, Live?
-              </h2>
-              <p className="mfg-cta-card__desc">
-                Schedule a live interactive walkthrough with our industrial automation specialists. We’ll show you how Manufapp connects to your existing machines and teams to stop downtime and drive operational excellence.
-              </p>
-              <div className="mfg-cta-card__actions">
-                <Link to="/company/contact" className="mfg-btn-primary">
-                  Book a free demo
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <path d="M5 12h14" />
-                    <path d="m12 5 7 7-7 7" />
-                  </svg>
-                </Link>
-                <Link to="/products/aindri" className="mfg-btn-secondary">
-                  Explore Aindri Platform
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
   );
 };

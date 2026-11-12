@@ -1364,106 +1364,7 @@
   max-width: 290px;
 }
 
-/* ================================================================
-   5. BOTTOM CALL TO ACTION (COMPACT WHITE THEME)
-   ================================================================ */
-.mfg-cta-section {
-  padding: 2.75rem 0 3.25rem;
-  background-color: #ffffff;
-  border-top: 1px solid #f1f5f9;
-}
 
-.mfg-cta-card {
-  position: relative;
-  border-radius: 20px;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08), 0 2px 8px rgba(0, 0, 0, 0.03);
-  padding: 2.25rem 2rem;
-  text-align: center;
-  max-width: 840px;
-  margin: 0 auto;
-}
-
-.mfg-cta-card__overlay {
-  display: none;
-}
-
-.mfg-cta-card__content {
-  position: relative;
-  z-index: 1;
-  max-width: 660px;
-  margin: 0 auto;
-}
-
-.mfg-cta-card__eyebrow {
-  display: inline-block;
-  font-size: 0.68rem;
-  font-weight: 750;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #2563eb;
-  background: #eff6ff;
-  border: 1px solid #bfdbfe;
-  padding: 0.22rem 0.75rem;
-  border-radius: 9999px;
-  margin-bottom: 0.75rem;
-}
-
-.mfg-cta-card__title {
-  font-size: clamp(1.4rem, 2.3vw, 1.85rem);
-  font-weight: 850;
-  color: #0f172a;
-  line-height: 1.25;
-  letter-spacing: -0.02em;
-  margin: 0 0 0.6rem 0;
-}
-
-.mfg-cta-card__desc {
-  font-size: clamp(0.88rem, 1.1vw, 0.95rem);
-  line-height: 1.6;
-  color: #64748b;
-  margin: 0 auto 1.5rem auto;
-  max-width: 600px;
-}
-
-.mfg-cta-card__actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.85rem;
-  flex-wrap: wrap;
-}
-
-.mfg-cta-card .mfg-btn-primary {
-  padding: 0.65rem 1.45rem;
-  font-size: 0.88rem;
-  background: #2563eb;
-  border: 1px solid transparent;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.28);
-}
-
-.mfg-cta-card .mfg-btn-primary:hover {
-  background: #1d4ed8;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4);
-}
-
-.mfg-cta-card .mfg-btn-secondary {
-  padding: 0.65rem 1.45rem;
-  font-size: 0.88rem;
-  background: #f8fafc;
-  color: #334155;
-  border: 1px solid #cbd5e1;
-}
-
-.mfg-cta-card .mfg-btn-secondary:hover {
-  background: #f1f5f9;
-  border-color: #94a3b8;
-  color: #0f172a;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-}
 
 /* ================================================================
    RESPONSIVE BREAKPOINTS
@@ -1642,14 +1543,6 @@
     max-width: 380px;
     margin: 0 auto;
     row-gap: 2.75rem;
-  }
-
-  .mfg-cta-section {
-    padding: 2rem 0 2.5rem;
-  }
-
-  .mfg-cta-card {
-    padding: 1.65rem 1.15rem;
   }
 }
 
